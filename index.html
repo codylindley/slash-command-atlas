@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slash Command Atlas</title>
+<meta name="description" content="An interactive reference for the slash commands of AI coding agents — GitHub Copilot, Claude Code and OpenAI Codex — organized by the surface you actually type them into.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Slash Command Atlas">
+<meta property="og:description" content="Slash commands for GitHub Copilot, Claude Code and OpenAI Codex, organized by the surface you actually type them into — desktop app, CLI, editor, and web.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Slash Command Atlas">
+<meta name="twitter:description" content="Slash commands for GitHub Copilot, Claude Code and OpenAI Codex, side by side.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%8C%A8%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/styles.css?v=4">
+</head>
+<body>
+
+<a class="skip-link" href="#results">Skip to commands</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#/app">
+      <span class="brand-mark" aria-hidden="true">/</span>
+      <span class="brand-text">Slash Command Atlas</span>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="#/app" data-nav="explore">Explore</a>
+      <a href="#/compare" data-nav="compare">Compare</a>
+      <a href="#/about" data-nav="about">About</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch color theme">
+        <span data-theme-icon></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ EXPLORE ============ -->
+<div id="view-explore" class="view">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Slash commands, surface by surface</p>
+      <h1>Slash commands, mapped<br>by coding agent and surface.</h1>
+      <p class="lede">
+        <strong>GitHub Copilot</strong>, <strong>Claude Code</strong>, and <strong>OpenAI Codex</strong> all
+        answer to <code>/</code> &mdash; and each surface exposes a different command set. Compare desktop
+        apps, terminals, editor integrations, and documented coding-agent web experiences, without mixing
+        in the general Claude or ChatGPT composer menus.
+        <span id="hero-stat"></span>
+        Pick a surface below, or jump to <a href="#/compare">Compare</a> to see who has what.
+      </p>
+      <div class="surface-picker" id="surface-picker"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="surface-note" id="surface-note"></div>
+
+    <div class="toolbar" role="search">
+      <div class="search-field">
+        <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M10.68 11.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06ZM11.5 7a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0Z"/></svg>
+        <input id="search" type="search" placeholder="Search commands, e.g. plan, pull request, tokens&hellip;" autocomplete="off" spellcheck="false" aria-label="Search slash commands">
+        <kbd class="search-kbd">/</kbd>
+        <button id="search-clear" class="search-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+      </div>
+      <div class="toolbar-row">
+        <div class="chips" id="category-chips" role="group" aria-label="Filter by category"></div>
+      </div>
+      <div class="toolbar-row toolbar-meta">
+        <label class="switch">
+          <input type="checkbox" id="filter-noreq">
+          <span>Only commands with no prerequisites</span>
+        </label>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <main id="results" class="results" role="tabpanel" tabindex="-1"></main>
+    <p id="empty-state" class="empty-state" hidden>
+      No commands match that search. <button type="button" class="linkish" data-reset-filters>Reset the filters</button>
+    </p>
+  </div>
+</div>
+
+<!-- ============ COMPARE ============ -->
+<div id="view-compare" class="view" hidden>
+  <div class="wrap">
+    <h1 class="page-title">Where each command lives</h1>
+    <p class="lede">
+      Same name, different product &mdash; and sometimes different behavior. A filled cell means that surface
+      documents a command by that name; hover or tap it to read what it does <em>there</em>.
+      A faint middle dot means the command is not listed. In columns marked <em>documented subset</em>, a question mark
+      means the vendor&rsquo;s surface-specific documentation is not exhaustive, so absence is unknown rather
+      than proof that the command is unavailable.
+    </p>
+    <div class="compare-controls">
+      <div class="search-field compact">
+        <input id="compare-search" type="search" placeholder="Filter command names&hellip;" autocomplete="off" aria-label="Filter comparison table">
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="compare-shared">
+        <span>Only commands in 2+ surfaces</span>
+      </label>
+    </div>
+    <div class="table-scroll">
+      <table class="compare-table" id="compare-table">
+        <caption class="sr-only">Slash command availability by agent and surface</caption>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div id="view-about" class="view" hidden>
+  <div class="wrap prose">
+    <h1 class="page-title">About this reference</h1>
+
+    <h2>Why split by product and surface?</h2>
+    <p>
+      Because typing <code>/</code> gives you a different menu depending on where you are &mdash; and
+      &ldquo;where you are&rdquo; has two parts: which agent, and which of its surfaces.
+    </p>
+    <p>
+      Within <strong>GitHub Copilot</strong> alone the sets diverge sharply. The desktop app is built on
+      top of the GitHub Copilot CLI, so it inherits much of the CLI's vocabulary
+      (<code>/chronicle</code>, <code>/compact</code>, <code>/model</code>) &mdash; then adds app-only
+      commands like <code>/orchestrate</code>, <code>/create-canvas</code> and <code>/inbox</code>, and
+      drops the terminal-specific ones. GitHub Copilot Chat in VS Code is a different lineage entirely:
+      editor actions (<code>/fix</code>, <code>/tests</code>, <code>/explain</code>) plus customization
+      authoring (<code>/create-skill</code>, <code>/create-agent</code>). The JetBrains, Visual Studio
+      and Xcode plugins expose a much smaller set again.
+    </p>
+    <p>
+      Across products the overlap is real but shallow. Several names &mdash; <code>/init</code>,
+      <code>/compact</code>, <code>/model</code>, <code>/review</code> &mdash; show up in more than one
+      agent, usually meaning roughly the same thing. Others collide outright: the same token does
+      different work depending on whose prompt box you are in. The
+      <a href="#/compare">Compare</a> view exists to make both cases visible.
+    </p>
+
+    <h2>What counts as a surface?</h2>
+    <p>
+      Slash Command Atlas catalogs first-party-documented commands in coding-agent interfaces. A browser
+      counts only when the vendor documents commands for the coding product itself. That includes
+      <strong>GitHub Copilot Chat on GitHub.com</strong> and <strong>Claude Code on the web</strong> at
+      <code>claude.ai/code</code>. It excludes ordinary Claude chat and ChatGPT web: both have their own
+      <code>/</code> menus, but those are general composer options or skills, not Claude Code or Codex
+      commands. Codex cloud is browser-based, but OpenAI currently publishes no Codex-cloud slash-command
+      reference, so it remains out until one exists.
+    </p>
+    <p>
+      Editor integrations are separate surfaces only when their composer exposes a distinct documented
+      set. The Codex IDE extension qualifies with an explicit slash-command table. Claude Code in VS Code
+      is included as a documented subset because Anthropic says the extension exposes only part of the CLI
+      set; Claude Code&rsquo;s JetBrains plugin stays under CLI because it launches and connects the terminal
+      interface.
+    </p>
+
+    <h2>A note on naming</h2>
+    <p>
+      This reference says <strong>GitHub Copilot</strong>, never just &ldquo;Copilot&rdquo;. Microsoft
+      ships several unrelated products under that word &mdash; Microsoft 365 Copilot, Copilot in Windows,
+      Security Copilot and others &mdash; and none of them share this command set. <strong>Claude Code</strong>
+      means Anthropic&rsquo;s coding agent, including its Code tab and <code>claude.ai/code</code>, not an
+      ordinary Claude chat. <strong>OpenAI Codex</strong> means the current coding agent, not the general
+      ChatGPT web composer or the deprecated Codex model API of the same name.
+    </p>
+
+    <h2>Reading the badges</h2>
+    <ul class="legend-list">
+      <li><span class="badge badge-req">Requires</span> The command is greyed out or hidden until this condition is met &mdash; usually an active session, a repository, or an open pull request.</li>
+      <li><span class="badge badge-skill">Built-in skill</span> The command runs an agent skill rather than a hard-coded action, so its behavior can evolve without a client update.</li>
+      <li><span class="badge badge-workflow">Bundled workflow</span> The command orchestrates a packaged, multi-agent workflow rather than one fixed UI action.</li>
+      <li><span class="badge badge-custom">Dynamic command</span> The token is a pattern populated by your own prompts, skills, plugins, or connected servers.</li>
+      <li><span class="badge badge-hidden">Hidden from menu</span> The command works when typed in full but is intentionally omitted from the normal picker.</li>
+      <li><span class="badge badge-preview">Preview</span> Publicly available but explicitly labelled as subject to change.</li>
+      <li><span class="badge badge-exp">Experimental</span> Off by default or gated behind an experimental flag.</li>
+      <li><span class="badge badge-alias">Alias</span> A second name for the same command.</li>
+    </ul>
+
+    <h2>Sources</h2>
+    <p>Every command and its one-line description is derived from official documentation. The longer
+      explanations, use cases, and example prompts are editorial &mdash; written to make the reference
+      usable, not copied from the docs.</p>
+    <ul id="source-list" class="source-list"></ul>
+
+    <h2>Staying current</h2>
+    <p>
+      These products change their command sets frequently, and availability also depends on your plan,
+      your organization&rsquo;s policies, platform, and client version. This site is a snapshot. The
+      authoritative answer for your setup is always the same: <strong>type <code>/</code> in the prompt
+      box</strong> and read the picker.
+    </p>
+    <p class="build-stamp" id="build-stamp"></p>
+  </div>
+</div>
+
+<!-- ============ DETAIL PANEL ============ -->
+<div id="scrim" class="scrim" hidden></div>
+<aside id="detail" class="detail" hidden aria-labelledby="detail-title" role="dialog" aria-modal="true">
+  <div class="detail-inner">
+    <div class="detail-top">
+      <div>
+        <p class="detail-surface" id="detail-surface"></p>
+        <h2 id="detail-title"></h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close command details">&times;</button>
+    </div>
+    <div id="detail-body"></div>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>An unofficial, community-maintained reference. Not affiliated with GitHub, Microsoft, Anthropic, or OpenAI.</p>
+    <p><a href="https://docs.github.com/en/copilot">GitHub Copilot docs</a> &middot; <a href="https://code.claude.com/docs/en/overview">Claude Code docs</a> &middot; <a href="https://learn.chatgpt.com/docs/developers">OpenAI Codex docs</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/data/meta.js?v=4"></script>
+<script src="assets/js/data/app.js?v=4"></script>
+<script src="assets/js/data/cli.js?v=4"></script>
+<script src="assets/js/data/editors.js?v=4"></script>
+<script src="assets/js/data/claude-app.js?v=4"></script>
+<script src="assets/js/data/claude-cli.js?v=4"></script>
+<script src="assets/js/data/claude-vscode.js?v=4"></script>
+<script src="assets/js/data/claude-web.js?v=4"></script>
+<script src="assets/js/data/codex-app.js?v=4"></script>
+<script src="assets/js/data/codex-cli.js?v=4"></script>
+<script src="assets/js/data/codex-ide.js?v=4"></script>
+<script src="assets/js/app.js?v=4"></script>
+</body>
+</html>
