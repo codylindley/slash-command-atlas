@@ -5,7 +5,9 @@
 (function () {
   var D = {
     ref: ['ChatGPT desktop app slash commands',
-      'https://learn.chatgpt.com/docs/reference/slash-commands#available-slash-commands']
+      'https://learn.chatgpt.com/docs/reference/slash-commands#available-slash-commands'],
+    share: ['Share a read-only snapshot of a Codex thread',
+      'https://learn.chatgpt.com/docs/use-chatgpt#share-a-read-only-snapshot-of-a-codex-thread']
   };
 
   window.SLASH.register('codex-app', [
@@ -185,6 +187,18 @@
         'You want a temporary second line of reasoning rather than a saved fork'
       ],
       related: ['fork', 'plan', 'status'], docs: [D.ref]
+    },
+    {
+      key: 'share', cmd: '/share', cat: 'session',
+      requires: 'Local Codex thread in the macOS desktop app; sharing allowed by workspace policy',
+      summary: 'Creates a read-only snapshot of the current local Codex thread.',
+      detail: 'Opens the sharing dialog and prepares an uploaded snapshot. Personal accounts can create a link for anyone who has it; workspace accounts can restrict the audience to signed-in members or invited people when policy allows.',
+      note: 'Review the snapshot before copying its link. OpenAI redacts detected secrets, but the snapshot can include messages, reasoning summaries, images, and diffs.',
+      when: [
+        'You want to share a reproducible thread without giving someone access to the live project',
+        'A teammate needs the conversation and resulting diff, but not local tool or shell history'
+      ],
+      related: ['fork', 'status'], docs: [D.share]
     },
     {
       key: 'status', cmd: '/status', cat: 'diag',

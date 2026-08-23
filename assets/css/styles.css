@@ -39,6 +39,7 @@
   --c-codex-app:  #006b5f;
   --c-codex-cli:  #006a7a;
   --c-codex-ide:  #1b5e9b;
+  --c-codex-web:  #5c4b9a;
 
   --radius:    10px;
   --radius-lg: 16px;
@@ -88,6 +89,7 @@
     --c-codex-app:  #5eead4;
     --c-codex-cli:  #67e8f9;
     --c-codex-ide:  #7dd3fc;
+    --c-codex-web:  #c4b5fd;
 
     --shadow-sm: 0 1px 2px rgba(1,4,9,.5);
     --shadow-md: 0 8px 24px rgba(1,4,9,.6);
@@ -130,6 +132,7 @@
   --c-codex-app:  #5eead4;
   --c-codex-cli:  #67e8f9;
   --c-codex-ide:  #7dd3fc;
+  --c-codex-web:  #c4b5fd;
 
   --shadow-sm: 0 1px 2px rgba(1,4,9,.5);
   --shadow-md: 0 8px 24px rgba(1,4,9,.6);
@@ -141,7 +144,8 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .scrim, .detail { animation: none; }
+  .surface-card, .chip, .cmd-card { transition: none; }
 }
 
 body {
@@ -156,6 +160,7 @@ body {
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+p a, .source-list a { text-decoration: underline; text-underline-offset: 2px; }
 
 code, kbd, .mono { font-family: var(--mono); }
 
@@ -238,6 +243,7 @@ code, kbd, .mono { font-family: var(--mono); }
 .surface-picker {
   display: grid; gap: 12px; margin-bottom: 40px;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  min-height: 747px;
 }
 /* With more than one product the picker becomes a stack of grouped rows. */
 .surface-picker:has(.product-group) { display: block; }
@@ -255,6 +261,7 @@ code, kbd, .mono { font-family: var(--mono); }
 /* On narrow screens, three horizontal product rows keep the command results
    close to the picker instead of stacking all fourteen surface cards first. */
 @media (max-width: 620px) {
+  .surface-picker { min-height: 622px; }
   .surface-picker:has(.product-group) { display: flex; flex-direction: column; gap: 0; }
   .product-group { margin-bottom: 22px; }
   .product-surfaces {
@@ -303,8 +310,9 @@ code, kbd, .mono { font-family: var(--mono); }
 .surface-note {
   display: flex; gap: 14px; align-items: flex-start;
   padding: 14px 18px; margin-bottom: 22px;
-  border: 1px solid var(--border); border-left: 3px solid var(--sc, var(--border-strong));
-  border-radius: var(--radius); background: var(--bg-subtle);
+  border: 1px solid color-mix(in srgb, var(--sc, var(--border-strong)) 18%, var(--border));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--sc, var(--border-strong)) 4%, var(--bg-subtle));
   font-size: 14.5px; color: var(--text-muted);
 }
 .surface-note strong { color: var(--text); }
@@ -361,7 +369,7 @@ code, kbd, .mono { font-family: var(--mono); }
 .chip[aria-pressed="true"] {
   background: var(--text); border-color: var(--text); color: var(--bg); font-weight: 550;
 }
-.chip .chip-n { opacity: .55; font-variant-numeric: tabular-nums; margin-left: 5px; }
+.chip .chip-n { opacity: .72; font-variant-numeric: tabular-nums; margin-left: 5px; }
 
 .switch { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-muted); cursor: pointer; }
 .switch input { accent-color: var(--accent); width: 15px; height: 15px; cursor: pointer; }
@@ -415,6 +423,8 @@ code, kbd, .mono { font-family: var(--mono); }
 .badge-hidden { border-color: var(--border-strong); color: var(--text-muted); background: var(--bg-inset); }
 .badge-preview { border-color: color-mix(in srgb, var(--accent) 45%, transparent);   color: var(--accent);      background: var(--accent-soft); }
 .badge-exp  { border-color: color-mix(in srgb, var(--badge-exp) 45%, transparent);   color: var(--badge-exp);   background: color-mix(in srgb, var(--badge-exp) 10%, transparent); }
+.badge-inherited { border-color: color-mix(in srgb, var(--text-muted) 45%, transparent); color: var(--text-muted); background: var(--bg-subtle); }
+.badge-blocked { border-color: color-mix(in srgb, var(--badge-warn) 45%, transparent); color: var(--badge-warn); background: color-mix(in srgb, var(--badge-warn) 10%, transparent); }
 .badge-alias{ font-family: var(--mono); font-size: 11px; }
 
 @media (max-width: 420px) {

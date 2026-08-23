@@ -52,25 +52,25 @@
       "product": "copilot",
       "name": "GitHub Copilot Chat in JetBrains",
       "label": "JetBrains",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "IntelliJ, PyCharm, GoLand, WebStorm…",
-      "docs": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains"
+      "docs": "https://www.jetbrains.com/help/ai-assistant/copilot-agent.html"
     },
     {
       "id": "visualstudio",
       "product": "copilot",
       "name": "GitHub Copilot Chat in Visual Studio",
       "label": "Visual Studio",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "Visual Studio 2022 on Windows",
-      "docs": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=visualstudio"
+      "docs": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio"
     },
     {
       "id": "xcode",
       "product": "copilot",
       "name": "GitHub Copilot Chat in Xcode",
       "label": "Xcode",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "Xcode on macOS",
       "docs": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode"
     },
@@ -79,7 +79,7 @@
       "product": "copilot",
       "name": "GitHub Copilot Chat on GitHub.com",
       "label": "GitHub.com",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "Browser — github.com and mobile",
       "docs": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet"
     },
@@ -124,7 +124,7 @@
       "product": "codex",
       "name": "OpenAI Codex in the ChatGPT desktop app",
       "label": "Desktop app",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "ChatGPT desktop app — Codex workspace",
       "docs": "https://learn.chatgpt.com/docs/reference/slash-commands"
     },
@@ -142,9 +142,18 @@
       "product": "codex",
       "name": "OpenAI Codex IDE extension",
       "label": "IDE extension",
-      "coverage": "documented-reference",
+      "coverage": "documented-subset",
       "where": "VS Code, Cursor and Windsurf",
       "docs": "https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands"
+    },
+    {
+      "id": "codex-web",
+      "product": "codex",
+      "name": "OpenAI Codex on the web",
+      "label": "Web",
+      "coverage": "unpublished-inventory",
+      "where": "Browser — chatgpt.com/codex",
+      "docs": "https://learn.chatgpt.com/docs/developer-commands?surface=web"
     }
   ],
   "categories": {
@@ -185,8 +194,16 @@
       "url": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet"
     },
     {
-      "title": "VS Code: GitHub Copilot cheat sheet",
-      "url": "https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features"
+      "title": "VS Code AI features cheat sheet",
+      "url": "https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet"
+    },
+    {
+      "title": "Visual Studio: customize chat responses",
+      "url": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio"
+    },
+    {
+      "title": "GitHub Copilot agent in JetBrains IDEs",
+      "url": "https://www.jetbrains.com/help/ai-assistant/copilot-agent.html"
     },
     {
       "title": "A guide to slash commands in the GitHub Copilot app (GitHub Blog)",
@@ -205,24 +222,48 @@
       "url": "https://code.claude.com/docs/en/claude-code-on-the-web"
     },
     {
-      "title": "Claude Code in VS Code",
-      "url": "https://code.claude.com/docs/en/vs-code"
+      "title": "Claude Code Remote Control limitations",
+      "url": "https://code.claude.com/docs/en/remote-control#limitations"
     },
     {
-      "title": "Claude Code IDE integrations",
-      "url": "https://code.claude.com/docs/en/ide-integrations"
+      "title": "Claude Code in VS Code",
+      "url": "https://code.claude.com/docs/en/vs-code"
     },
     {
       "title": "Slash commands in the ChatGPT desktop app",
       "url": "https://learn.chatgpt.com/docs/reference/slash-commands"
     },
     {
+      "title": "Share a read-only Codex thread",
+      "url": "https://learn.chatgpt.com/docs/use-chatgpt#share-a-read-only-snapshot-of-a-codex-thread"
+    },
+    {
       "title": "OpenAI Codex CLI developer commands",
       "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli"
     },
     {
+      "title": "OpenAI Codex CLI slash-command source",
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/tui/src/slash_command.rs"
+    },
+    {
       "title": "OpenAI Codex IDE developer commands",
       "url": "https://learn.chatgpt.com/docs/developer-commands?surface=ide"
+    },
+    {
+      "title": "Build skills in Codex",
+      "url": "https://learn.chatgpt.com/docs/build-skills"
+    },
+    {
+      "title": "Custom prompts in Codex",
+      "url": "https://learn.chatgpt.com/docs/custom-prompts"
+    },
+    {
+      "title": "OpenAI Codex commands on the web",
+      "url": "https://learn.chatgpt.com/docs/developer-commands?surface=web"
+    },
+    {
+      "title": "OpenAI Codex cloud",
+      "url": "https://learn.chatgpt.com/docs/cloud"
     }
   ],
   "commands": [
@@ -2000,6 +2041,39 @@
         "settings"
       ],
       "docs": []
+    },
+    {
+      "id": "cli-keep-alive",
+      "product": "copilot",
+      "surface": "cli",
+      "command": "/keep-alive",
+      "aliases": [
+        "/caffeinate"
+      ],
+      "arguments": "[on|off|busy|DURATION]",
+      "category": "system",
+      "categoryLabel": "CLI & environment",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Prevents the machine from sleeping while Copilot works.",
+      "summaryHtml": "Prevents the machine from sleeping while Copilot works.",
+      "subcommands": [],
+      "examples": [
+        "/keep-alive busy",
+        "/caffeinate 2h"
+      ],
+      "related": [
+        "tasks",
+        "every",
+        "after"
+      ],
+      "docs": [
+        {
+          "title": "CLI command reference",
+          "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+        }
+      ]
     },
     {
       "id": "cli-init",
@@ -4372,7 +4446,16 @@
       "related": [
         "explain"
       ],
-      "docs": []
+      "docs": [
+        {
+          "title": "Copilot Chat cheat sheet",
+          "url": "https://docs.github.com/en/copilot/reference/chat-cheat-sheet"
+        },
+        {
+          "title": "GitHub Copilot agent in JetBrains IDEs",
+          "url": "https://www.jetbrains.com/help/ai-assistant/copilot-agent.html"
+        }
+      ]
     },
     {
       "id": "jetbrains-chronicle",
@@ -4588,6 +4671,88 @@
       "docs": []
     },
     {
+      "id": "visualstudio-generate",
+      "product": "copilot",
+      "surface": "visualstudio",
+      "command": "/generate",
+      "aliases": [],
+      "arguments": "[QUESTION]",
+      "category": "editor",
+      "categoryLabel": "Editor actions",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Generates code to answer a specified question.",
+      "summaryHtml": "Generates code to answer a specified question.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "explain",
+        "fix",
+        "generateInstructions"
+      ],
+      "docs": [
+        {
+          "title": "Customize chat responses in Visual Studio",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio"
+        }
+      ]
+    },
+    {
+      "id": "visualstudio-generateInstructions",
+      "product": "copilot",
+      "surface": "visualstudio",
+      "command": "/generateInstructions",
+      "aliases": [],
+      "arguments": null,
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Generates a repository-wide Copilot instructions file.",
+      "summaryHtml": "Generates a repository-wide Copilot instructions file.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "generate",
+        "savePrompt"
+      ],
+      "docs": [
+        {
+          "title": "Customize chat responses in Visual Studio",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio"
+        }
+      ]
+    },
+    {
+      "id": "visualstudio-savePrompt",
+      "product": "copilot",
+      "surface": "visualstudio",
+      "command": "/savePrompt",
+      "aliases": [],
+      "arguments": "[NAME]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Extracts a reusable prompt from the current conversation.",
+      "summaryHtml": "Extracts a reusable prompt from the current conversation.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "generateInstructions",
+        "generate"
+      ],
+      "docs": [
+        {
+          "title": "Customize chat responses in Visual Studio",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio"
+        }
+      ]
+    },
+    {
       "id": "xcode-explain",
       "product": "copilot",
       "surface": "xcode",
@@ -4795,102 +4960,6 @@
         "rename"
       ],
       "docs": []
-    },
-    {
-      "id": "claude-app-compact",
-      "product": "claude",
-      "surface": "claude-app",
-      "command": "/compact",
-      "aliases": [],
-      "arguments": "[FOCUS-INSTRUCTIONS]",
-      "category": "context",
-      "categoryLabel": "Context & input",
-      "requires": null,
-      "flags": [],
-      "comparisonEligible": true,
-      "summary": "Compacts the Desktop conversation to free context-window space.",
-      "summaryHtml": "Compacts the Desktop conversation to free context-window space.",
-      "subcommands": [],
-      "examples": [
-        "/compact preserve the approved plan and unresolved test failure"
-      ],
-      "related": [
-        "btw"
-      ],
-      "docs": [
-        {
-          "title": "Use Claude Code Desktop",
-          "url": "https://code.claude.com/docs/en/desktop"
-        },
-        {
-          "title": "Explore the context window",
-          "url": "https://code.claude.com/docs/en/context-window"
-        }
-      ]
-    },
-    {
-      "id": "claude-app-btw",
-      "product": "claude",
-      "surface": "claude-app",
-      "command": "/btw",
-      "aliases": [],
-      "arguments": "QUESTION",
-      "category": "context",
-      "categoryLabel": "Context & input",
-      "requires": null,
-      "flags": [],
-      "comparisonEligible": true,
-      "summary": "Opens a side chat that does not change the main conversation.",
-      "summaryHtml": "Opens a side chat that does not change the main conversation.",
-      "subcommands": [],
-      "examples": [
-        "/btw what evidence do we have that this is a database race?"
-      ],
-      "related": [
-        "compact"
-      ],
-      "docs": [
-        {
-          "title": "Use Claude Code Desktop",
-          "url": "https://code.claude.com/docs/en/desktop"
-        }
-      ]
-    },
-    {
-      "id": "claude-app-custom-skill",
-      "product": "claude",
-      "surface": "claude-app",
-      "command": "/<skill-name>",
-      "aliases": [],
-      "arguments": "[ARGUMENTS]",
-      "category": "author",
-      "categoryLabel": "Customization authoring",
-      "requires": null,
-      "flags": [
-        "custom"
-      ],
-      "comparisonEligible": false,
-      "summary": "Invokes a built-in, personal, project, or plugin skill from Desktop.",
-      "summaryHtml": "Invokes a built-in, personal, project, or plugin skill from Desktop.",
-      "subcommands": [],
-      "examples": [],
-      "related": [
-        "compact"
-      ],
-      "docs": [
-        {
-          "title": "Use Claude Code Desktop",
-          "url": "https://code.claude.com/docs/en/desktop"
-        },
-        {
-          "title": "Get started with Claude Code Desktop",
-          "url": "https://code.claude.com/docs/en/desktop-quickstart"
-        },
-        {
-          "title": "Extend Claude Code with skills",
-          "url": "https://code.claude.com/docs/en/skills"
-        }
-      ]
     },
     {
       "id": "claude-cli-plan",
@@ -8160,6 +8229,1273 @@
       ]
     },
     {
+      "id": "claude-app-compact",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/compact",
+      "aliases": [],
+      "arguments": "[FOCUS-INSTRUCTIONS]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Compacts the Desktop conversation to free context-window space.",
+      "summaryHtml": "Compacts the Desktop conversation to free context-window space.",
+      "subcommands": [],
+      "examples": [
+        "/compact preserve the approved plan and unresolved test failure"
+      ],
+      "related": [
+        "btw",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Claude Code Desktop",
+          "url": "https://code.claude.com/docs/en/desktop"
+        },
+        {
+          "title": "Explore the context window",
+          "url": "https://code.claude.com/docs/en/context-window"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-btw",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/btw",
+      "aliases": [],
+      "arguments": "[QUESTION]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Opens a side chat that uses session context without adding to the conversation.",
+      "summaryHtml": "Opens a side chat that uses session context without adding to the conversation.",
+      "subcommands": [],
+      "examples": [
+        "/btw what evidence do we have that this is a database race?"
+      ],
+      "related": [
+        "compact"
+      ],
+      "docs": [
+        {
+          "title": "Claude Code Desktop",
+          "url": "https://code.claude.com/docs/en/desktop"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-config",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/config",
+      "aliases": [],
+      "arguments": null,
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Opens Settings → Claude Code; any text after the command is ignored.",
+      "summaryHtml": "Opens Settings &rarr; Claude Code; any text after the command is ignored.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "permissions"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — what is not available",
+          "url": "https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop"
+        },
+        {
+          "title": "Claude Code Desktop",
+          "url": "https://code.claude.com/docs/en/desktop"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-permissions",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/permissions",
+      "aliases": [],
+      "arguments": null,
+      "category": "perms",
+      "categoryLabel": "Tools & permissions",
+      "requires": null,
+      "flags": [
+        "blocked"
+      ],
+      "comparisonEligible": true,
+      "summary": "Replies isn’t available in this environment in Desktop.",
+      "summaryHtml": "Replies <code>isn&rsquo;t available in this environment</code> in Desktop.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "config",
+        "terminal-dialog"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — what is not available",
+          "url": "https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-custom-skill",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/<skill-name>",
+      "aliases": [],
+      "arguments": "[ARGUMENTS]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [
+        "custom"
+      ],
+      "comparisonEligible": false,
+      "summary": "Invokes a built-in, personal, project, or plugin skill from Desktop.",
+      "summaryHtml": "Invokes a built-in, personal, project, or plugin skill from Desktop.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "compact"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Get started with Claude Code Desktop",
+          "url": "https://code.claude.com/docs/en/desktop-quickstart"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-clear",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/clear",
+      "aliases": [
+        "/reset",
+        "/new"
+      ],
+      "arguments": "[NAME]",
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Starts a new conversation with empty context.",
+      "summaryHtml": "Starts a new conversation with empty context.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "compact"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        },
+        {
+          "title": "Checkpointing",
+          "url": "https://code.claude.com/docs/en/checkpointing"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-rename",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/rename",
+      "aliases": [],
+      "arguments": "[NAME]",
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Renames the current session, or generates a name from its history.",
+      "summaryHtml": "Renames the current session, or generates a name from its history.",
+      "subcommands": [],
+      "examples": [
+        "/rename oauth-token-rotation"
+      ],
+      "related": [
+        "color"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        },
+        {
+          "title": "Manage multiple agents with agent view",
+          "url": "https://code.claude.com/docs/en/agent-view"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-color",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/color",
+      "aliases": [],
+      "arguments": "[COLOR|default]",
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Sets the prompt-bar color for this session.",
+      "summaryHtml": "Sets the prompt-bar color for this session.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "rename"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        },
+        {
+          "title": "Manage multiple agents with agent view",
+          "url": "https://code.claude.com/docs/en/agent-view"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-autocompact",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/autocompact",
+      "aliases": [],
+      "arguments": "[auto|TOKENS]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": "Claude Code 2.1.221+",
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Sets how full the context window gets before automatic compaction.",
+      "summaryHtml": "Sets how full the context window gets before automatic compaction.",
+      "subcommands": [],
+      "examples": [
+        "/autocompact 500k",
+        "/autocompact auto"
+      ],
+      "related": [
+        "compact",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        },
+        {
+          "title": "Explore the context window",
+          "url": "https://code.claude.com/docs/en/context-window"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-context",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/context",
+      "aliases": [],
+      "arguments": "[all]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Visualizes what is consuming the current context window.",
+      "summaryHtml": "Visualizes what is consuming the current context window.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "compact",
+        "autocompact",
+        "usage"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Explore the context window",
+          "url": "https://code.claude.com/docs/en/context-window"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-recap",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/recap",
+      "aliases": [],
+      "arguments": null,
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Generates a one-line summary of the current session.",
+      "summaryHtml": "Generates a one-line summary of the current session.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "rename",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-batch",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/batch",
+      "aliases": [],
+      "arguments": "<INSTRUCTION>",
+      "category": "delegate",
+      "categoryLabel": "Delegation & parallelism",
+      "requires": "A Git repository",
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Decomposes a large codebase change into parallel worktree tasks.",
+      "summaryHtml": "Decomposes a large codebase change into parallel worktree tasks.",
+      "subcommands": [],
+      "examples": [
+        "/batch migrate src/ from Solid to React"
+      ],
+      "related": [
+        "code-review"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Run parallel sessions with worktrees",
+          "url": "https://code.claude.com/docs/en/worktrees"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-deep-research",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/deep-research",
+      "aliases": [],
+      "arguments": "<QUESTION>",
+      "category": "delegate",
+      "categoryLabel": "Delegation & parallelism",
+      "requires": null,
+      "flags": [
+        "workflow",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Fans a research question out across web-searching agents.",
+      "summaryHtml": "Fans a research question out across web-searching agents.",
+      "subcommands": [],
+      "examples": [
+        "/deep-research compare current browser isolation models for local coding agents"
+      ],
+      "related": [],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Orchestrate subagents with dynamic workflows",
+          "url": "https://code.claude.com/docs/en/workflows"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-code-review",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/code-review",
+      "aliases": [
+        "/review",
+        "/ultrareview"
+      ],
+      "arguments": "[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [PR|BRANCH|PATH]",
+      "category": "review",
+      "categoryLabel": "Review & critique",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Reviews a diff or target for correctness bugs and cleanup opportunities.",
+      "summaryHtml": "Reviews a diff or target for correctness bugs and cleanup opportunities.",
+      "subcommands": [
+        {
+          "name": "low … max",
+          "description": "Choose local review effort"
+        },
+        {
+          "name": "ultra",
+          "description": "Run the deep cloud review"
+        },
+        {
+          "name": "--fix",
+          "description": "Apply accepted findings"
+        },
+        {
+          "name": "--comment",
+          "description": "Post findings as inline PR comments"
+        }
+      ],
+      "examples": [
+        "/code-review high --fix src/auth",
+        "/review medium 1234",
+        "/code-review ultra --post 1234"
+      ],
+      "related": [
+        "simplify"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code review",
+          "url": "https://code.claude.com/docs/en/code-review"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-simplify",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/simplify",
+      "aliases": [],
+      "arguments": "[TARGET]",
+      "category": "review",
+      "categoryLabel": "Review & critique",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Finds cleanup opportunities in changed code and applies them.",
+      "summaryHtml": "Finds cleanup opportunities in changed code and applies them.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "code-review",
+        "verify"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-run",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/run",
+      "aliases": [],
+      "arguments": null,
+      "category": "review",
+      "categoryLabel": "Review & critique",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Launches and drives the project so you can see a change working.",
+      "summaryHtml": "Launches and drives the project so you can see a change working.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "verify",
+        "run-skill-generator",
+        "simplify"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-verify",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/verify",
+      "aliases": [],
+      "arguments": null,
+      "category": "review",
+      "categoryLabel": "Review & critique",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Builds, runs, and observes the app to confirm a change works.",
+      "summaryHtml": "Builds, runs, and observes the app to confirm a change works.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "run",
+        "run-skill-generator",
+        "code-review"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-run-skill-generator",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/run-skill-generator",
+      "aliases": [],
+      "arguments": null,
+      "category": "review",
+      "categoryLabel": "Review & critique",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Teaches /run and /verify how to operate this project.",
+      "summaryHtml": "Teaches /run and /verify how to operate this project.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "run",
+        "verify"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-debug",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/debug",
+      "aliases": [],
+      "arguments": "[DESCRIPTION]",
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Enables session debug logging and investigates the resulting log.",
+      "summaryHtml": "Enables session debug logging and investigates the resulting log.",
+      "subcommands": [],
+      "examples": [
+        "/debug MCP tools disappear after compaction"
+      ],
+      "related": [
+        "doctor"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-doctor",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/doctor",
+      "aliases": [
+        "/checkup"
+      ],
+      "arguments": null,
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Diagnoses installation, configuration, and context-cost problems.",
+      "summaryHtml": "Diagnoses installation, configuration, and context-cost problems.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "debug",
+        "fewer-permission-prompts"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-model",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/model",
+      "aliases": [],
+      "arguments": "[MODEL]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Switches models and saves the choice as the default for new sessions.",
+      "summaryHtml": "Switches models and saves the choice as the default for new sessions.",
+      "subcommands": [],
+      "examples": [
+        "/model sonnet"
+      ],
+      "related": [
+        "effort",
+        "fast"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Model configuration",
+          "url": "https://code.claude.com/docs/en/model-config"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-effort",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/effort",
+      "aliases": [],
+      "arguments": "[LEVEL|auto|status]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Sets or reports the model’s reasoning effort.",
+      "summaryHtml": "Sets or reports the model’s reasoning effort.",
+      "subcommands": [],
+      "examples": [
+        "/effort high",
+        "/effort status"
+      ],
+      "related": [
+        "model",
+        "fast"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Model configuration",
+          "url": "https://code.claude.com/docs/en/model-config"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-fast",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/fast",
+      "aliases": [],
+      "arguments": "[on|off]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": "Fast mode eligibility; Claude Code 2.1.205+",
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Toggles fast mode for lower-latency model responses.",
+      "summaryHtml": "Toggles fast mode for lower-latency model responses.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "model",
+        "effort"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Model configuration",
+          "url": "https://code.claude.com/docs/en/model-config"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-fewer-permission-prompts",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/fewer-permission-prompts",
+      "aliases": [],
+      "arguments": null,
+      "category": "perms",
+      "categoryLabel": "Tools & permissions",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Builds a conservative allowlist from repeated read-only tool calls.",
+      "summaryHtml": "Builds a conservative allowlist from repeated read-only tool calls.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "permissions",
+        "doctor"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-reload-plugins",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/reload-plugins",
+      "aliases": [],
+      "arguments": "[--force]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Reloads active plugins and reports component or load errors.",
+      "summaryHtml": "Reloads active plugins and reports component or load errors.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "mcp"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Create plugins",
+          "url": "https://code.claude.com/docs/en/plugins"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-mcp",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/mcp",
+      "aliases": [],
+      "arguments": "reconnect [SERVER]|enable|disable [SERVER|all]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Runs text-based MCP management subcommands inherited from Claude Code.",
+      "summaryHtml": "Runs text-based MCP management subcommands inherited from Claude Code.",
+      "subcommands": [
+        {
+          "name": "reconnect SERVER",
+          "description": "Reconnect a disconnected server"
+        },
+        {
+          "name": "enable [SERVER|all]",
+          "description": "Enable one or all configured servers"
+        },
+        {
+          "name": "disable [SERVER|all]",
+          "description": "Disable one or all configured servers"
+        }
+      ],
+      "examples": [],
+      "related": [
+        "permissions"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-loop",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/loop",
+      "aliases": [
+        "/proactive"
+      ],
+      "arguments": "[INTERVAL] [PROMPT]",
+      "category": "system",
+      "categoryLabel": "CLI & environment",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Repeats a prompt while the session remains open.",
+      "summaryHtml": "Repeats a prompt while the session remains open.",
+      "subcommands": [],
+      "examples": [
+        "/loop 5m check whether the deploy finished and report only changes"
+      ],
+      "related": [],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Run prompts on a schedule",
+          "url": "https://code.claude.com/docs/en/scheduled-tasks"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-usage",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/usage",
+      "aliases": [
+        "/cost",
+        "/stats"
+      ],
+      "arguments": null,
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Shows session cost, plan limits, and activity statistics.",
+      "summaryHtml": "Shows session cost, plan limits, and activity statistics.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "usage-credits",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Manage costs effectively",
+          "url": "https://code.claude.com/docs/en/costs"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-usage-credits",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/usage-credits",
+      "aliases": [],
+      "arguments": null,
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": null,
+      "flags": [
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Configures usage credits or requests them from an administrator.",
+      "summaryHtml": "Configures usage credits or requests them from an administrator.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "usage"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Manage costs effectively",
+          "url": "https://code.claude.com/docs/en/costs"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-claude-api",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/claude-api",
+      "aliases": [],
+      "arguments": "[migrate|upgrade|managed-agents-onboard|prompt-audit]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Loads current Claude API guidance and runs migration workflows.",
+      "summaryHtml": "Loads current Claude API guidance and runs migration workflows.",
+      "subcommands": [
+        {
+          "name": "migrate",
+          "description": "Update Claude API code to a newer model"
+        },
+        {
+          "name": "upgrade",
+          "description": "Upgrade a supported Anthropic SDK major version"
+        },
+        {
+          "name": "managed-agents-onboard",
+          "description": "Create and configure a Managed Agent"
+        },
+        {
+          "name": "prompt-audit",
+          "description": "Find model-era assumptions in prompts and tool descriptions"
+        }
+      ],
+      "examples": [],
+      "related": [],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-dataviz",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/dataviz",
+      "aliases": [],
+      "arguments": "[REQUEST]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": "Claude Code 2.1.198+",
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Applies structured design guidance to charts and dashboards.",
+      "summaryHtml": "Applies structured design guidance to charts and dashboards.",
+      "subcommands": [],
+      "examples": [
+        "/dataviz redesign the retention dashboard for weekly cohorts"
+      ],
+      "related": [],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-design-sync",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/design-sync",
+      "aliases": [],
+      "arguments": "[NAME-HINT]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": "Anthropic API connection and Claude Design access",
+      "flags": [
+        "skill",
+        "inherited"
+      ],
+      "comparisonEligible": true,
+      "summary": "Uploads a React design system so Claude Design uses real components.",
+      "summaryHtml": "Uploads a React design system so Claude Design uses real components.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "dataviz"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — use skills",
+          "url": "https://code.claude.com/docs/en/desktop#use-skills"
+        },
+        {
+          "title": "Extend Claude Code with skills",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-app-terminal-dialog",
+      "product": "claude",
+      "surface": "claude-app",
+      "command": "/<terminal-dialog-command>",
+      "aliases": [],
+      "arguments": null,
+      "category": "system",
+      "categoryLabel": "CLI & environment",
+      "requires": null,
+      "flags": [
+        "blocked"
+      ],
+      "comparisonEligible": false,
+      "summary": "Terminal-panel commands are refused or replaced by native Desktop controls.",
+      "summaryHtml": "Terminal-panel commands are refused or replaced by native Desktop controls.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "config",
+        "permissions"
+      ],
+      "docs": [
+        {
+          "title": "Desktop — what is not available",
+          "url": "https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
       "id": "claude-vscode-compact",
       "product": "claude",
       "surface": "claude-vscode",
@@ -8182,7 +9518,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         },
         {
           "title": "Explore the context window",
@@ -8199,7 +9535,7 @@
       "arguments": "QUESTION",
       "category": "context",
       "categoryLabel": "Context & input",
-      "requires": null,
+      "requires": "Claude Code 2.1.227+",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Opens a side question without adding it to the main conversation.",
@@ -8214,7 +9550,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8240,7 +9576,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8255,7 +9591,7 @@
       "arguments": null,
       "category": "session",
       "categoryLabel": "Session lifecycle",
-      "requires": "Claude subscription and Remote Control policy; Claude Code 2.1.79+",
+      "requires": "Claude subscription and Remote Control policy",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Makes the VS Code session available through claude.ai or mobile.",
@@ -8268,11 +9604,11 @@
       "docs": [
         {
           "title": "Remote Control from VS Code",
-          "url": "https://code.claude.com/docs/en/remote-control#vs-code"
+          "url": "https://code.claude.com/docs/en/remote-control#start-a-remote-control-session"
         },
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8298,7 +9634,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8324,7 +9660,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8350,11 +9686,38 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         },
         {
           "title": "Claude Code plugins",
           "url": "https://code.claude.com/docs/en/plugins"
+        }
+      ]
+    },
+    {
+      "id": "claude-vscode-mcp",
+      "product": "claude",
+      "surface": "claude-vscode",
+      "command": "/mcp",
+      "aliases": [],
+      "arguments": null,
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Opens VS Code’s MCP server manager.",
+      "summaryHtml": "Opens VS Code&rsquo;s MCP server manager.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "plugins",
+        "usage"
+      ],
+      "docs": [
+        {
+          "title": "Use Claude Code in VS Code",
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8381,7 +9744,7 @@
       "docs": [
         {
           "title": "Use Claude Code in VS Code",
-          "url": "https://code.claude.com/docs/en/ide-integrations"
+          "url": "https://code.claude.com/docs/en/vs-code"
         }
       ]
     },
@@ -8455,10 +9818,10 @@
       "surface": "claude-web",
       "command": "/autocompact",
       "aliases": [],
-      "arguments": "auto|TOKENS",
+      "arguments": "[auto|TOKENS]",
       "category": "context",
       "categoryLabel": "Context & input",
-      "requires": null,
+      "requires": "Claude Code 2.1.221+",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Changes the auto-compact window for this cloud environment.",
@@ -8491,7 +9854,7 @@
       "arguments": "MODEL",
       "category": "config",
       "categoryLabel": "Models, agents & skills",
-      "requires": null,
+      "requires": "Claude Code 2.1.205+ in the session environment",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Switches the cloud session to a named model.",
@@ -8524,7 +9887,7 @@
       "arguments": "LEVEL|auto|status",
       "category": "config",
       "categoryLabel": "Models, agents & skills",
-      "requires": null,
+      "requires": "Claude Code 2.1.205+ in the session environment",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Sets or reports reasoning effort without the terminal slider.",
@@ -8558,7 +9921,7 @@
       "arguments": "on|off",
       "category": "config",
       "categoryLabel": "Models, agents & skills",
-      "requires": "Session launched with fast mode",
+      "requires": "Session launched with fast mode; Claude Code 2.1.205+",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Toggles fast serving for an eligible cloud session.",
@@ -8589,7 +9952,7 @@
       "arguments": "COLOR|default",
       "category": "session",
       "categoryLabel": "Session lifecycle",
-      "requires": null,
+      "requires": "Claude Code 2.1.205+ in the session environment",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Sets the cloud session’s identifying color.",
@@ -8621,7 +9984,7 @@
       "arguments": "NAME",
       "category": "session",
       "categoryLabel": "Session lifecycle",
-      "requires": null,
+      "requires": "Claude Code 2.1.205+ in the session environment",
       "flags": [],
       "comparisonEligible": true,
       "summary": "Renames the cloud session from the conversation.",
@@ -8672,6 +10035,272 @@
         {
           "title": "Claude Code commands",
           "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-mcp",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/mcp",
+      "aliases": [],
+      "arguments": "[reconnect SERVER|enable|disable [SERVER|all]]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": "Claude Code 2.1.166+",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Opens web connector settings or manages a Remote Control session’s MCP servers.",
+      "summaryHtml": "Opens web connector settings or manages a Remote Control session&rsquo;s MCP servers.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "config",
+        "reload-plugins"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-usage",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/usage",
+      "aliases": [
+        "/cost",
+        "/stats"
+      ],
+      "arguments": null,
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Prints session cost, plan limits, and activity statistics as text.",
+      "summaryHtml": "Prints session cost, plan limits, and activity statistics as text.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "usage-credits",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-usage-credits",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/usage-credits",
+      "aliases": [],
+      "arguments": null,
+      "category": "diag",
+      "categoryLabel": "Diagnostics & usage",
+      "requires": "Eligible account",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Prints the usage-credits billing URL in the web conversation.",
+      "summaryHtml": "Prints the usage-credits billing URL in the web conversation.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "usage"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-recap",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/recap",
+      "aliases": [],
+      "arguments": null,
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Prints a one-line summary of the current session.",
+      "summaryHtml": "Prints a one-line summary of the current session.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "context",
+        "compact"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-reload-plugins",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/reload-plugins",
+      "aliases": [],
+      "arguments": "[--force]",
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Reloads active plugins and returns the result as text.",
+      "summaryHtml": "Reloads active plugins and returns the result as text.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "mcp",
+        "plugin"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-clear",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/clear",
+      "aliases": [
+        "/reset",
+        "/new"
+      ],
+      "arguments": null,
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": null,
+      "flags": [
+        "blocked"
+      ],
+      "comparisonEligible": true,
+      "summary": "Is unavailable in cloud sessions; start a new session from the sidebar instead.",
+      "summaryHtml": "Is unavailable in cloud sessions; start a new session from the sidebar instead.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "compact",
+        "context"
+      ],
+      "docs": [
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        },
+        {
+          "title": "Claude Code on the web — manage context",
+          "url": "https://code.claude.com/docs/en/claude-code-on-the-web#manage-context"
+        },
+        {
+          "title": "Claude Code commands",
+          "url": "https://code.claude.com/docs/en/commands"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-plugin",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/plugin",
+      "aliases": [],
+      "arguments": null,
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [
+        "blocked"
+      ],
+      "comparisonEligible": true,
+      "summary": "Is unavailable because plugin management runs only in the terminal interface.",
+      "summaryHtml": "Is unavailable because plugin management runs only in the terminal interface.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "reload-plugins",
+        "resume"
+      ],
+      "docs": [
+        {
+          "title": "Claude Code on the web — manage context",
+          "url": "https://code.claude.com/docs/en/claude-code-on-the-web#manage-context"
+        },
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
+        }
+      ]
+    },
+    {
+      "id": "claude-web-resume",
+      "product": "claude",
+      "surface": "claude-web",
+      "command": "/resume",
+      "aliases": [
+        "/continue"
+      ],
+      "arguments": null,
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": null,
+      "flags": [
+        "blocked"
+      ],
+      "comparisonEligible": true,
+      "summary": "Is unavailable because browser session switching happens in the sidebar.",
+      "summaryHtml": "Is unavailable because browser session switching happens in the sidebar.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "clear",
+        "teleport",
+        "plugin"
+      ],
+      "docs": [
+        {
+          "title": "Claude Code on the web — manage context",
+          "url": "https://code.claude.com/docs/en/claude-code-on-the-web#manage-context"
+        },
+        {
+          "title": "Remote Control limitations",
+          "url": "https://code.claude.com/docs/en/remote-control#limitations"
         }
       ]
     },
@@ -9292,6 +10921,33 @@
       ]
     },
     {
+      "id": "codex-app-share",
+      "product": "codex",
+      "surface": "codex-app",
+      "command": "/share",
+      "aliases": [],
+      "arguments": null,
+      "category": "session",
+      "categoryLabel": "Session lifecycle",
+      "requires": "Local Codex thread in the macOS desktop app; sharing allowed by workspace policy",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Creates a read-only snapshot of the current local Codex thread.",
+      "summaryHtml": "Creates a read-only snapshot of the current local Codex thread.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "fork",
+        "status"
+      ],
+      "docs": [
+        {
+          "title": "Share a read-only snapshot of a Codex thread",
+          "url": "https://learn.chatgpt.com/docs/use-chatgpt#share-a-read-only-snapshot-of-a-codex-thread"
+        }
+      ]
+    },
+    {
       "id": "codex-app-status",
       "product": "codex",
       "surface": "codex-app",
@@ -9575,24 +11231,23 @@
       ]
     },
     {
-      "id": "codex-cli-agent",
+      "id": "codex-cli-subagents",
       "product": "codex",
       "surface": "codex-cli",
-      "command": "/agent",
-      "aliases": [
-        "/subagents"
-      ],
+      "command": "/subagents",
+      "aliases": [],
       "arguments": null,
       "category": "delegate",
       "categoryLabel": "Delegation & parallelism",
       "requires": null,
       "flags": [],
       "comparisonEligible": true,
-      "summary": "Switches the active agent thread.",
-      "summaryHtml": "Switches the active agent thread.",
+      "summary": "Switches the active subagent thread.",
+      "summaryHtml": "Switches the active subagent thread.",
       "subcommands": [],
       "examples": [],
       "related": [
+        "agents",
         "fork",
         "side",
         "status"
@@ -9601,6 +11256,38 @@
         {
           "title": "Codex CLI built-in slash commands",
           "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands"
+        },
+        {
+          "title": "Codex CLI slash-command source (August 21, 2026)",
+          "url": "https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs"
+        }
+      ]
+    },
+    {
+      "id": "codex-cli-agents",
+      "product": "codex",
+      "surface": "codex-cli",
+      "command": "/agents",
+      "aliases": [],
+      "arguments": null,
+      "category": "delegate",
+      "categoryLabel": "Delegation & parallelism",
+      "requires": "Shared app-server session dashboard available",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Opens a dashboard of active root agent sessions.",
+      "summaryHtml": "Opens a dashboard of active root agent sessions.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "subagents",
+        "resume",
+        "status"
+      ],
+      "docs": [
+        {
+          "title": "Codex CLI slash-command source (August 21, 2026)",
+          "url": "https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs"
         }
       ]
     },
@@ -9834,6 +11521,66 @@
       ]
     },
     {
+      "id": "codex-cli-cd",
+      "product": "codex",
+      "surface": "codex-cli",
+      "command": "/cd",
+      "aliases": [],
+      "arguments": "[PATH]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": "Idle, trusted local session with no background terminals",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Changes the working directory without losing the conversation.",
+      "summaryHtml": "Changes the working directory without losing the conversation.",
+      "subcommands": [],
+      "examples": [
+        "/cd ../service-api",
+        "/cd"
+      ],
+      "related": [
+        "pwd",
+        "mention",
+        "permissions"
+      ],
+      "docs": [
+        {
+          "title": "Codex CLI slash-command source (August 21, 2026)",
+          "url": "https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs"
+        }
+      ]
+    },
+    {
+      "id": "codex-cli-pwd",
+      "product": "codex",
+      "surface": "codex-cli",
+      "command": "/pwd",
+      "aliases": [
+        "/cwd"
+      ],
+      "arguments": null,
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Shows the current working directory.",
+      "summaryHtml": "Shows the current working directory.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "cd",
+        "status"
+      ],
+      "docs": [
+        {
+          "title": "Codex CLI slash-command source (August 21, 2026)",
+          "url": "https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs"
+        }
+      ]
+    },
+    {
       "id": "codex-cli-copy",
       "product": "codex",
       "surface": "codex-cli",
@@ -9858,6 +11605,35 @@
         {
           "title": "Codex CLI built-in slash commands",
           "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands"
+        }
+      ]
+    },
+    {
+      "id": "codex-cli-export",
+      "product": "codex",
+      "surface": "codex-cli",
+      "command": "/export",
+      "aliases": [],
+      "arguments": "[PATH]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": "No task in progress",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Exports the conversation as Markdown.",
+      "summaryHtml": "Exports the conversation as Markdown.",
+      "subcommands": [],
+      "examples": [
+        "/export notes/auth-investigation.md"
+      ],
+      "related": [
+        "copy",
+        "status"
+      ],
+      "docs": [
+        {
+          "title": "Codex CLI slash-command source (August 21, 2026)",
+          "url": "https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs"
         }
       ]
     },
@@ -10026,6 +11802,35 @@
         {
           "title": "Codex CLI built-in slash commands",
           "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands"
+        }
+      ]
+    },
+    {
+      "id": "codex-cli-custom-prompt",
+      "product": "codex",
+      "surface": "codex-cli",
+      "command": "/prompts:<name>",
+      "aliases": [],
+      "arguments": "[ARGUMENTS]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [
+        "custom"
+      ],
+      "comparisonEligible": false,
+      "summary": "Runs a legacy custom prompt by its configured name.",
+      "summaryHtml": "Runs a legacy custom prompt by its configured name.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "skills",
+        "init"
+      ],
+      "docs": [
+        {
+          "title": "Custom prompts in Codex",
+          "url": "https://learn.chatgpt.com/docs/custom-prompts"
         }
       ]
     },
@@ -10423,7 +12228,7 @@
       "related": [
         "side",
         "new",
-        "agent"
+        "subagents"
       ],
       "docs": [
         {
@@ -10483,7 +12288,7 @@
       "related": [
         "fork",
         "plan",
-        "agent"
+        "subagents"
       ],
       "docs": [
         {
@@ -11141,6 +12946,33 @@
       ]
     },
     {
+      "id": "codex-ide-skills",
+      "product": "codex",
+      "surface": "codex-ide",
+      "command": "/skills",
+      "aliases": [],
+      "arguments": null,
+      "category": "config",
+      "categoryLabel": "Models, agents & skills",
+      "requires": null,
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Browses available skills and applies one to the next request.",
+      "summaryHtml": "Browses available skills and applies one to the next request.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "mcp",
+        "model"
+      ],
+      "docs": [
+        {
+          "title": "Build skills in Codex",
+          "url": "https://learn.chatgpt.com/docs/build-skills#how-chatgpt-and-codex-use-skills"
+        }
+      ]
+    },
+    {
       "id": "codex-ide-memories",
       "product": "codex",
       "surface": "codex-ide",
@@ -11421,6 +13253,34 @@
         {
           "title": "Codex IDE extension slash commands",
           "url": "https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands"
+        }
+      ]
+    },
+    {
+      "id": "codex-ide-custom-prompt",
+      "product": "codex",
+      "surface": "codex-ide",
+      "command": "/prompts:<name>",
+      "aliases": [],
+      "arguments": "[ARGUMENTS]",
+      "category": "author",
+      "categoryLabel": "Customization authoring",
+      "requires": null,
+      "flags": [
+        "custom"
+      ],
+      "comparisonEligible": false,
+      "summary": "Runs a legacy custom prompt by its configured name.",
+      "summaryHtml": "Runs a legacy custom prompt by its configured name.",
+      "subcommands": [],
+      "examples": [],
+      "related": [
+        "init"
+      ],
+      "docs": [
+        {
+          "title": "Custom prompts in Codex",
+          "url": "https://learn.chatgpt.com/docs/custom-prompts"
         }
       ]
     }

@@ -181,7 +181,9 @@ function readExistingGeneratedDate(text, exportPath) {
 }
 
 function validate(data) {
-  const allowedFlags = new Set(['skill', 'workflow', 'custom', 'hidden', 'preview', 'experimental']);
+  const allowedFlags = new Set([
+    'skill', 'workflow', 'custom', 'hidden', 'preview', 'experimental', 'inherited', 'blocked'
+  ]);
   const registryId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const routeKey = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/;
   const productIds = new Set();
@@ -206,7 +208,8 @@ function validate(data) {
     if (/['";<>]/.test(s.color || '')) errors.push('Unsafe surface color value on ' + s.id);
     if (surfaceIds.has(s.id)) errors.push('Duplicate surface id: ' + s.id);
     if (!productIds.has(s.product)) errors.push('Unknown product on surface ' + s.id + ': ' + s.product);
-    if (s.coverage && s.coverage !== 'documented-subset') {
+    if (s.coverage && s.coverage !== 'documented-subset' &&
+        s.coverage !== 'unpublished-inventory') {
       errors.push('Unknown coverage value on surface ' + s.id + ': ' + s.coverage);
     }
     if (!/^https:\/\//.test(s.docs || '')) errors.push('Invalid docs URL on surface ' + s.id);

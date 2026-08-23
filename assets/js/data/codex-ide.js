@@ -5,7 +5,9 @@
 (function () {
   var D = {
     ref: ['Codex IDE extension slash commands',
-      'https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands']
+      'https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands'],
+    prompts: ['Custom prompts in Codex',
+      'https://learn.chatgpt.com/docs/custom-prompts']
   };
 
   window.SLASH.register('codex-ide', [
@@ -98,6 +100,15 @@
       related: ['status', 'feedback'], docs: [D.ref]
     },
     {
+      key: 'skills', cmd: '/skills', cat: 'config',
+      summary: 'Browses available skills and applies one to the next request.',
+      detail: 'Opens the skill picker so the next request follows that skill&rsquo;s instructions. You can also type <code>$</code> to mention a skill explicitly, or let Codex select one when the request matches its description.',
+      note: 'OpenAI&rsquo;s Build skills guide names this command for the IDE extension, although it is absent from the extension&rsquo;s 22-row slash-command table. The popup in your installed extension remains definitive.',
+      related: ['mcp', 'model'],
+      docs: [['Build skills in Codex',
+        'https://learn.chatgpt.com/docs/build-skills#how-chatgpt-and-codex-use-skills']]
+    },
+    {
       key: 'memories', cmd: '/memories', cat: 'context',
       requires: 'Memories available',
       summary: 'Configures whether the chat can use or generate memories.',
@@ -166,6 +177,14 @@
         'Experimental work should live in a separate Git worktree'
       ],
       related: ['fork', 'local', 'project', 'review'], docs: [D.ref]
+    },
+    {
+      key: 'custom-prompt', cmd: '/prompts:<name>', args: '[ARGUMENTS]', cat: 'author',
+      flags: ['custom'], noCompare: true,
+      summary: 'Runs a legacy custom prompt by its configured name.',
+      detail: 'Markdown files directly under <code>~/.codex/prompts/</code> appear dynamically in the IDE slash menu and can accept positional, free-form, or named arguments.',
+      note: 'OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting the extension.',
+      related: ['init'], docs: [D.prompts]
     }
   ]);
 }());
