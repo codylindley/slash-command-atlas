@@ -69,7 +69,7 @@ assets/js/data/meta.js      Surfaces, categories, sources
 assets/js/data/app.js       GitHub Copilot app commands (47)
 assets/js/data/cli.js       GitHub Copilot CLI commands (72)
 assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (9), Xcode (5), web (4)
-assets/js/data/claude-*.js  Claude Code Desktop (33), CLI (103), VS Code (9), web (18)
+assets/js/data/claude-*.js  Claude Code Desktop (33), CLI (103), IDE extension (9), web (18)
 assets/js/data/codex-*.js   OpenAI Codex desktop (26), CLI (54), IDE (24), web (0 published)
 data/commands.json          Generated machine-readable export
 tools/export-json.js        Validates source/loader parity and regenerates data/commands.json

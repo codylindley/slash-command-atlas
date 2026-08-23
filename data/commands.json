@@ -105,7 +105,7 @@
       "id": "claude-vscode",
       "product": "claude",
       "name": "Claude Code in VS Code",
-      "label": "VS Code",
+      "label": "IDE extension",
       "coverage": "documented-subset",
       "where": "VS Code, Cursor and compatible forks",
       "docs": "https://code.claude.com/docs/en/vs-code"
