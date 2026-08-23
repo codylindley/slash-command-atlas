@@ -186,7 +186,7 @@ window.SLASH.surfaces = [
     id: 'claude-vscode',
     product: 'claude',
     name: 'Claude Code in VS Code',
-    label: 'VS Code',
+    label: 'IDE extension',
     coverage: 'documented-subset',
     where: 'VS Code, Cursor and compatible forks',
     color: 'var(--c-claude-vscode)',
