@@ -1,4 +1,4 @@
-/* Regenerates data/commands.json from the browser data files.
+/* Regenerates machine-readable command artifacts from the browser data files.
    Usage: node tools/export-json.js [--check] */
 
 const fs = require('fs');
@@ -12,13 +12,204 @@ if (unknownArgs.length) {
   process.exit(2);
 }
 
+function buildCommandNameIndex(commands) {
+  const index = new Map();
+  commands.forEach(function (c) {
+    if (c.noCompare) return;
+    [c.cmd].concat(c.aliases || []).forEach(function (name) {
+      const key = name.toLowerCase();
+      if (!index.has(key)) index.set(key, []);
+      index.get(key).push(c);
+    });
+  });
+  return index;
+}
+
+function commandMarkdownPath(c) {
+  return 'commands/' + c.surface + '/' + c.key + '.md';
+}
+
+function publicUrl(relativePath) {
+  return new URL(relativePath, S.siteUrl).toString();
+}
+
+function interactiveUrl(c) {
+  return new URL('#/' + c.surface + '/' + c.key, S.siteUrl).toString();
+}
+
+function commandNames(c) {
+  return [c.cmd].concat(c.aliases || []);
+}
+
+function alsoIn(c) {
+  if (c.noCompare) return [];
+  const seen = new Set();
+  const matches = [];
+  commandNames(c).forEach(function (name) {
+    (commandNameIndex.get(name.toLowerCase()) || []).forEach(function (other) {
+      if (other.surface === c.surface || seen.has(other.id)) return;
+      seen.add(other.id);
+      matches.push(other);
+    });
+  });
+  return matches;
+}
+
+function inlineCode(value) {
+  return '`' + String(value).replace(/`/g, '\\`') + '`';
+}
+
+function renderCommandMarkdown(c, absoluteLinks, includeFooter) {
+  const surface = surfaceById[c.surface];
+  const product = productById[surface.product];
+  const command = c.cmd + (c.args ? ' ' + c.args : '');
+  const lines = [
+    '# ' + inlineCode(command),
+    '',
+    '> ' + toMarkdownText(c.summary),
+    '',
+    '- **Product:** ' + product.name,
+    '- **Surface:** ' + surface.name,
+    '- **Category:** ' + S.categories[c.cat],
+    '- **Data snapshot:** ' + S.built
+  ];
+
+  if (c.aliases && c.aliases.length) {
+    lines.push('- **Aliases:** ' + c.aliases.map(inlineCode).join(', '));
+  }
+  if (c.requires) lines.push('- **Requires:** ' + toMarkdownText(c.requires));
+  if (c.flags && c.flags.length) lines.push('- **Flags:** ' + c.flags.join(', '));
+
+  lines.push('', '## What it does', '', toMarkdownText(c.summary));
+  if (c.detail) lines.push('', toMarkdownText(c.detail));
+  if (c.note) lines.push('', '> **Note:** ' + toMarkdownText(c.note));
+
+  if (c.when && c.when.length) {
+    lines.push('', '## Reach for it when', '');
+    c.when.forEach(function (item) { lines.push('- ' + toMarkdownText(item)); });
+  }
+  if (c.subs && c.subs.length) {
+    lines.push('', '## Subcommands', '');
+    c.subs.forEach(function (sub) {
+      lines.push('- ' + inlineCode(c.cmd.split(' ')[0] + ' ' + sub[0]) + ' — ' + toMarkdownText(sub[1]));
+    });
+  }
+  if (c.examples && c.examples.length) {
+    lines.push('', '## Examples', '');
+    c.examples.forEach(function (example) { lines.push('- ' + inlineCode(example)); });
+  }
+
+  const related = (c.related || []).map(function (key) {
+    return commandByRoute.get(c.surface + '/' + key);
+  }).filter(Boolean);
+  if (related.length) {
+    lines.push('', '## Related commands', '');
+    related.forEach(function (other) {
+      const href = absoluteLinks
+        ? publicUrl(commandMarkdownPath(other))
+        : './' + other.key + '.md';
+      lines.push('- [' + inlineCode(other.cmd) + '](' + href + ')');
+    });
+  }
+
+  const otherSurfaces = alsoIn(c);
+  if (otherSurfaces.length) {
+    lines.push('', '## Also in other surfaces', '');
+    otherSurfaces.forEach(function (other) {
+      const otherSurface = surfaceById[other.surface];
+      const href = absoluteLinks
+        ? publicUrl(commandMarkdownPath(other))
+        : '../' + other.surface + '/' + other.key + '.md';
+      lines.push('- [' + otherSurface.name + ' — ' + inlineCode(other.cmd) +
+        '](' + href + ')');
+    });
+  }
+
+  const docs = [];
+  const seenDocs = new Set();
+  (c.docs || []).concat([[surface.name + ' slash command reference', surface.docs]]).forEach(function (doc) {
+    if (!doc[1] || seenDocs.has(doc[1])) return;
+    seenDocs.add(doc[1]);
+    docs.push(doc);
+  });
+  lines.push('', '## Official sources', '');
+  docs.forEach(function (doc) { lines.push('- [' + toMarkdownText(doc[0]) + '](' + doc[1] + ')'); });
+
+  lines.push(
+    '',
+    '## Atlas links',
+    '',
+    '- [Interactive command view](' + interactiveUrl(c) + ')',
+    '- [All commands as JSON](' + publicUrl('data/commands.json') + ')',
+    '- [AI-readable command index](' + publicUrl('llms.txt') + ')'
+  );
+  if (includeFooter !== false) {
+    lines.push(
+      '',
+      '---',
+      '',
+      'This page is generated from the Slash Command Atlas data files. Longer explanations and use-case guidance are editorial; linked vendor documentation is authoritative.'
+    );
+  }
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderLlmsIndex() {
+  const lines = [
+    '# Slash Command Atlas',
+    '',
+    '> An interactive reference for slash commands in GitHub Copilot, Claude Code, and OpenAI Codex, organized by product and surface.',
+    '',
+    'Use the per-command Markdown pages below for focused context. Vendor documentation linked from each page is authoritative.',
+    '',
+    '## Complete exports',
+    '',
+    '- [Complete Markdown reference](' + publicUrl('llms-full.txt') + ')',
+    '- [Machine-readable JSON dataset](' + publicUrl('data/commands.json') + ')'
+  ];
+
+  S.surfaces.forEach(function (surface) {
+    lines.push('', '## ' + surface.name, '');
+    S.commands.filter(function (c) { return c.surface === surface.id; }).forEach(function (c) {
+      lines.push('- [' + inlineCode(c.cmd + (c.args ? ' ' + c.args : '')) + '](' +
+        publicUrl(commandMarkdownPath(c)) + '): ' + toMarkdownText(c.summary));
+    });
+  });
+  lines.push('');
+  return lines.join('\n');
+}
+
+function renderLlmsFull() {
+  const lines = [
+    '# Slash Command Atlas — complete reference',
+    '',
+    '> All generated command pages in one document. Vendor documentation linked in each entry is authoritative.',
+    ''
+  ];
+  S.surfaces.forEach(function (surface) {
+    lines.push('## ' + surface.name, '');
+    S.commands.filter(function (c) { return c.surface === surface.id; }).forEach(function (c) {
+      const command = renderCommandMarkdown(c, true, false)
+        .replace(/^## /gm, '#### ')
+        .replace(/^# /, '### ')
+        .trim();
+      lines.push(command, '', '---', '');
+    });
+  });
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
 const checkMode = args.includes('--check');
 const rootDir = path.join(__dirname, '..');
 const dataDir = path.join(rootDir, 'assets', 'js', 'data');
-const dest = path.join(rootDir, 'data', 'commands.json');
-const existingText = checkMode ? readExistingExport(dest) : null;
+const jsonDest = path.join(rootDir, 'data', 'commands.json');
+const commandsDest = path.join(rootDir, 'commands');
+const llmsDest = path.join(rootDir, 'llms.txt');
+const llmsFullDest = path.join(rootDir, 'llms-full.txt');
+const existingText = checkMode ? readExistingExport(jsonDest) : null;
 const generatedDate = checkMode
-  ? readExistingGeneratedDate(existingText, dest)
+  ? readExistingGeneratedDate(existingText, jsonDest)
   : new Date().toISOString().slice(0, 10);
 
 global.window = {};
@@ -30,6 +221,9 @@ const S = global.window.SLASH;
 validate(S);
 
 const surfaceById = Object.fromEntries(S.surfaces.map(function (s) { return [s.id, s]; }));
+const productById = Object.fromEntries(S.products.map(function (p) { return [p.id, p]; }));
+const commandByRoute = new Map(S.commands.map(function (c) { return [c.surface + '/' + c.key, c]; }));
+const commandNameIndex = buildCommandNameIndex(S.commands);
 const NAMED_HTML_ENTITIES = Object.freeze({
   amp: '&',
   apos: "'",
@@ -60,6 +254,7 @@ const out = {
   schemaVersion: 2,
   generated: generatedDate,
   dataCompiled: S.built,
+  siteUrl: S.siteUrl,
   products: S.products.map(function (p) {
     return { id: p.id, name: p.name, vendor: p.vendor };
   }),
@@ -106,6 +301,28 @@ function toPlainText(value) {
   return decodeHtmlEntities(String(value || '').replace(/<[^>]+>/g, '')).trim();
 }
 
+function toMarkdownText(value) {
+  const codeSpans = [];
+  let text = String(value || '').replace(/<(code|kbd)>([\s\S]*?)<\/\1>/gi,
+    function (match, tag, content) {
+      const token = '\u0000CODE' + codeSpans.length + '\u0000';
+      codeSpans.push(inlineCode(decodeHtmlEntities(content.replace(/<[^>]+>/g, ''))));
+      return token;
+    });
+  text = text
+    .replace(/<(strong|b)>([\s\S]*?)<\/\1>/gi, '**$2**')
+    .replace(/<(em|i)>([\s\S]*?)<\/\1>/gi, '*$2*')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>\s*<p[^>]*>/gi, '\n\n')
+    .replace(/<\/?p[^>]*>/gi, '');
+  text = decodeHtmlEntities(text.replace(/<[^>]+>/g, '')).trim()
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return text.replace(/\u0000CODE(\d+)\u0000/g, function (match, index) {
+    return codeSpans[Number(index)];
+  });
+}
+
 function decodeHtmlEntities(value) {
   return value.replace(/&(#(?:[xX][0-9a-fA-F]+|[0-9]+)|[A-Za-z][A-Za-z0-9]+);/g,
     function (match, entity) {
@@ -145,6 +362,7 @@ function dataScriptsFromIndex(projectRoot, sourceDir) {
   const indexSet = new Set(indexScripts);
   const diskSet = new Set(diskScripts);
   const errors = [];
+
   const duplicates = indexScripts.filter(function (src, i) { return indexScripts.indexOf(src) !== i; });
   const missingFromIndex = diskScripts.filter(function (src) { return !indexSet.has(src); });
   const missingFromDisk = indexScripts.filter(function (src) { return !diskSet.has(src); });
@@ -191,6 +409,10 @@ function validate(data) {
   const commandTokens = new Map();
   const errors = [];
 
+  if (!/^https:\/\/.+\/$/.test(data.siteUrl || '')) {
+    errors.push('siteUrl must be an absolute HTTPS URL ending in /');
+  }
+
   data.products.forEach(function (p) {
     if (!p.id || !p.name || !p.vendor) errors.push('Product is missing id, name, or vendor');
     if (!registryId.test(p.id || '')) errors.push('Product id is not route/DOM safe: ' + p.id);
@@ -206,7 +428,7 @@ function validate(data) {
     if (/['";<>]/.test(s.color || '')) errors.push('Unsafe surface color value on ' + s.id);
     if (surfaceIds.has(s.id)) errors.push('Duplicate surface id: ' + s.id);
     if (!productIds.has(s.product)) errors.push('Unknown product on surface ' + s.id + ': ' + s.product);
-    if (s.coverage && s.coverage !== 'documented-subset') {
+    if (s.coverage && s.coverage !== 'documented-subset' && s.coverage !== 'runtime-variable') {
       errors.push('Unknown coverage value on surface ' + s.id + ': ' + s.coverage);
     }
     if (!/^https:\/\//.test(s.docs || '')) errors.push('Invalid docs URL on surface ' + s.id);
@@ -287,16 +509,67 @@ function validate(data) {
   }
 }
 
-const rendered = JSON.stringify(out, null, 2) + '\n';
+const renderedJson = JSON.stringify(out, null, 2) + '\n';
+const generatedArtifacts = [
+  { file: jsonDest, content: renderedJson },
+  { file: llmsDest, content: renderLlmsIndex() },
+  { file: llmsFullDest, content: renderLlmsFull() }
+].concat(S.commands.map(function (c) {
+  return {
+    file: path.join(commandsDest, c.surface, c.key + '.md'),
+    content: renderCommandMarkdown(c)
+  };
+}));
+
+function listFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(function (entry) {
+    const full = path.join(dir, entry.name);
+    return entry.isDirectory() ? listFiles(full) : [full];
+  });
+}
+
+function writeArtifact(artifact) {
+  fs.mkdirSync(path.dirname(artifact.file), { recursive: true });
+  fs.writeFileSync(artifact.file, artifact.content);
+}
+
+const expectedCommandFiles = new Set(generatedArtifacts
+  .filter(function (artifact) { return artifact.file.startsWith(commandsDest + path.sep); })
+  .map(function (artifact) { return artifact.file; }));
+const unexpectedCommandFiles = listFiles(commandsDest).filter(function (file) {
+  return !expectedCommandFiles.has(file);
+});
+
+function removeEmptyDirectories(dir) {
+  if (!fs.existsSync(dir)) return;
+  fs.readdirSync(dir, { withFileTypes: true }).forEach(function (entry) {
+    if (entry.isDirectory()) removeEmptyDirectories(path.join(dir, entry.name));
+  });
+  if (dir !== commandsDest && fs.readdirSync(dir).length === 0) fs.rmdirSync(dir);
+}
+
 if (checkMode) {
-  if (rendered !== existingText) {
-    console.error('Generated command data is out of date: ' + dest);
-    console.error('Run `node tools/export-json.js` and commit the updated file.');
+  const stale = generatedArtifacts.filter(function (artifact) {
+    return !fs.existsSync(artifact.file) || fs.readFileSync(artifact.file, 'utf8') !== artifact.content;
+  });
+  if (stale.length || unexpectedCommandFiles.length) {
+    if (stale.length) {
+      console.error('Generated artifacts are out of date:\n- ' +
+        stale.map(function (artifact) { return path.relative(rootDir, artifact.file); }).join('\n- '));
+    }
+    if (unexpectedCommandFiles.length) {
+      console.error('Unexpected generated command pages:\n- ' +
+        unexpectedCommandFiles.map(function (file) { return path.relative(rootDir, file); }).join('\n- '));
+    }
+    console.error('Run `node tools/export-json.js` and commit the updated files.');
     process.exitCode = 1;
   } else {
-    console.log('Command data is up to date (' + out.commands.length + ' commands)');
+    console.log('Command artifacts are up to date (' + out.commands.length + ' command pages)');
   }
 } else {
-  fs.writeFileSync(dest, rendered);
-  console.log('Wrote ' + dest + ' (' + out.commands.length + ' commands)');
+  generatedArtifacts.forEach(writeArtifact);
+  unexpectedCommandFiles.forEach(function (file) { fs.unlinkSync(file); });
+  removeEmptyDirectories(commandsDest);
+  console.log('Wrote command artifacts (' + out.commands.length + ' command pages)');
 }

@@ -142,16 +142,17 @@ window.SLASH.surfaces = [
   {
     id: 'claude-app',
     product: 'claude',
-    name: 'Claude Code Desktop',
+    name: 'Claude Desktop — Code tab',
     label: 'Desktop app',
-    coverage: 'documented-subset',
+    coverage: 'runtime-variable',
     where: 'Claude Desktop Code tab — macOS, Windows',
     color: 'var(--c-claude-app)',
     note:
-      '<p><strong>A documented subset, not a claimed exhaustive list.</strong> Anthropic says Desktop runs the ' +
-      'same Claude Code engine and its slash menu includes built-ins, custom skills, project skills and plugin ' +
-      'skills, but it does not publish a complete Desktop-only command table. This surface therefore includes ' +
-      'only the built-ins and dynamic skill mechanism Anthropic documents explicitly for Desktop.</p>',
+      '<p><strong>The Code tab runs the same underlying engine as the CLI.</strong> This surface mirrors ' +
+      'Anthropic&rsquo;s complete Claude Code command reference and adds bundled entries observed in the live ' +
+      'Desktop picker. Your actual menu can be larger or smaller because platform, plan, environment, synced ' +
+      'skills, project skills, custom commands and plugins all change what appears.</p>' +
+      '<p>The authoritative list for your installation is the picker itself: type <code>/</code> in the prompt box.</p>',
     docs: 'https://code.claude.com/docs/en/desktop'
   },
   {
@@ -279,3 +280,4 @@ window.SLASH.sources = [
 ];
 
 window.SLASH.built = '2026-08-23';
+window.SLASH.siteUrl = 'https://codylindley.github.io/slash-command-atlas/';

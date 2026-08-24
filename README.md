@@ -4,7 +4,7 @@ An interactive reference for the slash commands of AI coding agents — **GitHub
 Code** and **OpenAI Codex** — organized by product and by the surface you actually type them into,
 because `/` gives you a different menu in a desktop app, a terminal, an editor extension, and the web.
 
-**392 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
+**496 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
 
 ---
 
@@ -22,6 +22,8 @@ because `/` gives you a different menu in a desktop app, a terminal, an editor e
   link to the surface-specific behavior; faint dots mean “not listed,” and question marks distinguish
   evidence-only subsets where the vendor does not publish an exhaustive surface table.
 - **Deep links.** Every command has its own URL — `#/app/security-review` — so you can share one.
+- **Continue in AI.** Copy a command&rsquo;s structured context or open it in ChatGPT, Claude,
+  Gemini, or Perplexity for follow-up questions.
 - **Light and dark**, keyboard shortcuts (`/` to search, `Esc` to close), and responsive down to
   phone width.
 
@@ -40,6 +42,18 @@ The site was audited and meets WCAG 2.1 AA on the points that apply to it:
   screen readers can announce which command and surface a cell belongs to.
 - **Also** — skip link, visible focus rings, every interactive element has an accessible name, no
   duplicate IDs, no horizontal page scroll at 320px, and `prefers-reduced-motion` is honored.
+
+## AI handoff and privacy
+
+The command detail panel can open a new conversation in ChatGPT, Claude, or Perplexity with a short
+prompt pointing to that command&rsquo;s generated Markdown page. Gemini does not support prompt-prefill
+links, so its menu action copies the same fetch prompt before opening Gemini. The site has no AI API
+keys, sends no background AI requests, and stores no conversation data. **Copy AI context** keeps the
+complete command record on your clipboard so you can paste it into an installed app or any other
+assistant.
+
+Prompt-prefill URLs are conveniences offered by third-party web interfaces rather than stable APIs.
+If a provider changes its behavior, use **Copy AI context** as the reliable fallback.
 
 ## Run it locally
 
@@ -69,10 +83,13 @@ assets/js/data/meta.js      Surfaces, categories, sources
 assets/js/data/app.js       GitHub Copilot app commands (47)
 assets/js/data/cli.js       GitHub Copilot CLI commands (71)
 assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (6), Xcode (5), web (4)
-assets/js/data/claude-*.js  Claude Code Desktop (3), CLI (103), VS Code (8), web (10)
+assets/js/data/claude-*.js  Claude Desktop Code tab (107), CLI (103), VS Code (8), web (10)
 assets/js/data/codex-*.js   OpenAI Codex desktop (25), CLI (49), IDE extension (22)
 data/commands.json          Generated machine-readable export
-tools/export-json.js        Validates source/loader parity and regenerates data/commands.json
+commands/{surface}/*.md     Generated, public Markdown page for every command
+llms.txt                    AI-readable command index
+llms-full.txt               Complete command reference in one Markdown document
+tools/export-json.js        Validates and regenerates every machine-readable artifact
 ```
 
 The data files are plain scripts that call `window.SLASH.register(surface, [...])`. Surface metadata
@@ -105,7 +122,7 @@ Add or change a command by editing the relevant file in `assets/js/data/`. Each 
 `summary`, `detail`, `note`, `when` and `subs` descriptions are rendered as HTML, so they are trusted
 content — keep them authored by hand rather than interpolating anything external.
 
-After editing, regenerate the JSON export:
+After editing, regenerate the JSON and Markdown exports:
 
 ```bash
 node tools/export-json.js
@@ -158,7 +175,8 @@ the picker, or run the product&rsquo;s help command in the CLI.
 
 ## License
 
-Unofficial and community-maintained. Not affiliated with GitHub, Microsoft, Anthropic or OpenAI.
+Authored by [Cody Lindley](https://codylindley.com/). This is an unofficial reference and is not
+affiliated with GitHub, Microsoft, Anthropic or OpenAI.
 GitHub and GitHub Copilot are trademarks of GitHub, Inc.; Claude and Claude Code are trademarks of
 Anthropic; OpenAI and Codex are trademarks of OpenAI.
 

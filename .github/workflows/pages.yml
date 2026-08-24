@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Verify generated command data
+      - name: Verify generated command artifacts
         run: node tools/export-json.js --check
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
