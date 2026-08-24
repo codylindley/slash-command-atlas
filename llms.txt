@@ -1,0 +1,573 @@
+# Slash Command Atlas
+
+> An interactive reference for slash commands in GitHub Copilot, Claude Code, and OpenAI Codex, organized by product and surface.
+
+Use the per-command Markdown pages below for focused context. Vendor documentation linked from each page is authoritative.
+
+## Complete exports
+
+- [Complete Markdown reference](https://codylindley.github.io/slash-command-atlas/llms-full.txt)
+- [Machine-readable JSON dataset](https://codylindley.github.io/slash-command-atlas/data/commands.json)
+
+## GitHub Copilot app
+
+- [`/plan [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/plan.md): Switches the session into Plan mode, optionally seeded with a prompt.
+- [`/interactive [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/interactive.md): Switches the session into Interactive mode, optionally seeded with a prompt.
+- [`/autopilot [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/autopilot.md): Switches into Autopilot mode and optionally starts execution.
+- [`/clear`](https://codylindley.github.io/slash-command-atlas/commands/app/clear.md): Clears the current transcript and starts a fresh session.
+- [`/fork`](https://codylindley.github.io/slash-command-atlas/commands/app/fork.md): Forks the session at the latest turn into a new independent session.
+- [`/merge-to-parent`](https://codylindley.github.io/slash-command-atlas/commands/app/merge-to-parent.md): Merges a forked session’s work back into the session it came from.
+- [`/restart-session`](https://codylindley.github.io/slash-command-atlas/commands/app/restart-session.md): Restarts the current session and keeps its history.
+- [`/rename`](https://codylindley.github.io/slash-command-atlas/commands/app/rename.md): Renames the current chat or session.
+- [`/remote`](https://codylindley.github.io/slash-command-atlas/commands/app/remote.md): Enables or manages remote control, so you can reach the session from GitHub.com or GitHub Mobile.
+- [`/terminal [COMMAND]`](https://codylindley.github.io/slash-command-atlas/commands/app/terminal.md): Opens a terminal in the right panel, optionally running a command.
+- [`/attach-files`](https://codylindley.github.io/slash-command-atlas/commands/app/attach-files.md): Opens a file picker and attaches files to your message.
+- [`/attach-folder`](https://codylindley.github.io/slash-command-atlas/commands/app/attach-folder.md): Opens a folder picker and attaches a folder to your message.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/app/compact.md): Summarizes earlier parts of the conversation to reduce token pressure.
+- [`/context`](https://codylindley.github.io/slash-command-atlas/commands/app/context.md): Shows the current session’s context usage.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/app/init.md): Generates or improves repository instructions.
+- [`/review`](https://codylindley.github.io/slash-command-atlas/commands/app/review.md): Reviews the changes made in the current session.
+- [`/security-review`](https://codylindley.github.io/slash-command-atlas/commands/app/security-review.md): Runs a security-focused review against the current diff.
+- [`/rubber-duck [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/rubber-duck.md): Asks a different model to critique your plan, implementation or tests.
+- [`/spar [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/spar.md): Runs adversarial reasoning that challenges your approach.
+- [`/research [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/research.md): Runs a research workflow and produces a cited report.
+- [`/pr-open`](https://codylindley.github.io/slash-command-atlas/commands/app/pr-open.md): Opens a pull request from the current session’s changes.
+- [`/pr-fix-checks`](https://codylindley.github.io/slash-command-atlas/commands/app/pr-fix-checks.md): Runs a prompt to address failing pull request checks.
+- [`/pr-resolve-comments`](https://codylindley.github.io/slash-command-atlas/commands/app/pr-resolve-comments.md): Runs a prompt to resolve pull request review comments.
+- [`/pr-merge`](https://codylindley.github.io/slash-command-atlas/commands/app/pr-merge.md): Merges the current pull request into its target branch.
+- [`/pr-stack`](https://codylindley.github.io/slash-command-atlas/commands/app/pr-stack.md): Creates and manages a stack of dependent pull requests, with one child session per layer.
+- [`/orchestrate [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/orchestrate.md): Coordinates work across sessions and repositories by creating and guiding child sessions.
+- [`/fleet [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/fleet.md): Launches multiple agents in parallel on a single task.
+- [`/spawn [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/spawn.md): Creates a focused child session for delegated work.
+- [`/model [MODEL]`](https://codylindley.github.io/slash-command-atlas/commands/app/model.md): Opens model selection, or selects a model by name or ID.
+- [`/agent`](https://codylindley.github.io/slash-command-atlas/commands/app/agent.md): Selects a custom agent for the session.
+- [`/skills reload`](https://codylindley.github.io/slash-command-atlas/commands/app/skills.md): Manages skills. Use /skills reload to reload them mid-session.
+- [`/af`](https://codylindley.github.io/slash-command-atlas/commands/app/af.md): Finds installable MCP servers, tools, skills and agents by searching Agent Finder.
+- [`/create-canvas [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/app/create-canvas.md): Invokes the canvas-authoring skill.
+- [`/allow-all-tools`](https://codylindley.github.io/slash-command-atlas/commands/app/allow-all-tools.md): Turns tool auto-approval on, or shows its current state.
+- [`/reset-allowed-tools`](https://codylindley.github.io/slash-command-atlas/commands/app/reset-allowed-tools.md): Clears session-level tool approvals and turns auto-approval off.
+- [`/chronicle`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle.md): Opens session history and analysis features.
+- [`/chronicle standup`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-standup.md): Summarizes your work from the last day.
+- [`/chronicle search`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-search.md): Searches session history by keyword or topic.
+- [`/chronicle tips`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-tips.md): Returns personalized workflow tips.
+- [`/chronicle cost-tips`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-cost-tips.md): Shows suggestions to reduce token usage and cost.
+- [`/chronicle improve`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-improve.md): Suggests improvements for your instructions file.
+- [`/chronicle reindex`](https://codylindley.github.io/slash-command-atlas/commands/app/chronicle-reindex.md): Rebuilds the chronicle session index.
+- [`/debug`](https://codylindley.github.io/slash-command-atlas/commands/app/debug.md): Copies session debug JSON to your clipboard.
+- [`/collect-debug-logs`](https://codylindley.github.io/slash-command-atlas/commands/app/collect-debug-logs.md): Creates a debug log archive, or uploads one as a secret gist.
+- [`/export-gist`](https://codylindley.github.io/slash-command-atlas/commands/app/export-gist.md): Exports the transcript to a secret gist.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/app/usage.md): Opens usage and rate-limit details for your plan.
+- [`/inbox`](https://codylindley.github.io/slash-command-atlas/commands/app/inbox.md): Renders an interactive inbox widget for work items.
+
+## GitHub Copilot CLI
+
+- [`/plan [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/plan.md): Creates an implementation plan before coding.
+- [`/autopilot [OBJECTIVE]`](https://codylindley.github.io/slash-command-atlas/commands/cli/autopilot.md): Starts or refocuses autopilot mode, optionally with an explicit objective.
+- [`/clear [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/clear.md): Starts a new conversation.
+- [`/exit`](https://codylindley.github.io/slash-command-atlas/commands/cli/exit.md): Closes the current session.
+- [`/fork [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/cli/fork.md): Forks the current session into a new one, optionally named.
+- [`/rename [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/cli/rename.md): Renames the current session, auto-generating a name if omitted.
+- [`/restart`](https://codylindley.github.io/slash-command-atlas/commands/cli/restart.md): Restarts the CLI, preserving the current session.
+- [`/resume [SESSION-ID]`](https://codylindley.github.io/slash-command-atlas/commands/cli/resume.md): Switches to a different session, chosen from a list or by ID.
+- [`/session [info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]`](https://codylindley.github.io/slash-command-atlas/commands/cli/session.md): Shows session information and manages saved sessions.
+- [`/remote [on|off]`](https://codylindley.github.io/slash-command-atlas/commands/cli/remote.md): Shows, enables, or ends remote control of the session.
+- [`/worktree [branch|task]`](https://codylindley.github.io/slash-command-atlas/commands/cli/worktree.md): Creates a new Git worktree and switches to it, leaving uncommitted changes behind.
+- [`/move [branch|task]`](https://codylindley.github.io/slash-command-atlas/commands/cli/move.md): Moves uncommitted changes into a new Git worktree and switches to it.
+- [`/undo`](https://codylindley.github.io/slash-command-atlas/commands/cli/undo.md): Opens the rewind picker to roll the session back to an earlier turn.
+- [`/compact [FOCUS-INSTRUCTIONS]`](https://codylindley.github.io/slash-command-atlas/commands/cli/compact.md): Summarizes conversation history to reduce context window usage.
+- [`/context`](https://codylindley.github.io/slash-command-atlas/commands/cli/context.md): Shows context window token usage and a visualization of it.
+- [`/add-dir PATH`](https://codylindley.github.io/slash-command-atlas/commands/cli/add-dir.md): Adds a directory to the allowed list for file access.
+- [`/list-dirs`](https://codylindley.github.io/slash-command-atlas/commands/cli/list-dirs.md): Displays every directory that file access has been allowed for.
+- [`/cwd [PATH]`](https://codylindley.github.io/slash-command-atlas/commands/cli/cwd.md): Changes the working directory, or displays the current one.
+- [`/instructions`](https://codylindley.github.io/slash-command-atlas/commands/cli/instructions.md): Views and toggles custom instruction files.
+- [`/keep-alive [on|off|busy|DURATION]`](https://codylindley.github.io/slash-command-atlas/commands/cli/keep-alive.md): Prevents the machine from sleeping while Copilot works.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/cli/init.md): Initializes Copilot custom instructions and agentic features for the repository.
+- [`/search [QUERY]`](https://codylindley.github.io/slash-command-atlas/commands/cli/search.md): Searches the conversation timeline.
+- [`/copy`](https://codylindley.github.io/slash-command-atlas/commands/cli/copy.md): Copies the last response to the clipboard.
+- [`/ask QUESTION`](https://codylindley.github.io/slash-command-atlas/commands/cli/ask.md): Asks a quick side question without adding it to the conversation history.
+- [`/refine TEXT`](https://codylindley.github.io/slash-command-atlas/commands/cli/refine.md): Rewrites a roughly composed prompt into a clearer one for review.
+- [`/review [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/review.md): Runs the code review agent to analyze changes.
+- [`/security-review [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/security-review.md): Runs a focused security review of active local changes.
+- [`/rubber-duck [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/rubber-duck.md): Consults the rubber duck agent for a second opinion on plans, code and tests.
+- [`/research TOPIC`](https://codylindley.github.io/slash-command-atlas/commands/cli/research.md): Runs a deep research investigation using GitHub search and web sources.
+- [`/diff`](https://codylindley.github.io/slash-command-atlas/commands/cli/diff.md): Reviews changes in the current directory.
+- [`/pr [view|create|fix|auto|automerge]`](https://codylindley.github.io/slash-command-atlas/commands/cli/pr.md): Manages pull requests for the current branch.
+- [`/delegate [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/delegate.md): Delegates changes to a remote repository with an AI-generated pull request.
+- [`/fleet [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/fleet.md): Enables parallel subagent execution of parts of a task.
+- [`/subagents`](https://codylindley.github.io/slash-command-atlas/commands/cli/subagents.md): Configures default and per-agent subagent models.
+- [`/tasks`](https://codylindley.github.io/slash-command-atlas/commands/cli/tasks.md): Views and manages tasks — subagents and shell commands.
+- [`/model [--session|--global|--repo|--local] [MODEL]`](https://codylindley.github.io/slash-command-atlas/commands/cli/model.md): Selects the AI model, reasoning effort, or context window — or chooses Auto.
+- [`/agent`](https://codylindley.github.io/slash-command-atlas/commands/cli/agent.md): Browses and selects from the available custom agents.
+- [`/skills [list|info|add|remove|reload]`](https://codylindley.github.io/slash-command-atlas/commands/cli/skills.md): Manages skills for enhanced capabilities.
+- [`/plugins [install|update|uninstall|list|enable|disable|remove|marketplace|mcp]`](https://codylindley.github.io/slash-command-atlas/commands/cli/plugins.md): Manages plugins, MCP servers and skills, and opens the plugins dashboard.
+- [`/mcp [list|show|add|edit|delete|disable|enable|auth|reload|search] [SERVER-NAME]`](https://codylindley.github.io/slash-command-atlas/commands/cli/mcp.md): Manages MCP server configuration.
+- [`/extensions [manage|mode]`](https://codylindley.github.io/slash-command-atlas/commands/cli/extensions.md): Manages CLI extensions.
+- [`/lsp [show|test|reload|logs|help] [SERVER-NAME]`](https://codylindley.github.io/slash-command-atlas/commands/cli/lsp.md): Manages the language server configuration.
+- [`/settings [--repo|--local] [show KEY|KEY|KEY VALUE]`](https://codylindley.github.io/slash-command-atlas/commands/cli/settings.md): Opens the settings dialog, or reads and writes a setting inline.
+- [`/limits [set max-ai-credits VALUE|unset [max-ai-credits|all]]`](https://codylindley.github.io/slash-command-atlas/commands/cli/limits.md): Opens the response limits dialog, or sets and clears a per-response credit cap.
+- [`/statusline`](https://codylindley.github.io/slash-command-atlas/commands/cli/statusline.md): Configures which items appear in the status line.
+- [`/theme [default|github|dim|high-contrast|colorblind]`](https://codylindley.github.io/slash-command-atlas/commands/cli/theme.md): Views or sets the color mode.
+- [`/voice [on|off|models|devices]`](https://codylindley.github.io/slash-command-atlas/commands/cli/voice.md): Toggles voice mode, browses voice models, or chooses the input device.
+- [`/permissions [default|assisted|allow-all|show|reset]`](https://codylindley.github.io/slash-command-atlas/commands/cli/permissions.md): Switches permission mode, shows the current one, or resets in-session approvals.
+- [`/allow-all [off|auto|show]`](https://codylindley.github.io/slash-command-atlas/commands/cli/allow-all.md): Enables all permissions — tools, paths and URLs.
+- [`/reset-allowed-tools`](https://codylindley.github.io/slash-command-atlas/commands/cli/reset-allowed-tools.md): Resets the list of allowed tools.
+- [`/sandbox [config|status|policy|enable|disable]`](https://codylindley.github.io/slash-command-atlas/commands/cli/sandbox.md): Manages OS-level sandboxing of filesystem and network access.
+- [`/chronicle <standup|tips|improve|reindex|skills create|skills review|skills status>`](https://codylindley.github.io/slash-command-atlas/commands/cli/chronicle.md): Session history tools and insights.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/cli/usage.md): Displays session usage metrics, including per-model token totals.
+- [`/share [link|off|file|html|gist|research] [...]`](https://codylindley.github.io/slash-command-atlas/commands/cli/share.md): Shares or exports the current session.
+- [`/env`](https://codylindley.github.io/slash-command-atlas/commands/cli/env.md): Shows loaded environment details.
+- [`/version`](https://codylindley.github.io/slash-command-atlas/commands/cli/version.md): Displays version information and checks for updates.
+- [`/feedback`](https://codylindley.github.io/slash-command-atlas/commands/cli/feedback.md): Provides feedback about the CLI.
+- [`/changelog [summarize] [VERSION|last N|since VERSION]`](https://codylindley.github.io/slash-command-atlas/commands/cli/changelog.md): Displays the CLI changelog, optionally summarized.
+- [`/clikit [COMPONENT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/clikit.md): Previews CLI business components, such as quota info.
+- [`/tuikit [colors|icons|select|tabbar]`](https://codylindley.github.io/slash-command-atlas/commands/cli/tuikit.md): Previews TUIkit design-system components and color tokens.
+- [`/login`](https://codylindley.github.io/slash-command-atlas/commands/cli/login.md): Logs in to Copilot.
+- [`/logout`](https://codylindley.github.io/slash-command-atlas/commands/cli/logout.md): Logs out of Copilot.
+- [`/user [show|list|switch]`](https://codylindley.github.io/slash-command-atlas/commands/cli/user.md): Manages the current GitHub user.
+- [`/update`](https://codylindley.github.io/slash-command-atlas/commands/cli/update.md): Updates the CLI to the latest version.
+- [`/downgrade VERSION`](https://codylindley.github.io/slash-command-atlas/commands/cli/downgrade.md): Downloads and restarts into a specific CLI version.
+- [`/terminal-setup`](https://codylindley.github.io/slash-command-atlas/commands/cli/terminal-setup.md): Configures the terminal for multiline input.
+- [`/experimental [on|off|show]`](https://codylindley.github.io/slash-command-atlas/commands/cli/experimental.md): Toggles, sets, or shows experimental features.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/cli/help.md): Shows the help for interactive commands.
+- [`/ide`](https://codylindley.github.io/slash-command-atlas/commands/cli/ide.md): Connects to an IDE workspace.
+- [`/app`](https://codylindley.github.io/slash-command-atlas/commands/cli/app.md): Opens the current session in the GitHub Copilot desktop app.
+- [`/every [INTERVAL PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/every.md): Schedules a recurring prompt, skill, or schedulable slash command.
+- [`/after [DELAY PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/cli/after.md): Schedules a one-off prompt, skill, or schedulable slash command.
+
+## GitHub Copilot Chat in VS Code
+
+- [`/explain`](https://codylindley.github.io/slash-command-atlas/commands/vscode/explain.md): Explains a code block, a file, or a programming concept.
+- [`/fix`](https://codylindley.github.io/slash-command-atlas/commands/vscode/fix.md): Proposes a fix for a code block, or resolves compiler and linting errors.
+- [`/doc`](https://codylindley.github.io/slash-command-atlas/commands/vscode/doc.md): Generates documentation comments from editor inline chat.
+- [`/tests`](https://codylindley.github.io/slash-command-atlas/commands/vscode/tests.md): Generates tests for all, or only the selected, methods and functions.
+- [`/setupTests`](https://codylindley.github.io/slash-command-atlas/commands/vscode/setupTests.md): Helps set up a testing framework for your project.
+- [`/fixTestFailure`](https://codylindley.github.io/slash-command-atlas/commands/vscode/fixTestFailure.md): Finds and fixes a failing test.
+- [`/startDebugging`](https://codylindley.github.io/slash-command-atlas/commands/vscode/startDebugging.md): Generates a launch.json configuration and starts a debugging session.
+- [`/search`](https://codylindley.github.io/slash-command-atlas/commands/vscode/search.md): Generates a search query for the Search view from natural language.
+- [`/new`](https://codylindley.github.io/slash-command-atlas/commands/vscode/new.md): Scaffolds a new VS Code workspace or file.
+- [`/newNotebook`](https://codylindley.github.io/slash-command-atlas/commands/vscode/newNotebook.md): Scaffolds a new Jupyter notebook from your requirements.
+- [`/plan`](https://codylindley.github.io/slash-command-atlas/commands/vscode/plan.md): Creates a detailed implementation plan for a complex coding task.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/vscode/init.md): Generates or updates workspace instructions from your project structure.
+- [`/clear`](https://codylindley.github.io/slash-command-atlas/commands/vscode/clear.md): Starts a new chat session in the Chat view.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/vscode/compact.md): Compacts the conversation context by summarizing it.
+- [`/fork`](https://codylindley.github.io/slash-command-atlas/commands/vscode/fork.md): Forks the chat session into a new independent session that inherits the full history.
+- [`/debug`](https://codylindley.github.io/slash-command-atlas/commands/vscode/debug.md): Opens the Chat Debug view to inspect chat logs.
+- [`/troubleshoot`](https://codylindley.github.io/slash-command-atlas/commands/vscode/troubleshoot.md): Asks the AI to analyze the agent debug logs for this chat session.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/vscode/help.md): Quick reference and basics of using Copilot.
+- [`/instructions`](https://codylindley.github.io/slash-command-atlas/commands/vscode/instructions.md): Configures your custom instructions.
+- [`/prompts`](https://codylindley.github.io/slash-command-atlas/commands/vscode/prompts.md): Configures your reusable prompt files.
+- [`/skills`](https://codylindley.github.io/slash-command-atlas/commands/vscode/skills.md): Configures your agent skills.
+- [`/agents`](https://codylindley.github.io/slash-command-atlas/commands/vscode/agents.md): Configures your custom agents.
+- [`/hooks`](https://codylindley.github.io/slash-command-atlas/commands/vscode/hooks.md): Configures your hooks.
+- [`/create-instruction`](https://codylindley.github.io/slash-command-atlas/commands/vscode/create-instruction.md): Generates an instructions file with AI assistance in Agent mode.
+- [`/create-prompt`](https://codylindley.github.io/slash-command-atlas/commands/vscode/create-prompt.md): Generates a prompt file with AI assistance in Agent mode.
+- [`/create-skill`](https://codylindley.github.io/slash-command-atlas/commands/vscode/create-skill.md): Generates an agent skill with AI assistance in Agent mode.
+- [`/create-agent`](https://codylindley.github.io/slash-command-atlas/commands/vscode/create-agent.md): Generates a custom agent with AI assistance in Agent mode.
+- [`/create-hook`](https://codylindley.github.io/slash-command-atlas/commands/vscode/create-hook.md): Generates a hook configuration with AI assistance in Agent mode.
+- [`/<skill name>`](https://codylindley.github.io/slash-command-atlas/commands/vscode/custom-skill.md): Runs one of your own agent skills by name.
+- [`/<prompt name>`](https://codylindley.github.io/slash-command-atlas/commands/vscode/custom-prompt.md): Runs one of your reusable prompt files by name.
+- [`/yolo`](https://codylindley.github.io/slash-command-atlas/commands/vscode/yolo.md): Enables global auto-approval of all tool calls.
+- [`/disableYolo`](https://codylindley.github.io/slash-command-atlas/commands/vscode/disableYolo.md): Disables global auto-approval of tool calls.
+
+## GitHub Copilot Chat in JetBrains
+
+- [`/explain`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/explain.md): Explains how the code in your active editor works.
+- [`/fix`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/fix.md): Proposes a fix for problems in the selected code.
+- [`/tests`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/tests.md): Generates unit tests for the selected code.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/help.md): Quick reference and basics of using Copilot.
+- [`/chronicle <standup|tips|search|improve>`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/chronicle.md): Reviews and analyzes your session history.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/compact.md): Compresses the current CLI session context to keep a long session manageable.
+- [`/remote`](https://codylindley.github.io/slash-command-atlas/commands/jetbrains/remote.md): Enables or manages remote control of the current session.
+
+## GitHub Copilot Chat in Visual Studio
+
+- [`/explain`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/explain.md): Explains how the code in your active editor works.
+- [`/fix`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/fix.md): Proposes a fix for problems in the selected code.
+- [`/doc`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/doc.md): Adds a documentation comment for this symbol.
+- [`/tests`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/tests.md): Generates unit tests for the selected code.
+- [`/optimize`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/optimize.md): Analyzes and improves the running time of the selected code.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/help.md): Quick reference and basics of using Copilot.
+- [`/generate [QUESTION]`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/generate.md): Generates code to answer a specified question.
+- [`/generateInstructions`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/generateInstructions.md): Generates a repository-wide Copilot instructions file.
+- [`/savePrompt [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/visualstudio/savePrompt.md): Extracts a reusable prompt from the current conversation.
+
+## GitHub Copilot Chat in Xcode
+
+- [`/explain`](https://codylindley.github.io/slash-command-atlas/commands/xcode/explain.md): Provides an explanation for the selected code.
+- [`/fix`](https://codylindley.github.io/slash-command-atlas/commands/xcode/fix.md): Suggests fixes for code errors and typos.
+- [`/doc`](https://codylindley.github.io/slash-command-atlas/commands/xcode/doc.md): Generates documentation for this symbol.
+- [`/tests`](https://codylindley.github.io/slash-command-atlas/commands/xcode/tests.md): Creates a unit test for the current code selection.
+- [`/simplify`](https://codylindley.github.io/slash-command-atlas/commands/xcode/simplify.md): Simplifies the current code selection.
+
+## GitHub Copilot Chat on GitHub.com
+
+- [`/new`](https://codylindley.github.io/slash-command-atlas/commands/web/new.md): Starts a new conversation.
+- [`/clear`](https://codylindley.github.io/slash-command-atlas/commands/web/clear.md): Clears the conversation.
+- [`/rename`](https://codylindley.github.io/slash-command-atlas/commands/web/rename.md): Renames a conversation.
+- [`/delete`](https://codylindley.github.io/slash-command-atlas/commands/web/delete.md): Deletes a conversation.
+
+## Claude Desktop — Code tab
+
+- [`/plan [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/plan.md): Enters plan mode, optionally starting with a task description.
+- [`/goal [CONDITION|clear]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/goal.md): Keeps Claude working across turns until a stated condition is met.
+- [`/clear [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/clear.md): Starts a new conversation with empty context.
+- [`/branch [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/branch.md): Branches the conversation and switches you into the new branch.
+- [`/fork [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/fork.md): Copies this conversation into a separate background session.
+- [`/background [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/background.md): Detaches this whole session so it can keep running in the background.
+- [`/stop`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/stop.md): Stops the background session you are currently attached to.
+- [`/resume [SESSION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/resume.md): Resumes a saved conversation by ID or name, or opens the picker.
+- [`/rename [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/rename.md): Renames the current session, or generates a name from its history.
+- [`/rewind`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/rewind.md): Restores code and/or conversation to an earlier checkpoint.
+- [`/exit`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/exit.md): Exits the CLI, or detaches from an attached background session.
+- [`/desktop`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/desktop.md): Continues this session in the Claude Code Desktop app.
+- [`/color [COLOR|default]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/color.md): Sets the prompt-bar color for this session.
+- [`/focus`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/focus.md): Toggles a compact view of the current turn.
+- [`/compact [FOCUS-INSTRUCTIONS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/compact.md): Compacts the Desktop conversation to free context-window space.
+- [`/autocompact [auto|TOKENS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/autocompact.md): Sets how full the context window gets before automatic compaction.
+- [`/context [all]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/context.md): Visualizes what is consuming the current context window.
+- [`/btw [QUESTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/btw.md): Opens a side chat that uses session context without adding to the conversation.
+- [`/add-dir <PATH>`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/add-dir.md): Adds another working directory for this session to access.
+- [`/cd <PATH>`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/cd.md): Moves this session to another working directory without losing context.
+- [`/memory`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/memory.md): Manages project instructions and automatic memory.
+- [`/copy [N]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/copy.md): Copies a recent assistant response or one of its code blocks.
+- [`/recap`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/recap.md): Generates a one-line summary of the current session.
+- [`/agents`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/agents.md): Explains how to create or manage custom subagents.
+- [`/list-agents`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/list-agents.md): Lists subagents, teammates, and sessions this session can message.
+- [`/subtask <TASK>`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/subtask.md): Spawns a forked subagent whose result returns to this conversation.
+- [`/tasks`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/tasks.md): Lists and manages background work inside the current session.
+- [`/batch <INSTRUCTION>`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/batch.md): Decomposes a large codebase change into parallel worktree tasks.
+- [`/deep-research <QUESTION>`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/deep-research.md): Fans a research question out across web-searching agents.
+- [`/workflows`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/workflows.md): Opens the progress view for dynamic workflows.
+- [`/artifacts`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/artifacts.md): Browses artifacts you own or that others shared with you.
+- [`/team-onboarding`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/team-onboarding.md): Builds a teammate onboarding guide from 30 days of local usage.
+- [`/code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [PR|BRANCH|PATH]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/code-review.md): Reviews a diff or target for correctness bugs and cleanup opportunities.
+- [`/security-review`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/security-review.md): Checks the current branch changes for security vulnerabilities.
+- [`/simplify [TARGET]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/simplify.md): Finds cleanup opportunities in changed code and applies them.
+- [`/diff`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/diff.md): Opens an interactive viewer for Git and per-turn diffs.
+- [`/run`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/run.md): Launches and drives the project so you can see a change working.
+- [`/verify`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/verify.md): Builds, runs, and observes the app to confirm a change works.
+- [`/run-skill-generator`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/run-skill-generator.md): Teaches /run and /verify how to operate this project.
+- [`/debug [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/debug.md): Enables session debug logging and investigates the resulting log.
+- [`/doctor`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/doctor.md): Diagnoses installation, configuration, and context-cost problems.
+- [`/autofix-pr [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/autofix-pr.md): Starts a cloud session that watches this branch’s pull request.
+- [`/teleport`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/teleport.md): Pulls a Claude Code on the web session into this terminal.
+- [`/remote-control`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/remote-control.md): Makes this local session steerable from claude.ai or mobile.
+- [`/remote-env`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/remote-env.md): Chooses the default environment used by cloud agents.
+- [`/web-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/web-setup.md): Connects GitHub to Claude Code on the web using local gh credentials.
+- [`/model [MODEL]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/model.md): Switches models and saves the choice as the default for new sessions.
+- [`/effort [LEVEL|auto|status]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/effort.md): Sets or reports the model’s reasoning effort.
+- [`/fast [on|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/fast.md): Toggles fast mode for lower-latency model responses.
+- [`/advisor [MODEL|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/advisor.md): Lets Claude consult a second model for guidance during a task.
+- [`/config`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/config.md): Opens Settings → Claude Code; any text after the command is ignored.
+- [`/permissions`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/permissions.md): Replies `isn’t available in this environment` in Desktop.
+- [`/fewer-permission-prompts`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/fewer-permission-prompts.md): Builds a conservative allowlist from repeated read-only tool calls.
+- [`/sandbox`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/sandbox.md): Toggles sandbox mode for shell execution.
+- [`/auto-mode-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/auto-mode-setup.md): Drafts an auto-mode environment policy from this project and recent work.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/init.md): Initializes the repository with a CLAUDE.md project guide.
+- [`/import [codex|gemini] [--dry-run] [--yes]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/import.md): Imports configuration from OpenAI Codex or Gemini CLI.
+- [`/skills`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/skills.md): Lists skills and controls their visibility to you and Claude.
+- [`/<skill-name> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/custom-skill.md): Invokes a built-in, personal, project, synced, or plugin skill from Desktop.
+- [`/mcp__<server>__<prompt> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/mcp-prompt.md): Invokes a prompt dynamically exposed by a connected MCP server.
+- [`/reload-skills`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/reload-skills.md): Re-scans skill and legacy command directories without restarting.
+- [`/plugin [SUBCOMMAND]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/plugin.md): Browses and manages Claude Code plugins.
+- [`/reload-plugins [--force]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/reload-plugins.md): Reloads active plugins and reports component or load errors.
+- [`/mcp [reconnect SERVER|enable|disable [SERVER|all]]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/mcp.md): Manages MCP connections, state, and OAuth authentication.
+- [`/hooks`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/hooks.md): Shows configured lifecycle hooks and their tool-event matchers.
+- [`/ide`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/ide.md): Manages IDE integrations and shows their connection status.
+- [`/keybindings`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/keybindings.md): Opens or creates the Claude Code keybindings configuration.
+- [`/terminal-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/terminal-setup.md): Configures terminal keybindings such as Shift+Enter.
+- [`/chrome`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/chrome.md): Configures Claude in Chrome integration settings.
+- [`/statusline`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/statusline.md): Configures the information shown in the terminal status line.
+- [`/theme`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/theme.md): Changes the terminal color theme.
+- [`/tui [default|fullscreen]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/tui.md): Selects the terminal renderer and relaunches the current conversation.
+- [`/scroll-speed`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/scroll-speed.md): Adjusts mouse-wheel speed with an interactive preview ruler.
+- [`/voice [hold|tap|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/voice.md): Enables, configures, or disables voice dictation.
+- [`/loop [INTERVAL] [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/loop.md): Repeats a prompt while the session remains open.
+- [`/schedule [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/schedule.md): Creates, updates, lists, or runs cloud routines conversationally.
+- [`/status`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/status.md): Opens Settings on version, model, account, and connectivity status.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/usage.md): Shows session cost, plan limits, and activity statistics.
+- [`/usage-credits`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/usage-credits.md): Configures usage credits or requests them from an administrator.
+- [`/insights`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/insights.md): Generates an HTML report about recent local Claude Code usage.
+- [`/export [FILENAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/export.md): Exports the current conversation as plain text.
+- [`/bug [REPORT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/bug.md): Reports a bug or shares a conversation with explicit consent.
+- [`/feedback [REPORT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/feedback.md): Sends product feedback through the same consent flow as /bug.
+- [`/heapdump`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/heapdump.md): Writes a heap snapshot and memory diagnostics for troubleshooting.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/help.md): Shows help and the commands available in this session.
+- [`/release-notes`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/release-notes.md): Browses the Claude Code changelog by version.
+- [`/powerup`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/powerup.md): Teaches Claude Code features through short interactive demos.
+- [`/login`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/login.md): Signs in to an Anthropic or Claude account.
+- [`/logout`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/logout.md): Signs out of the current Anthropic account.
+- [`/upgrade`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/upgrade.md): Opens the page for moving to a higher Claude plan.
+- [`/privacy-settings`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/privacy-settings.md): Views and updates Claude Code privacy settings.
+- [`/passes`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/passes.md): Shares an eligible free week of Claude Code with friends.
+- [`/mobile`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/mobile.md): Shows a QR code for downloading the Claude mobile app.
+- [`/radio`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/radio.md): Opens Claude FM lo-fi radio, or prints its stream URL.
+- [`/stickers`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/stickers.md): Opens the flow for ordering Claude Code stickers.
+- [`/install-github-app`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/install-github-app.md): Installs the Claude GitHub App for a repository.
+- [`/install-slack-app`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/install-slack-app.md): Installs the Claude Slack app through browser OAuth.
+- [`/claude-api [migrate|upgrade|managed-agents-onboard|prompt-audit]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/claude-api.md): Loads current Claude API guidance and runs migration workflows.
+- [`/dataviz [REQUEST]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/dataviz.md): Applies structured design guidance to charts and dashboards.
+- [`/design-login`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/design-login.md): Authorizes Claude Design access for design-system synchronization.
+- [`/design-sync [NAME-HINT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/design-sync.md): Uploads a React design system so Claude Design uses real components.
+- [`/setup-bedrock`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/setup-bedrock.md): Configures Amazon Bedrock authentication, region, and model pins.
+- [`/setup-vertex`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/setup-vertex.md): Configures Google Cloud authentication, project, region, and model pins.
+- [`/artifact-capabilities`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/artifact-capabilities.md): Loads guidance about the artifact formats and capabilities available in Desktop.
+- [`/artifact-design`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/artifact-design.md): Loads design guidance for creating polished visual artifacts.
+- [`/artifact-diagramming`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/artifact-diagramming.md): Loads diagramming guidance for visual artifacts.
+- [`/__remote-workflow`](https://codylindley.github.io/slash-command-atlas/commands/claude-app/remote-workflow-internal.md): Internal Desktop workflow entry exposed by some builds.
+
+## Claude Code CLI
+
+- [`/plan [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/plan.md): Enters plan mode, optionally starting with a task description.
+- [`/goal [CONDITION|clear]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/goal.md): Keeps Claude working across turns until a stated condition is met.
+- [`/clear [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/clear.md): Starts a new conversation with empty context.
+- [`/branch [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/branch.md): Branches the conversation and switches you into the new branch.
+- [`/fork [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/fork.md): Copies this conversation into a separate background session.
+- [`/background [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/background.md): Detaches this whole session so it can keep running in the background.
+- [`/stop`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/stop.md): Stops the background session you are currently attached to.
+- [`/resume [SESSION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/resume.md): Resumes a saved conversation by ID or name, or opens the picker.
+- [`/rename [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/rename.md): Renames the current session, or generates a name from its history.
+- [`/rewind`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/rewind.md): Restores code and/or conversation to an earlier checkpoint.
+- [`/exit`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/exit.md): Exits the CLI, or detaches from an attached background session.
+- [`/desktop`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/desktop.md): Continues this session in the Claude Code Desktop app.
+- [`/color [COLOR|default]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/color.md): Sets the prompt-bar color for this session.
+- [`/focus`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/focus.md): Toggles a compact view of the current turn.
+- [`/compact [FOCUS-INSTRUCTIONS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/compact.md): Summarizes the conversation to free context-window space.
+- [`/autocompact [auto|TOKENS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/autocompact.md): Sets how full the context window gets before automatic compaction.
+- [`/context [all]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/context.md): Visualizes what is consuming the current context window.
+- [`/btw [QUESTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/btw.md): Asks a side question without adding it to the main conversation.
+- [`/add-dir <PATH>`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/add-dir.md): Adds another working directory for this session to access.
+- [`/cd <PATH>`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/cd.md): Moves this session to another working directory without losing context.
+- [`/memory`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/memory.md): Manages project instructions and automatic memory.
+- [`/copy [N]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/copy.md): Copies a recent assistant response or one of its code blocks.
+- [`/recap`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/recap.md): Generates a one-line summary of the current session.
+- [`/agents`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/agents.md): Explains how to create or manage custom subagents.
+- [`/list-agents`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/list-agents.md): Lists subagents, teammates, and sessions this session can message.
+- [`/subtask <TASK>`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/subtask.md): Spawns a forked subagent whose result returns to this conversation.
+- [`/tasks`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/tasks.md): Lists and manages background work inside the current session.
+- [`/batch <INSTRUCTION>`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/batch.md): Decomposes a large codebase change into parallel worktree tasks.
+- [`/deep-research <QUESTION>`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/deep-research.md): Fans a research question out across web-searching agents.
+- [`/workflows`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/workflows.md): Opens the progress view for dynamic workflows.
+- [`/artifacts`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/artifacts.md): Browses artifacts you own or that others shared with you.
+- [`/team-onboarding`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/team-onboarding.md): Builds a teammate onboarding guide from 30 days of local usage.
+- [`/code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [PR|BRANCH|PATH]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/code-review.md): Reviews a diff or target for correctness bugs and cleanup opportunities.
+- [`/security-review`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/security-review.md): Checks the current branch changes for security vulnerabilities.
+- [`/simplify [TARGET]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/simplify.md): Finds cleanup opportunities in changed code and applies them.
+- [`/diff`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/diff.md): Opens an interactive viewer for Git and per-turn diffs.
+- [`/run`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/run.md): Launches and drives the project so you can see a change working.
+- [`/verify`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/verify.md): Builds, runs, and observes the app to confirm a change works.
+- [`/run-skill-generator`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/run-skill-generator.md): Teaches /run and /verify how to operate this project.
+- [`/debug [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/debug.md): Enables session debug logging and investigates the resulting log.
+- [`/doctor`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/doctor.md): Diagnoses installation, configuration, and context-cost problems.
+- [`/autofix-pr [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/autofix-pr.md): Starts a cloud session that watches this branch’s pull request.
+- [`/teleport`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/teleport.md): Pulls a Claude Code on the web session into this terminal.
+- [`/remote-control`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/remote-control.md): Makes this local session steerable from claude.ai or mobile.
+- [`/remote-env`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/remote-env.md): Chooses the default environment used by cloud agents.
+- [`/web-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/web-setup.md): Connects GitHub to Claude Code on the web using local gh credentials.
+- [`/model [MODEL]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/model.md): Switches models and saves the choice as the default for new sessions.
+- [`/effort [LEVEL|auto|status]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/effort.md): Sets or reports the model’s reasoning effort.
+- [`/fast [on|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/fast.md): Toggles fast mode for lower-latency model responses.
+- [`/advisor [MODEL|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/advisor.md): Lets Claude consult a second model for guidance during a task.
+- [`/config [KEY=VALUE ...]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/config.md): Opens settings or changes one or more settings directly.
+- [`/permissions`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/permissions.md): Manages allow, ask, and deny rules for tool use.
+- [`/fewer-permission-prompts`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/fewer-permission-prompts.md): Builds a conservative allowlist from repeated read-only tool calls.
+- [`/sandbox`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/sandbox.md): Toggles sandbox mode for shell execution.
+- [`/auto-mode-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/auto-mode-setup.md): Drafts an auto-mode environment policy from this project and recent work.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/init.md): Initializes the repository with a CLAUDE.md project guide.
+- [`/import [codex|gemini] [--dry-run] [--yes]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/import.md): Imports configuration from OpenAI Codex or Gemini CLI.
+- [`/skills`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/skills.md): Lists skills and controls their visibility to you and Claude.
+- [`/<skill-name> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/custom-skill.md): Invokes a user, project, or plugin skill by its discovered name.
+- [`/mcp__<server>__<prompt> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/mcp-prompt.md): Invokes a prompt dynamically exposed by a connected MCP server.
+- [`/reload-skills`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/reload-skills.md): Re-scans skill and legacy command directories without restarting.
+- [`/plugin [SUBCOMMAND]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/plugin.md): Browses and manages Claude Code plugins.
+- [`/reload-plugins [--force]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/reload-plugins.md): Reloads active plugins and reports component or load errors.
+- [`/mcp [reconnect SERVER|enable|disable [SERVER|all]]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/mcp.md): Manages MCP connections, state, and OAuth authentication.
+- [`/hooks`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/hooks.md): Shows configured lifecycle hooks and their tool-event matchers.
+- [`/ide`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/ide.md): Manages IDE integrations and shows their connection status.
+- [`/keybindings`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/keybindings.md): Opens or creates the Claude Code keybindings configuration.
+- [`/terminal-setup`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/terminal-setup.md): Configures terminal keybindings such as Shift+Enter.
+- [`/chrome`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/chrome.md): Configures Claude in Chrome integration settings.
+- [`/statusline`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/statusline.md): Configures the information shown in the terminal status line.
+- [`/theme`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/theme.md): Changes the terminal color theme.
+- [`/tui [default|fullscreen]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/tui.md): Selects the terminal renderer and relaunches the current conversation.
+- [`/scroll-speed`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/scroll-speed.md): Adjusts mouse-wheel speed with an interactive preview ruler.
+- [`/voice [hold|tap|off]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/voice.md): Enables, configures, or disables voice dictation.
+- [`/loop [INTERVAL] [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/loop.md): Repeats a prompt while the session remains open.
+- [`/schedule [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/schedule.md): Creates, updates, lists, or runs cloud routines conversationally.
+- [`/status`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/status.md): Opens Settings on version, model, account, and connectivity status.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/usage.md): Shows session cost, plan limits, and activity statistics.
+- [`/usage-credits`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/usage-credits.md): Configures usage credits or requests them from an administrator.
+- [`/insights`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/insights.md): Generates an HTML report about recent local Claude Code usage.
+- [`/export [FILENAME]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/export.md): Exports the current conversation as plain text.
+- [`/bug [REPORT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/bug.md): Reports a bug or shares a conversation with explicit consent.
+- [`/feedback [REPORT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/feedback.md): Sends product feedback through the same consent flow as /bug.
+- [`/heapdump`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/heapdump.md): Writes a heap snapshot and memory diagnostics for troubleshooting.
+- [`/help`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/help.md): Shows help and the commands available in this session.
+- [`/release-notes`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/release-notes.md): Browses the Claude Code changelog by version.
+- [`/powerup`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/powerup.md): Teaches Claude Code features through short interactive demos.
+- [`/login`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/login.md): Signs in to an Anthropic or Claude account.
+- [`/logout`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/logout.md): Signs out of the current Anthropic account.
+- [`/upgrade`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/upgrade.md): Opens the page for moving to a higher Claude plan.
+- [`/privacy-settings`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/privacy-settings.md): Views and updates Claude Code privacy settings.
+- [`/passes`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/passes.md): Shares an eligible free week of Claude Code with friends.
+- [`/mobile`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/mobile.md): Shows a QR code for downloading the Claude mobile app.
+- [`/radio`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/radio.md): Opens Claude FM lo-fi radio, or prints its stream URL.
+- [`/stickers`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/stickers.md): Opens the flow for ordering Claude Code stickers.
+- [`/install-github-app`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/install-github-app.md): Installs the Claude GitHub App for a repository.
+- [`/install-slack-app`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/install-slack-app.md): Installs the Claude Slack app through browser OAuth.
+- [`/claude-api [migrate|upgrade|managed-agents-onboard|prompt-audit]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/claude-api.md): Loads current Claude API guidance and runs migration workflows.
+- [`/dataviz [REQUEST]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/dataviz.md): Applies structured design guidance to charts and dashboards.
+- [`/design-login`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/design-login.md): Authorizes Claude Design access for design-system synchronization.
+- [`/design-sync [NAME-HINT]`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/design-sync.md): Uploads a React design system so Claude Design uses real components.
+- [`/setup-bedrock`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/setup-bedrock.md): Configures Amazon Bedrock authentication, region, and model pins.
+- [`/setup-vertex`](https://codylindley.github.io/slash-command-atlas/commands/claude-cli/setup-vertex.md): Configures Google Cloud authentication, project, region, and model pins.
+
+## Claude Code in VS Code
+
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/compact.md): Manually compacts the VS Code conversation context.
+- [`/btw QUESTION`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/btw.md): Opens a side question without adding it to the main conversation.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/usage.md): Opens the extension’s Account & usage dialog.
+- [`/remote-control`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/remote-control.md): Makes the VS Code session available through claude.ai or mobile.
+- [`/bug [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/bug.md): Opens the VS Code problem-report dialog with an optional prefilled description.
+- [`/feedback [DESCRIPTION]`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/feedback.md): Opens the extension’s feedback and problem-report dialog.
+- [`/plugins`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/plugins.md): Opens VS Code’s graphical plugin and marketplace manager.
+- [`/mcp`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/mcp.md): Opens VS Code’s MCP server manager.
+- [`/login`](https://codylindley.github.io/slash-command-atlas/commands/claude-vscode/login.md): Starts account sign-in when the extension is not authenticated.
+
+## Claude Code on the web
+
+- [`/compact [FOCUS-INSTRUCTIONS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/compact.md): Summarizes the cloud conversation to free context-window space.
+- [`/context`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/context.md): Shows what currently occupies the cloud session’s context window.
+- [`/autocompact [auto|TOKENS]`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/autocompact.md): Changes the auto-compact window for this cloud environment.
+- [`/model MODEL`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/model.md): Switches the cloud session to a named model.
+- [`/effort LEVEL|auto|status`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/effort.md): Sets or reports reasoning effort without the terminal slider.
+- [`/fast on|off`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/fast.md): Toggles fast serving for an eligible cloud session.
+- [`/color COLOR|default`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/color.md): Sets the cloud session’s identifying color.
+- [`/rename NAME`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/rename.md): Renames the cloud session from the conversation.
+- [`/config`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/config.md): Opens Claude Code settings for the web surface.
+- [`/mcp [reconnect SERVER|enable|disable [SERVER|all]]`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/mcp.md): Opens web connector settings or manages a Remote Control session’s MCP servers.
+- [`/usage`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/usage.md): Prints session cost, plan limits, and activity statistics as text.
+- [`/usage-credits`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/usage-credits.md): Prints the usage-credits billing URL in the web conversation.
+- [`/recap`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/recap.md): Prints a one-line summary of the current session.
+- [`/reload-plugins [--force]`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/reload-plugins.md): Reloads active plugins and returns the result as text.
+- [`/clear`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/clear.md): Is unavailable in cloud sessions; start a new session from the sidebar instead.
+- [`/plugin`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/plugin.md): Is unavailable because plugin management runs only in the terminal interface.
+- [`/resume`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/resume.md): Is unavailable because browser session switching happens in the sidebar.
+- [`/teleport`](https://codylindley.github.io/slash-command-atlas/commands/claude-web/teleport.md): Prints the exact CLI command for continuing this cloud session locally.
+
+## OpenAI Codex in the ChatGPT desktop app
+
+- [`/approve`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/approve.md): Approves one retry of an action that automatic review recently denied.
+- [`/cloud`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/cloud.md): Runs the chat in the cloud.
+- [`/cloud-environment`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/cloud-environment.md): Chooses the cloud environment for the chat.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/compact.md): Compacts the current chat context.
+- [`/fast`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/fast.md): Turns the model catalog's Fast service tier on or off.
+- [`/feedback`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/feedback.md): Opens the feedback dialog, with an option to include logs.
+- [`/fork`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/fork.md): Copies a local chat into a new local chat or worktree.
+- [`/goal`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/goal.md): Sets a persistent goal for this Codex chat to work toward.
+- [`/ide-context`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/ide-context.md): Turns shared IDE context on or off.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/init.md): Generates an `AGENTS.md` scaffold for the current project.
+- [`/local`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/local.md): Runs the chat in the selected local project.
+- [`/mcp`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/mcp.md): Opens MCP status to show connected servers.
+- [`/memories`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/memories.md): Configures whether the chat can use or generate memories.
+- [`/model`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/model.md): Chooses the model for the current chat.
+- [`/pet`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/pet.md): Wakes or tucks away the desktop pet.
+- [`/personality`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/personality.md): Chooses how Codex responds.
+- [`/plan`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/plan.md): Toggles plan mode for multi-step planning.
+- [`/project`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/project.md): Chooses a project for new chats.
+- [`/reasoning`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/reasoning.md): Chooses the reasoning effort for the current chat.
+- [`/review`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/review.md): Starts code review mode for uncommitted changes or a base-branch comparison.
+- [`/side`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/side.md): Starts a temporary side chat without interrupting the main chat.
+- [`/share`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/share.md): Creates a read-only snapshot of the current local Codex thread.
+- [`/status`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/status.md): Shows the chat ID, context usage, and rate limits.
+- [`/task`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/task.md): Starts a chat without a project.
+- [`/worktree`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/worktree.md): Runs the chat in a new Git worktree.
+- [`/prompts:<name>`](https://codylindley.github.io/slash-command-atlas/commands/codex-app/custom-prompt.md): Runs a custom prompt by its configured name.
+
+## OpenAI Codex CLI
+
+- [`/permissions`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/permissions.md): Sets what Codex can do without asking first.
+- [`/ide [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/ide.md): Includes open files, the current selection, and other IDE context.
+- [`/keymap`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/keymap.md): Inspects and remaps TUI keyboard shortcuts.
+- [`/vim`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/vim.md): Toggles Vim editing mode for the composer.
+- [`/setup-default-sandbox`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/setup-default-sandbox.md): Sets up the elevated agent sandbox on Windows.
+- [`/sandbox-add-read-dir <ABSOLUTE_PATH>`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/sandbox-add-read-dir.md): Grants the sandbox read access to an additional directory.
+- [`/subagents`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/subagents.md): Switches the active subagent thread.
+- [`/agents`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/agents.md): Opens a dashboard of active root agent sessions.
+- [`/apps`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/apps.md): Browses apps (connectors) and inserts one into the prompt.
+- [`/plugins`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/plugins.md): Browses installed and discoverable plugins.
+- [`/hooks`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/hooks.md): Views and manages lifecycle hooks.
+- [`/clear [CHAT NAME]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/clear.md): Clears the terminal and starts a fresh chat.
+- [`/rename [NAME]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/rename.md): Renames the current chat.
+- [`/archive`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/archive.md): Archives the current session and exits Codex.
+- [`/delete`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/delete.md): Permanently deletes the current session and exits Codex.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/compact.md): Summarizes the chat to free context-window space.
+- [`/cd [PATH]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/cd.md): Changes the working directory without losing the conversation.
+- [`/pwd`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/pwd.md): Shows the current working directory.
+- [`/copy`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/copy.md): Copies the latest completed Codex output.
+- [`/export [PATH]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/export.md): Exports the conversation as Markdown.
+- [`/diff`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/diff.md): Shows the Git diff, including untracked files.
+- [`/exit`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/exit.md): Exits the Codex CLI immediately.
+- [`/experimental`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/experimental.md): Toggles experimental features.
+- [`/approve`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/approve.md): Approves one retry of an action denied by automatic review.
+- [`/memories`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/memories.md): Configures memory use and generation.
+- [`/skills`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/skills.md): Browses and selects skills for the next request.
+- [`/prompts:<name> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/custom-prompt.md): Runs a legacy custom prompt by its configured name.
+- [`/import`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/import.md): Imports supported Claude Code or Cursor setup, projects, and chats.
+- [`/feedback`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/feedback.md): Sends feedback and optional diagnostics to the Codex maintainers.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/init.md): Generates an `AGENTS.md` scaffold in the current directory.
+- [`/logout`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/logout.md): Signs out of Codex.
+- [`/mcp [verbose]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/mcp.md): Lists configured MCP servers and tools.
+- [`/mention <PATH>`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/mention.md): Finds and attaches a file to the chat.
+- [`/model`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/model.md): Chooses the active model and, when available, reasoning effort.
+- [`/fast`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/fast.md): Toggles the model catalog's Fast service tier.
+- [`/plan [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/plan.md): Switches to plan mode and optionally sends a prompt.
+- [`/goal [OBJECTIVE|edit|pause|resume|clear]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/goal.md): Sets, views, edits, pauses, resumes, or clears a task goal.
+- [`/personality [friendly|pragmatic|none]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/personality.md): Chooses a communication style for responses.
+- [`/ps`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/ps.md): Shows background terminals and their recent output.
+- [`/stop`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/stop.md): Stops all background terminals for the current session.
+- [`/fork`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/fork.md): Forks the current chat into a new chat.
+- [`/app`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/app.md): Continues the current session in the ChatGPT desktop app.
+- [`/side [PROMPT]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/side.md): Starts an ephemeral side chat.
+- [`/raw [on|off]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/raw.md): Toggles raw terminal scrollback mode.
+- [`/resume`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/resume.md): Resumes a saved chat from the session list.
+- [`/new [CHAT NAME]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/new.md): Starts a new chat in the same CLI session.
+- [`/review`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/review.md): Asks Codex to review the working tree.
+- [`/status`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/status.md): Displays session configuration and token usage.
+- [`/usage [daily|weekly|cumulative]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/usage.md): Views account token activity or redeems an available earned reset.
+- [`/debug-config`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/debug-config.md): Prints configuration layers and policy-requirement diagnostics.
+- [`/statusline`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/statusline.md): Configures the TUI footer fields.
+- [`/title`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/title.md): Configures terminal window or tab title fields.
+- [`/theme`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/theme.md): Previews and selects a syntax-highlighting theme.
+- [`/pets [off]`](https://codylindley.github.io/slash-command-atlas/commands/codex-cli/pets.md): Chooses or hides an ambient terminal pet.
+
+## OpenAI Codex IDE extension
+
+- [`/approve`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/approve.md): Approves one retry of an action that automatic review recently denied.
+- [`/cloud`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/cloud.md): Runs the chat in the cloud.
+- [`/cloud-environment`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/cloud-environment.md): Chooses the cloud environment for the chat.
+- [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/compact.md): Compacts the current chat context.
+- [`/fast`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/fast.md): Turns a catalog-provided Fast service tier on or off.
+- [`/feedback`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/feedback.md): Opens the feedback dialog, with an option to include logs.
+- [`/fork`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/fork.md): Copies a local chat into a new local chat.
+- [`/goal`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/goal.md): Sets a persistent goal for Codex to work toward.
+- [`/ide-context`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/ide-context.md): Turns automatic IDE context on or off.
+- [`/init`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/init.md): Generates an `AGENTS.md` scaffold for the current project.
+- [`/local`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/local.md): Runs the chat in the local workspace.
+- [`/mcp`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/mcp.md): Opens MCP status to show connected servers.
+- [`/skills`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/skills.md): Browses available skills and applies one to the next request.
+- [`/memories`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/memories.md): Configures whether the chat can use or generate memories.
+- [`/model`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/model.md): Chooses the model for the current chat.
+- [`/personality`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/personality.md): Chooses how Codex responds.
+- [`/plan`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/plan.md): Toggles plan mode for multi-step planning.
+- [`/project`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/project.md): Chooses a project for new chats.
+- [`/reasoning`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/reasoning.md): Chooses the reasoning effort for the current chat.
+- [`/review`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/review.md): Starts code review mode for uncommitted changes or a base-branch comparison.
+- [`/side`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/side.md): Starts a temporary side chat without interrupting the main chat.
+- [`/status`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/status.md): Shows the chat ID, context usage, and rate limits.
+- [`/worktree`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/worktree.md): Runs the chat in a new Git worktree.
+- [`/prompts:<name> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/custom-prompt.md): Runs a legacy custom prompt by its configured name.
+
+## OpenAI Codex on the web
+
+No published command inventory is available for this surface.

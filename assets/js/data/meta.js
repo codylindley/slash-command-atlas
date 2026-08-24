@@ -152,20 +152,19 @@ window.SLASH.surfaces = [
   {
     id: 'claude-app',
     product: 'claude',
-    name: 'Claude Code Desktop',
+    name: 'Claude Desktop — Code tab',
     label: 'Desktop app',
-    coverage: 'documented-subset',
+    coverage: 'runtime-variable',
     where: 'Claude Desktop Code tab — macOS, Windows',
     color: 'var(--c-claude-app)',
     note:
-      '<p><strong>Desktop inherits the Claude Code built-in command set.</strong> Anthropic documents that typing ' +
-      '<code>/</code> in the Code tab lists built-ins alongside custom, project, and plugin skills because Desktop ' +
-      'runs the same engine as the CLI. It also documents the limit: commands that open an interactive terminal ' +
-      'panel and take no arguments reply <code>isn&rsquo;t available in this environment</code>, while ' +
-      '<code>/config</code> opens Settings and ignores arguments.</p><p>Anthropic publishes no Desktop-only command ' +
-      'table. Commands named directly for Desktop are shown normally; conservative rule-derived entries carry an ' +
-      '<strong>Inherited built-in</strong> badge. Unsettled commands are omitted rather than guessed, so your ' +
-      'session&rsquo;s picker remains definitive.</p>',
+      '<p><strong>The Code tab runs the same underlying engine as the CLI.</strong> This surface indexes ' +
+      'Anthropic&rsquo;s complete command reference and adds bundled entries observed in the live Desktop picker. ' +
+      'Commands without separately published Desktop behavior carry an <strong>Inherited built-in</strong> badge; ' +
+      'known terminal-panel commands are marked <strong>Not available here</strong>.</p>' +
+      '<p>Your actual menu can still be larger or smaller because platform, plan, environment, synced skills, ' +
+      'project skills, custom commands and plugins all change what appears. Type <code>/</code> for the authoritative ' +
+      'list in your installation.</p>',
     docs: 'https://code.claude.com/docs/en/desktop'
   },
   {
@@ -328,3 +327,4 @@ window.SLASH.sources = [
 ];
 
 window.SLASH.built = '2026-08-23';
+window.SLASH.siteUrl = 'https://codylindley.github.io/slash-command-atlas/';
