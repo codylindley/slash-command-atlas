@@ -7,10 +7,13 @@
 - **Category:** CLI & environment
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/ios`, `/android`
+- **Flags:** inherited
 
 ## What it does
 
 Shows a QR code for downloading the Claude mobile app.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -23,6 +26,7 @@ Shows a QR code for downloading the Claude mobile app.
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

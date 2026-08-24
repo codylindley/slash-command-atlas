@@ -96,13 +96,21 @@
     if (PRODUCTS.length < 2) return s.label;
     return s.name;
   }
-  function limitedCoverage(s) {
-    return s.coverage === 'documented-subset' || s.coverage === 'runtime-variable';
+  function coverageLabel(s) {
+    if (s.coverage === 'documented-subset') return 'documented subset';
+    if (s.coverage === 'unpublished-inventory') return 'inventory not published';
+    if (s.coverage === 'runtime-variable') return 'availability varies';
+    return '';
   }
-  function coverageText(s) {
-    return s.coverage === 'runtime-variable' ? 'availability varies'
-      : s.coverage === 'documented-subset' ? 'documented subset'
-      : '';
+
+  function coverageAbsence(s) {
+    if (s.coverage === 'unpublished-inventory') {
+      return 'No command inventory is published for this surface';
+    }
+    if (s.coverage === 'runtime-variable') {
+      return 'Availability is not established for this variable surface';
+    }
+    return 'Not documented in the published subset';
   }
 
   /* ---------------------------------------------------------------- index */
@@ -173,8 +181,7 @@
   function makeTab(s) {
     var n = (BY_SURFACE[s.id] || []).length;
     var selected = s.id === state.surface;
-    var limited = limitedCoverage(s);
-    var coverage = coverageText(s);
+    var coverage = coverageLabel(s);
     var b = el('button', 'surface-card');
     b.type = 'button';
     b.id = 'tab-' + s.id;
@@ -182,15 +189,15 @@
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-controls', 'results');
     b.setAttribute('aria-selected', String(selected));
-    b.setAttribute('aria-label', surfaceTitle(s) + ' — ' + n +
-      ' command' + (n === 1 ? '' : 's') + (limited ? ', ' + coverage : ''));
     b.tabIndex = selected ? 0 : -1;
     b.style.setProperty('--sc', s.color);
     b.innerHTML =
+      '<span class="sr-only">' + esc(surfaceTitle(s)) + ': </span>' +
       '<span class="sc-name"><span class="sc-dot"></span>' + esc(s.label) + '</span>' +
       '<span class="sc-where">' + esc(s.where) + '</span>' +
       '<span class="sc-count"><b>' + n + '</b> command' + (n === 1 ? '' : 's') +
-      (limited ? ' indexed <span class="sc-coverage">' + coverage + '</span>' : '') + '</span>';
+      (coverage ? (s.coverage === 'runtime-variable' ? ' indexed ' : ' shown ') +
+        '<span class="sc-coverage">' + esc(coverage) + '</span>' : '') + '</span>';
     b.addEventListener('click', function () {
       if (s.id === state.surface) return;
       pendingTabFocus = true;
@@ -323,6 +330,8 @@
       if (f === 'hidden')       out.push('<span class="badge badge-hidden">Hidden from menu</span>');
       if (f === 'preview')      out.push('<span class="badge badge-preview">Preview</span>');
       if (f === 'experimental') out.push('<span class="badge badge-exp">Experimental</span>');
+      if (f === 'inherited')    out.push('<span class="badge badge-inherited">Inherited built-in</span>');
+      if (f === 'blocked')      out.push('<span class="badge badge-blocked">Not available here</span>');
     });
     (c.aliases || []).forEach(function (a) {
       out.push('<span class="badge badge-alias">' + esc(a) + '</span>');
@@ -358,7 +367,13 @@
     $('#result-count').textContent =
       list.length + (list.length === 1 ? ' command' : ' commands') +
       (list.length !== total ? ' of ' + total : '');
-    $('#empty-state').hidden = list.length > 0;
+    var empty = $('#empty-state');
+    empty.innerHTML = total === 0
+      ? 'The vendor confirms a slash menu exists here, but does not publish its command inventory. ' +
+        'See the surface note above for the first-party source.'
+      : 'No commands match that search. ' +
+        '<button type="button" class="linkish" data-reset-filters>Reset the filters</button>';
+    empty.hidden = list.length > 0;
   }
 
   /* ------------------------------------------------------- detail panel */
@@ -807,11 +822,11 @@
       h += '<tr><th class="cmp-command-head" scope="col">Command</th>';
     }
     columnSurfaces.forEach(function (s) {
-      var limited = limitedCoverage(s);
-      var coverage = coverageText(s);
+      var coverage = coverageLabel(s);
       h += '<th class="cmp-surface-head" scope="col" aria-label="' +
-        esc(surfaceTitle(s) + (limited ? ', ' + coverage : '')) + '">' + esc(s.label) +
-        (limited ? '<span class="cmp-subset">' + coverage + '</span>' : '') + '</th>';
+        esc(surfaceTitle(s) + (coverage ? ', ' + coverage : '')) + '">' + esc(s.label) +
+        (coverage
+          ? '<span class="cmp-subset">' + esc(coverage) + '</span>' : '') + '</th>';
     });
     h += '</tr></thead><tbody>';
 
@@ -823,9 +838,9 @@
           ? '<button class="cmp-dot" type="button" style="--sc:' + s.color + '" data-goto="' + esc(c.id) +
             '" title="' + esc(stripTags(c.summary)) + '" aria-label="' +
             esc(surfaceTitle(s) + ': ' + stripTags(c.summary)) + '">&#9679;</button>'
-          : limitedCoverage(s)
-            ? '<span class="cmp-unknown" role="img" aria-label="Availability not established for this variable surface" ' +
-              'title="Availability not established for this variable surface">?</span>'
+          : coverageLabel(s)
+            ? '<span class="cmp-unknown" role="img" aria-label="' + esc(coverageAbsence(s)) + '" ' +
+              'title="' + esc(coverageAbsence(s)) + '">?</span>'
             : '<span class="cmp-none" aria-hidden="true">&middot;</span>') + '</td>';
       });
       h += '</tr>';
@@ -976,13 +991,12 @@
     $('#filter-noreq').addEventListener('change', function (e) {
       state.noReq = e.target.checked; renderCards();
     });
-    document.querySelectorAll('[data-reset-filters]').forEach(function (b) {
-      b.addEventListener('click', function () {
-        state.query = ''; state.cats = []; state.noReq = false;
-        $('#search').value = ''; $('#filter-noreq').checked = false;
-        $('#search-clear').hidden = true;
-        render();
-      });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-reset-filters]')) return;
+      state.query = ''; state.cats = []; state.noReq = false;
+      $('#search').value = ''; $('#filter-noreq').checked = false;
+      $('#search-clear').hidden = true;
+      render();
     });
 
     $('#compare-search').addEventListener('input', renderCompare);

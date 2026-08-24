@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session modes
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Enters plan mode, optionally starting with a task description.
 
 Plan mode lets Claude inspect the codebase and propose an approach without editing source files. Supplying a description starts that planning turn immediately.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Reach for it when
 
@@ -40,6 +43,7 @@ Plan mode lets Claude inspect the codebase and propose an approach without editi
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

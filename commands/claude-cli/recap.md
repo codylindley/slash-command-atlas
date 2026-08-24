@@ -22,6 +22,7 @@ Useful for quickly reorienting yourself or naming what the session has become wi
 ## Also in other surfaces
 
 - [Claude Desktop — Code tab — `/recap`](../claude-app/recap.md)
+- [Claude Code on the web — `/recap`](../claude-web/recap.md)
 
 ## Official sources
 

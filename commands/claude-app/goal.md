@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session modes
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Keeps Claude working across turns until a stated condition is met.
 
 Run bare to inspect the active or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, and `cancel` all end an active goal early.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -34,6 +37,7 @@ Run bare to inspect the active or most recently achieved goal. `clear`, `stop`, 
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

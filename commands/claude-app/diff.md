@@ -7,12 +7,15 @@
 - **Category:** Review & critique
 - **Data snapshot:** 2026-08-23
 - **Requires:** A Git repository
+- **Flags:** blocked
 
 ## What it does
 
 Opens an interactive viewer for Git and per-turn diffs.
 
 Move left and right between the working-tree diff and individual Claude turns, then browse changed files. The viewer reads raw Git blobs, so configured diff drivers and `textconv` filters do not rewrite what you see.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -28,6 +31,7 @@ Move left and right between the working-tree diff and individual Claude turns, t
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

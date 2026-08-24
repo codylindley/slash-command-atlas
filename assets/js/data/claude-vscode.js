@@ -5,8 +5,8 @@
 
 (function () {
   var D = {
-    vscode: ['Use Claude Code in VS Code', 'https://code.claude.com/docs/en/ide-integrations'],
-    remote: ['Remote Control from VS Code', 'https://code.claude.com/docs/en/remote-control#vs-code'],
+    vscode: ['Use Claude Code in VS Code', 'https://code.claude.com/docs/en/vs-code'],
+    remote: ['Remote Control from VS Code', 'https://code.claude.com/docs/en/remote-control#start-a-remote-control-session'],
     context: ['Explore the context window', 'https://code.claude.com/docs/en/context-window'],
     plugins: ['Claude Code plugins', 'https://code.claude.com/docs/en/plugins']
   };
@@ -28,6 +28,7 @@
       summary: 'Opens a side question without adding it to the main conversation.',
       detail: 'The answer appears in a panel beside chat, supports follow-ups, and survives window reloads. VS Code retains the newest 20 exchanges and cleans old threads on the configured retention schedule.',
       examples: ['/btw why did we choose a write-through cache here?'],
+      requires: 'Claude Code 2.1.227+',
       related: ['compact'],
       docs: [D.vscode]
     },
@@ -44,7 +45,7 @@
       summary: 'Makes the VS Code session available through claude.ai or mobile.',
       detail: 'The extension shows connection status above the prompt and can open the remote browser view. Run the command again or close the banner to disconnect.',
       note: 'Unlike the CLI form, VS Code accepts no custom name argument and does not display a QR code.',
-      requires: 'Claude subscription and Remote Control policy; Claude Code 2.1.79+',
+      requires: 'Claude subscription and Remote Control policy',
       related: ['usage'],
       docs: [D.remote, D.vscode]
     },
@@ -71,6 +72,13 @@
       detail: 'Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. The extension uses Claude Code&rsquo;s shared plugin configuration underneath.',
       related: ['usage'],
       docs: [D.vscode, D.plugins]
+    },
+    {
+      key: 'mcp', cmd: '/mcp', cat: 'config',
+      summary: 'Opens VS Code&rsquo;s MCP server manager.',
+      detail: 'Shows configured Model Context Protocol servers and lets you enable or disable them, reconnect, and manage OAuth authentication without leaving the chat panel. Adding a new server still requires the CLI.',
+      related: ['plugins', 'usage'],
+      docs: [D.vscode]
     },
     {
       key: 'login', cmd: '/login', cat: 'system',

@@ -7,12 +7,15 @@
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/bashes`
+- **Flags:** blocked
 
 ## What it does
 
 Lists and manages background work inside the current session.
 
 Includes running and completed subagents as well as background shell commands. This is session-local work; use agent view for whole background conversations.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -27,6 +30,7 @@ Includes running and completed subagents as well as background shell commands. T
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Manage multiple agents with agent view](https://code.claude.com/docs/en/agent-view)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

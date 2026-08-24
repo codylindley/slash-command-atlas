@@ -23,7 +23,7 @@ Creates a temporary fork for a focused detour without switching the main chat aw
 
 - [`/fork`](./fork.md)
 - [`/plan`](./plan.md)
-- [`/agent`](./agent.md)
+- [`/subagents`](./subagents.md)
 
 ## Also in other surfaces
 

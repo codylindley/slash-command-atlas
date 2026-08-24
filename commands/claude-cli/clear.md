@@ -32,6 +32,7 @@ An optional name labels the conversation you are leaving in the `/resume` picker
 - [GitHub Copilot Chat in VS Code — `/clear`](../vscode/clear.md)
 - [GitHub Copilot Chat on GitHub.com — `/clear`](../web/clear.md)
 - [Claude Desktop — Code tab — `/clear`](../claude-app/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 - [OpenAI Codex CLI — `/clear`](../codex-cli/clear.md)
 - [GitHub Copilot Chat in VS Code — `/new`](../vscode/new.md)
 - [GitHub Copilot Chat on GitHub.com — `/new`](../web/new.md)

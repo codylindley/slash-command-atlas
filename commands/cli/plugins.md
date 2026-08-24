@@ -37,6 +37,7 @@ Run bare to open the dashboard, or pass `--plugin`, `--mcp` or `--skill` to open
 - [OpenAI Codex CLI — `/plugins`](../codex-cli/plugins.md)
 - [Claude Code CLI — `/plugin`](../claude-cli/plugin.md)
 - [Claude Desktop — Code tab — `/plugin`](../claude-app/plugin.md)
+- [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 

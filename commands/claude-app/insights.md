@@ -7,12 +7,15 @@
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
 - **Requires:** Local session
+- **Flags:** inherited
 
 ## What it does
 
 Generates an HTML report about recent local Claude Code usage.
 
 Analyzes projects, interaction patterns, friction points, and underused features from sessions on this machine.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Analyzes projects, interaction patterns, friction points, and underused features
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

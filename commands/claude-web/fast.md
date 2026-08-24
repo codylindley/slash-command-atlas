@@ -6,7 +6,7 @@
 - **Surface:** Claude Code on the web
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
-- **Requires:** Session launched with fast mode
+- **Requires:** Session launched with fast mode; Claude Code 2.1.205+
 
 ## What it does
 

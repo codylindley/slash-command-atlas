@@ -6,6 +6,7 @@
 - **Surface:** Claude Code on the web
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
+- **Requires:** Claude Code 2.1.205+ in the session environment
 
 ## What it does
 

@@ -24,6 +24,7 @@ Background sessions appear with a `bg` marker. A background session that is stil
 
 - [GitHub Copilot CLI — `/resume`](../cli/resume.md)
 - [Claude Desktop — Code tab — `/resume`](../claude-app/resume.md)
+- [Claude Code on the web — `/resume`](../claude-web/resume.md)
 - [OpenAI Codex CLI — `/resume`](../codex-cli/resume.md)
 
 ## Official sources

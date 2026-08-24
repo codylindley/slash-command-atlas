@@ -28,6 +28,7 @@ A dialog lets you choose how much session history to include and confirm before 
 - [Claude Desktop — Code tab — `/bug`](../claude-app/bug.md)
 - [Claude Code in VS Code — `/bug`](../claude-vscode/bug.md)
 - [GitHub Copilot CLI — `/share`](../cli/share.md)
+- [OpenAI Codex in the ChatGPT desktop app — `/share`](../codex-app/share.md)
 
 ## Official sources
 

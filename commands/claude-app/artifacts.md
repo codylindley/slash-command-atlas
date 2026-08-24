@@ -7,12 +7,15 @@
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
 - **Requires:** Artifact availability; Claude Code 2.1.208+
+- **Flags:** blocked
 
 ## What it does
 
 Browses artifacts you own or that others shared with you.
 
 Attach an artifact to the session, open it in a browser, or copy its link from the picker.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -25,6 +28,7 @@ Attach an artifact to the session, open it in a browser, or copy its link from t
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

@@ -29,6 +29,7 @@ Opens the account-usage menu. The documented arguments jump directly to daily, w
 - [Claude Code CLI — `/usage`](../claude-cli/usage.md)
 - [Claude Desktop — Code tab — `/usage`](../claude-app/usage.md)
 - [Claude Code in VS Code — `/usage`](../claude-vscode/usage.md)
+- [Claude Code on the web — `/usage`](../claude-web/usage.md)
 
 ## Official sources
 

@@ -29,6 +29,8 @@ Run bare for the interactive server list. Direct subcommands reconnect a server 
 
 - [GitHub Copilot CLI — `/mcp`](../cli/mcp.md)
 - [Claude Desktop — Code tab — `/mcp`](../claude-app/mcp.md)
+- [Claude Code in VS Code — `/mcp`](../claude-vscode/mcp.md)
+- [Claude Code on the web — `/mcp`](../claude-web/mcp.md)
 - [OpenAI Codex in the ChatGPT desktop app — `/mcp`](../codex-app/mcp.md)
 - [OpenAI Codex CLI — `/mcp`](../codex-cli/mcp.md)
 - [OpenAI Codex IDE extension — `/mcp`](../codex-ide/mcp.md)

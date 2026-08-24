@@ -6,13 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Enables session debug logging and investigates the resulting log.
 
 If logging was not already enabled at launch, it starts at invocation time. An optional issue description focuses the diagnosis on the behavior you are seeing.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -32,6 +34,7 @@ If logging was not already enabled at launch, it starts at invocation time. An o
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

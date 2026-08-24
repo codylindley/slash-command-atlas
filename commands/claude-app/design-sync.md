@@ -7,13 +7,15 @@
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
 - **Requires:** Anthropic API connection and Claude Design access
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Uploads a React design system so Claude Design uses real components.
 
 Verifies and converts the repository’s component library before synchronization. A first upload can take hours for a large design system.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,6 +28,7 @@ Verifies and converts the repository’s component library before synchronizatio
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

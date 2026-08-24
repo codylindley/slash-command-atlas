@@ -8,12 +8,15 @@
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/peers`
 - **Requires:** Cross-session messaging; Claude Code 2.1.224+
+- **Flags:** inherited
 
 ## What it does
 
 Lists subagents, teammates, and sessions this session can message.
 
 Prints the addressable name for each peer. The command only exists when cross-session messaging is enabled; recent builds also show this session’s own name.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -27,6 +30,7 @@ Prints the addressable name for each peer. The command only exists when cross-se
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Manage multiple agents with agent view](https://code.claude.com/docs/en/agent-view)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

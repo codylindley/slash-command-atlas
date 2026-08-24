@@ -170,8 +170,12 @@ function renderLlmsIndex() {
   ];
 
   S.surfaces.forEach(function (surface) {
+    const commands = S.commands.filter(function (c) { return c.surface === surface.id; });
     lines.push('', '## ' + surface.name, '');
-    S.commands.filter(function (c) { return c.surface === surface.id; }).forEach(function (c) {
+    if (!commands.length) {
+      lines.push('No published command inventory is available for this surface.');
+    }
+    commands.forEach(function (c) {
       lines.push('- [' + inlineCode(c.cmd + (c.args ? ' ' + c.args : '')) + '](' +
         publicUrl(commandMarkdownPath(c)) + '): ' + toMarkdownText(c.summary));
     });
@@ -188,8 +192,12 @@ function renderLlmsFull() {
     ''
   ];
   S.surfaces.forEach(function (surface) {
+    const commands = S.commands.filter(function (c) { return c.surface === surface.id; });
     lines.push('## ' + surface.name, '');
-    S.commands.filter(function (c) { return c.surface === surface.id; }).forEach(function (c) {
+    if (!commands.length) {
+      lines.push('No published command inventory is available for this surface.', '');
+    }
+    commands.forEach(function (c) {
       const command = renderCommandMarkdown(c, true, false)
         .replace(/^## /gm, '#### ')
         .replace(/^# /, '### ')
@@ -399,7 +407,9 @@ function readExistingGeneratedDate(text, exportPath) {
 }
 
 function validate(data) {
-  const allowedFlags = new Set(['skill', 'workflow', 'custom', 'hidden', 'preview', 'experimental']);
+  const allowedFlags = new Set([
+    'skill', 'workflow', 'custom', 'hidden', 'preview', 'experimental', 'inherited', 'blocked'
+  ]);
   const registryId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const routeKey = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/;
   const productIds = new Set();
@@ -428,7 +438,8 @@ function validate(data) {
     if (/['";<>]/.test(s.color || '')) errors.push('Unsafe surface color value on ' + s.id);
     if (surfaceIds.has(s.id)) errors.push('Duplicate surface id: ' + s.id);
     if (!productIds.has(s.product)) errors.push('Unknown product on surface ' + s.id + ': ' + s.product);
-    if (s.coverage && s.coverage !== 'documented-subset' && s.coverage !== 'runtime-variable') {
+    if (s.coverage && s.coverage !== 'documented-subset' &&
+        s.coverage !== 'unpublished-inventory' && s.coverage !== 'runtime-variable') {
       errors.push('Unknown coverage value on surface ' + s.id + ': ' + s.coverage);
     }
     if (!/^https:\/\//.test(s.docs || '')) errors.push('Invalid docs URL on surface ' + s.id);

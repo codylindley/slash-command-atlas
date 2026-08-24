@@ -22,7 +22,6 @@ Custom agents bundle instructions, tools and model settings under a name, so a r
 ## Also in other surfaces
 
 - [GitHub Copilot CLI — `/agent`](../cli/agent.md)
-- [OpenAI Codex CLI — `/agent`](../codex-cli/agent.md)
 
 ## Official sources
 

@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Sets the prompt-bar color for this session.
 
 Choose red, blue, green, yellow, purple, orange, pink, or cyan; use `default` to reset. With no argument Claude Code picks a random color. The color also identifies the session in agent view and syncs to Remote Control.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Choose red, blue, green, yellow, purple, orange, pink, or cyan; use `default` to
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Manage multiple agents with agent view](https://code.claude.com/docs/en/agent-view)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

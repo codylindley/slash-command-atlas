@@ -22,10 +22,11 @@ Lets you run subagents on a cheaper or faster model than the main session — of
 
 ## Also in other surfaces
 
-- [OpenAI Codex CLI — `/agent`](../codex-cli/agent.md)
+- [OpenAI Codex CLI — `/subagents`](../codex-cli/subagents.md)
 - [GitHub Copilot Chat in VS Code — `/agents`](../vscode/agents.md)
 - [Claude Code CLI — `/agents`](../claude-cli/agents.md)
 - [Claude Desktop — Code tab — `/agents`](../claude-app/agents.md)
+- [OpenAI Codex CLI — `/agents`](../codex-cli/agents.md)
 
 ## Official sources
 

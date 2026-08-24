@@ -7,13 +7,15 @@
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/checkup`
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Diagnoses installation, configuration, and context-cost problems.
 
 Checks install health, settings, updates, slow hooks, and unused extensions, then can propose fixes. It also finds bloated or duplicated `CLAUDE.md` guidance and reports changes before asking to apply them.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -27,6 +29,7 @@ Checks install health, settings, updates, slow hooks, and unused extensions, the
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

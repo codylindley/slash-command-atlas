@@ -170,6 +170,15 @@
       related: ['init', 'env', 'settings']
     },
     {
+      key: 'keep-alive', cmd: '/keep-alive', aliases: ['/caffeinate'],
+      args: '[on|off|busy|DURATION]', cat: 'system',
+      summary: 'Prevents the machine from sleeping while Copilot works.',
+      detail: 'Use <code>on</code> to keep the machine awake continuously, <code>busy</code> only while work is active, or pass a duration such as <code>30m</code>, <code>2h</code>, or <code>1d</code>. Use <code>off</code> to restore normal sleep behavior.',
+      examples: ['/keep-alive busy', '/caffeinate 2h'],
+      related: ['tasks', 'every', 'after'],
+      docs: [D.ref]
+    },
+    {
       key: 'init', cmd: '/init', cat: 'context',
       summary: 'Initializes Copilot custom instructions and agentic features for the repository.',
       detail: 'Scaffolds the repository-level configuration the agent reads on every future session here.',

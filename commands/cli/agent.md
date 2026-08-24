@@ -20,7 +20,6 @@ Browses and selects from the available custom agents.
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/agent`](../app/agent.md)
-- [OpenAI Codex CLI — `/agent`](../codex-cli/agent.md)
 
 ## Official sources
 

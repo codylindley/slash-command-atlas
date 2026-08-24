@@ -8,12 +8,15 @@
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/rc`
 - **Requires:** Claude subscription; Remote Control allowed
+- **Flags:** inherited
 
 ## What it does
 
 Makes this local session steerable from claude.ai or mobile.
 
 Remote Control exposes the running terminal session without moving its execution off your machine. It requires Claude subscription sign-in and organization policy support.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -28,6 +31,7 @@ Remote Control exposes the running terminal session without moving its execution
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Remote Control](https://code.claude.com/docs/en/remote-control)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

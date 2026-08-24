@@ -24,12 +24,12 @@ Shows account and plan, session and weekly usage bars, reset timing, and local D
 - [GitHub Copilot CLI — `/usage`](../cli/usage.md)
 - [Claude Code CLI — `/usage`](../claude-cli/usage.md)
 - [Claude Desktop — Code tab — `/usage`](../claude-app/usage.md)
+- [Claude Code on the web — `/usage`](../claude-web/usage.md)
 - [OpenAI Codex CLI — `/usage`](../codex-cli/usage.md)
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

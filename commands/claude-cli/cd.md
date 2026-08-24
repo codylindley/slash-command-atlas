@@ -28,6 +28,7 @@ Keeps the conversation and prompt cache, asks for workspace trust when needed, a
 
 - [GitHub Copilot CLI — `/cwd`](../cli/cwd.md)
 - [Claude Desktop — Code tab — `/cd`](../claude-app/cd.md)
+- [OpenAI Codex CLI — `/cd`](../codex-cli/cd.md)
 
 ## Official sources
 

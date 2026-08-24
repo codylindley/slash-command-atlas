@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
+- **Flags:** blocked
 
 ## What it does
 
 Opens the progress view for dynamic workflows.
 
 Watch running and completed workflows, pause or resume work, and save useful workflow definitions for reuse.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -25,6 +28,7 @@ Watch running and completed workflows, pause or resume work, and save useful wor
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Orchestrate subagents with dynamic workflows](https://code.claude.com/docs/en/workflows)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

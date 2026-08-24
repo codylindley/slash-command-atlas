@@ -26,6 +26,7 @@ Manages skills for enhanced capabilities.
 - [Claude Code CLI — `/skills`](../claude-cli/skills.md)
 - [Claude Desktop — Code tab — `/skills`](../claude-app/skills.md)
 - [OpenAI Codex CLI — `/skills`](../codex-cli/skills.md)
+- [OpenAI Codex IDE extension — `/skills`](../codex-ide/skills.md)
 
 ## Official sources
 

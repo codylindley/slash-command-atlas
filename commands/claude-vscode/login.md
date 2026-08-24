@@ -26,8 +26,7 @@ The extension normally opens its sign-in screen automatically; this command is t
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

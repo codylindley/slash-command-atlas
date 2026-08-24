@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Manages MCP connections, state, and OAuth authentication.
 
 Run bare for the interactive server list. Direct subcommands reconnect a server or enable and disable one or all servers without entering the dialog.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Subcommands
 
@@ -29,12 +32,15 @@ Run bare for the interactive server list. Direct subcommands reconnect a server 
 
 - [GitHub Copilot CLI — `/mcp`](../cli/mcp.md)
 - [Claude Code CLI — `/mcp`](../claude-cli/mcp.md)
+- [Claude Code in VS Code — `/mcp`](../claude-vscode/mcp.md)
+- [Claude Code on the web — `/mcp`](../claude-web/mcp.md)
 - [OpenAI Codex in the ChatGPT desktop app — `/mcp`](../codex-app/mcp.md)
 - [OpenAI Codex CLI — `/mcp`](../codex-cli/mcp.md)
 - [OpenAI Codex IDE extension — `/mcp`](../codex-ide/mcp.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

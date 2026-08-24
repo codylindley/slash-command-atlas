@@ -33,8 +33,10 @@ With no subcommand it generates a shareable GitHub link when you are logged in a
 
 - [Claude Code CLI — `/bug`](../claude-cli/bug.md)
 - [Claude Desktop — Code tab — `/bug`](../claude-app/bug.md)
+- [OpenAI Codex in the ChatGPT desktop app — `/share`](../codex-app/share.md)
 - [Claude Code CLI — `/export`](../claude-cli/export.md)
 - [Claude Desktop — Code tab — `/export`](../claude-app/export.md)
+- [OpenAI Codex CLI — `/export`](../codex-cli/export.md)
 
 ## Official sources
 

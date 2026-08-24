@@ -7,12 +7,15 @@
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
 - **Requires:** Terminal requiring keybinding setup
+- **Flags:** blocked
 
 ## What it does
 
 Configures terminal keybindings such as Shift+Enter.
 
 Appears only in terminals that need extra setup, including VS Code, Cursor, Devin Desktop, Alacritty, and Zed.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Appears only in terminals that need extra setup, including VS Code, Cursor, Devi
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

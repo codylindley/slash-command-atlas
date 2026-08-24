@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Initializes the repository with a CLAUDE.md project guide.
 
 Generates standing project context for future sessions. With `CLAUDE_CODE_NEW_INIT=1`, an interactive flow also covers skills, hooks, and personal memory; supported configuration from Codex or Gemini can be carried over through `/import`.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -31,6 +34,7 @@ Generates standing project context for future sessions. With `CLAUDE_CODE_NEW_IN
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [How Claude remembers your project](https://code.claude.com/docs/en/memory)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

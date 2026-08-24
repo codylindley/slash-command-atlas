@@ -24,6 +24,7 @@ Custom agents define how the agent operates — its tools, its model, its instru
 - [GitHub Copilot CLI — `/subagents`](../cli/subagents.md)
 - [Claude Code CLI — `/agents`](../claude-cli/agents.md)
 - [Claude Desktop — Code tab — `/agents`](../claude-app/agents.md)
+- [OpenAI Codex CLI — `/agents`](../codex-cli/agents.md)
 
 ## Official sources
 

@@ -7,12 +7,15 @@
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/reset`, `/new`
+- **Flags:** inherited
 
 ## What it does
 
 Starts a new conversation with empty context.
 
 An optional name labels the conversation you are leaving in the `/resume` picker. The previous conversation remains resumable; use `/compact` when you want space without starting over.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Reach for it when
 
@@ -32,6 +35,7 @@ An optional name labels the conversation you are leaving in the `/resume` picker
 - [GitHub Copilot Chat in VS Code — `/clear`](../vscode/clear.md)
 - [GitHub Copilot Chat on GitHub.com — `/clear`](../web/clear.md)
 - [Claude Code CLI — `/clear`](../claude-cli/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 - [OpenAI Codex CLI — `/clear`](../codex-cli/clear.md)
 - [GitHub Copilot Chat in VS Code — `/new`](../vscode/new.md)
 - [GitHub Copilot Chat on GitHub.com — `/new`](../web/new.md)
@@ -39,6 +43,7 @@ An optional name labels the conversation you are leaving in the `/resume` picker
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Checkpointing](https://code.claude.com/docs/en/checkpointing)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

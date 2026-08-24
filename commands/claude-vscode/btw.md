@@ -6,6 +6,7 @@
 - **Surface:** Claude Code in VS Code
 - **Category:** Context & input
 - **Data snapshot:** 2026-08-23
+- **Requires:** Claude Code 2.1.227+
 
 ## What it does
 
@@ -29,8 +30,7 @@ The answer appears in a panel beside chat, supports follow-ups, and survives win
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

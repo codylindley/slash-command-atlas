@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Browses and manages Claude Code plugins.
 
 Run bare for the plugin menu or use direct subcommands such as `list`, `install`, `enable`, and `disable`. The install summary tells you whether activation was immediate or needs a reload.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Subcommands
 
@@ -29,9 +32,11 @@ Run bare for the plugin menu or use direct subcommands such as `list`, `install`
 
 - [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
 - [Claude Code CLI — `/plugin`](../claude-cli/plugin.md)
+- [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Create plugins](https://code.claude.com/docs/en/plugins)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

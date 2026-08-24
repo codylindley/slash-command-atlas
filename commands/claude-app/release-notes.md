@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
+- **Flags:** blocked
 
 ## What it does
 
 Browses the Claude Code changelog by version.
 
 Release notes appear in the transcript but are not added to the conversation Claude sees.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Release notes appear in the transcript but are not added to the conversation Cla
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

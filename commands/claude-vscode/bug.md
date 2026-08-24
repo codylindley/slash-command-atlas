@@ -28,8 +28,7 @@ A first-party Anthropic connection can submit the confirmed report directly. On 
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

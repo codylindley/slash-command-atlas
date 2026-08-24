@@ -27,6 +27,7 @@ With a filename it writes directly; without one it opens a dialog to copy the tr
 
 - [GitHub Copilot CLI — `/share`](../cli/share.md)
 - [Claude Desktop — Code tab — `/export`](../claude-app/export.md)
+- [OpenAI Codex CLI — `/export`](../codex-cli/export.md)
 
 ## Official sources
 

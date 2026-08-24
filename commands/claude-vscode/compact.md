@@ -38,9 +38,8 @@ Claude compacts automatically when the context indicator approaches its limit; t
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 - [Explore the context window](https://code.claude.com/docs/en/context-window)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

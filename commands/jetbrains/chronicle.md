@@ -27,7 +27,7 @@ Available because you are running a Copilot CLI session inside JetBrains, not be
 ## Official sources
 
 - [Chronicle](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
-- [GitHub Copilot Chat in JetBrains slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links
 

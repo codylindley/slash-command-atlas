@@ -25,7 +25,8 @@ Quick reference and basics of using Copilot.
 
 ## Official sources
 
-- [GitHub Copilot Chat in JetBrains slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
+- [GitHub Copilot agent in JetBrains IDEs](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links
 

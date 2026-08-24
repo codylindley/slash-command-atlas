@@ -26,6 +26,7 @@ Eligible subscription plans also break usage down by skill, subagent, plugin, an
 - [GitHub Copilot CLI — `/usage`](../cli/usage.md)
 - [Claude Desktop — Code tab — `/usage`](../claude-app/usage.md)
 - [Claude Code in VS Code — `/usage`](../claude-vscode/usage.md)
+- [Claude Code on the web — `/usage`](../claude-web/usage.md)
 - [OpenAI Codex CLI — `/usage`](../codex-cli/usage.md)
 
 ## Official sources

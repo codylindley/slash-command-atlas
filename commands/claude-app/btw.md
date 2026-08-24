@@ -1,6 +1,6 @@
 # `/btw [QUESTION]`
 
-> Opens a side chat that does not change the main conversation.
+> Opens a side chat that uses session context without adding to the conversation.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
@@ -9,9 +9,11 @@
 
 ## What it does
 
-Opens a side chat that does not change the main conversation.
+Opens a side chat that uses session context without adding to the conversation.
 
-The side chat can read the main thread up to that point, making it useful for explanation or a quick assumption check without steering the agent. It is documented for local and SSH Desktop sessions.
+Equivalent to **Cmd+;** on macOS or **Ctrl+;** on Windows. The side chat can read everything in the main thread up to that point.
+
+> **Note:** Available in local, SSH, and WSL sessions only. Desktop does not save side chats to disk, so you cannot return to one after closing the app.
 
 ## Examples
 

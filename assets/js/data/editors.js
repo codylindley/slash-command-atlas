@@ -6,7 +6,8 @@
   var V = 'https://code.visualstudio.com/docs/copilot/';
   var G = 'https://docs.github.com/en/copilot/';
   var D = {
-    vsRef:    ['VS Code Copilot cheat sheet', V + 'reference/copilot-vscode-features'],
+    vsRef:    ['VS Code AI features cheat sheet',
+      'https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet'],
     vsChat:   ['Chat in VS Code', V + 'chat/copilot-chat'],
     vsInline: ['Inline chat', V + 'chat/inline-chat'],
     vsAgent:  ['Agent mode', V + 'chat/chat-agent-mode'],
@@ -16,7 +17,11 @@
     vsAgents: ['Custom agents', V + 'customization/custom-agents'],
     ghIde:    ['Chat with Copilot in your IDE', G + 'how-tos/chat-with-copilot/chat-in-ide'],
     ghWeb:    ['Chat with Copilot on GitHub', G + 'how-tos/copilot-on-github/chat-with-copilot/chat-in-github'],
-    ghSheet:  ['Copilot Chat cheat sheet', G + 'reference/chat-cheat-sheet']
+    ghSheet:  ['Copilot Chat cheat sheet', G + 'reference/chat-cheat-sheet'],
+    msVs:     ['Customize chat responses in Visual Studio',
+      'https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio'],
+    jbAgent:  ['GitHub Copilot agent in JetBrains IDEs',
+      'https://www.jetbrains.com/help/ai-assistant/copilot-agent.html']
   };
 
   /* ============================= VS CODE ============================= */
@@ -258,7 +263,8 @@
     {
       key: 'help', cmd: '/help', cat: 'diag',
       summary: 'Quick reference and basics of using Copilot.',
-      related: ['explain']
+      related: ['explain'],
+      docs: [D.ghSheet, D.jbAgent]
     },
     {
       key: 'chronicle', cmd: '/chronicle', args: '<standup|tips|search|improve>', cat: 'history',
@@ -313,6 +319,27 @@
       key: 'help', cmd: '/help', cat: 'diag',
       summary: 'Quick reference and basics of using Copilot.',
       related: ['explain']
+    },
+    {
+      key: 'generate', cmd: '/generate', args: '[QUESTION]', cat: 'editor',
+      summary: 'Generates code to answer a specified question.',
+      detail: 'Use it when the desired outcome is new implementation rather than an explanation, fix, optimization, or test.',
+      related: ['explain', 'fix', 'generateInstructions'],
+      docs: [D.msVs]
+    },
+    {
+      key: 'generateInstructions', cmd: '/generateInstructions', cat: 'author',
+      summary: 'Generates a repository-wide Copilot instructions file.',
+      detail: 'Creates a starting <code>.github/copilot-instructions.md</code> from the current solution so future chat requests inherit the project&rsquo;s conventions.',
+      related: ['generate', 'savePrompt'],
+      docs: [D.msVs]
+    },
+    {
+      key: 'savePrompt', cmd: '/savePrompt', args: '[NAME]', cat: 'author',
+      summary: 'Extracts a reusable prompt from the current conversation.',
+      detail: 'Saves the result under <code>.github/prompts/</code> as a <code>.prompt.md</code> file so it can be reviewed, committed, and invoked again.',
+      related: ['generateInstructions', 'generate'],
+      docs: [D.msVs]
     }
   ]);
 

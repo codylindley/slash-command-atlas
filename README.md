@@ -4,7 +4,7 @@ An interactive reference for the slash commands of AI coding agents — **GitHub
 Code** and **OpenAI Codex** — organized by product and by the surface you actually type them into,
 because `/` gives you a different menu in a desktop app, a terminal, an editor extension, and the web.
 
-**496 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
+**517 command entries across 15 surfaces and 3 products.** No build step, no dependencies, no framework.
 
 ---
 
@@ -20,7 +20,7 @@ because `/` gives you a different menu in a desktop app, a terminal, an editor e
   worked examples, use cases, gating conditions, related commands, and cross-surface equivalents.
 - **Compare surfaces.** A matrix of command name × surface, with spanning product headers. Filled cells
   link to the surface-specific behavior; faint dots mean “not listed,” and question marks distinguish
-  evidence-only subsets where the vendor does not publish an exhaustive surface table.
+  evidence-only subsets and surfaces where the vendor does not publish an inventory.
 - **Deep links.** Every command has its own URL — `#/app/security-review` — so you can share one.
 - **Continue in AI.** Copy a command&rsquo;s structured context or open it in ChatGPT, Claude,
   Gemini, or Perplexity for follow-up questions.
@@ -81,10 +81,10 @@ assets/css/styles.css       All styling; light/dark via CSS custom properties
 assets/js/app.js            Router, search, filtering, detail panel, compare table
 assets/js/data/meta.js      Surfaces, categories, sources
 assets/js/data/app.js       GitHub Copilot app commands (47)
-assets/js/data/cli.js       GitHub Copilot CLI commands (71)
-assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (6), Xcode (5), web (4)
-assets/js/data/claude-*.js  Claude Desktop Code tab (107), CLI (103), VS Code (8), web (10)
-assets/js/data/codex-*.js   OpenAI Codex desktop (25), CLI (49), IDE extension (22)
+assets/js/data/cli.js       GitHub Copilot CLI commands (72)
+assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (9), Xcode (5), web (4)
+assets/js/data/claude-*.js  Claude Desktop Code tab (107), CLI (103), IDE extension (9), web (18)
+assets/js/data/codex-*.js   OpenAI Codex desktop (26), CLI (54), IDE (24), web (0 published)
 data/commands.json          Generated machine-readable export
 commands/{surface}/*.md     Generated, public Markdown page for every command
 llms.txt                    AI-readable command index
@@ -107,7 +107,7 @@ Add or change a command by editing the relevant file in `assets/js/data/`. Each 
   args: '[PROMPT]',                  // optional
   cat: 'review',                     // key from window.SLASH.categories
   requires: 'Active session',        // optional gating condition
-  flags: ['preview'],                // skill | workflow | custom | hidden | preview | experimental
+  flags: ['preview'],                // also inherited and blocked; see the site legend
   summary: 'One line.',              // shown on the card
   detail: 'A paragraph. May contain <code>markup</code>.',
   note: 'Rendered as a callout.',    // optional
@@ -148,20 +148,26 @@ in confusing, hard-to-reproduce ways rather than cleanly.
 ## Where the data comes from
 
 Command names, arguments, aliases, gating conditions and one-line descriptions are derived from
-official documentation:
+first-party documentation and, where a published table lags, first-party source code. Rule-derived
+Desktop entries are visibly marked as inherited rather than presented as individually documented:
 
 - [Slash commands for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 - [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
 - [GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
-- [GitHub Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet) (VS Code, Visual Studio, JetBrains, Xcode, github.com)
-- [VS Code: GitHub Copilot cheat sheet](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [GitHub Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet) (Visual Studio, JetBrains, Xcode, github.com)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Visual Studio: customize chat responses](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [GitHub Copilot agent in JetBrains IDEs](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 - [Claude Code command reference](https://code.claude.com/docs/en/commands)
 - [Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 - [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
-- [Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
+- [Claude Code Remote Control limitations](https://code.claude.com/docs/en/remote-control#limitations)
+- [Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 - [Slash commands in the ChatGPT desktop app](https://learn.chatgpt.com/docs/reference/slash-commands)
 - [OpenAI Codex CLI commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
 - [OpenAI Codex IDE commands](https://learn.chatgpt.com/docs/developer-commands?surface=ide)
+- [OpenAI Codex commands on the web](https://learn.chatgpt.com/docs/developer-commands?surface=web)
+- [OpenAI Codex CLI slash-command source](https://github.com/openai/codex/blob/main/codex-rs/tui/src/slash_command.rs)
 
 The longer explanations, "reach for it when" bullets and example prompts are editorial — written to
 make the reference usable, not copied from the docs.

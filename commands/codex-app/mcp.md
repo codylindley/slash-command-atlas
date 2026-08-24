@@ -28,6 +28,8 @@ Displays the Model Context Protocol connections available to the chat. It is the
 - [GitHub Copilot CLI — `/mcp`](../cli/mcp.md)
 - [Claude Code CLI — `/mcp`](../claude-cli/mcp.md)
 - [Claude Desktop — Code tab — `/mcp`](../claude-app/mcp.md)
+- [Claude Code in VS Code — `/mcp`](../claude-vscode/mcp.md)
+- [Claude Code on the web — `/mcp`](../claude-web/mcp.md)
 - [OpenAI Codex CLI — `/mcp`](../codex-cli/mcp.md)
 - [OpenAI Codex IDE extension — `/mcp`](../codex-ide/mcp.md)
 

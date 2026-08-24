@@ -23,6 +23,7 @@ Displays session usage metrics, including per-model token totals.
 - [Claude Code CLI — `/usage`](../claude-cli/usage.md)
 - [Claude Desktop — Code tab — `/usage`](../claude-app/usage.md)
 - [Claude Code in VS Code — `/usage`](../claude-vscode/usage.md)
+- [Claude Code on the web — `/usage`](../claude-web/usage.md)
 - [OpenAI Codex CLI — `/usage`](../codex-cli/usage.md)
 
 ## Official sources

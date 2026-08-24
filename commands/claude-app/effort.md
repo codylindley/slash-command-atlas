@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Sets or reports the model’s reasoning effort.
 
 Supports levels from `low` through `xhigh`, plus session-only `max` and `ultracode` where available. `auto` returns to the model default; bare invocation opens a slider.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -31,6 +34,7 @@ Supports levels from `low` through `xhigh`, plus session-only `max` and `ultraco
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Model configuration](https://code.claude.com/docs/en/model-config)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

@@ -6,13 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Customization authoring
 - **Data snapshot:** 2026-08-23
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Loads current Claude API guidance and runs migration workflows.
 
 Activates automatically for Anthropic SDK imports, or invoke a focused workflow: update model usage, upgrade the SDK, onboard a Managed Agent, or audit prompts for instructions written for older models.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Subcommands
 
@@ -33,6 +35,7 @@ Activates automatically for Anthropic SDK imports, or invoke a focused workflow:
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

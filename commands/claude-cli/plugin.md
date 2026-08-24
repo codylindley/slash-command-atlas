@@ -29,6 +29,7 @@ Run bare for the plugin menu or use direct subcommands such as `list`, `install`
 
 - [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
 - [Claude Desktop — Code tab — `/plugin`](../claude-app/plugin.md)
+- [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 

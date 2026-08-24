@@ -7,12 +7,15 @@
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/cost`, `/stats`
+- **Flags:** inherited
 
 ## What it does
 
 Shows session cost, plan limits, and activity statistics.
 
 Eligible subscription plans also break usage down by skill, subagent, plugin, and MCP server. The `/stats` alias opens directly on the Stats tab.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,10 +29,12 @@ Eligible subscription plans also break usage down by skill, subagent, plugin, an
 - [GitHub Copilot CLI — `/usage`](../cli/usage.md)
 - [Claude Code CLI — `/usage`](../claude-cli/usage.md)
 - [Claude Code in VS Code — `/usage`](../claude-vscode/usage.md)
+- [Claude Code on the web — `/usage`](../claude-web/usage.md)
 - [OpenAI Codex CLI — `/usage`](../codex-cli/usage.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Manage costs effectively](https://code.claude.com/docs/en/costs)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

@@ -7,13 +7,15 @@
 - **Category:** Review & critique
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/review`, `/ultrareview`
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Reviews a diff or target for correctness bugs and cleanup opportunities.
 
 Target the current diff, a pull request number, branch, or path. `--fix` applies findings; `--comment` posts inline GitHub comments. `ultra` runs a deep cloud review, and the legacy `/ultrareview` spelling remains available for that path.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Subcommands
 
@@ -45,6 +47,7 @@ Target the current diff, a pull request number, branch, or path. `--fix` applies
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code review](https://code.claude.com/docs/en/code-review)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

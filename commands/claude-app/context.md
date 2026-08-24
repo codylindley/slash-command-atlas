@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Context & input
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Visualizes what is consuming the current context window.
 
 Shows a colored usage grid, heavy contributors, capacity warnings, and optimization suggestions. In fullscreen mode the per-item breakdown starts collapsed; pass `all` to expand it.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -28,6 +31,7 @@ Shows a colored usage grid, heavy contributors, capacity warnings, and optimizat
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Explore the context window](https://code.claude.com/docs/en/context-window)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

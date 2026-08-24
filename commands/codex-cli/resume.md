@@ -25,6 +25,7 @@ Opens the saved-session picker and reloads the selected transcript so you can co
 - [GitHub Copilot CLI — `/resume`](../cli/resume.md)
 - [Claude Code CLI — `/resume`](../claude-cli/resume.md)
 - [Claude Desktop — Code tab — `/resume`](../claude-app/resume.md)
+- [Claude Code on the web — `/resume`](../claude-web/resume.md)
 
 ## Official sources
 

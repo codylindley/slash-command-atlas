@@ -7,13 +7,15 @@
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
 - **Requires:** A Git repository
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Decomposes a large codebase change into parallel worktree tasks.
 
 Researches the repository, proposes 5–30 independent units, then after approval launches one background subagent per unit in an isolated worktree. Each unit implements, tests, and opens a pull request.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -31,6 +33,7 @@ Researches the repository, proposes 5–30 independent units, then after approva
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Run parallel sessions with worktrees](https://code.claude.com/docs/en/worktrees)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)

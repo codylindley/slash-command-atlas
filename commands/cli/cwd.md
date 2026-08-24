@@ -21,8 +21,10 @@ Lets you move the session to a different part of the codebase without starting o
 
 ## Also in other surfaces
 
+- [OpenAI Codex CLI — `/pwd`](../codex-cli/pwd.md)
 - [Claude Code CLI — `/cd`](../claude-cli/cd.md)
 - [Claude Desktop — Code tab — `/cd`](../claude-app/cd.md)
+- [OpenAI Codex CLI — `/cd`](../codex-cli/cd.md)
 
 ## Official sources
 

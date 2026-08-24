@@ -22,7 +22,7 @@ Clones the active transcript into a new chat with a fresh ID and leaves the orig
 
 - [`/side`](./side.md)
 - [`/new`](./new.md)
-- [`/agent`](./agent.md)
+- [`/subagents`](./subagents.md)
 
 ## Also in other surfaces
 

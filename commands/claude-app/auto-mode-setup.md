@@ -7,12 +7,15 @@
 - **Category:** Tools & permissions
 - **Data snapshot:** 2026-08-23
 - **Requires:** Pro, Max, or Team; Claude Code 2.1.228+
+- **Flags:** inherited
 
 ## What it does
 
 Drafts an auto-mode environment policy from this project and recent work.
 
 Proposes `autoMode.environment` entries, shows the draft for review, and saves accepted changes to user settings.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Proposes `autoMode.environment` entries, shows the draft for review, and saves a
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Configure auto mode](https://code.claude.com/docs/en/auto-mode-config)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

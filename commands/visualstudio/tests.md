@@ -24,7 +24,7 @@ Generates unit tests for the selected code.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=visualstudio)
+- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

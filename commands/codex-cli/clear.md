@@ -32,6 +32,7 @@ Resets the visible transcript and creates a new chat in the same CLI session. Op
 - [GitHub Copilot Chat on GitHub.com — `/clear`](../web/clear.md)
 - [Claude Code CLI — `/clear`](../claude-cli/clear.md)
 - [Claude Desktop — Code tab — `/clear`](../claude-app/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 
 ## Official sources
 

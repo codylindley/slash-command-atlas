@@ -6,13 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
-- **Flags:** workflow
+- **Flags:** workflow, inherited
 
 ## What it does
 
 Fans a research question out across web-searching agents.
 
 A bundled dynamic workflow that fetches and cross-checks sources, then synthesizes a cited report. It runs only when you invoke it.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -30,6 +32,7 @@ A bundled dynamic workflow that fetches and cross-checks sources, then synthesiz
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Orchestrate subagents with dynamic workflows](https://code.claude.com/docs/en/workflows)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

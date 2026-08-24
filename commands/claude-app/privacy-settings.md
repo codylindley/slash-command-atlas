@@ -7,10 +7,13 @@
 - **Category:** CLI & environment
 - **Data snapshot:** 2026-08-23
 - **Requires:** Pro or Max subscription
+- **Flags:** inherited
 
 ## What it does
 
 Views and updates Claude Code privacy settings.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -23,6 +26,7 @@ Views and updates Claude Code privacy settings.
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

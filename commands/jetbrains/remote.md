@@ -26,7 +26,7 @@ Lets you reach the session from GitHub.com or GitHub Mobile. CLI-session only.
 
 ## Official sources
 
-- [GitHub Copilot Chat in JetBrains slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links
 

@@ -1,6 +1,6 @@
-# `/config [KEY=VALUE ...]`
+# `/config`
 
-> Opens settings or changes one or more settings directly.
+> Opens Settings → Claude Code; any text after the command is ignored.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
@@ -10,9 +10,9 @@
 
 ## What it does
 
-Opens settings or changes one or more settings directly.
+Opens Settings → Claude Code; any text after the command is ignored.
 
-The interactive view covers theme, model, output style, editor behavior, and other preferences. Direct `key=value` assignments avoid the picker; `/config --help` lists supported keys and values.
+Unlike the CLI, Desktop accepts no `key=value` form: `/config theme=dark` does not set the theme. Change behavior through Settings or by editing the settings files Desktop shares with the CLI.
 
 ## Examples
 
@@ -32,8 +32,8 @@ The interactive view covers theme, model, output style, editor behavior, and oth
 
 ## Official sources
 
-- [Claude Code commands](https://code.claude.com/docs/en/commands)
-- [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
+- [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links
 

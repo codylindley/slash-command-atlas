@@ -22,6 +22,7 @@ Applies plugin changes without restarting. If changed MCP tools would invalidate
 ## Also in other surfaces
 
 - [Claude Desktop — Code tab — `/reload-plugins`](../claude-app/reload-plugins.md)
+- [Claude Code on the web — `/reload-plugins`](../claude-web/reload-plugins.md)
 
 ## Official sources
 

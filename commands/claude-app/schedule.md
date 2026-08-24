@@ -8,12 +8,15 @@
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/routines`
 - **Requires:** Claude cloud routines
+- **Flags:** inherited
 
 ## What it does
 
 Creates, updates, lists, or runs cloud routines conversationally.
 
 Describe the recurring automation you want and Claude walks through schedule, environment, and task setup. You can also ask about recent routine runs.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -31,6 +34,7 @@ Describe the recurring automation you want and Claude walks through schedule, en
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Automate work with routines](https://code.claude.com/docs/en/routines)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

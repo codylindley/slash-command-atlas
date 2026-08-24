@@ -24,6 +24,7 @@ The same idea as the `--resume` and `--continue` launch flags, but from inside a
 
 - [Claude Code CLI — `/resume`](../claude-cli/resume.md)
 - [Claude Desktop — Code tab — `/resume`](../claude-app/resume.md)
+- [Claude Code on the web — `/resume`](../claude-web/resume.md)
 - [OpenAI Codex CLI — `/resume`](../codex-cli/resume.md)
 
 ## Official sources

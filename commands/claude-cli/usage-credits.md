@@ -21,6 +21,7 @@ Opens billing settings for users with access. Team and Enterprise members withou
 ## Also in other surfaces
 
 - [Claude Desktop — Code tab — `/usage-credits`](../claude-app/usage-credits.md)
+- [Claude Code on the web — `/usage-credits`](../claude-web/usage-credits.md)
 
 ## Official sources
 

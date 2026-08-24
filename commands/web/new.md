@@ -25,6 +25,7 @@ Note the divergence: on github.com `/new` starts a conversation, while in VS Cod
 - [GitHub Copilot Chat in VS Code — `/new`](../vscode/new.md)
 - [Claude Code CLI — `/clear`](../claude-cli/clear.md)
 - [Claude Desktop — Code tab — `/clear`](../claude-app/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 - [OpenAI Codex CLI — `/new`](../codex-cli/new.md)
 
 ## Official sources

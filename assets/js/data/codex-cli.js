@@ -5,7 +5,11 @@
 (function () {
   var D = {
     ref: ['Codex CLI built-in slash commands',
-      'https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands']
+      'https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands'],
+    source: ['Codex CLI slash-command source (August 21, 2026)',
+      'https://github.com/openai/codex/blob/df6a54ee851129447290b5684b8c2d2df10a5cd5/codex-rs/tui/src/slash_command.rs'],
+    prompts: ['Custom prompts in Codex',
+      'https://learn.chatgpt.com/docs/custom-prompts']
   };
 
   window.SLASH.register('codex-cli', [
@@ -58,14 +62,22 @@
       related: ['permissions', 'setup-default-sandbox', 'status'], docs: [D.ref]
     },
     {
-      key: 'agent', cmd: '/agent', aliases: ['/subagents'], cat: 'delegate',
-      summary: 'Switches the active agent thread.',
-      detail: 'Opens the agent-thread picker so you can inspect or continue work in a spawned subagent thread without leaving the TUI.',
+      key: 'subagents', cmd: '/subagents', cat: 'delegate',
+      summary: 'Switches the active subagent thread.',
+      detail: 'Opens the subagent-thread picker so you can inspect or continue work spawned inside the current session without leaving the TUI.',
+      note: 'The prose command table still lists <code>/agent</code> as an alias, but the current first-party CLI source removed that alias on August 17, 2026.',
       when: [
         'A subagent has results you want to inspect directly',
         'You need to continue a spawned thread rather than the parent chat'
       ],
-      related: ['fork', 'side', 'status'], docs: [D.ref]
+      related: ['agents', 'fork', 'side', 'status'], docs: [D.ref, D.source]
+    },
+    {
+      key: 'agents', cmd: '/agents', cat: 'delegate',
+      summary: 'Opens a dashboard of active root agent sessions.',
+      detail: 'Shows loaded top-level sessions from the shared app server and lets you inspect or switch between them. This is broader than <code>/subagents</code>, which stays within the current session&rsquo;s spawned threads.',
+      requires: 'Shared app-server session dashboard available',
+      related: ['subagents', 'resume', 'status'], docs: [D.source]
     },
     {
       key: 'apps', cmd: '/apps', cat: 'config',
@@ -127,11 +139,33 @@
       related: ['status', 'clear', 'new'], docs: [D.ref]
     },
     {
+      key: 'cd', cmd: '/cd', args: '[PATH]', cat: 'context',
+      requires: 'Idle, trusted local session with no background terminals',
+      summary: 'Changes the working directory without losing the conversation.',
+      detail: 'Moves an idle local session to a trusted directory while preserving its transcript. Relative paths resolve from the current directory; omitting the path selects your home directory. Codex rejects unsafe transitions, remote environments, active work, and incompatible permission profiles.',
+      examples: ['/cd ../service-api', '/cd'],
+      related: ['pwd', 'mention', 'permissions'], docs: [D.source]
+    },
+    {
+      key: 'pwd', cmd: '/pwd', aliases: ['/cwd'], cat: 'context',
+      summary: 'Shows the current working directory.',
+      detail: 'Prints the active directory for the session. Unlike <code>/cd</code>, this read-only command remains available while a task is running and from side conversations.',
+      related: ['cd', 'status'], docs: [D.source]
+    },
+    {
       key: 'copy', cmd: '/copy', cat: 'context',
       requires: 'At least one completed Codex output',
       summary: 'Copies the latest completed Codex output.',
       detail: 'Copies the most recent completed response or plan to the clipboard. If a turn is still running, Codex copies the last completed output instead; <code>Ctrl+O</code> is the default keyboard equivalent.',
       related: ['raw', 'diff', 'status'], docs: [D.ref]
+    },
+    {
+      key: 'export', cmd: '/export', args: '[PATH]', cat: 'context',
+      requires: 'No task in progress',
+      summary: 'Exports the conversation as Markdown.',
+      detail: 'Without a path, opens the destination flow for copying or saving the transcript. A path can be absolute, relative to the current directory, or home-relative; Codex refuses to overwrite an existing file.',
+      examples: ['/export notes/auth-investigation.md'],
+      related: ['copy', 'status'], docs: [D.source]
     },
     {
       key: 'diff', cmd: '/diff', cat: 'review',
@@ -177,6 +211,14 @@
       summary: 'Browses and selects skills for the next request.',
       detail: 'Opens the skill picker and inserts the selected skill context so the following request is handled under that skill\'s instructions.',
       related: ['plugins', 'apps', 'init'], docs: [D.ref]
+    },
+    {
+      key: 'custom-prompt', cmd: '/prompts:<name>', args: '[ARGUMENTS]', cat: 'author',
+      flags: ['custom'], noCompare: true,
+      summary: 'Runs a legacy custom prompt by its configured name.',
+      detail: 'Markdown files directly under <code>~/.codex/prompts/</code> appear dynamically as slash commands. They can accept positional placeholders, <code>$ARGUMENTS</code>, and named <code>KEY=value</code> arguments.',
+      note: 'OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting Codex.',
+      related: ['skills', 'init'], docs: [D.prompts]
     },
     {
       key: 'import', cmd: '/import', cat: 'system',
@@ -277,7 +319,7 @@
         'You want to test an alternative approach from the current context',
         'The experiment should be durable rather than an ephemeral side chat'
       ],
-      related: ['side', 'new', 'agent'], docs: [D.ref]
+      related: ['side', 'new', 'subagents'], docs: [D.ref]
     },
     {
       key: 'app', cmd: '/app', cat: 'session',
@@ -292,7 +334,7 @@
       summary: 'Starts an ephemeral side chat.',
       detail: 'Creates a temporary fork for a focused detour without switching the main chat away from its work. The side transcript stays separate, and the command is unavailable inside another side chat or during review mode.',
       examples: ['/side Check whether this plan has an obvious risk'],
-      related: ['fork', 'plan', 'agent'], docs: [D.ref]
+      related: ['fork', 'plan', 'subagents'], docs: [D.ref]
     },
     {
       key: 'raw', cmd: '/raw', args: '[on|off]', cat: 'system',

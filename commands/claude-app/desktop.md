@@ -8,12 +8,15 @@
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/app`
 - **Requires:** macOS or x64 Windows; Claude subscription
+- **Flags:** inherited
 
 ## What it does
 
 Continues this session in the Claude Code Desktop app.
 
 Saves the conversation, opens it in the Code tab of Claude Desktop, and exits the terminal CLI.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -28,6 +31,7 @@ Saves the conversation, opens it in the Code tab of Claude Desktop, and exits th
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 

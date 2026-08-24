@@ -25,7 +25,7 @@ Proposes a fix for problems in the selected code.
 ## Official sources
 
 - [Chat with Copilot in your IDE](https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide)
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=visualstudio)
+- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

@@ -7,12 +7,15 @@
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
 - **Requires:** First-party Anthropic connection; Claude Code 2.1.213+
+- **Flags:** inherited
 
 ## What it does
 
 Imports configuration from OpenAI Codex or Gemini CLI.
 
 Brings over instruction files, MCP servers, commands, subagents, and skills. `--dry-run` previews changes and `--yes` skips the interactive picker.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -31,6 +34,7 @@ Brings over instruction files, MCP servers, commands, subagents, and skills. `--
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

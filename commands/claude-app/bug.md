@@ -7,6 +7,7 @@
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/share`
+- **Flags:** inherited
 
 ## What it does
 
@@ -15,6 +16,8 @@ Reports a bug or shares a conversation with explicit consent.
 A dialog lets you choose how much session history to include and confirm before sending. First-party Anthropic connections submit directly; third-party or unauthenticated setups write a local feedback bundle you can forward.
 
 > **Note:** Review the selected session history for secrets before confirming.
+
+**Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -28,9 +31,11 @@ A dialog lets you choose how much session history to include and confirm before 
 - [Claude Code CLI — `/bug`](../claude-cli/bug.md)
 - [Claude Code in VS Code — `/bug`](../claude-vscode/bug.md)
 - [GitHub Copilot CLI — `/share`](../cli/share.md)
+- [OpenAI Codex in the ChatGPT desktop app — `/share`](../codex-app/share.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

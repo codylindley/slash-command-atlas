@@ -1,18 +1,21 @@
 # `/permissions`
 
-> Manages allow, ask, and deny rules for tool use.
+> Replies `isn’t available in this environment` in Desktop.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Tools & permissions
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/allowed-tools`
+- **Flags:** blocked
 
 ## What it does
 
-Manages allow, ask, and deny rules for tool use.
+Replies `isn’t available in this environment` in Desktop.
 
-The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Changes made while Claude is responding apply to its next tool call.
+Anthropic names `/permissions` as the example of its general rule: built-ins that open an interactive terminal panel and take no arguments are refused in the Code tab. Manage rules by editing settings files or run the command from the standalone CLI.
+
+> **Note:** Use the mode selector next to the send button for per-session permission modes.
 
 ## Related commands
 
@@ -28,9 +31,8 @@ The dialog shows rules by scope, lets you add or remove patterns and working dir
 
 ## Official sources
 
-- [Claude Code commands](https://code.claude.com/docs/en/commands)
-- [Configure auto mode](https://code.claude.com/docs/en/auto-mode-config)
-- [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
+- [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links
 

@@ -7,12 +7,15 @@
 - **Category:** Delegation & parallelism
 - **Data snapshot:** 2026-08-23
 - **Requires:** Pro, Max, Team, or Enterprise subscription
+- **Flags:** inherited
 
 ## What it does
 
 Builds a teammate onboarding guide from 30 days of local usage.
 
 Analyzes sessions, commands, and MCP usage, then produces a guide a teammate can paste as a first prompt. Eligible Claude subscriptions also receive a shareable Claude Code link.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -26,6 +29,7 @@ Analyzes sessions, commands, and MCP usage, then produces a guide a teammate can
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

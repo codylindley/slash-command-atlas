@@ -7,12 +7,15 @@
 - **Category:** Pull requests
 - **Data snapshot:** 2026-08-23
 - **Requires:** gh CLI, open PR, and Claude Code on the web
+- **Flags:** inherited
 
 ## What it does
 
 Starts a cloud session that watches this branch’s pull request.
 
 The cloud agent reacts to CI failures and review comments and pushes clear fixes. By default it handles every failure and comment; an optional prompt narrows its remit.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -30,6 +33,7 @@ The cloud agent reacts to CI failures and review comments and pushes clear fixes
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

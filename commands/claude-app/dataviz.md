@@ -7,13 +7,15 @@
 - **Category:** Customization authoring
 - **Data snapshot:** 2026-08-23
 - **Requires:** Claude Code 2.1.198+
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Applies structured design guidance to charts and dashboards.
 
 Chooses an appropriate chart form, assigns color by semantic role, validates palette contrast and colorblind safety, and applies interaction and accessibility rules.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -30,6 +32,7 @@ Chooses an appropriate chart form, assigns color by semantic role, validates pal
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

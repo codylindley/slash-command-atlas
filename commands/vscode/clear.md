@@ -23,6 +23,7 @@ Starts a new chat session in the Chat view.
 - [GitHub Copilot Chat on GitHub.com — `/clear`](../web/clear.md)
 - [Claude Code CLI — `/clear`](../claude-cli/clear.md)
 - [Claude Desktop — Code tab — `/clear`](../claude-app/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 - [OpenAI Codex CLI — `/clear`](../codex-cli/clear.md)
 
 ## Official sources

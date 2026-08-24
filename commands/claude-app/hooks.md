@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** blocked
 
 ## What it does
 
 Shows configured lifecycle hooks and their tool-event matchers.
 
 Use it to inspect what runs before and after tool calls, prompts, compaction, session changes, and other Claude Code events.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -27,6 +30,7 @@ Use it to inspect what runs before and after tool calls, prompts, compaction, se
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Hooks reference](https://code.claude.com/docs/en/hooks)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

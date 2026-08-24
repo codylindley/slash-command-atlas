@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Diagnostics & usage
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Exports the current conversation as plain text.
 
 With a filename it writes directly; without one it opens a dialog to copy the transcript or save it to a file.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -27,9 +30,11 @@ With a filename it writes directly; without one it opens a dialog to copy the tr
 
 - [GitHub Copilot CLI — `/share`](../cli/share.md)
 - [Claude Code CLI — `/export`](../claude-cli/export.md)
+- [OpenAI Codex CLI — `/export`](../codex-cli/export.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

@@ -7,7 +7,7 @@
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/rc`
-- **Requires:** Claude subscription and Remote Control policy; Claude Code 2.1.79+
+- **Requires:** Claude subscription and Remote Control policy
 
 ## What it does
 
@@ -28,9 +28,8 @@ The extension shows connection status above the prompt and can open the remote b
 
 ## Official sources
 
-- [Remote Control from VS Code](https://code.claude.com/docs/en/remote-control#vs-code)
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
+- [Remote Control from VS Code](https://code.claude.com/docs/en/remote-control#start-a-remote-control-session)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

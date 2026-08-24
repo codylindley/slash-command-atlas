@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
+- **Flags:** inherited
 
 ## What it does
 
 Renames the current session, or generates a name from its history.
 
 Names appear in the prompt bar and session lists. Claude Code removes invisible control characters, caps names at 200 characters, and disambiguates a name already used by another live session.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -33,6 +36,7 @@ Names appear in the prompt bar and session lists. Claude Code removes invisible 
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Manage multiple agents with agent view](https://code.claude.com/docs/en/agent-view)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

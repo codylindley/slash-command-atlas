@@ -26,6 +26,7 @@ Filter by name, press `t` to sort by token count, and use `Space` to cycle wheth
 - [GitHub Copilot Chat in VS Code — `/skills`](../vscode/skills.md)
 - [Claude Desktop — Code tab — `/skills`](../claude-app/skills.md)
 - [OpenAI Codex CLI — `/skills`](../codex-cli/skills.md)
+- [OpenAI Codex IDE extension — `/skills`](../codex-ide/skills.md)
 
 ## Official sources
 

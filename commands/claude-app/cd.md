@@ -7,12 +7,15 @@
 - **Category:** Context & input
 - **Data snapshot:** 2026-08-23
 - **Requires:** Claude Code 2.1.169+
+- **Flags:** inherited
 
 ## What it does
 
 Moves this session to another working directory without losing context.
 
 Keeps the conversation and prompt cache, asks for workspace trust when needed, and makes the moved session discoverable by later resume commands from the new directory. `Cd` permission rules can restrict targets.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -28,9 +31,11 @@ Keeps the conversation and prompt cache, asks for workspace trust when needed, a
 
 - [GitHub Copilot CLI — `/cwd`](../cli/cwd.md)
 - [Claude Code CLI — `/cd`](../claude-cli/cd.md)
+- [OpenAI Codex CLI — `/cd`](../codex-cli/cd.md)
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

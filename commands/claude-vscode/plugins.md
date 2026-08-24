@@ -24,9 +24,8 @@ Install plugins at user, project, or local scope; enable or disable installed pl
 
 ## Official sources
 
-- [Use Claude Code in VS Code](https://code.claude.com/docs/en/ide-integrations)
+- [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 - [Claude Code plugins](https://code.claude.com/docs/en/plugins)
-- [Claude Code in VS Code slash command reference](https://code.claude.com/docs/en/vs-code)
 
 ## Atlas links
 

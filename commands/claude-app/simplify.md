@@ -6,13 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Review & critique
 - **Data snapshot:** 2026-08-23
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Finds cleanup opportunities in changed code and applies them.
 
 Four agents inspect reuse, clarity, efficiency, and abstraction level in parallel. Current versions deliberately do not look for correctness bugs; pair it with `/code-review` for that.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Reach for it when
 
@@ -32,6 +34,7 @@ Four agents inspect reuse, clarity, efficiency, and abstraction level in paralle
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

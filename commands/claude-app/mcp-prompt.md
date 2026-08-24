@@ -6,13 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Customization authoring
 - **Data snapshot:** 2026-08-23
-- **Flags:** custom
+- **Flags:** custom, inherited
 
 ## What it does
 
 Invokes a prompt dynamically exposed by a connected MCP server.
 
 Claude Code discovers MCP prompts at runtime and namespaces them with the server name. The exact commands therefore depend on your active connections and cannot be enumerated as a fixed built-in set.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -21,6 +23,7 @@ Claude Code discovers MCP prompts at runtime and namespaces them with the server
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

@@ -7,12 +7,15 @@
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
 - **Requires:** Fast mode eligibility; Claude Code 2.1.205+
+- **Flags:** inherited
 
 ## What it does
 
 Toggles fast mode for lower-latency model responses.
 
 Switches supported sessions between ordinary and fast serving. Non-interactive availability is more limited than the in-session command.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Related commands
 
@@ -29,6 +32,7 @@ Switches supported sessions between ordinary and fast serving. Non-interactive a
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Model configuration](https://code.claude.com/docs/en/model-config)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

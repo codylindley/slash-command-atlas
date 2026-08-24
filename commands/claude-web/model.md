@@ -6,12 +6,13 @@
 - **Surface:** Claude Code on the web
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Requires:** Claude Code 2.1.205+ in the session environment
 
 ## What it does
 
 Switches the cloud session to a named model.
 
-Cloud sessions cannot open the terminal model picker, so the model argument is required here.
+Pass the model directly instead of using the terminal picker.
 
 ## Examples
 

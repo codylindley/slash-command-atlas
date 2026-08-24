@@ -6,12 +6,15 @@
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
 - **Data snapshot:** 2026-08-23
+- **Flags:** blocked
 
 ## What it does
 
 Changes the terminal color theme.
 
 Includes automatic light/dark matching, colorblind-accessible variants, ANSI-palette themes, and custom themes supplied from your user directory or plugins.
+
+> **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
 ## Related commands
 
@@ -27,6 +30,7 @@ Includes automatic light/dark matching, colorblind-accessible variants, ANSI-pal
 
 ## Official sources
 
+- [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

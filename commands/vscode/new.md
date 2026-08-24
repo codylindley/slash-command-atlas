@@ -28,6 +28,7 @@ Describe the project or file you want and preview the scaffolded content before 
 - [GitHub Copilot Chat on GitHub.com — `/new`](../web/new.md)
 - [Claude Code CLI — `/clear`](../claude-cli/clear.md)
 - [Claude Desktop — Code tab — `/clear`](../claude-app/clear.md)
+- [Claude Code on the web — `/clear`](../claude-web/clear.md)
 - [OpenAI Codex CLI — `/new`](../codex-cli/new.md)
 
 ## Official sources

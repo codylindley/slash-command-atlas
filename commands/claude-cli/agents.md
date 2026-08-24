@@ -24,6 +24,7 @@ Current builds direct you to ask Claude to create an agent or edit `.claude/agen
 - [GitHub Copilot CLI — `/subagents`](../cli/subagents.md)
 - [GitHub Copilot Chat in VS Code — `/agents`](../vscode/agents.md)
 - [Claude Desktop — Code tab — `/agents`](../claude-app/agents.md)
+- [OpenAI Codex CLI — `/agents`](../codex-cli/agents.md)
 
 ## Official sources
 

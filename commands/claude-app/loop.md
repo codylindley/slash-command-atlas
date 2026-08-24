@@ -7,13 +7,15 @@
 - **Category:** CLI & environment
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/proactive`
-- **Flags:** skill
+- **Flags:** skill, inherited
 
 ## What it does
 
 Repeats a prompt while the session remains open.
 
 Specify an interval such as `5m`, or let Claude self-pace where supported. With no prompt it runs an autonomous maintenance check, or the instructions in `.claude/loop.md` when present.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -31,6 +33,7 @@ Specify an interval such as `5m`, or let Claude self-pace where supported. With 
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)

@@ -7,12 +7,15 @@
 - **Category:** Session lifecycle
 - **Data snapshot:** 2026-08-23
 - **Aliases:** `/bg`
+- **Flags:** inherited
 
 ## What it does
 
 Detaches this whole session so it can keep running in the background.
 
 Frees the terminal and moves the conversation into agent view. An optional prompt sends one final instruction before detaching; monitor or reattach with `claude agents`.
+
+> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Examples
 
@@ -30,6 +33,7 @@ Frees the terminal and moves the conversation into agent view. An optional promp
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Manage multiple agents with agent view](https://code.claude.com/docs/en/agent-view)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)

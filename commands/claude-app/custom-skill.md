@@ -23,7 +23,9 @@ Type `/` in the prompt box or choose **+ → Slash commands** to browse what thi
 
 ## Official sources
 
+- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Extend Claude Code with skills](https://code.claude.com/docs/en/skills)
+- [Get started with Claude Code Desktop](https://code.claude.com/docs/en/desktop-quickstart)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links
