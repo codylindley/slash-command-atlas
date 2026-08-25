@@ -14,6 +14,10 @@ Resumes a saved conversation by ID or name, or opens the picker.
 
 Background sessions appear with a `bg` marker. A background session that is still running must be attached from agent view or stopped before it can be resumed here.
 
+## Canonical example
+
+`/resume oauth-token-rotation`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

@@ -14,9 +14,12 @@ Sets or reports reasoning effort without the terminal slider.
 
 Supply the value directly. Claude Code reports `Not applied` if the model is still inside a launch-default effort hold.
 
-## Examples
+## Canonical example
 
-- `/effort high`
+`/effort high`
+
+## More examples
+
 - `/effort status`
 
 ## Related commands

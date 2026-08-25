@@ -18,6 +18,10 @@ Reduces the accumulated conversation context so a long-running chat can keep goi
 - A long chat is approaching its context limit
 - You want to continue the same task without carrying every earlier turn verbatim
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/status`](./status.md)

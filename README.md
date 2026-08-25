@@ -16,8 +16,9 @@ because `/` gives you a different menu in a desktop app, a terminal, an editor e
   `/yolo` finds `/allow-all` because it knows the aliases.
 - **Filter by category and prerequisites.** Surface-relevant categories, plus a toggle for commands that work
   without an active session, a repository, or an open pull request.
-- **Read the detail.** Every entry has a concise explanation and official source links; many add
-  worked examples, use cases, gating conditions, related commands, and cross-surface equivalents.
+- **Read the detail.** Every entry has a concise explanation, a canonical common-case example, and
+  official source links; many add variants, use cases, gating conditions, related commands, and
+  cross-surface equivalents.
 - **Compare surfaces.** A matrix of command name × surface, with spanning product headers. Filled cells
   link to the surface-specific behavior; faint dots mean “not listed,” and question marks distinguish
   evidence-only subsets and surfaces where the vendor does not publish an inventory.
@@ -79,6 +80,7 @@ index.html                  Markup and view shells
 assets/css/styles.css       All styling; light/dark via CSS custom properties
 assets/js/app.js            Router, search, filtering, detail panel, compare table
 assets/js/data/meta.js      Surfaces, categories, sources
+assets/js/data/examples.js  Canonical examples for argument-heavy or ambiguous commands
 assets/js/data/app.js       GitHub Copilot app commands (47)
 assets/js/data/cli.js       GitHub Copilot CLI commands (72)
 assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (9), Xcode (5), web (4)
@@ -111,7 +113,7 @@ Add or change a command by editing the relevant file in `assets/js/data/`. Each 
   detail: 'A paragraph. May contain <code>markup</code>.',
   note: 'Rendered as a callout.',    // optional
   when: ['Bullet', 'Bullet'],        // optional
-  examples: ['/security-review'],    // optional
+  examples: ['/security-review'],    // optional; first entry is canonical
   subs: [['reload', 'What it does']],// optional subcommand table
   related: ['review', 'pr-open'],    // keys within the same surface
   docs: [['Link title', 'https://…']]
@@ -120,6 +122,13 @@ Add or change a command by editing the relevant file in `assets/js/data/`. Each 
 
 `summary`, `detail`, `note`, `when` and `subs` descriptions are rendered as HTML, so they are trusted
 content — keep them authored by hand rather than interpolating anything external.
+
+Every command receives a canonical example. Strong inline `examples` arrays are kept, while
+`assets/js/data/examples.js` supplies or corrects examples for argument-heavy, dynamic, and ambiguous
+commands. A command that normally opens a picker or acts on the current editor selection falls back
+to its bare token. Argument-bearing commands must have an authored example, enforced by the exporter.
+In the version 3 JSON schema, `canonicalExample` is also the first item in the ordered `examples`
+array; any remaining items are optional variants.
 
 After editing, regenerate the JSON and Markdown exports:
 

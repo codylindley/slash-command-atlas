@@ -15,6 +15,10 @@ Adjusts mouse-wheel speed with an interactive preview ruler.
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/scroll-speed`
+
 ## Related commands
 
 - [`/tui`](./tui.md)

@@ -11,6 +11,10 @@
 
 Displays session usage metrics, including per-model token totals.
 
+## Canonical example
+
+`/usage`
+
 ## Related commands
 
 - [`/context`](./context.md)

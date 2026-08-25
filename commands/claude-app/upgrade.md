@@ -16,6 +16,10 @@ When a browser cannot open, Claude Code shows a sign-in prompt instead. The comm
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/upgrade`
+
 ## Related commands
 
 - [`/usage-credits`](./usage-credits.md)

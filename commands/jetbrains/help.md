@@ -11,6 +11,10 @@
 
 Quick reference and basics of using Copilot.
 
+## Canonical example
+
+`/help`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

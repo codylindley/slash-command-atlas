@@ -13,6 +13,10 @@ Re-scans skill and legacy command directories without restarting.
 
 Reports the new total plus how many skills were added or removed, making newly created or edited skills available in the running session.
 
+## Canonical example
+
+`/reload-skills`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

@@ -13,9 +13,9 @@ Asks a quick side question without adding it to the conversation history.
 
 A scratchpad question that leaves no trace in the transcript — so it does not pollute the context of the task you are actually working on.
 
-## Examples
+## Canonical example
 
-- `/ask what does the -u flag do in git push?`
+`/ask what does the -u flag do in git push?`
 
 ## Related commands
 

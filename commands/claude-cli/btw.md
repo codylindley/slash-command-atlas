@@ -13,9 +13,9 @@ Asks a side question without adding it to the main conversation.
 
 A side answer can use the current session context but does not steer or enlarge the main transcript. Run bare to revisit recent side questions and answers.
 
-## Examples
+## Canonical example
 
-- `/btw which layer currently owns retry policy?`
+`/btw which layer currently owns retry policy?`
 
 ## Related commands
 

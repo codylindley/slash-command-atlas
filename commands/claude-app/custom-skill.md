@@ -14,6 +14,10 @@ Invokes a built-in, personal, project, synced, or plugin skill from Desktop.
 
 Type `/` in the prompt box or choose **+ → Slash commands** to browse what this session actually has. Desktop combines the shared Claude Code command inventory with skills from your account, machine, project, and installed plugins, so the runtime list can be larger than this fixed reference.
 
+## Canonical example
+
+`/review-api src/auth`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

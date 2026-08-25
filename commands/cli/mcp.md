@@ -22,6 +22,10 @@ Manages MCP server configuration.
 - `/mcp reload` — Reload server configuration
 - `/mcp search` — Find servers to add
 
+## Canonical example
+
+`/mcp list`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

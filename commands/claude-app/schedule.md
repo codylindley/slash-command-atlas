@@ -18,9 +18,9 @@ Describe the recurring automation you want and Claude walks through schedule, en
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/schedule review dependency updates every Monday at 9am`
+`/schedule review dependency updates every Monday at 9am`
 
 ## Related commands
 

@@ -13,9 +13,9 @@ Searches session history by keyword or topic.
 
 Finds the session where you solved this before. Given how much agentic work turns out to be re-solving something you half-remember, this is the subcommand that earns chronicle its place.
 
-## Examples
+## Canonical example
 
-- `/chronicle search flaky websocket test`
+`/chronicle search flaky websocket test`
 
 ## Related commands
 

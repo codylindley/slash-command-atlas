@@ -15,9 +15,9 @@ Repeats a prompt while the session remains open.
 
 Specify an interval such as `5m`, or let Claude self-pace where supported. With no prompt it runs an autonomous maintenance check, or the instructions in `.claude/loop.md` when present.
 
-## Examples
+## Canonical example
 
-- `/loop 5m check whether the deploy finished and report only changes`
+`/loop 5m check whether the deploy finished and report only changes`
 
 ## Related commands
 

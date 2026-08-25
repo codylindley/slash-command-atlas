@@ -11,6 +11,10 @@
 
 Proposes a fix for problems in the selected code.
 
+## Canonical example
+
+`/fix`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

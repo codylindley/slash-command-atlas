@@ -94,9 +94,12 @@ function renderCommandMarkdown(c, absoluteLinks, includeFooter) {
       lines.push('- ' + inlineCode(c.cmd.split(' ')[0] + ' ' + sub[0]) + ' — ' + toMarkdownText(sub[1]));
     });
   }
-  if (c.examples && c.examples.length) {
-    lines.push('', '## Examples', '');
-    c.examples.forEach(function (example) { lines.push('- ' + inlineCode(example)); });
+  if (c.canonicalExample) {
+    lines.push('', '## Canonical example', '', inlineCode(c.canonicalExample));
+  }
+  if (c.examples && c.examples.length > 1) {
+    lines.push('', '## More examples', '');
+    c.examples.slice(1).forEach(function (example) { lines.push('- ' + inlineCode(example)); });
   }
 
   const related = (c.related || []).map(function (key) {
@@ -259,7 +262,7 @@ const NAMED_HTML_ENTITIES = Object.freeze({
 });
 
 const out = {
-  schemaVersion: 2,
+  schemaVersion: 3,
   generated: generatedDate,
   dataCompiled: S.built,
   siteUrl: S.siteUrl,
@@ -295,6 +298,7 @@ const out = {
       comparisonEligible: !c.noCompare,
       summary: toPlainText(c.summary),
       summaryHtml: c.summary,
+      canonicalExample: c.canonicalExample,
       subcommands: (c.subs || []).map(function (p) {
         return { name: p[0], description: toPlainText(p[1]) };
       }),
@@ -379,6 +383,9 @@ function dataScriptsFromIndex(projectRoot, sourceDir) {
   if (missingFromIndex.length) errors.push('Data file not loaded by index.html: ' + missingFromIndex.join(', '));
   if (missingFromDisk.length) errors.push('index.html loads a missing data file: ' + missingFromDisk.join(', '));
   if (indexScripts[0] !== prefix + 'meta.js') errors.push('index.html must load ' + prefix + 'meta.js first');
+  if (indexScripts[1] !== prefix + 'examples.js') {
+    errors.push('index.html must load ' + prefix + 'examples.js immediately after meta.js');
+  }
 
   if (errors.length) {
     throw new Error('Data-script loader parity check failed:\n- ' + errors.join('\n- '));
@@ -486,8 +493,37 @@ function validate(data) {
       if (typeof item !== 'string') errors.push('Invalid when entry on command ' + at);
     });
     (Array.isArray(c.examples) ? c.examples : []).forEach(function (item) {
-      if (typeof item !== 'string') errors.push('Invalid example on command ' + at);
+      if (typeof item !== 'string' || !item.trim() || item.charAt(0) !== '/') {
+        errors.push('Invalid example on command ' + at + ': ' + item);
+      }
     });
+    if (!c.canonicalExample || !Array.isArray(c.examples) || !c.examples.length) {
+      errors.push('Command is missing a canonical example: ' + at);
+    } else {
+      if (c.examples[0] !== c.canonicalExample) {
+        errors.push('Canonical example must be first on command ' + at);
+      }
+      const argumentPlaceholders = String(c.args || '').match(/\b[A-Z][A-Z0-9_-]*\b/g) || [];
+      const exampleWords = c.canonicalExample.split(/\s+/);
+      if (c.canonicalExample.includes('<') || c.canonicalExample.includes('[') ||
+          c.canonicalExample.includes('{') ||
+          argumentPlaceholders.some(function (placeholder) {
+            return exampleWords.includes(placeholder);
+          })) {
+        errors.push('Canonical example contains a placeholder on command ' + at + ': ' + c.canonicalExample);
+      }
+      const knownNames = [c.cmd].concat(Array.isArray(c.aliases) ? c.aliases : []);
+      const usesKnownName = knownNames.some(function (name) {
+        return c.canonicalExample === name || c.canonicalExample.indexOf(name + ' ') === 0;
+      });
+      if (!(c.flags || []).includes('custom') && !usesKnownName) {
+        errors.push('Canonical example must use a documented command name on ' + at + ': ' +
+          c.canonicalExample);
+      }
+    }
+    if (c.args && !c._exampleExplicit) {
+      errors.push('Argument-bearing command needs an authored canonical example: ' + at);
+    }
     (Array.isArray(c.subs) ? c.subs : []).forEach(function (sub) {
       if (!Array.isArray(sub) || sub.length !== 2 || !sub[0] || typeof sub[1] !== 'string') {
         errors.push('Invalid subcommand entry on command ' + at);
@@ -496,6 +532,21 @@ function validate(data) {
     commandIds.add(c.id);
     commandKeys.add(at);
   });
+
+  if (!data.exampleOverrides || typeof data.exampleOverrides !== 'object' ||
+      Array.isArray(data.exampleOverrides)) {
+    errors.push('exampleOverrides must be an object');
+  } else {
+    Object.keys(data.exampleOverrides).forEach(function (at) {
+      const values = [].concat(data.exampleOverrides[at]);
+      if (!commandKeys.has(at)) errors.push('Example override targets an unknown command: ' + at);
+      if (!values.length || values.some(function (value) {
+        return typeof value !== 'string' || !value.trim() || value.charAt(0) !== '/';
+      })) {
+        errors.push('Invalid example override on ' + at);
+      }
+    });
+  }
 
   data.commands.forEach(function (c) {
     (Array.isArray(c.related) ? c.related : []).forEach(function (key) {

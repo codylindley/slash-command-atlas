@@ -17,9 +17,9 @@ The subagent inherits the full conversation and works in the background while yo
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/subtask trace where the legacy header is still emitted`
+`/subtask trace where the legacy header is still emitted`
 
 ## Related commands
 

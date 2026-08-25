@@ -14,6 +14,10 @@ Opens the extension’s feedback and problem-report dialog.
 
 The optional text prefills the report. Submission rules match `/bug`: direct on a first-party Anthropic connection, unavailable through a third-party provider, and no fallback local archive.
 
+## Canonical example
+
+`/feedback add keyboard navigation to the session picker`
+
 ## Related commands
 
 - [`/bug`](./bug.md)

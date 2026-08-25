@@ -14,6 +14,10 @@ Chooses the cloud environment for the chat.
 
 Opens the cloud-environment chooser. It selects where cloud work runs; `/cloud` is the separate command that switches execution mode.
 
+## Canonical example
+
+`/cloud-environment`
+
 ## Related commands
 
 - [`/cloud`](./cloud.md)

@@ -23,6 +23,10 @@ With no subcommand it generates a shareable GitHub link when you are logged in a
 - `/share gist [session|research]` — Create a GitHub gist
 - `/share research [PATH]` — Export the research report
 
+## Canonical example
+
+`/share file session`
+
 ## Related commands
 
 - [`/research`](./research.md)

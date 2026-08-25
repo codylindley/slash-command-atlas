@@ -14,6 +14,10 @@ Checks the current branch changes for security vulnerabilities.
 
 Reviews the diff against the origin default branch for risks such as injection, authorization failures, and data exposure.
 
+## Canonical example
+
+`/security-review`
+
 ## Related commands
 
 - [`/code-review`](./code-review.md)

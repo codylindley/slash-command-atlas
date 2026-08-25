@@ -13,6 +13,10 @@ Generates a launch.json configuration and starts a debugging session.
 
 Skips the part of debugging everyone dislikes: writing the launch configuration by hand.
 
+## Canonical example
+
+`/startDebugging`
+
 ## Related commands
 
 - [`/fix`](./fix.md)

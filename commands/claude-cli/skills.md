@@ -13,6 +13,10 @@ Lists skills and controls their visibility to you and Claude.
 
 Filter by name, press `t` to sort by token count, and use `Space` to cycle whether a skill appears to the model and in the slash menu before saving.
 
+## Canonical example
+
+`/skills`
+
 ## Related commands
 
 - [`/reload-skills`](./reload-skills.md)

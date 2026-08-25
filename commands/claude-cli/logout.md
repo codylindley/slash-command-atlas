@@ -11,6 +11,10 @@
 
 Signs out of the current Anthropic account.
 
+## Canonical example
+
+`/logout`
+
 ## Related commands
 
 - [`/login`](./login.md)

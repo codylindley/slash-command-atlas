@@ -13,9 +13,9 @@ Configures the information shown in the terminal status line.
 
 Describe the status line you want, or run bare to derive one from the current shell prompt.
 
-## Examples
+## Canonical example
 
-- `/statusline show model, context percent, branch, and elapsed time`
+`/statusline show model, context percent, branch, and elapsed time`
 
 ## Related commands
 

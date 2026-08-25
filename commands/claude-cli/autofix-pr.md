@@ -14,9 +14,9 @@ Starts a cloud session that watches this branch’s pull request.
 
 The cloud agent reacts to CI failures and review comments and pushes clear fixes. By default it handles every failure and comment; an optional prompt narrows its remit.
 
-## Examples
+## Canonical example
 
-- `/autofix-pr only fix lint and type errors`
+`/autofix-pr only fix lint and type errors`
 
 ## Related commands
 

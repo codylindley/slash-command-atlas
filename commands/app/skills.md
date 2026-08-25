@@ -13,6 +13,10 @@ Manages skills. Use /skills reload to reload them mid-session.
 
 Skills are packaged instructions that extend what the agent does well. This command lists and manages what is available, and the `reload` subcommand picks up edits without a restart — which is exactly what you want while you are authoring one.
 
+## Canonical example
+
+`/skills reload`
+
 ## Related commands
 
 - [`/agent`](./agent.md)

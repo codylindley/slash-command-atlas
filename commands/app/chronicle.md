@@ -13,6 +13,10 @@ Opens session history and analysis features.
 
 Chronicle is memory across sessions. Because the app is built on the Copilot CLI, it reads history from both app sessions and other CLI sessions, so a week of work is queryable in one place. Run it bare to open the interface, or go straight to a subcommand.
 
+## Canonical example
+
+`/chronicle`
+
 ## Related commands
 
 - [`/chronicle standup`](./chronicle-standup.md)

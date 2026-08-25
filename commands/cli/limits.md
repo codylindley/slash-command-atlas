@@ -18,6 +18,10 @@ Response limits are soft limits that reset for each user message — a guard aga
 - `/limits set max-ai-credits VALUE` — Soft maximum of AI Credits per response
 - `/limits unset [max-ai-credits|all]` — Remove one limit, or all of them
 
+## Canonical example
+
+`/limits set max-ai-credits 5`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

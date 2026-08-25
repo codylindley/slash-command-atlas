@@ -18,6 +18,10 @@ Claude compacts automatically when the context indicator approaches its limit; t
 - The context indicator is nearly full
 - A long debugging trail is crowding out the code that now matters
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/btw`](./btw.md)

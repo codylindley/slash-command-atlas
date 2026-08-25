@@ -14,9 +14,9 @@ Renames the cloud session from the conversation.
 
 Pass the name directly instead of opening the terminal naming UI. Claude normalizes invisible and control characters, caps names at 200 characters, and rejects a name that is empty after normalization.
 
-## Examples
+## Canonical example
 
-- `/rename checkout-race-investigation`
+`/rename checkout-race-investigation`
 
 ## Related commands
 

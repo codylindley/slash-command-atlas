@@ -13,6 +13,10 @@ Suggests improvements for your instructions file.
 
 Reads your history for the places the agent repeatedly needed correcting, then proposes edits to your custom instructions so it stops needing them. The natural follow-up to `/init` after a few weeks of real use.
 
+## Canonical example
+
+`/chronicle improve`
+
 ## Related commands
 
 - [`/init`](./init.md)

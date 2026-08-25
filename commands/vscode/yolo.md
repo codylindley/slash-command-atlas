@@ -16,6 +16,10 @@ Shows a warning dialog the first time, and for good reason: it approves every to
 
 > **Note:** This is a global setting, not a per-session one. `/disableYolo` turns it back off.
 
+## Canonical example
+
+`/yolo`
+
 ## Related commands
 
 - [`/disableYolo`](./disableYolo.md)

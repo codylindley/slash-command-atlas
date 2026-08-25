@@ -12,6 +12,10 @@
 
 Updates the CLI to the latest version.
 
+## Canonical example
+
+`/update`
+
 ## Related commands
 
 - [`/version`](./version.md)

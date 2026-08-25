@@ -12,6 +12,10 @@
 
 Adjusts mouse-wheel speed with an interactive preview ruler.
 
+## Canonical example
+
+`/scroll-speed`
+
 ## Related commands
 
 - [`/tui`](./tui.md)

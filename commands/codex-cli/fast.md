@@ -14,6 +14,10 @@ Toggles the model catalog's Fast service tier.
 
 Turns the current model's catalog-provided Fast tier on or off and persists the selection. Codex hides the command when the model does not advertise a Fast tier.
 
+## Canonical example
+
+`/fast`
+
 ## Related commands
 
 - [`/model`](./model.md)

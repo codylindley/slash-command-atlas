@@ -16,6 +16,10 @@ A first-party Anthropic connection can submit the confirmed report directly. On 
 
 > **Note:** Review the selected report context for secrets before submitting.
 
+## Canonical example
+
+`/bug MCP tools disappear after compaction`
+
 ## Related commands
 
 - [`/feedback`](./feedback.md)

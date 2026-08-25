@@ -14,6 +14,10 @@ Exits the Codex CLI immediately.
 
 Closes the interactive session. The two documented spellings behave the same; save or commit any important work first.
 
+## Canonical example
+
+`/exit`
+
 ## Related commands
 
 - [`/archive`](./archive.md)

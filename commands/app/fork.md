@@ -20,6 +20,10 @@ Branches the conversation. Both sessions keep everything up to the fork point an
 - Running a risky experiment you might want to throw away
 - Chasing a tangent without losing the main thread
 
+## Canonical example
+
+`/fork`
+
 ## Related commands
 
 - [`/merge-to-parent`](./merge-to-parent.md)

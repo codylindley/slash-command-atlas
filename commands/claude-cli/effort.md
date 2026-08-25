@@ -13,9 +13,12 @@ Sets or reports the model’s reasoning effort.
 
 Supports levels from `low` through `xhigh`, plus session-only `max` and `ultracode` where available. `auto` returns to the model default; bare invocation opens a slider.
 
-## Examples
+## Canonical example
 
-- `/effort high`
+`/effort high`
+
+## More examples
+
 - `/effort status`
 
 ## Related commands

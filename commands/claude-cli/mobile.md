@@ -12,6 +12,10 @@
 
 Shows a QR code for downloading the Claude mobile app.
 
+## Canonical example
+
+`/mobile`
+
 ## Related commands
 
 - [`/remote-control`](./remote-control.md)

@@ -11,6 +11,10 @@
 
 Resets the list of allowed tools.
 
+## Canonical example
+
+`/reset-allowed-tools`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

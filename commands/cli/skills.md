@@ -13,6 +13,10 @@ Manages skills for enhanced capabilities.
 
 `reload` picks up edits to a skill without restarting the session, which is what you want while authoring one.
 
+## Canonical example
+
+`/skills list`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

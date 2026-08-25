@@ -16,6 +16,10 @@ Bare `/mcp` on the web opens the claude.ai connectors directory. The `reconnect`
 
 > **Note:** This behavior is documented for the claude.ai/code client under Remote Control limitations; Anthropic does not separately state the cloud-session behavior.
 
+## Canonical example
+
+`/mcp`
+
 ## Related commands
 
 - [`/config`](./config.md)

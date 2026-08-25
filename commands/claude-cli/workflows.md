@@ -13,6 +13,10 @@ Opens the progress view for dynamic workflows.
 
 Watch running and completed workflows, pause or resume work, and save useful workflow definitions for reuse.
 
+## Canonical example
+
+`/workflows`
+
 ## Related commands
 
 - [`/deep-research`](./deep-research.md)

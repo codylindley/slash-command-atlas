@@ -16,6 +16,10 @@ The diagnostics JSON is intended for bug reports. The full `.heapsnapshot` conta
 
 > **Note:** Hidden from the command menu; type the complete command. Never upload the .heapsnapshot.
 
+## Canonical example
+
+`/heapdump`
+
 ## Related commands
 
 - [`/debug`](./debug.md)

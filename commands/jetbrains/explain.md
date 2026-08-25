@@ -11,6 +11,10 @@
 
 Explains how the code in your active editor works.
 
+## Canonical example
+
+`/explain`
+
 ## Related commands
 
 - [`/fix`](./fix.md)

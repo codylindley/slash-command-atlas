@@ -11,6 +11,10 @@
 
 Runs the code review agent to analyze changes.
 
+## Canonical example
+
+`/review focus on error handling and missing tests`
+
 ## Related commands
 
 - [`/security-review`](./security-review.md)

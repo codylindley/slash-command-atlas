@@ -13,6 +13,10 @@ Shows the help for interactive commands.
 
 The authoritative list for your build. Any reference, this one included, is a snapshot; `/help` is current.
 
+## Canonical example
+
+`/help`
+
 ## Related commands
 
 - [`/version`](./version.md)

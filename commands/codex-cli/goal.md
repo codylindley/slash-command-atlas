@@ -13,9 +13,12 @@ Sets, views, edits, pauses, resumes, or clears a task goal.
 
 Keeps a persistent objective attached to the active chat while work continues. The bare command shows the current goal; action arguments manage it. Objectives must be non-empty and no longer than 4,000 characters.
 
-## Examples
+## Canonical example
 
-- `/goal Finish the migration and keep tests green`
+`/goal Finish the migration and keep tests green`
+
+## More examples
+
 - `/goal pause`
 - `/goal clear`
 

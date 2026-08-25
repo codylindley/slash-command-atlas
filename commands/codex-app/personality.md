@@ -14,6 +14,10 @@ Chooses how Codex responds.
 
 Changes the response style for the current chat without replacing your task instructions. The command is available only when the current model supports personalities.
 
+## Canonical example
+
+`/personality`
+
 ## Related commands
 
 - [`/model`](./model.md)

@@ -13,6 +13,10 @@ Browses installed and discoverable plugins.
 
 Opens the plugin browser across the marketplace sources allowed by your configuration. You can inspect capabilities and available actions, and toggle the enabled state of an installed plugin from the browser.
 
+## Canonical example
+
+`/plugins`
+
 ## Related commands
 
 - [`/apps`](./apps.md)

@@ -13,6 +13,10 @@ Configures your custom agents.
 
 Custom agents define how the agent operates — its tools, its model, its instructions. A common use is a read-only planning agent that cannot edit anything.
 
+## Canonical example
+
+`/agents`
+
 ## Related commands
 
 - [`/create-agent`](./create-agent.md)

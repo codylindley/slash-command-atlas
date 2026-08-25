@@ -14,6 +14,10 @@ Closes the current session.
 
 If other sessions are running, this foregrounds the newest remaining one rather than quitting; the CLI only exits when this is the last open session. `/exit print` always tears the CLI down and offers to dump the transcript.
 
+## Canonical example
+
+`/exit`
+
 ## Related commands
 
 - [`/resume`](./resume.md)

@@ -16,6 +16,10 @@ Because availability depends on version, platform, plan, provider, and installed
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/help`
+
 ## Related commands
 
 - [`/release-notes`](./release-notes.md)

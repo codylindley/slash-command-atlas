@@ -16,6 +16,10 @@ Markdown files directly under `~/.codex/prompts/` appear dynamically in the IDE 
 
 > **Note:** OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting the extension.
 
+## Canonical example
+
+`/prompts:review-pr focus=security`
+
 ## Related commands
 
 - [`/init`](./init.md)

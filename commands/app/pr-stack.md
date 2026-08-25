@@ -16,6 +16,10 @@ For work too large to review as a single pull request. It splits the change into
 
 > **Note:** This is a built-in skill rather than an entry on the app’s slash command reference page. It appears in the picker when it applies.
 
+## Canonical example
+
+`/pr-stack`
+
 ## Related commands
 
 - [`/pr-open`](./pr-open.md)

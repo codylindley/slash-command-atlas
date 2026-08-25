@@ -13,9 +13,9 @@ Explains a code block, a file, or a programming concept.
 
 The workhorse. With a selection it explains that code; with nothing selected it explains the active file; with neither it will happily explain a concept. Pairs well with a `#` reference when the thing you want explained is not what is currently on screen.
 
-## Examples
+## Canonical example
 
-- `/explain what does this reducer do when the action is unknown?`
+`/explain what does this reducer do when the action is unknown?`
 
 ## Related commands
 

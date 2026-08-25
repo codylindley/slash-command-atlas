@@ -12,6 +12,10 @@
 
 Compresses the current CLI session context to keep a long session manageable.
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/chronicle`](./chronicle.md)

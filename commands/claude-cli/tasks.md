@@ -14,6 +14,10 @@ Lists and manages background work inside the current session.
 
 Includes running and completed subagents as well as background shell commands. This is session-local work; use agent view for whole background conversations.
 
+## Canonical example
+
+`/tasks`
+
 ## Related commands
 
 - [`/subtask`](./subtask.md)

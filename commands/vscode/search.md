@@ -13,9 +13,9 @@ Generates a search query for the Search view from natural language.
 
 Describe what you are looking for and it composes the regex or glob for you, then hands it to the Search view rather than answering itself.
 
-## Examples
+## Canonical example
 
-- `/search every call to fetch that does not check response.ok`
+`/search every call to fetch that does not check response.ok`
 
 ## Related commands
 

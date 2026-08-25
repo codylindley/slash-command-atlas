@@ -13,6 +13,10 @@ Quick reference and basics of using Copilot.
 
 > **Note:** Listed in GitHub’s cheat sheet for VS Code, Visual Studio, JetBrains and Xcode. It is not in the current VS Code reference — check the picker in your build.
 
+## Canonical example
+
+`/help`
+
 ## Also in other surfaces
 
 - [GitHub Copilot CLI — `/help`](../cli/help.md)

@@ -21,6 +21,10 @@ Opens the sharing dialog and prepares an uploaded snapshot. Personal accounts ca
 - You want to share a reproducible thread without giving someone access to the live project
 - A teammate needs the conversation and resulting diff, but not local tool or shell history
 
+## Canonical example
+
+`/share`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

@@ -14,9 +14,9 @@ Imports configuration from OpenAI Codex or Gemini CLI.
 
 Brings over instruction files, MCP servers, commands, subagents, and skills. `--dry-run` previews changes and `--yes` skips the interactive picker.
 
-## Examples
+## Canonical example
 
-- `/import codex --dry-run`
+`/import codex --dry-run`
 
 ## Related commands
 

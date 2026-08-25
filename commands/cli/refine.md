@@ -13,6 +13,10 @@ Rewrites a roughly composed prompt into a clearer one for review.
 
 Run it with no arguments (via `Ctrl`+`X` then `/refine`) to clean up whatever is currently in the input box. Particularly useful for prompts entered by speaking.
 
+## Canonical example
+
+`/refine add retries to the upload handler without changing its API`
+
 ## Related commands
 
 - [`/voice`](./voice.md)

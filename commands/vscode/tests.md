@@ -13,6 +13,10 @@ Generates tests for all, or only the selected, methods and functions.
 
 Select first to scope it. Generated tests are a starting point rather than a deliverable — they tend to cover the happy path thoroughly and the interesting cases less so.
 
+## Canonical example
+
+`/tests`
+
 ## Related commands
 
 - [`/setupTests`](./setupTests.md)

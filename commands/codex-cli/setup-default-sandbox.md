@@ -14,6 +14,10 @@ Sets up the elevated agent sandbox on Windows.
 
 Appears only when native Windows Codex is using the degraded restricted-token sandbox. It starts the administrator setup flow, configures the elevated sandbox, and selects the corresponding automatic approval preset.
 
+## Canonical example
+
+`/setup-default-sandbox`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

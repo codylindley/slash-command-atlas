@@ -19,6 +19,10 @@ A dialog lets you choose how much session history to include and confirm before 
 
 **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/bug MCP tools disappear after compaction`
+
 ## Related commands
 
 - [`/feedback`](./feedback.md)

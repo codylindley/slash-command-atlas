@@ -16,6 +16,10 @@ Custom prompts appear dynamically in the composer as `/prompts:<name>`. The conc
 
 > **Note:** Enabled skills also appear in the slash list, but the documented explicit invocation syntax for a skill is `$skill-name`, not a slash command.
 
+## Canonical example
+
+`/prompts:review-pr`
+
 ## Official sources
 
 - [ChatGPT desktop app slash commands](https://learn.chatgpt.com/docs/reference/slash-commands#available-slash-commands)

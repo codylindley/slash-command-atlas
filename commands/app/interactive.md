@@ -19,9 +19,9 @@ The most hands-on mode: the agent proposes changes and waits for your input as i
 - You want a tight feedback loop rather than a finished result
 - Taking back control partway through an autonomous run
 
-## Examples
+## Canonical example
 
-- `/interactive walk me through the auth middleware before we change anything`
+`/interactive walk me through the auth middleware before we change anything`
 
 ## Related commands
 

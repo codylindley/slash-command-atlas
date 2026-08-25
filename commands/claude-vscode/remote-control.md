@@ -17,6 +17,10 @@ The extension shows connection status above the prompt and can open the remote b
 
 > **Note:** Unlike the CLI form, VS Code accepts no custom name argument and does not display a QR code.
 
+## Canonical example
+
+`/remote-control`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

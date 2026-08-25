@@ -14,6 +14,10 @@ Enables or manages remote control of the current session.
 
 Lets you reach the session from GitHub.com or GitHub Mobile. CLI-session only.
 
+## Canonical example
+
+`/remote`
+
 ## Related commands
 
 - [`/chronicle`](./chronicle.md)

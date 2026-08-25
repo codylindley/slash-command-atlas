@@ -13,9 +13,9 @@ Renames the current chat.
 
 Updates the saved chat name without changing its transcript. Provide the name inline or invoke the bare command to open the naming prompt.
 
-## Examples
+## Canonical example
 
-- `/rename auth migration`
+`/rename auth migration`
 
 ## Related commands
 

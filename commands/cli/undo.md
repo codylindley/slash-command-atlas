@@ -14,6 +14,10 @@ Opens the rewind picker to roll the session back to an earlier turn.
 
 Choose **Conversation only** to roll back the discussion while leaving files as they are, or **Conversation + files** to also restore the files Copilot changed in that turn and any later discarded turns — skipping any you have edited yourself since. File changes are tracked per turn across editing tools, shell commands and subagents, so this does not require Git.
 
+## Canonical example
+
+`/undo`
+
 ## Related commands
 
 - [`/session`](./session.md)

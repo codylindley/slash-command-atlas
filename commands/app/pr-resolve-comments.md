@@ -14,6 +14,10 @@ Runs a prompt to resolve pull request review comments.
 
 Pulls the outstanding review threads and works through them one at a time. Good for mechanical feedback; still worth reading its replies before they land on a colleague’s thread.
 
+## Canonical example
+
+`/pr-resolve-comments`
+
 ## Related commands
 
 - [`/pr-fix-checks`](./pr-fix-checks.md)

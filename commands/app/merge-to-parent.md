@@ -14,6 +14,10 @@ Merges a forked session’s work back into the session it came from.
 
 The other half of `/fork`. Once the experiment in the fork has worked out, this folds it back into the parent so you can carry on in one place instead of maintaining two.
 
+## Canonical example
+
+`/merge-to-parent`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

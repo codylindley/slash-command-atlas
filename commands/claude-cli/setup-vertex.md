@@ -15,6 +15,10 @@ Configures Google Cloud authentication, project, region, and model pins.
 
 An interactive wizard hidden from autocomplete until the Google Cloud provider mode is enabled; type the full command to invoke it.
 
+## Canonical example
+
+`/setup-vertex`
+
 ## Related commands
 
 - [`/setup-bedrock`](./setup-bedrock.md)

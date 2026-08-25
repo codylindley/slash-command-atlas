@@ -23,6 +23,10 @@ Wipes the conversation so the next prompt starts clean. Reach for it when you sw
 - The context has been poisoned by a wrong turn
 - A long session has drifted away from what you actually want
 
+## Canonical example
+
+`/clear`
+
 ## Related commands
 
 - [`/restart-session`](./restart-session.md)

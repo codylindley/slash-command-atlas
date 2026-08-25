@@ -13,6 +13,10 @@ Helps set up a testing framework for your project.
 
 Recommends a framework suited to the codebase, walks through configuring it, and suggests relevant VS Code testing extensions. The command to run before `/tests` in a project that has no test setup yet.
 
+## Canonical example
+
+`/setupTests`
+
 ## Related commands
 
 - [`/tests`](./tests.md)

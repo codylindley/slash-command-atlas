@@ -21,9 +21,9 @@ Plan mode lets Claude inspect the codebase and propose an approach without editi
 - A change spans several files or has sequencing risk
 - You want to approve an approach before Claude starts editing
 
-## Examples
+## Canonical example
 
-- `/plan replace the session store without changing the public API`
+`/plan replace the session store without changing the public API`
 
 ## Related commands
 

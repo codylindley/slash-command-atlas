@@ -14,9 +14,9 @@ Copies this conversation into a separate background session.
 
 The copy inherits the conversation and can start immediately with an optional prompt while you keep working here. Where possible Claude asks the copy to isolate edits in its own worktree. Use `/subtask` when the result should return to this conversation instead.
 
-## Examples
+## Canonical example
 
-- `/fork investigate the flaky Windows test and report the cause`
+`/fork investigate the flaky Windows test and report the cause`
 
 ## Related commands
 

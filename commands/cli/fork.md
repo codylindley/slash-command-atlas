@@ -15,6 +15,10 @@ Forks the current session into a new one, optionally named.
 
 Both sessions share history up to the fork point and then diverge — useful for trying a second approach without losing the context that got you here.
 
+## Canonical example
+
+`/fork alternate-cache-design`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

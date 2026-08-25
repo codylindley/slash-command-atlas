@@ -18,6 +18,10 @@ Branches the current local conversation into a durable new chat while keeping th
 - You want to explore an alternative approach from the current context
 - The branch should be saved rather than temporary like `/side`
 
+## Canonical example
+
+`/fork`
+
 ## Related commands
 
 - [`/side`](./side.md)

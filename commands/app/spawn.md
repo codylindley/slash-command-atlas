@@ -13,9 +13,9 @@ Creates a focused child session for delegated work.
 
 Hands one well-defined subtask to its own session with its own context, keeping the parent’s context clean. It is the lightest of the three delegation commands: `/spawn` is one child, `/fleet` is many parallel workers, `/orchestrate` is a managed programme of work.
 
-## Examples
+## Canonical example
 
-- `/spawn write integration tests for the new webhook endpoint`
+`/spawn write integration tests for the new webhook endpoint`
 
 ## Related commands
 

@@ -11,6 +11,10 @@
 
 Starts a new chat session in the Chat view.
 
+## Canonical example
+
+`/clear`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

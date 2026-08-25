@@ -13,6 +13,10 @@ Initializes the repository with a CLAUDE.md project guide.
 
 Generates standing project context for future sessions. With `CLAUDE_CODE_NEW_INIT=1`, an interactive flow also covers skills, hooks, and personal memory; supported configuration from Codex or Gemini can be carried over through `/import`.
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/memory`](./memory.md)

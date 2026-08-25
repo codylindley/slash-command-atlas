@@ -13,6 +13,10 @@ Opens or creates the Claude Code keybindings configuration.
 
 Use the generated configuration file to remap terminal actions without confusing keyboard shortcuts with slash commands.
 
+## Canonical example
+
+`/keybindings`
+
 ## Related commands
 
 - [`/terminal-setup`](./terminal-setup.md)

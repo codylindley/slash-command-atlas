@@ -14,6 +14,10 @@ Chooses how Codex responds.
 
 Changes the response style without replacing the task instructions. Unsupported models do not expose the command.
 
+## Canonical example
+
+`/personality`
+
 ## Related commands
 
 - [`/model`](./model.md)

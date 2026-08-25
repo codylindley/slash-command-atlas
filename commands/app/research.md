@@ -13,9 +13,9 @@ Runs a research workflow and produces a cited report.
 
 A deeper investigation than an ordinary answer: the agent gathers sources, cross-checks them, and returns a written report with citations you can follow yourself. This is for the questions you would otherwise answer by opening fifteen browser tabs.
 
-## Examples
+## Canonical example
 
-- `/research how do teams handle zero-downtime Postgres major version upgrades?`
+`/research how do teams handle zero-downtime Postgres major version upgrades?`
 
 ## Related commands
 

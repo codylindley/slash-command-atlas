@@ -15,10 +15,13 @@ Starts or refocuses autopilot mode, optionally with an explicit objective.
 
 Without an objective, autopilot infers intent from context. You can cap spend for an objective with `--max-ai-credits N`; when the cap is reached autopilot pauses and reports credits used, and you either enter a new amount to resume with a fresh window or leave it paused. `/goal on` and `/goal off` toggle the mode without setting an objective.
 
-## Examples
+## Canonical example
 
-- `/goal Refactor the auth module --max-ai-credits 5`
-- `/autopilot get the integration tests green`
+`/autopilot get the integration tests green`
+
+## More examples
+
+- `/autopilot refactor the auth module --max-ai-credits 5`
 
 ## Related commands
 

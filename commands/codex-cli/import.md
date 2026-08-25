@@ -16,6 +16,10 @@ Opens the external-agent import picker and migrates the selected supported artif
 
 > **Note:** Unavailable while a task is running, in remote sessions, and while connected to the local app-server daemon.
 
+## Canonical example
+
+`/import`
+
 ## Related commands
 
 - [`/init`](./init.md)

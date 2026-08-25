@@ -20,6 +20,10 @@ Sandboxing restricts what shell commands, MCP and LSP servers, and the built-in 
 - `/sandbox policy` — The effective policy: path grants, denials, network access
 - `/sandbox enable / disable` — Turn sandboxing on or off
 
+## Canonical example
+
+`/sandbox policy`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

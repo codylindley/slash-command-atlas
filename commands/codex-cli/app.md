@@ -14,6 +14,10 @@ Continues the current session in the ChatGPT desktop app.
 
 Opens the same saved chat in the desktop app. If the app is not installed or running, Codex reports that it must be installed or launched.
 
+## Canonical example
+
+`/app`
+
 ## Related commands
 
 - [`/ide`](./ide.md)

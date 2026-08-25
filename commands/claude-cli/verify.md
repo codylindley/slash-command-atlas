@@ -14,6 +14,10 @@ Builds, runs, and observes the app to confirm a change works.
 
 A manual-only bundled skill for experiential verification. It is useful when passing tests cannot prove the UI, server, or end-to-end behavior is actually correct.
 
+## Canonical example
+
+`/verify`
+
 ## Related commands
 
 - [`/run`](./run.md)

@@ -11,6 +11,10 @@
 
 Scaffolds a new Jupyter notebook from your requirements.
 
+## Canonical example
+
+`/newNotebook`
+
 ## Related commands
 
 - [`/new`](./new.md)

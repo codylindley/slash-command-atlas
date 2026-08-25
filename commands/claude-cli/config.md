@@ -14,9 +14,9 @@ Opens settings or changes one or more settings directly.
 
 The interactive view covers theme, model, output style, editor behavior, and other preferences. Direct `key=value` assignments avoid the picker; `/config --help` lists supported keys and values.
 
-## Examples
+## Canonical example
 
-- `/config theme=dark thinking=false`
+`/config theme=dark thinking=false`
 
 ## Related commands
 

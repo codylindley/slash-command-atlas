@@ -14,6 +14,10 @@ Runs a prompt to address failing pull request checks.
 
 Reads the failing CI checks, reproduces locally what it can, and pushes fixes — the loop you would otherwise run by hand between the pull request page and your editor.
 
+## Canonical example
+
+`/pr-fix-checks`
+
 ## Related commands
 
 - [`/pr-open`](./pr-open.md)

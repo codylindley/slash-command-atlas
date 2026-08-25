@@ -16,6 +16,10 @@ Also identifies whether the session is ordinary interactive work or an attached 
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/status`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

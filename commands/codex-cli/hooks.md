@@ -13,6 +13,10 @@ Views and manages lifecycle hooks.
 
 Opens the hook browser by event so you can inspect matching handlers and trust, disable, or re-enable non-managed hooks. Managed hooks are shown as managed and cannot be disabled from this browser.
 
+## Canonical example
+
+`/hooks`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

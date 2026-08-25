@@ -14,6 +14,10 @@ Reviews changes in the current directory.
 
 Auto-switches to a branch diff when the working tree is clean.
 
+## Canonical example
+
+`/diff`
+
 ## Related commands
 
 - [`/review`](./review.md)

@@ -13,9 +13,9 @@ Adds another working directory for this session to access.
 
 Grants file access for the current session and fires `DirectoryAdded` hooks. Most `.claude/` configuration is not discovered from an added directory; skills are the notable exception.
 
-## Examples
+## Canonical example
 
-- `/add-dir ../shared-schema`
+`/add-dir ../shared-schema`
 
 ## Related commands
 

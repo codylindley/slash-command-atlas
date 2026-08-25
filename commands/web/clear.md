@@ -11,6 +11,10 @@
 
 Clears the conversation.
 
+## Canonical example
+
+`/clear`
+
 ## Related commands
 
 - [`/new`](./new.md)

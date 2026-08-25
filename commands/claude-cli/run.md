@@ -14,6 +14,10 @@ Launches and drives the project so you can see a change working.
 
 Verifies behavior in the running application instead of stopping at tests or type checks. A project-specific generated skill can teach it how to build, launch, and interact with your app.
 
+## Canonical example
+
+`/run`
+
 ## Related commands
 
 - [`/verify`](./verify.md)

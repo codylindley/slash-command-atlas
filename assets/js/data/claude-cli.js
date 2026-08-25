@@ -326,7 +326,7 @@
       examples: [
         '/code-review high --fix src/auth',
         '/review medium 1234',
-        '/code-review ultra --post 1234'
+        '/code-review ultra --comment 1234'
       ],
       related: ['security-review', 'simplify', 'diff'],
       docs: [D.review, D.commands]

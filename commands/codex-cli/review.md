@@ -13,6 +13,10 @@ Asks Codex to review the working tree.
 
 Starts a review focused on behavior changes and missing tests in the current working tree. It uses the current session model unless `review_model` is configured; use `/diff` to inspect the exact edits.
 
+## Canonical example
+
+`/review`
+
 ## Related commands
 
 - [`/diff`](./diff.md)

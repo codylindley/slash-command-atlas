@@ -14,9 +14,9 @@ Opens a terminal in the right panel, optionally running a command.
 
 Gives you a shell next to the agent, scoped to the session’s own worktree. Useful for checking the agent’s work yourself — running the tests, reading `git status` — without leaving the app or competing with the agent over the same working tree.
 
-## Examples
+## Canonical example
 
-- `/terminal npm test`
+`/terminal npm test`
 
 ## Related commands
 

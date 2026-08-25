@@ -13,9 +13,9 @@ Starts a new chat in the same CLI session.
 
 Creates a fresh chat without leaving the terminal. Optional text names it. Unlike `/clear`, `/new` leaves the current terminal view in place.
 
-## Examples
+## Canonical example
 
-- `/new bug bash`
+`/new bug bash`
 
 ## Related commands
 

@@ -14,9 +14,12 @@ Sets how full the context window gets before automatic compaction.
 
 Pass a window such as `500k`, or `auto` to return to the model-tuned default. Without an argument the command opens a dialog showing the current value and saves changes to user settings.
 
-## Examples
+## Canonical example
 
-- `/autocompact 500k`
+`/autocompact 500k`
+
+## More examples
+
 - `/autocompact auto`
 
 ## Related commands

@@ -17,9 +17,9 @@ Chooses an appropriate chart form, assigns color by semantic role, validates pal
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/dataviz redesign the retention dashboard for weekly cohorts`
+`/dataviz redesign the retention dashboard for weekly cohorts`
 
 ## Related commands
 

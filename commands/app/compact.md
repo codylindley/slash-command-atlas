@@ -20,6 +20,10 @@ Replaces older turns with a condensed summary, freeing up context window while k
 - `/context` shows you are close to the limit
 - Starting a substantial new subtask inside the same session
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/context`](./context.md)

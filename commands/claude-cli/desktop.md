@@ -15,6 +15,10 @@ Continues this session in the Claude Code Desktop app.
 
 Saves the conversation, opens it in the Code tab of Claude Desktop, and exits the terminal CLI.
 
+## Canonical example
+
+`/desktop`
+
 ## Related commands
 
 - [`/teleport`](./teleport.md)

@@ -12,6 +12,10 @@
 
 Shares an eligible free week of Claude Code with friends.
 
+## Canonical example
+
+`/passes`
+
 ## Related commands
 
 - [`/upgrade`](./upgrade.md)

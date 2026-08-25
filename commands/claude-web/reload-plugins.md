@@ -13,6 +13,10 @@ Reloads active plugins and returns the result as text.
 
 > **Note:** Listed among the text-output commands that work from web and mobile.
 
+## Canonical example
+
+`/reload-plugins`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

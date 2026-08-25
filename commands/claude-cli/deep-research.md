@@ -14,9 +14,9 @@ Fans a research question out across web-searching agents.
 
 A bundled dynamic workflow that fetches and cross-checks sources, then synthesizes a cited report. It runs only when you invoke it.
 
-## Examples
+## Canonical example
 
-- `/deep-research compare current browser isolation models for local coding agents`
+`/deep-research compare current browser isolation models for local coding agents`
 
 ## Related commands
 

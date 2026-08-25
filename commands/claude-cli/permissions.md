@@ -14,6 +14,10 @@ Manages allow, ask, and deny rules for tool use.
 
 The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Changes made while Claude is responding apply to its next tool call.
 
+## Canonical example
+
+`/permissions`
+
 ## Related commands
 
 - [`/sandbox`](./sandbox.md)

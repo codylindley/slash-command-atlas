@@ -14,9 +14,9 @@ Opens Settings → Claude Code; any text after the command is ignored.
 
 Unlike the CLI, Desktop accepts no `key=value` form: `/config theme=dark` does not set the theme. Change behavior through Settings or by editing the settings files Desktop shares with the CLI.
 
-## Examples
+## Canonical example
 
-- `/config theme=dark thinking=false`
+`/config`
 
 ## Related commands
 

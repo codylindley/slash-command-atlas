@@ -15,9 +15,9 @@ Creates, updates, lists, or runs cloud routines conversationally.
 
 Describe the recurring automation you want and Claude walks through schedule, environment, and task setup. You can also ask about recent routine runs.
 
-## Examples
+## Canonical example
 
-- `/schedule review dependency updates every Monday at 9am`
+`/schedule review dependency updates every Monday at 9am`
 
 ## Related commands
 

@@ -14,9 +14,9 @@ Detaches this whole session so it can keep running in the background.
 
 Frees the terminal and moves the conversation into agent view. An optional prompt sends one final instruction before detaching; monitor or reattach with `claude agents`.
 
-## Examples
+## Canonical example
 
-- `/bg finish the test run and summarize any failures`
+`/background finish the test run and summarize any failures`
 
 ## Related commands
 

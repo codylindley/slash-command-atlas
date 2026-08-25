@@ -12,6 +12,10 @@
 
 Manages CLI extensions.
 
+## Canonical example
+
+`/extensions manage`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

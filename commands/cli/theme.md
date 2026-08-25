@@ -11,6 +11,10 @@
 
 Views or sets the color mode.
 
+## Canonical example
+
+`/theme github`
+
 ## Related commands
 
 - [`/statusline`](./statusline.md)

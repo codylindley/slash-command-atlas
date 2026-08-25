@@ -17,6 +17,10 @@ Attach an artifact to the session, open it in a browser, or copy its link from t
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/artifacts`
+
 ## Related commands
 
 - [`/deep-research`](./deep-research.md)

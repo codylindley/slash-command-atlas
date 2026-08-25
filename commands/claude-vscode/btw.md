@@ -14,9 +14,9 @@ Opens a side question without adding it to the main conversation.
 
 The answer appears in a panel beside chat, supports follow-ups, and survives window reloads. VS Code retains the newest 20 exchanges and cleans old threads on the configured retention schedule.
 
-## Examples
+## Canonical example
 
-- `/btw why did we choose a write-through cache here?`
+`/btw why did we choose a write-through cache here?`
 
 ## Related commands
 

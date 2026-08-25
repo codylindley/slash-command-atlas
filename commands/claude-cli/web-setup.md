@@ -14,6 +14,10 @@ Connects GitHub to Claude Code on the web using local gh credentials.
 
 Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone repositories and push branches. `/schedule` offers this setup automatically when needed.
 
+## Canonical example
+
+`/web-setup`
+
 ## Related commands
 
 - [`/autofix-pr`](./autofix-pr.md)

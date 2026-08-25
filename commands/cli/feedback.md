@@ -12,6 +12,10 @@
 
 Provides feedback about the CLI.
 
+## Canonical example
+
+`/feedback`
+
 ## Related commands
 
 - [`/version`](./version.md)

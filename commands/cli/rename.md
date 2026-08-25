@@ -13,6 +13,10 @@ Renames the current session, auto-generating a name if omitted.
 
 An alias for `/session rename`.
 
+## Canonical example
+
+`/rename oauth-token-rotation`
+
 ## Related commands
 
 - [`/session`](./session.md)

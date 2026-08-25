@@ -15,9 +15,9 @@ Equivalent to **Cmd+;** on macOS or **Ctrl+;** on Windows. The side chat can rea
 
 > **Note:** Available in local, SSH, and WSL sessions only. Desktop does not save side chats to disk, so you cannot return to one after closing the app.
 
-## Examples
+## Canonical example
 
-- `/btw which layer currently owns retry policy?`
+`/btw which layer currently owns retry policy?`
 
 ## Related commands
 

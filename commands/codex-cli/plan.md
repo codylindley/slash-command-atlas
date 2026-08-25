@@ -14,9 +14,9 @@ Switches to plan mode and optionally sends a prompt.
 
 Moves the current chat into plan mode. Inline prompt text, pasted content, and images can seed the first planning request; the command is temporarily unavailable while Codex is already working.
 
-## Examples
+## Canonical example
 
-- `/plan Propose a migration plan for this service`
+`/plan Propose a migration plan for this service`
 
 ## Related commands
 

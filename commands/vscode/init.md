@@ -13,6 +13,10 @@ Generates or updates workspace instructions from your project structure.
 
 Writes `copilot-instructions.md` or `AGENTS.md` based on the project’s structure and coding patterns, so every later chat starts with your conventions already in context.
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/instructions`](./instructions.md)

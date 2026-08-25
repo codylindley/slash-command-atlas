@@ -13,6 +13,10 @@ Logs in to Copilot.
 
 You will be prompted for this if you start the CLI unauthenticated.
 
+## Canonical example
+
+`/login`
+
 ## Related commands
 
 - [`/logout`](./logout.md)

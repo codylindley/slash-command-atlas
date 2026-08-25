@@ -14,9 +14,9 @@ Finds installable MCP servers, tools, skills and agents by searching Agent Finde
 
 A search front end for the ecosystem: describe a capability you wish you had and it surfaces MCP servers, skills and agents you can install. This is the path from “I wish Copilot could talk to our issue tracker” to actually having that connector installed.
 
-## Examples
+## Canonical example
 
-- `/af something that can query a Postgres database`
+`/af something that can query a Postgres database`
 
 ## Related commands
 

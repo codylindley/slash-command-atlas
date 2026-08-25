@@ -14,9 +14,9 @@ Switches the cloud session to a named model.
 
 Pass the model directly instead of using the terminal picker.
 
-## Examples
+## Canonical example
 
-- `/model sonnet`
+`/model sonnet`
 
 ## Related commands
 

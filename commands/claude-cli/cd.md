@@ -14,9 +14,9 @@ Moves this session to another working directory without losing context.
 
 Keeps the conversation and prompt cache, asks for workspace trust when needed, and makes the moved session discoverable by later resume commands from the new directory. `Cd` permission rules can restrict targets.
 
-## Examples
+## Canonical example
 
-- `/cd ../service-api`
+`/cd ../service-api`
 
 ## Related commands
 

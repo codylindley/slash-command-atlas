@@ -13,6 +13,10 @@ Starts a new conversation.
 
 Note the divergence: on github.com `/new` starts a conversation, while in VS Code the same command scaffolds a project. Same token, entirely different outcome.
 
+## Canonical example
+
+`/new`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

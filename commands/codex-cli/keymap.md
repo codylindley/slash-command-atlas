@@ -18,6 +18,10 @@ Opens an interactive shortcut editor, applies the new binding immediately, and p
 - A default TUI shortcut conflicts with your terminal or editor
 - You want to inspect which action a key currently triggers
 
+## Canonical example
+
+`/keymap`
+
 ## Related commands
 
 - [`/vim`](./vim.md)

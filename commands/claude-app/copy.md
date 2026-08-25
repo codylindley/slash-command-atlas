@@ -16,9 +16,9 @@ Pass `N` to select the Nth-latest answer. When the response contains code blocks
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/copy 2`
+`/copy 2`
 
 ## Related commands
 

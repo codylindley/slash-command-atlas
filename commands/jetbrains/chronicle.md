@@ -14,6 +14,10 @@ Reviews and analyzes your session history.
 
 Available because you are running a Copilot CLI session inside JetBrains, not because the JetBrains plugin provides it. The same subcommands as the CLI: `standup`, `tips`, `search` and `improve`.
 
+## Canonical example
+
+`/chronicle standup`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

@@ -14,6 +14,10 @@ Opens the extension’s Account & usage dialog.
 
 Shows account and plan, session and weekly usage bars, reset timing, and local Day/Week attribution by skill, subagent, plugin, and MCP server. It also highlights behaviors responsible for at least 10% of recent use.
 
+## Canonical example
+
+`/usage`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

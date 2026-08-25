@@ -13,6 +13,10 @@ Configures your reusable prompt files.
 
 Prompt files turn a prompt you keep retyping into a command. Once saved, a prompt file is invocable as `/its-name`.
 
+## Canonical example
+
+`/prompts`
+
 ## Related commands
 
 - [`/create-prompt`](./create-prompt.md)

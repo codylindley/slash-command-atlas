@@ -13,6 +13,10 @@ Shows loaded environment details.
 
 Instructions, MCP servers, skills, agents, hooks, plugins, LSPs and extensions — everything currently influencing the agent, in one place. The first command to run when the agent behaves in a way you cannot explain.
 
+## Canonical example
+
+`/env`
+
 ## Related commands
 
 - [`/instructions`](./instructions.md)

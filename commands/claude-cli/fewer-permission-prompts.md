@@ -16,6 +16,10 @@ Scans transcripts for common Bash and MCP calls, prioritizes safe read-only patt
 
 > **Note:** Review the proposed rules before accepting them; repetition does not make a command harmless.
 
+## Canonical example
+
+`/fewer-permission-prompts`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

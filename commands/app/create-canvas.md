@@ -14,9 +14,9 @@ Invokes the canvas-authoring skill.
 
 Canvases are custom, agent-driven interfaces in the app’s side panel — dashboards, diagrams, triage boards — that you and the agent can both act on. This command builds one out of the conversation, turning a discussion into a small purpose-built tool.
 
-## Examples
+## Canonical example
 
-- `/create-canvas a board of the open PRs in this repo grouped by review state`
+`/create-canvas a board of the open PRs in this repo grouped by review state`
 
 ## Related commands
 

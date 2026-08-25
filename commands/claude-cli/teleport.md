@@ -15,6 +15,10 @@ Pulls a Claude Code on the web session into this terminal.
 
 Opens a cloud-session picker, fetches the session branch, and loads a local copy of the conversation. The local and cloud copies diverge after teleporting.
 
+## Canonical example
+
+`/teleport`
+
 ## Related commands
 
 - [`/remote-control`](./remote-control.md)

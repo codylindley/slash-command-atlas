@@ -14,6 +14,10 @@ Runs the chat in the cloud.
 
 Switches the Codex chat from the local workspace to available cloud execution. Use `/cloud-environment` to choose the backing environment.
 
+## Canonical example
+
+`/cloud`
+
 ## Related commands
 
 - [`/cloud-environment`](./cloud-environment.md)

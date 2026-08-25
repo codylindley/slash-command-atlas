@@ -13,6 +13,10 @@ Starts code review mode for uncommitted changes or a base-branch comparison.
 
 Opens the review workflow and lets you inspect either local uncommitted work or the branch difference from a selected base branch.
 
+## Canonical example
+
+`/review`
+
 ## Related commands
 
 - [`/approve`](./approve.md)

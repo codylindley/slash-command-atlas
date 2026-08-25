@@ -16,6 +16,10 @@ Deletes the local transcript, closes the TUI, and also removes spawned descendan
 
 > **Note:** **Permanent:** unlike `/archive`, this does not retain a restorable transcript.
 
+## Canonical example
+
+`/delete`
+
 ## Related commands
 
 - [`/archive`](./archive.md)

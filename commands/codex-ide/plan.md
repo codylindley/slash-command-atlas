@@ -18,6 +18,10 @@ Switches the chat into or out of a planning workflow so you can work through the
 - A task spans several files or contains unresolved design choices
 - You want to review an approach before Codex starts editing
 
+## Canonical example
+
+`/plan`
+
 ## Related commands
 
 - [`/goal`](./goal.md)

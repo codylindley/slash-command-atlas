@@ -11,6 +11,10 @@
 
 Copies the last response to the clipboard.
 
+## Canonical example
+
+`/copy`
+
 ## Related commands
 
 - [`/share`](./share.md)

@@ -13,9 +13,12 @@ Keeps Claude working across turns until a stated condition is met.
 
 Run bare to inspect the active or most recently achieved goal. `clear`, `stop`, `off`, `reset`, `none`, and `cancel` all end an active goal early.
 
-## Examples
+## Canonical example
 
-- `/goal all unit and integration tests pass`
+`/goal all unit and integration tests pass`
+
+## More examples
+
 - `/goal clear`
 
 ## Related commands

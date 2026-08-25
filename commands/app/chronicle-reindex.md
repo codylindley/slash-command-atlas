@@ -13,6 +13,10 @@ Rebuilds the chronicle session index.
 
 Maintenance. Run it when search results look stale or incomplete, or after sessions have been moved around.
 
+## Canonical example
+
+`/chronicle reindex`
+
 ## Related commands
 
 - [`/chronicle`](./chronicle.md)

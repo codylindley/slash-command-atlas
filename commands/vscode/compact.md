@@ -13,6 +13,10 @@ Compacts the conversation context by summarizing it.
 
 For when a conversation has grown past what the model’s context window can hold comfortably.
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

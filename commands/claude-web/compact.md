@@ -13,9 +13,9 @@ Summarizes the cloud conversation to free context-window space.
 
 The web surface supports the same optional focus text as the CLI, so you can name what the summary must preserve instead of accepting a generic compression.
 
-## Examples
+## Canonical example
 
-- `/compact keep the test output`
+`/compact keep the test output`
 
 ## Related commands
 

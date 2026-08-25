@@ -17,9 +17,9 @@ Specify an interval such as `5m`, or let Claude self-pace where supported. With 
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/loop 5m check whether the deploy finished and report only changes`
+`/loop 5m check whether the deploy finished and report only changes`
 
 ## Related commands
 

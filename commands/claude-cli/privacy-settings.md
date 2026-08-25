@@ -12,6 +12,10 @@
 
 Views and updates Claude Code privacy settings.
 
+## Canonical example
+
+`/privacy-settings`
+
 ## Related commands
 
 - [`/bug`](./bug.md)

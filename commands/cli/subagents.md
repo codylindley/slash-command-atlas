@@ -14,6 +14,10 @@ Configures default and per-agent subagent models.
 
 Lets you run subagents on a cheaper or faster model than the main session — often the single biggest lever on the cost of a parallel run.
 
+## Canonical example
+
+`/subagents`
+
 ## Related commands
 
 - [`/fleet`](./fleet.md)

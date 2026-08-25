@@ -18,6 +18,10 @@ Starts the in-app feedback flow so you can describe a problem or share product f
 - A Codex action behaved unexpectedly
 - You want to report a reproducible app or agent issue and attach diagnostics
 
+## Canonical example
+
+`/feedback`
+
 ## Related commands
 
 - [`/status`](./status.md)

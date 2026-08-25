@@ -13,6 +13,10 @@ Delegates changes to a remote repository with an AI-generated pull request.
 
 Hands the task to the cloud coding agent rather than doing it locally, and the result arrives as a pull request.
 
+## Canonical example
+
+`/delegate add OAuth login and open a pull request`
+
 ## Related commands
 
 - [`/pr`](./pr.md)

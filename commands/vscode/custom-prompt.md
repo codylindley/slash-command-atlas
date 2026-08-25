@@ -12,6 +12,10 @@
 
 Runs one of your reusable prompt files by name.
 
+## Canonical example
+
+`/create-release-notes`
+
 ## Related commands
 
 - [`/prompts`](./prompts.md)

@@ -13,6 +13,10 @@ Lets Claude consult a second model for guidance during a task.
 
 Choose `fable`, `opus`, `sonnet`, or a full model ID, or pass `off`. Without an argument the command opens a picker.
 
+## Canonical example
+
+`/advisor opus`
+
 ## Related commands
 
 - [`/model`](./model.md)

@@ -16,6 +16,10 @@ Removes the session from active lists and closes the TUI while retaining the tra
 
 > **Note:** Archiving retains the transcript. Use `/delete` only when you intend permanent removal.
 
+## Canonical example
+
+`/archive`
+
 ## Related commands
 
 - [`/delete`](./delete.md)

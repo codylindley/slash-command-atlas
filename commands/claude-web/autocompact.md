@@ -14,9 +14,9 @@ Changes the auto-compact window for this cloud environment.
 
 Pass a token count, or `auto` to restore the model-tuned window. With no argument, web and mobile print the current window size instead of opening a terminal dialog. The command only takes effect when `CLAUDE_CODE_AUTO_COMPACT_WINDOW` is not already set in the cloud environment; the web-managed percentage override remains separate.
 
-## Examples
+## Canonical example
 
-- `/autocompact 500k`
+`/autocompact 500k`
 
 ## Related commands
 

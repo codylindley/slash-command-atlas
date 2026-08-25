@@ -19,6 +19,10 @@ Run bare for the plugin menu or use direct subcommands such as `list`, `install`
 - `/plugin install` — Install from a configured marketplace
 - `/plugin enable / disable` — Change plugin activation
 
+## Canonical example
+
+`/plugin list`
+
 ## Related commands
 
 - [`/reload-plugins`](./reload-plugins.md)

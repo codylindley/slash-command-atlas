@@ -13,6 +13,10 @@ Connects to an IDE workspace.
 
 Links the CLI session to an open editor so the two share context — your selection and open files become available to the agent.
 
+## Canonical example
+
+`/ide`
+
 ## Related commands
 
 - [`/app`](./app.md)

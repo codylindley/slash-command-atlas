@@ -13,6 +13,10 @@ Chooses a project for new chats.
 
 Selects the project that future chats will use. The reference scopes the selection to new chats rather than moving the active one.
 
+## Canonical example
+
+`/project`
+
 ## Related commands
 
 - [`/local`](./local.md)

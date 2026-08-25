@@ -14,6 +14,10 @@ Starts a new conversation.
 
 Discards the current conversation and begins fresh, optionally with the first prompt supplied inline.
 
+## Canonical example
+
+`/clear review the caching layer from scratch`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

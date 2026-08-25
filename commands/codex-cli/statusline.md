@@ -18,6 +18,10 @@ Opens an interactive picker to toggle and reorder status-line items, updates the
 - You want model, context, rate-limit, Git, token, session, or path information always visible
 - The default footer is too sparse or too crowded
 
+## Canonical example
+
+`/statusline`
+
 ## Related commands
 
 - [`/title`](./title.md)

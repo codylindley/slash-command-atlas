@@ -14,9 +14,9 @@ Enables session debug logging and investigates the resulting log.
 
 If logging was not already enabled at launch, it starts at invocation time. An optional issue description focuses the diagnosis on the behavior you are seeing.
 
-## Examples
+## Canonical example
 
-- `/debug MCP tools disappear after compaction`
+`/debug MCP tools disappear after compaction`
 
 ## Related commands
 

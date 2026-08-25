@@ -19,9 +19,9 @@ Where `/rubber-duck` reviews, `/spar` argues. It plays devil’s advocate agains
 - Sanity-checking a migration before you commit to it
 - You suspect you have talked yourself into something
 
-## Examples
+## Canonical example
 
-- `/spar we want to cache sessions in Redis with a 24h TTL — what breaks?`
+`/spar we want to cache sessions in Redis with a 24h TTL — what breaks?`
 
 ## Related commands
 

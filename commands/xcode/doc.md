@@ -11,6 +11,10 @@
 
 Generates documentation for this symbol.
 
+## Canonical example
+
+`/doc`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

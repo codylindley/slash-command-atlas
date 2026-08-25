@@ -18,6 +18,10 @@ Displays staged changes, unstaged changes, and files Git has not started trackin
 - You want to inspect the exact edits before committing
 - A review finding needs to be checked against the underlying patch
 
+## Canonical example
+
+`/diff`
+
 ## Related commands
 
 - [`/review`](./review.md)

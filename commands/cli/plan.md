@@ -13,9 +13,9 @@ Creates an implementation plan before coding.
 
 The CLI equivalent of the app’s Plan mode: the agent researches and writes out an approach for you to approve before it starts editing.
 
-## Examples
+## Canonical example
 
-- `/plan migrate the config loader from JSON to TOML`
+`/plan migrate the config loader from JSON to TOML`
 
 ## Related commands
 

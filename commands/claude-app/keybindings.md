@@ -16,6 +16,10 @@ Use the generated configuration file to remap terminal actions without confusing
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/keybindings`
+
 ## Related commands
 
 - [`/terminal-setup`](./terminal-setup.md)

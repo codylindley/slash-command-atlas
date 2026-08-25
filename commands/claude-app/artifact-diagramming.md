@@ -15,6 +15,10 @@ Loads diagramming guidance for visual artifacts.
 
 This bundled skill appears in the live Desktop Code picker but is not listed in Anthropic’s fixed command table. Its availability can vary with Desktop build, plan, and synced skills.
 
+## Canonical example
+
+`/artifact-diagramming`
+
 ## Related commands
 
 - [`/artifacts`](./artifacts.md)

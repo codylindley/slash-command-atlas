@@ -20,6 +20,10 @@ Opens the subagent-thread picker so you can inspect or continue work spawned ins
 - A subagent has results you want to inspect directly
 - You need to continue a spawned thread rather than the parent chat
 
+## Canonical example
+
+`/subagents`
+
 ## Related commands
 
 - [`/agents`](./agents.md)

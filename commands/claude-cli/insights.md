@@ -14,6 +14,10 @@ Generates an HTML report about recent local Claude Code usage.
 
 Analyzes projects, interaction patterns, friction points, and underused features from sessions on this machine.
 
+## Canonical example
+
+`/insights`
+
 ## Related commands
 
 - [`/team-onboarding`](./team-onboarding.md)

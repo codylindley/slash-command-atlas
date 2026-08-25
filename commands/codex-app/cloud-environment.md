@@ -19,6 +19,10 @@ Opens the environment chooser for cloud-backed work. This selects where a cloud 
 - The workspace has more than one cloud environment
 - A task needs dependencies or configuration from a particular environment
 
+## Canonical example
+
+`/cloud-environment`
+
 ## Related commands
 
 - [`/cloud`](./cloud.md)

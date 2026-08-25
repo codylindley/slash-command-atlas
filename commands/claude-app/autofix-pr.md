@@ -17,9 +17,9 @@ The cloud agent reacts to CI failures and review comments and pushes clear fixes
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/autofix-pr only fix lint and type errors`
+`/autofix-pr only fix lint and type errors`
 
 ## Related commands
 

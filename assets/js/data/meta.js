@@ -5,9 +5,26 @@ window.SLASH = {
   commands: [],
   register(surface, list) {
     list.forEach((c, i) => {
+      var route = surface + '/' + c.key;
+      var authoredExamples = Array.isArray(c.examples) ? c.examples.slice() : [];
+      var hasExplicitMarker = Object.prototype.hasOwnProperty.call(c, '_exampleExplicit');
+      var hasOverride = this.exampleOverrides &&
+        Object.prototype.hasOwnProperty.call(this.exampleOverrides, route);
+      var examples = hasOverride
+        ? [].concat(this.exampleOverrides[route])
+        : (authoredExamples.length ? authoredExamples : [c.cmd]);
+
       c.surface = surface;
       c.id = surface + '-' + c.key;
       c.order = i;
+      c.examples = examples.filter((example, index) => examples.indexOf(example) === index);
+      c.canonicalExample = c.examples[0];
+      Object.defineProperty(c, '_exampleExplicit', {
+        value: Boolean(hasOverride ||
+          (hasExplicitMarker ? c._exampleExplicit : authoredExamples.length)),
+        enumerable: false,
+        configurable: true
+      });
       this.commands.push(c);
     });
   }

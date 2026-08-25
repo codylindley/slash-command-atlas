@@ -13,6 +13,10 @@ Forks the chat session into a new independent session that inherits the full his
 
 Lets you branch off to try something without losing the thread you were on.
 
+## Canonical example
+
+`/fork`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

@@ -11,6 +11,10 @@
 
 Views and manages tasks — subagents and shell commands.
 
+## Canonical example
+
+`/tasks`
+
 ## Related commands
 
 - [`/fleet`](./fleet.md)

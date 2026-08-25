@@ -18,6 +18,10 @@ Scans transcripts for common Bash and MCP calls, prioritizes safe read-only patt
 
 **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/fewer-permission-prompts`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

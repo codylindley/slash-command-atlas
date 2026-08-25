@@ -18,6 +18,10 @@ Switches the chat into a review workflow and lets you choose between inspecting 
 - You want findings on the current working tree before committing
 - You want to review the complete branch diff against its base
 
+## Canonical example
+
+`/review`
+
 ## Related commands
 
 - [`/approve`](./approve.md)

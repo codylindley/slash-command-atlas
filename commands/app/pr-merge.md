@@ -14,6 +14,10 @@ Merges the current pull request into its target branch.
 
 The end of the pipeline: open, fix the checks, resolve the comments, merge. It requires the pull request to actually be mergeable, so failing checks or conflicts have to be dealt with first.
 
+## Canonical example
+
+`/pr-merge`
+
 ## Related commands
 
 - [`/pr-open`](./pr-open.md)

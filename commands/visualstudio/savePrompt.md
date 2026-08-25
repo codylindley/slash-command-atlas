@@ -13,6 +13,10 @@ Extracts a reusable prompt from the current conversation.
 
 Saves the result under `.github/prompts/` as a `.prompt.md` file so it can be reviewed, committed, and invoked again.
 
+## Canonical example
+
+`/savePrompt review-api-changes`
+
 ## Related commands
 
 - [`/generateInstructions`](./generateInstructions.md)

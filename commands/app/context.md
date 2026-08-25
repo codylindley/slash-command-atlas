@@ -13,6 +13,10 @@ Shows the current session’s context usage.
 
 A breakdown of what is filling the context window: instructions, attached files, conversation history, tool output. This is the diagnostic you run before choosing between `/compact`, `/clear`, and detaching something you no longer need.
 
+## Canonical example
+
+`/context`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

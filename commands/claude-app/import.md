@@ -17,9 +17,9 @@ Brings over instruction files, MCP servers, commands, subagents, and skills. `--
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/import codex --dry-run`
+`/import codex --dry-run`
 
 ## Related commands
 

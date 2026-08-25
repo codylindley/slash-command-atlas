@@ -21,6 +21,10 @@ Activates automatically for Anthropic SDK imports, or invoke a focused workflow:
 - `/claude-api managed-agents-onboard` — Create and configure a Managed Agent
 - `/claude-api prompt-audit` — Find model-era assumptions in prompts and tool descriptions
 
+## Canonical example
+
+`/claude-api migrate`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

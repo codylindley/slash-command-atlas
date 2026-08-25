@@ -13,9 +13,9 @@ Exports the current conversation as plain text.
 
 With a filename it writes directly; without one it opens a dialog to copy the transcript or save it to a file.
 
-## Examples
+## Canonical example
 
-- `/export auth-investigation.txt`
+`/export auth-investigation.txt`
 
 ## Related commands
 

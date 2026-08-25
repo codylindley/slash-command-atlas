@@ -13,6 +13,10 @@ Downloads and restarts into a specific CLI version.
 
 > **Note:** Available for team accounts.
 
+## Canonical example
+
+`/downgrade 1.0.70`
+
 ## Related commands
 
 - [`/update`](./update.md)

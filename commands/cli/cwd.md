@@ -14,6 +14,10 @@ Changes the working directory, or displays the current one.
 
 Lets you move the session to a different part of the codebase without starting over.
 
+## Canonical example
+
+`/cwd ../service-api`
+
 ## Related commands
 
 - [`/add-dir`](./add-dir.md)

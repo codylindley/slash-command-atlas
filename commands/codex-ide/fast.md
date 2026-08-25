@@ -14,6 +14,10 @@ Turns a catalog-provided Fast service tier on or off.
 
 Toggles Fast for the current model when that service tier is exposed by the model catalog. Availability is model-dependent.
 
+## Canonical example
+
+`/fast`
+
 ## Related commands
 
 - [`/model`](./model.md)

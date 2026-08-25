@@ -17,6 +17,10 @@ Anthropic names `/permissions` as the example of its general rule: built-ins tha
 
 > **Note:** Use the mode selector next to the send button for per-session permission modes.
 
+## Canonical example
+
+`/permissions`
+
 ## Related commands
 
 - [`/sandbox`](./sandbox.md)

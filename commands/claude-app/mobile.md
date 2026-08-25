@@ -15,6 +15,10 @@ Shows a QR code for downloading the Claude mobile app.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/mobile`
+
 ## Related commands
 
 - [`/remote-control`](./remote-control.md)

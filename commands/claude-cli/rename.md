@@ -13,9 +13,9 @@ Renames the current session, or generates a name from its history.
 
 Names appear in the prompt bar and session lists. Claude Code removes invisible control characters, caps names at 200 characters, and disambiguates a name already used by another live session.
 
-## Examples
+## Canonical example
 
-- `/rename oauth-token-rotation`
+`/rename oauth-token-rotation`
 
 ## Related commands
 

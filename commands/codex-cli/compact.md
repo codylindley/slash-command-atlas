@@ -18,6 +18,10 @@ Replaces earlier turns with a concise summary so a long session can continue whi
 - The context shown by `/status` is getting tight
 - You need to continue the same task but no longer need every old turn verbatim
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/status`](./status.md)

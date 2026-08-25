@@ -14,6 +14,10 @@ Chooses or hides an ambient terminal pet.
 
 Opens the pet picker for built-in and custom pets and persists the selection in supported terminals. Pass `off` to hide the current pet.
 
+## Canonical example
+
+`/pets`
+
 ## Related commands
 
 - [`/theme`](./theme.md)

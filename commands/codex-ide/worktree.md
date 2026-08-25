@@ -18,6 +18,10 @@ Creates an isolated worktree for the chat so it can edit the same repository wit
 - Parallel chats need filesystem isolation in the same repository
 - Experimental work should live in a separate Git worktree
 
+## Canonical example
+
+`/worktree`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

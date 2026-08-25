@@ -11,6 +11,10 @@
 
 Creates a unit test for the current code selection.
 
+## Canonical example
+
+`/tests`
+
 ## Related commands
 
 - [`/doc`](./doc.md)

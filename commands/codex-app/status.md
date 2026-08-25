@@ -13,6 +13,10 @@ Shows the chat ID, context usage, and rate limits.
 
 Displays the key runtime facts for the current chat. It is the quick diagnostic for identifying the chat and checking both context pressure and current rate-limit information.
 
+## Canonical example
+
+`/status`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

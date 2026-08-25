@@ -13,6 +13,10 @@ Manages the language server configuration.
 
 Language servers give the agent real symbol information rather than guesses from text. `logs` opens a live log panel for the LSP services.
 
+## Canonical example
+
+`/lsp show`
+
 ## Related commands
 
 - [`/env`](./env.md)

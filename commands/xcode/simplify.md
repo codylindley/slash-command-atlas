@@ -13,6 +13,10 @@ Simplifies the current code selection.
 
 Unique to Xcode. Closest in spirit to Visual Studio’s `/optimize`, but aimed at readability rather than running time.
 
+## Canonical example
+
+`/simplify`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

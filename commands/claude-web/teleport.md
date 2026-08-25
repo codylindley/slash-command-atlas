@@ -14,6 +14,10 @@ Prints the exact CLI command for continuing this cloud session locally.
 
 From inside the cloud session, this returns a ready-to-run `claude --teleport <session-id>` command. The actual branch fetch and conversation handoff happen after you run that command in a matching local checkout.
 
+## Canonical example
+
+`/teleport`
+
 ## Related commands
 
 - [`/rename`](./rename.md)

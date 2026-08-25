@@ -11,6 +11,10 @@
 
 Adds a documentation comment for this symbol.
 
+## Canonical example
+
+`/doc`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

@@ -16,6 +16,10 @@ Filter by name, press `t` to sort by token count, and use `Space` to cycle wheth
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/skills`
+
 ## Related commands
 
 - [`/reload-skills`](./reload-skills.md)

@@ -13,9 +13,9 @@ Compacts the Desktop conversation to free context-window space.
 
 Desktop compacts automatically when context fills and continues working. Invoke this earlier when a long session starts carrying more history than the current task needs; optional focus text names what the summary must preserve.
 
-## Examples
+## Canonical example
 
-- `/compact keep the migration decisions and the latest failing test output`
+`/compact keep the migration decisions and the latest failing test output`
 
 ## Related commands
 

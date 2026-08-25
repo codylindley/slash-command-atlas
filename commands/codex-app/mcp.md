@@ -18,6 +18,10 @@ Displays the Model Context Protocol connections available to the chat. It is the
 - A tool backed by an MCP server is missing or unavailable
 - You want to inspect the chat's current external-tool connections
 
+## Canonical example
+
+`/mcp`
+
 ## Related commands
 
 - [`/status`](./status.md)

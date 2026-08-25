@@ -13,6 +13,10 @@ Opens the feedback dialog, with an option to include logs.
 
 Starts the extension feedback flow so you can report a problem or share product feedback and optionally attach diagnostics.
 
+## Canonical example
+
+`/feedback`
+
 ## Related commands
 
 - [`/status`](./status.md)

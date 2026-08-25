@@ -14,9 +14,9 @@ Exports the conversation as Markdown.
 
 Without a path, opens the destination flow for copying or saving the transcript. A path can be absolute, relative to the current directory, or home-relative; Codex refuses to overwrite an existing file.
 
-## Examples
+## Canonical example
 
-- `/export notes/auth-investigation.md`
+`/export notes/auth-investigation.md`
 
 ## Related commands
 

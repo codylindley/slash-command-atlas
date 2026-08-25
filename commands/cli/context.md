@@ -11,6 +11,10 @@
 
 Shows context window token usage and a visualization of it.
 
+## Canonical example
+
+`/context`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

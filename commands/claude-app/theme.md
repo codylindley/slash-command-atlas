@@ -16,6 +16,10 @@ Includes automatic light/dark matching, colorblind-accessible variants, ANSI-pal
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/theme`
+
 ## Related commands
 
 - [`/color`](./color.md)

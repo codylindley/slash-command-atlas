@@ -16,6 +16,10 @@ Applies plugin changes without restarting. If changed MCP tools would invalidate
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/reload-plugins`
+
 ## Related commands
 
 - [`/plugin`](./plugin.md)

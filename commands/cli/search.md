@@ -13,6 +13,10 @@
 
 Searches the conversation timeline.
 
+## Canonical example
+
+`/search websocket timeout`
+
 ## Related commands
 
 - [`/chronicle`](./chronicle.md)

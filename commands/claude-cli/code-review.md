@@ -22,11 +22,14 @@ Target the current diff, a pull request number, branch, or path. `--fix` applies
 - `/code-review --fix` — Apply accepted findings
 - `/code-review --comment` — Post findings as inline PR comments
 
-## Examples
+## Canonical example
 
-- `/code-review high --fix src/auth`
+`/code-review high --fix src/auth`
+
+## More examples
+
 - `/review medium 1234`
-- `/code-review ultra --post 1234`
+- `/code-review ultra --comment 1234`
 
 ## Related commands
 

@@ -14,6 +14,10 @@ Stops the background session you are currently attached to.
 
 The transcript and any worktree are kept. To detach without stopping the work, use `/exit` or the left-arrow shortcut instead.
 
+## Canonical example
+
+`/stop`
+
 ## Related commands
 
 - [`/background`](./background.md)

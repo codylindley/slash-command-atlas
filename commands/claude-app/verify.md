@@ -16,6 +16,10 @@ A manual-only bundled skill for experiential verification. It is useful when pas
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/verify`
+
 ## Related commands
 
 - [`/run`](./run.md)

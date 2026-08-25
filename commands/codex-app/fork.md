@@ -18,6 +18,10 @@ Branches from the current local chat so the original remains intact while the co
 - You want to explore an alternative approach without changing the original chat
 - A line of work needs an isolated worktree but should retain the current conversation context
 
+## Canonical example
+
+`/fork`
+
 ## Related commands
 
 - [`/side`](./side.md)

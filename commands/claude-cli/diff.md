@@ -14,6 +14,10 @@ Opens an interactive viewer for Git and per-turn diffs.
 
 Move left and right between the working-tree diff and individual Claude turns, then browse changed files. The viewer reads raw Git blobs, so configured diff drivers and `textconv` filters do not rewrite what you see.
 
+## Canonical example
+
+`/diff`
+
 ## Related commands
 
 - [`/code-review`](./code-review.md)

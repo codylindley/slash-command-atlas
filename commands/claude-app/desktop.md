@@ -18,6 +18,10 @@ Saves the conversation, opens it in the Code tab of Claude Desktop, and exits th
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/desktop`
+
 ## Related commands
 
 - [`/teleport`](./teleport.md)

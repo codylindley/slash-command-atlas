@@ -11,6 +11,10 @@
 
 Previews CLI business components, such as quota info.
 
+## Canonical example
+
+`/clikit quota`
+
 ## Related commands
 
 - [`/tuikit`](./tuikit.md)

@@ -13,6 +13,10 @@ Generates a one-line summary of the current session.
 
 Useful for quickly reorienting yourself or naming what the session has become without compacting or changing its context.
 
+## Canonical example
+
+`/recap`
+
 ## Related commands
 
 - [`/rename`](./rename.md)

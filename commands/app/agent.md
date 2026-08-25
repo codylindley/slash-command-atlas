@@ -13,6 +13,10 @@ Selects a custom agent for the session.
 
 Custom agents bundle instructions, tools and model settings under a name, so a repository can define something like a read-only reviewer or a documentation writer. This command chooses which one drives the session.
 
+## Canonical example
+
+`/agent`
+
 ## Related commands
 
 - [`/model`](./model.md)

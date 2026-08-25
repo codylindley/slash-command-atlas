@@ -16,9 +16,9 @@ If logging was not already enabled at launch, it starts at invocation time. An o
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/debug MCP tools disappear after compaction`
+`/debug MCP tools disappear after compaction`
 
 ## Related commands
 

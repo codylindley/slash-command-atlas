@@ -16,6 +16,10 @@ Creates a project skill describing the clean-environment setup, build, launch, a
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/run-skill-generator`
+
 ## Related commands
 
 - [`/run`](./run.md)

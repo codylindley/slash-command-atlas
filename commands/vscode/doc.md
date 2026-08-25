@@ -13,6 +13,10 @@ Generates documentation comments from editor inline chat.
 
 Writes a doc comment in the language’s conventional style for the selected symbol — JSDoc, docstrings, XML docs and so on.
 
+## Canonical example
+
+`/doc`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

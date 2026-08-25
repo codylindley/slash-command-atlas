@@ -11,6 +11,10 @@
 
 Generates a hook configuration with AI assistance in Agent mode.
 
+## Canonical example
+
+`/create-hook`
+
 ## Related commands
 
 - [`/hooks`](./hooks.md)

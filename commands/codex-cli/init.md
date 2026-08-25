@@ -13,6 +13,10 @@ Generates an `AGENTS.md` scaffold in the current directory.
 
 Creates a starting persistent-instructions file for the current repository or subdirectory. Review the generated file and edit it to match the project's real conventions before relying on it.
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

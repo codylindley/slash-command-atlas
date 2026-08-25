@@ -21,6 +21,10 @@ Where the desktop app splits this across four `/pr-*` commands, the CLI folds it
 - `/pr auto` — Drive the pull request to green, then stop
 - `/pr automerge` — Drive it to green and merge it (alias: agentmerge)
 
+## Canonical example
+
+`/pr create`
+
 ## Related commands
 
 - [`/delegate`](./delegate.md)

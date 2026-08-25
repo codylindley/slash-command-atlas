@@ -16,6 +16,10 @@ Turns a desktop session into something you can steer from a browser or your phon
 
 > **Note:** Remote control is policy-gated. If the command is missing, your organization or enterprise has likely disabled it.
 
+## Canonical example
+
+`/remote`
+
 ## Related commands
 
 - [`/terminal`](./terminal.md)

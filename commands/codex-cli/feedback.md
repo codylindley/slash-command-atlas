@@ -13,6 +13,10 @@ Sends feedback and optional diagnostics to the Codex maintainers.
 
 Starts the feedback flow, where you can describe the issue and choose whether to include logs or other diagnostics.
 
+## Canonical example
+
+`/feedback`
+
 ## Related commands
 
 - [`/status`](./status.md)

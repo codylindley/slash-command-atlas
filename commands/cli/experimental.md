@@ -13,6 +13,10 @@ Toggles, sets, or shows experimental features.
 
 Several commands here are gated behind this — including `/every`, `/after`, `/worktree`, `/move`, `/fork`, `/diff` and `/search`.
 
+## Canonical example
+
+`/experimental show`
+
 ## Related commands
 
 - [`/settings`](./settings.md)

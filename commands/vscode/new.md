@@ -13,9 +13,9 @@ Scaffolds a new VS Code workspace or file.
 
 Describe the project or file you want and preview the scaffolded content before anything is created.
 
-## Examples
+## Canonical example
 
-- `/new an Express API with TypeScript and Vitest`
+`/new an Express API with TypeScript and Vitest`
 
 ## Related commands
 

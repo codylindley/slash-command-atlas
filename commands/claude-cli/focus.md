@@ -14,6 +14,10 @@ Toggles a compact view of the current turn.
 
 Focus view keeps only your last prompt, a one-line tool summary with edit counts, and the final response visible. The choice persists across sessions through the `viewMode` setting.
 
+## Canonical example
+
+`/focus`
+
 ## Related commands
 
 - [`/tui`](./tui.md)

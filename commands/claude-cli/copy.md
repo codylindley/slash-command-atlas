@@ -13,9 +13,9 @@ Copies a recent assistant response or one of its code blocks.
 
 Pass `N` to select the Nth-latest answer. When the response contains code blocks, an interactive picker lets you copy one block or the whole answer; press `w` to write the selection to a file.
 
-## Examples
+## Canonical example
 
-- `/copy 2`
+`/copy 2`
 
 ## Related commands
 

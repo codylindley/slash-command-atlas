@@ -11,6 +11,10 @@
 
 Opens the flow for ordering Claude Code stickers.
 
+## Canonical example
+
+`/stickers`
+
 ## Related commands
 
 - [`/passes`](./passes.md)

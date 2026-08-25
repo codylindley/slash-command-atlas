@@ -18,6 +18,10 @@ Shows the active model, approval policy, writable roots, and current token usage
 - You need to confirm the model or permission policy before a task
 - You want to check context usage or verify the working roots
 
+## Canonical example
+
+`/status`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

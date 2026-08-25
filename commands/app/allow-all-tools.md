@@ -17,6 +17,10 @@ Stops the agent asking permission for each tool call. Genuinely useful in a thro
 
 > **Note:** This switches off the approval prompts that are your main guardrail. Prefer it in disposable or sandboxed environments, and use `/reset-allowed-tools` to turn it back off when you are done.
 
+## Canonical example
+
+`/allow-all-tools`
+
 ## Related commands
 
 - [`/reset-allowed-tools`](./reset-allowed-tools.md)

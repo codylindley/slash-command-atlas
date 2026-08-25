@@ -17,6 +17,10 @@ An interactive wizard hidden from autocomplete until the Google Cloud provider m
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/setup-vertex`
+
 ## Related commands
 
 - [`/setup-bedrock`](./setup-bedrock.md)

@@ -25,6 +25,10 @@ Run bare to open the dashboard, or pass `--plugin`, `--mcp` or `--skill` to open
 - `/plugins mcp [SUBCOMMAND]` — Delegates to /mcp
 - `/plugins help` — Full /plugins usage
 
+## Canonical example
+
+`/plugins list`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

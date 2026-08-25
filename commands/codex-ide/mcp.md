@@ -13,6 +13,10 @@ Opens MCP status to show connected servers.
 
 Displays the Model Context Protocol connections available to the chat, making it the quickest check when an expected external tool is missing.
 
+## Canonical example
+
+`/mcp`
+
 ## Related commands
 
 - [`/status`](./status.md)

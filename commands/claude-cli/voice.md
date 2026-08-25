@@ -14,6 +14,10 @@ Enables, configures, or disables voice dictation.
 
 Choose push-and-hold or tap-to-toggle dictation behavior, or turn it off.
 
+## Canonical example
+
+`/voice hold`
+
 ## Related commands
 
 - [`/keybindings`](./keybindings.md)

@@ -14,9 +14,12 @@ Schedules a recurring prompt, skill, or schedulable slash command.
 
 With no arguments it opens the schedule manager. In that manager, `↑`/`↓` selects an entry and `x` removes it — schedules can only be added from the prompt input, not from the dialog.
 
-## Examples
+## Canonical example
 
-- `/every 1h run tests`
+`/every 1h run tests`
+
+## More examples
+
 - `/every 1d /chronicle standup`
 
 ## Related commands

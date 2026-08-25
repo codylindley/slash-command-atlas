@@ -13,6 +13,10 @@ Consults the rubber duck agent for a second opinion on plans, code and tests.
 
 Runs on a different model from the one driving your session, which is the whole point — a critic that does not share the main agent’s blind spots.
 
+## Canonical example
+
+`/rubber-duck does this migration preserve backwards compatibility?`
+
 ## Related commands
 
 - [`/review`](./review.md)

@@ -17,9 +17,12 @@ Pass a window such as `500k`, or `auto` to return to the model-tuned default. Wi
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/autocompact 500k`
+`/autocompact 500k`
+
+## More examples
+
 - `/autocompact auto`
 
 ## Related commands
