@@ -540,8 +540,9 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 3px; paddi
 @media (max-width: 420px) {
   .copy-row { align-items: stretch; }
   .ai-copy-btn { flex: 1; justify-content: center; }
+  .ai-menu { position: static; }
   .ai-menu-trigger { justify-content: center; }
-  .ai-menu-popover { right: auto; left: 0; }
+  .ai-menu-popover { left: 0; right: 0; width: auto; max-width: none; }
 }
 
 .detail h3 {
