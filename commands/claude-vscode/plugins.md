@@ -13,6 +13,10 @@ Opens VS Code’s graphical plugin and marketplace manager.
 
 Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. The extension uses Claude Code’s shared plugin configuration underneath.
 
+## Canonical example
+
+`/plugins`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

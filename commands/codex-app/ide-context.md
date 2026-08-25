@@ -13,6 +13,10 @@ Turns shared IDE context on or off.
 
 Controls whether context shared by a connected IDE is used automatically in the chat. Turn it off when the editor state is unrelated to the current request; turn it on when open files and selections are relevant.
 
+## Canonical example
+
+`/ide-context`
+
 ## Related commands
 
 - [`/project`](./project.md)

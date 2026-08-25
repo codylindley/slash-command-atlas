@@ -13,6 +13,10 @@ Starts account sign-in when the extension is not authenticated.
 
 The extension normally opens its sign-in screen automatically; this command is the documented recovery path when the panel reports that you are not logged in.
 
+## Canonical example
+
+`/login`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

@@ -14,6 +14,10 @@ Teaches /run and /verify how to operate this project.
 
 Creates a project skill describing the clean-environment setup, build, launch, and interaction steps needed to exercise the application.
 
+## Canonical example
+
+`/run-skill-generator`
+
 ## Related commands
 
 - [`/run`](./run.md)

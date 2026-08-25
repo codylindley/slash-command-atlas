@@ -15,6 +15,10 @@ Uploads a React design system so Claude Design uses real components.
 
 Verifies and converts the repository’s component library before synchronization. A first upload can take hours for a large design system.
 
+## Canonical example
+
+`/design-sync component-library`
+
 ## Related commands
 
 - [`/design-login`](./design-login.md)

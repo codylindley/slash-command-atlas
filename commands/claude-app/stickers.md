@@ -14,6 +14,10 @@ Opens the flow for ordering Claude Code stickers.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/stickers`
+
 ## Related commands
 
 - [`/passes`](./passes.md)

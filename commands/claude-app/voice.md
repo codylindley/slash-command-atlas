@@ -17,6 +17,10 @@ Choose push-and-hold or tap-to-toggle dictation behavior, or turn it off.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/voice hold`
+
 ## Related commands
 
 - [`/keybindings`](./keybindings.md)

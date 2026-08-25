@@ -11,6 +11,10 @@
 
 Displays version information and checks for updates.
 
+## Canonical example
+
+`/version`
+
 ## Related commands
 
 - [`/update`](./update.md)

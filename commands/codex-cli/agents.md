@@ -14,6 +14,10 @@ Opens a dashboard of active root agent sessions.
 
 Shows loaded top-level sessions from the shared app server and lets you inspect or switch between them. This is broader than `/subagents`, which stays within the current session’s spawned threads.
 
+## Canonical example
+
+`/agents`
+
 ## Related commands
 
 - [`/subagents`](./subagents.md)

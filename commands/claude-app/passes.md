@@ -15,6 +15,10 @@ Shares an eligible free week of Claude Code with friends.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/passes`
+
 ## Related commands
 
 - [`/upgrade`](./upgrade.md)

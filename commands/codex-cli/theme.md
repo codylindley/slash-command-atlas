@@ -13,6 +13,10 @@ Previews and selects a syntax-highlighting theme.
 
 Opens the theme picker, previews choices, and persists the confirmed selection to `tui.theme` in `config.toml`.
 
+## Canonical example
+
+`/theme`
+
 ## Related commands
 
 - [`/raw`](./raw.md)

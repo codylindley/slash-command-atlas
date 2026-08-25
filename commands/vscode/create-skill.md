@@ -11,6 +11,10 @@
 
 Generates an agent skill with AI assistance in Agent mode.
 
+## Canonical example
+
+`/create-skill`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

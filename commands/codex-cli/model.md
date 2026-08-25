@@ -13,6 +13,10 @@ Chooses the active model and, when available, reasoning effort.
 
 Opens the model picker for the current session. The selected model can determine whether commands such as `/fast` and `/personality` are available.
 
+## Canonical example
+
+`/model`
+
 ## Related commands
 
 - [`/fast`](./fast.md)

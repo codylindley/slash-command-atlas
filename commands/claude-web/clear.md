@@ -15,6 +15,10 @@ Is unavailable in cloud sessions; start a new session from the sidebar instead.
 
 > **Note:** Different mode, different answer: when claude.ai/code drives a local session through Remote Control, `/clear` works and resets the conversation on every connected device.
 
+## Canonical example
+
+`/clear`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

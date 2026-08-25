@@ -15,6 +15,10 @@ Moves uncommitted changes into a new Git worktree and switches to it.
 
 The counterpart to `/worktree`: where that leaves your changes behind, this takes them with you. Useful when you realise the work you have started belongs on its own branch.
 
+## Canonical example
+
+`/move rate-limit-api`
+
 ## Related commands
 
 - [`/worktree`](./worktree.md)

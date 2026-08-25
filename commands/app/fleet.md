@@ -14,9 +14,9 @@ Launches multiple agents in parallel on a single task.
 
 Splits one task across parallel subagents inside the current session. Where `/orchestrate` coordinates whole sessions across repositories, `/fleet` parallelizes within one — which suits naturally shardable work, like applying the same change to fifty files.
 
-## Examples
+## Canonical example
 
-- `/fleet add JSDoc comments to every exported function in src/lib`
+`/fleet add JSDoc comments to every exported function in src/lib`
 
 ## Related commands
 

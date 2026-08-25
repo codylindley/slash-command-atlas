@@ -16,9 +16,9 @@ A bundled dynamic workflow that fetches and cross-checks sources, then synthesiz
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/deep-research compare current browser isolation models for local coding agents`
+`/deep-research compare current browser isolation models for local coding agents`
 
 ## Related commands
 

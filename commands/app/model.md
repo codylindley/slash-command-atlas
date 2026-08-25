@@ -20,6 +20,10 @@ Switches the model driving the session. Choosing **Auto** lets the app pick per 
 - Dropping to a cheaper model for mechanical work
 - A task that suits a particular vendor’s strengths
 
+## Canonical example
+
+`/model auto`
+
 ## Related commands
 
 - [`/agent`](./agent.md)

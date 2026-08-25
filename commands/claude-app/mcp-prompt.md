@@ -16,6 +16,10 @@ Claude Code discovers MCP prompts at runtime and namespaces them with the server
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/mcp__github__triage issue 1234`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

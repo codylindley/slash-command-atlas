@@ -14,6 +14,10 @@ Reviews the changes made in the current session.
 
 Turns the agent on its own diff, looking for bugs, omissions and loose ends before the work goes anywhere. Distinct from `/security-review`, which only hunts vulnerabilities, and from `/rubber-duck`, which brings in a second model.
 
+## Canonical example
+
+`/review`
+
 ## Related commands
 
 - [`/security-review`](./security-review.md)

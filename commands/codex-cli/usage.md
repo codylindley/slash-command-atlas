@@ -13,9 +13,9 @@ Views account token activity or redeems an available earned reset.
 
 Opens the account-usage menu. The documented arguments jump directly to daily, weekly, or cumulative token activity; accounts without Codex service authentication see a sign-in requirement.
 
-## Examples
+## Canonical example
 
-- `/usage weekly`
+`/usage weekly`
 
 ## Related commands
 

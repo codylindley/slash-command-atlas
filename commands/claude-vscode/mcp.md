@@ -13,6 +13,10 @@ Opens VS Code’s MCP server manager.
 
 Shows configured Model Context Protocol servers and lets you enable or disable them, reconnect, and manage OAuth authentication without leaving the chat panel. Adding a new server still requires the CLI.
 
+## Canonical example
+
+`/mcp`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

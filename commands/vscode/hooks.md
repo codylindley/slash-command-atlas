@@ -13,6 +13,10 @@ Configures your hooks.
 
 Hooks run your own commands at defined points in the agent loop — formatting after an edit, blocking a tool call, logging what happened.
 
+## Canonical example
+
+`/hooks`
+
 ## Related commands
 
 - [`/create-hook`](./create-hook.md)

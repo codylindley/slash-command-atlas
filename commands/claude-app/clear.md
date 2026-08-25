@@ -22,6 +22,10 @@ An optional name labels the conversation you are leaving in the `/resume` picker
 - Starting an unrelated task in the same repository
 - Old assumptions are actively confusing the current work
 
+## Canonical example
+
+`/clear auth-cleanup`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

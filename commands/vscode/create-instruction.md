@@ -11,6 +11,10 @@
 
 Generates an instructions file with AI assistance in Agent mode.
 
+## Canonical example
+
+`/create-instruction`
+
 ## Related commands
 
 - [`/instructions`](./instructions.md)

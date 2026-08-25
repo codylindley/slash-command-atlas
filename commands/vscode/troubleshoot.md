@@ -13,9 +13,12 @@ Asks the AI to analyze the agent debug logs for this chat session.
 
 Optionally include `#session` to select and diagnose a previous session instead. Requires the agent debug log setting to be enabled.
 
-## Examples
+## Canonical example
 
-- `/troubleshoot how many tokens did I use?`
+`/troubleshoot how many tokens did I use?`
+
+## More examples
+
 - `/troubleshoot list all paths you tried to load customizations in #session`
 
 ## Related commands

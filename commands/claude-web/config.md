@@ -13,6 +13,10 @@ Opens Claude Code settings for the web surface.
 
 Unlike the CLI, web `/config` does not accept direct `key=value` changes: any text after the command is ignored. Change cloud behavior through committed settings files or cloud-environment variables instead.
 
+## Canonical example
+
+`/config`
+
 ## Related commands
 
 - [`/model`](./model.md)

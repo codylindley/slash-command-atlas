@@ -12,6 +12,10 @@
 
 Opens Claude FM lo-fi radio, or prints its stream URL.
 
+## Canonical example
+
+`/radio`
+
 ## Related commands
 
 - [`/powerup`](./powerup.md)

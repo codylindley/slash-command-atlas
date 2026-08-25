@@ -14,6 +14,10 @@ Copies the latest completed Codex output.
 
 Copies the most recent completed response or plan to the clipboard. If a turn is still running, Codex copies the last completed output instead; `Ctrl+O` is the default keyboard equivalent.
 
+## Canonical example
+
+`/copy`
+
 ## Related commands
 
 - [`/raw`](./raw.md)

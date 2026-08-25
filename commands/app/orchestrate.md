@@ -20,9 +20,9 @@ The conductor. Rather than doing the work itself, it decomposes a goal, spins up
 - Parallelizable work that still needs a shared goal
 - Coordinating a migration across several services
 
-## Examples
+## Canonical example
 
-- `/orchestrate rename User.email to primaryEmail across the API, the web client and the SDK`
+`/orchestrate rename User.email to primaryEmail across the API, the web client and the SDK`
 
 ## Related commands
 

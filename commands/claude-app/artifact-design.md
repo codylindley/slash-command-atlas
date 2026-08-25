@@ -15,6 +15,10 @@ Loads design guidance for creating polished visual artifacts.
 
 This bundled skill appears in the live Desktop Code picker but is not listed in Anthropic’s fixed command table. Its availability can vary with Desktop build, plan, and synced skills.
 
+## Canonical example
+
+`/artifact-design`
+
 ## Related commands
 
 - [`/artifacts`](./artifacts.md)

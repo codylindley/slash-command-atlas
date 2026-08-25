@@ -18,6 +18,10 @@ Opens the memory interface to edit `CLAUDE.md` files, enable or disable auto mem
 - Claude keeps missing a stable project convention
 - You want to inspect or prune what auto memory has retained
 
+## Canonical example
+
+`/memory`
+
 ## Related commands
 
 - [`/init`](./init.md)

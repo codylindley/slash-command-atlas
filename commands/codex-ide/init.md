@@ -13,6 +13,10 @@ Generates an `AGENTS.md` scaffold for the current project.
 
 Creates a starting persistent-instructions file for the project. Review and refine it so later Codex chats receive accurate repository conventions and commands.
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/project`](./project.md)

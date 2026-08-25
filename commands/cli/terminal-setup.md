@@ -13,6 +13,10 @@ Configures the terminal for multiline input.
 
 Enables `Shift`+`Enter` and `Ctrl`+`Enter` for newlines, so a long prompt does not submit halfway through. Worth running on day one.
 
+## Canonical example
+
+`/terminal-setup`
+
 ## Related commands
 
 - [`/theme`](./theme.md)

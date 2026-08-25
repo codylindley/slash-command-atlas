@@ -14,6 +14,10 @@ Opens a pull request from the current session’s changes.
 
 Takes the work sitting in the session’s branch and worktree and turns it into a pull request, with a description drawn from what actually happened in the session. The natural next step once `/review` comes back clean.
 
+## Canonical example
+
+`/pr-open`
+
 ## Related commands
 
 - [`/pr-fix-checks`](./pr-fix-checks.md)

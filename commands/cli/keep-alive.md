@@ -14,9 +14,12 @@ Prevents the machine from sleeping while Copilot works.
 
 Use `on` to keep the machine awake continuously, `busy` only while work is active, or pass a duration such as `30m`, `2h`, or `1d`. Use `off` to restore normal sleep behavior.
 
-## Examples
+## Canonical example
 
-- `/keep-alive busy`
+`/keep-alive busy`
+
+## More examples
+
 - `/caffeinate 2h`
 
 ## Related commands

@@ -13,9 +13,12 @@ Lists configured MCP servers and tools.
 
 Shows the Model Context Protocol tools available in the session. Add `verbose` for detailed server diagnostics; other arguments display command usage.
 
-## Examples
+## Canonical example
 
-- `/mcp`
+`/mcp`
+
+## More examples
+
 - `/mcp verbose`
 
 ## Related commands

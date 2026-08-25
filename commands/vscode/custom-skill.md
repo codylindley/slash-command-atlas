@@ -14,6 +14,10 @@ Runs one of your own agent skills by name.
 
 Any skill file becomes a slash command. A skill saved as `webapp-testing.md` is invoked as `/webapp-testing`. This is the mechanism that makes VS Code’s command set effectively open-ended — and it is why your picker will not match anyone else’s.
 
+## Canonical example
+
+`/webapp-testing`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

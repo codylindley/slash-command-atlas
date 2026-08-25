@@ -13,6 +13,10 @@ Toggles voice mode, browses voice models, or chooses the input device.
 
 Pairs naturally with `/refine`, which cleans up a spoken prompt before you send it.
 
+## Canonical example
+
+`/voice on`
+
 ## Related commands
 
 - [`/refine`](./refine.md)

@@ -14,6 +14,10 @@ Approves one retry of an action that automatic review recently denied.
 
 Retries the denied action once while automatic review is active. This is a one-action override, not a standing permission change.
 
+## Canonical example
+
+`/approve`
+
 ## Related commands
 
 - [`/review`](./review.md)

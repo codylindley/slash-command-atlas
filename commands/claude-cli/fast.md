@@ -14,6 +14,10 @@ Toggles fast mode for lower-latency model responses.
 
 Switches supported sessions between ordinary and fast serving. Non-interactive availability is more limited than the in-session command.
 
+## Canonical example
+
+`/fast on`
+
 ## Related commands
 
 - [`/model`](./model.md)

@@ -476,8 +476,13 @@
     if (c.when && c.when.length) {
       lines.push('', 'Useful when:', c.when.map(function (w) { return '- ' + plainText(w); }).join('\n'));
     }
-    if (c.examples && c.examples.length) {
-      lines.push('', 'Examples:', c.examples.map(function (x) { return '- `' + plainText(x) + '`'; }).join('\n'));
+    if (c.canonicalExample) {
+      lines.push('', 'Canonical example: `' + plainText(c.canonicalExample) + '`');
+    }
+    if (c.examples && c.examples.length > 1) {
+      lines.push('', 'More examples:', c.examples.slice(1).map(function (x) {
+        return '- `' + plainText(x) + '`';
+      }).join('\n'));
     }
     if (c.subs && c.subs.length) {
       lines.push('', 'Subcommands:', c.subs.map(function (sub) {
@@ -542,10 +547,19 @@
     }).join('');
   }
 
-  function exampleHTML(x) {
-    var m = x.match(/^(\/[\w-]+(?:\s+[a-z-]+)?)(.*)$/);
-    return m
-      ? '<code class="example"><span class="ex-cmd">' + esc(m[1]) + '</span>' + esc(m[2]) + '</code>'
+  function exampleHTML(c, x) {
+    var command = names(c).sort(function (a, b) { return b.length - a.length; })
+      .find(function (name) { return x === name || x.indexOf(name + ' ') === 0; });
+
+    /* Dynamic commands contain placeholders, so match their concrete first token. */
+    if (!command && c.flags && c.flags.indexOf('custom') > -1) {
+      var token = x.match(/^\/\S+/);
+      command = token ? token[0] : '';
+    }
+
+    return command
+      ? '<code class="example"><span class="ex-cmd">' + esc(command) + '</span>' +
+        esc(x.slice(command.length)) + '</code>'
       : '<code class="example">' + esc(x) + '</code>';
   }
 
@@ -597,9 +611,12 @@
       h += '</ul>';
     }
 
-    if (c.examples && c.examples.length) {
-      h += '<h3>Example' + (c.examples.length > 1 ? 's' : '') + '</h3>';
-      c.examples.forEach(function (x) { h += exampleHTML(x); });
+    if (c.canonicalExample) {
+      h += '<h3>Canonical example</h3>' + exampleHTML(c, c.canonicalExample);
+    }
+    if (c.examples && c.examples.length > 1) {
+      h += '<h3>More examples</h3>';
+      c.examples.slice(1).forEach(function (x) { h += exampleHTML(c, x); });
     }
 
     var also = alsoIn(c);

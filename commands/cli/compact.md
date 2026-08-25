@@ -13,9 +13,9 @@ Summarizes conversation history to reduce context window usage.
 
 Optionally steer what the summary preserves by passing focus instructions.
 
-## Examples
+## Canonical example
 
-- `/compact focus on the auth module`
+`/compact focus on the auth module`
 
 ## Related commands
 

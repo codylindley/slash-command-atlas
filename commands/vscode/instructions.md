@@ -13,6 +13,10 @@ Configures your custom instructions.
 
 Custom instructions are the standing rules Copilot reads on every request in this workspace — conventions, stack, things never to do.
 
+## Canonical example
+
+`/instructions`
+
 ## Related commands
 
 - [`/create-instruction`](./create-instruction.md)

@@ -18,6 +18,10 @@ Moves the chat into or out of a planning workflow. Use it to work through the ap
 - A change spans several files or has sequencing decisions
 - You want to refine an objective before setting a long-running goal
 
+## Canonical example
+
+`/plan`
+
 ## Related commands
 
 - [`/goal`](./goal.md)

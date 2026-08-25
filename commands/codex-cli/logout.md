@@ -13,6 +13,10 @@ Signs out of Codex.
 
 Clears the locally stored credentials for the current user session. Use it when switching accounts or leaving a shared machine.
 
+## Canonical example
+
+`/logout`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

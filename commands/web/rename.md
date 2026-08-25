@@ -11,6 +11,10 @@
 
 Renames a conversation.
 
+## Canonical example
+
+`/rename`
+
 ## Related commands
 
 - [`/new`](./new.md)

@@ -13,6 +13,10 @@ Turns automatic IDE context on or off.
 
 Controls whether Codex automatically receives relevant editor context such as what is open or selected. Disable it when that state is unrelated to the current task.
 
+## Canonical example
+
+`/ide-context`
+
 ## Related commands
 
 - [`/project`](./project.md)

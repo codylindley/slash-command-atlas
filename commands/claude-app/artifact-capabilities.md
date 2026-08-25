@@ -15,6 +15,10 @@ Loads guidance about the artifact formats and capabilities available in Desktop.
 
 This bundled skill appears in the live Desktop Code picker but is not listed in Anthropic’s fixed command table. Its availability can vary with Desktop build, plan, and synced skills.
 
+## Canonical example
+
+`/artifact-capabilities`
+
 ## Related commands
 
 - [`/artifacts`](./artifacts.md)

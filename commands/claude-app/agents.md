@@ -16,6 +16,10 @@ Current builds direct you to ask Claude to create an agent or edit `.claude/agen
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/agents`
+
 ## Related commands
 
 - [`/list-agents`](./list-agents.md)

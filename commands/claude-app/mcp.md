@@ -22,6 +22,10 @@ Run bare for the interactive server list. Direct subcommands reconnect a server 
 - `/mcp enable [SERVER|all]` — Enable one or all configured servers
 - `/mcp disable [SERVER|all]` — Disable one or all configured servers
 
+## Canonical example
+
+`/mcp`
+
 ## Related commands
 
 - [`/plugin`](./plugin.md)

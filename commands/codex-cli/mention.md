@@ -13,9 +13,9 @@ Finds and attaches a file to the chat.
 
 Searches workspace paths, lets you choose a match, and adds that file to the conversation so later turns reference it directly.
 
-## Examples
+## Canonical example
 
-- `/mention src/lib/api.ts`
+`/mention src/lib/api.ts`
 
 ## Related commands
 

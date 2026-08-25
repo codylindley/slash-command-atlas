@@ -14,9 +14,9 @@ Grants the sandbox read access to an additional directory.
 
 Validates an existing absolute directory, refreshes the Windows sandbox policy, and makes that directory readable to later sandboxed commands. This command is documented only for the CLI running natively on Windows.
 
-## Examples
+## Canonical example
 
-- `/sandbox-add-read-dir C:\src\shared`
+`/sandbox-add-read-dir C:\src\shared`
 
 ## Related commands
 

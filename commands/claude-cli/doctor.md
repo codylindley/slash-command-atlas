@@ -15,6 +15,10 @@ Diagnoses installation, configuration, and context-cost problems.
 
 Checks install health, settings, updates, slow hooks, and unused extensions, then can propose fixes. It also finds bloated or duplicated `CLAUDE.md` guidance and reports changes before asking to apply them.
 
+## Canonical example
+
+`/doctor`
+
 ## Related commands
 
 - [`/debug`](./debug.md)

@@ -16,9 +16,9 @@ With a filename it writes directly; without one it opens a dialog to copy the tr
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/export auth-investigation.txt`
+`/export auth-investigation.txt`
 
 ## Related commands
 

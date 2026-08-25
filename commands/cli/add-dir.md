@@ -13,6 +13,10 @@ Adds a directory to the allowed list for file access.
 
 The CLI only reads and writes inside directories you have allowed. This widens that boundary deliberately, and leaves an auditable trail of what you opened up.
 
+## Canonical example
+
+`/add-dir ../shared-schema`
+
 ## Related commands
 
 - [`/list-dirs`](./list-dirs.md)

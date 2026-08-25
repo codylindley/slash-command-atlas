@@ -16,6 +16,10 @@ Release notes appear in the transcript but are not added to the conversation Cla
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/release-notes`
+
 ## Related commands
 
 - [`/status`](./status.md)

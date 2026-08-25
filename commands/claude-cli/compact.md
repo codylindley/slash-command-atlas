@@ -13,9 +13,9 @@ Summarizes the conversation to free context-window space.
 
 Optional instructions tell the summary what to preserve. Project instructions and memory reload from disk; details supplied only in conversation can be compressed away, so state the focus when it matters.
 
-## Examples
+## Canonical example
 
-- `/compact keep the migration decisions and the latest failing test output`
+`/compact keep the migration decisions and the latest failing test output`
 
 ## Related commands
 

@@ -12,6 +12,10 @@
 
 Disables global auto-approval of tool calls.
 
+## Canonical example
+
+`/disableYolo`
+
 ## Related commands
 
 - [`/yolo`](./yolo.md)

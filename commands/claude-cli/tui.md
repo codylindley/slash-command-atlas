@@ -13,6 +13,10 @@ Selects the terminal renderer and relaunches the current conversation.
 
 `fullscreen` uses the alternate-screen flicker-free UI; `default` returns to ordinary terminal rendering. Run bare to print the active renderer.
 
+## Canonical example
+
+`/tui fullscreen`
+
 ## Related commands
 
 - [`/focus`](./focus.md)

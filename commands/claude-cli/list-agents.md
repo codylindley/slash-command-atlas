@@ -15,6 +15,10 @@ Lists subagents, teammates, and sessions this session can message.
 
 Prints the addressable name for each peer. The command only exists when cross-session messaging is enabled; recent builds also show this session’s own name.
 
+## Canonical example
+
+`/list-agents`
+
 ## Related commands
 
 - [`/agents`](./agents.md)

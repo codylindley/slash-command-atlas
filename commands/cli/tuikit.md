@@ -11,6 +11,10 @@
 
 Previews TUIkit design-system components and color tokens.
 
+## Canonical example
+
+`/tuikit colors`
+
 ## Related commands
 
 - [`/clikit`](./clikit.md)

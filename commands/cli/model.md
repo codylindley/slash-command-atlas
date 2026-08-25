@@ -14,9 +14,9 @@ Selects the AI model, reasoning effort, or context window — or chooses Auto.
 
 By default (or with `--session`) the change applies to this session only and leaves saved settings alone. `--repo`/`--local` pins a default in repository settings; `--global` sets the default for future sessions. Press `Tab` on a model with a long-context variant to toggle its context window, and `Shift`+`Tab` to cycle how the picker groups models. It is usable mid-turn: a change requested while the agent is running is queued and applied once the turn finishes rather than swapping the model mid-request.
 
-## Examples
+## Canonical example
 
-- `/model --repo gpt-5.2`
+`/model --repo gpt-5.2`
 
 ## Related commands
 

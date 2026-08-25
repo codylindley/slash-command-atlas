@@ -29,6 +29,13 @@
     .filter(function (c) { return c.surface === 'claude-cli'; })
     .map(function (c) {
       var copy = JSON.parse(JSON.stringify(c));
+      /* JSON cloning preserves resolved examples but not their non-enumerable
+         provenance marker, so carry that marker across explicitly. */
+      Object.defineProperty(copy, '_exampleExplicit', {
+        value: c._exampleExplicit,
+        enumerable: false,
+        configurable: true
+      });
       delete copy.surface;
       delete copy.id;
       delete copy.order;
@@ -71,6 +78,10 @@
       copy.flags = copy.flags.filter(function (flag, index, flags) {
         return flags.indexOf(flag) === index;
       });
+      if (copy.flags.indexOf('blocked') > -1) {
+        copy.examples = [copy.cmd];
+        copy.canonicalExample = copy.cmd;
+      }
       return copy;
     });
 

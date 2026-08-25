@@ -15,9 +15,9 @@ Decomposes a large codebase change into parallel worktree tasks.
 
 Researches the repository, proposes 5–30 independent units, then after approval launches one background subagent per unit in an isolated worktree. Each unit implements, tests, and opens a pull request.
 
-## Examples
+## Canonical example
 
-- `/batch migrate src/ from Solid to React`
+`/batch migrate src/ from Solid to React`
 
 ## Related commands
 

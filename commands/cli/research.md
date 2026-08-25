@@ -13,6 +13,10 @@ Runs a deep research investigation using GitHub search and web sources.
 
 Produces a cited report. `/share research` exports it on its own.
 
+## Canonical example
+
+`/research zero-downtime Postgres major version upgrades`
+
 ## Related commands
 
 - [`/share`](./share.md)

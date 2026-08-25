@@ -11,6 +11,10 @@
 
 Suggests fixes for code errors and typos.
 
+## Canonical example
+
+`/fix`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

@@ -16,6 +16,10 @@ Opens immediately when supported, even during a response, and applies the same f
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/feedback add keyboard navigation to the session picker`
+
 ## Related commands
 
 - [`/bug`](./bug.md)

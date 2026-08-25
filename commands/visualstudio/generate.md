@@ -13,6 +13,10 @@ Generates code to answer a specified question.
 
 Use it when the desired outcome is new implementation rather than an explanation, fix, optimization, or test.
 
+## Canonical example
+
+`/generate an async method that retries transient HTTP failures`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

@@ -14,6 +14,10 @@ Invokes a prompt dynamically exposed by a connected MCP server.
 
 Claude Code discovers MCP prompts at runtime and namespaces them with the server name. The exact commands therefore depend on your active connections and cannot be enumerated as a fixed built-in set.
 
+## Canonical example
+
+`/mcp__github__triage issue 1234`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

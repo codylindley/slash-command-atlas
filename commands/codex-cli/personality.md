@@ -14,6 +14,10 @@ Chooses a communication style for responses.
 
 Changes how Codex communicates without rewriting the task prompt. The documented choices are `friendly`, `pragmatic`, and `none`; unsupported models hide the command.
 
+## Canonical example
+
+`/personality pragmatic`
+
 ## Related commands
 
 - [`/model`](./model.md)

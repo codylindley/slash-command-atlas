@@ -15,6 +15,10 @@ Installs the Claude Slack app through browser OAuth.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/install-slack-app`
+
 ## Related commands
 
 - [`/install-github-app`](./install-github-app.md)

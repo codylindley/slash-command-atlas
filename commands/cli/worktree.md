@@ -19,6 +19,10 @@ Pass a branch name, a task description used as the opening prompt in the new wor
 
 - `/worktree new [PROMPT]` — Start a new conversation in a new worktree, leaving this one alone
 
+## Canonical example
+
+`/worktree add rate limiting to the API`
+
 ## Related commands
 
 - [`/move`](./move.md)

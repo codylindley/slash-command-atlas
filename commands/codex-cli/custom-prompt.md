@@ -16,6 +16,10 @@ Markdown files directly under `~/.codex/prompts/` appear dynamically as slash co
 
 > **Note:** OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting Codex.
 
+## Canonical example
+
+`/prompts:review-pr focus=security`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

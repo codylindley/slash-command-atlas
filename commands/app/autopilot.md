@@ -21,9 +21,9 @@ Full autonomy — the agent writes code, runs tests and iterates without pausing
 - Tasks with an unambiguous success check, like a green test suite
 - Long-running chores you do not want to babysit
 
-## Examples
+## Canonical example
 
-- `/autopilot upgrade to React 19 and get the test suite passing`
+`/autopilot upgrade to React 19 and get the test suite passing`
 
 ## Related commands
 

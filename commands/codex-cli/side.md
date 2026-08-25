@@ -15,9 +15,9 @@ Starts an ephemeral side chat.
 
 Creates a temporary fork for a focused detour without switching the main chat away from its work. The side transcript stays separate, and the command is unavailable inside another side chat or during review mode.
 
-## Examples
+## Canonical example
 
-- `/side Check whether this plan has an obvious risk`
+`/side Check whether this plan has an obvious risk`
 
 ## Related commands
 

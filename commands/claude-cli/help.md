@@ -13,6 +13,10 @@ Shows help and the commands available in this session.
 
 Because availability depends on version, platform, plan, provider, and installed extensions, this is the definitive local inventory.
 
+## Canonical example
+
+`/help`
+
 ## Related commands
 
 - [`/release-notes`](./release-notes.md)

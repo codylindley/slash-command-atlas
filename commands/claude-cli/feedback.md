@@ -13,6 +13,10 @@ Sends product feedback through the same consent flow as /bug.
 
 Opens immediately when supported, even during a response, and applies the same first-party submission versus local-bundle rules as `/bug`.
 
+## Canonical example
+
+`/feedback add keyboard navigation to the session picker`
+
 ## Related commands
 
 - [`/bug`](./bug.md)

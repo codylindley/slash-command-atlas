@@ -20,6 +20,10 @@ Scans your in-progress changes for high-confidence vulnerabilities and returns p
 - Before opening a PR that touches authentication, input handling or crypto
 - After accepting a large agent-written diff you have not read line by line
 
+## Canonical example
+
+`/security-review`
+
 ## Related commands
 
 - [`/review`](./review.md)

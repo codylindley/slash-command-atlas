@@ -12,6 +12,10 @@
 
 Authorizes Claude Design access for design-system synchronization.
 
+## Canonical example
+
+`/design-login`
+
 ## Related commands
 
 - [`/design-sync`](./design-sync.md)

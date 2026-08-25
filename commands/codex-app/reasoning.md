@@ -13,6 +13,10 @@ Chooses the reasoning effort for the current chat.
 
 Opens the reasoning-effort chooser for the active chat. The options available depend on the selected model.
 
+## Canonical example
+
+`/reasoning`
+
 ## Related commands
 
 - [`/model`](./model.md)

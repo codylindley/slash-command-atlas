@@ -16,6 +16,10 @@ The picker can restore both code and conversation, either one alone, or summariz
 
 > **Note:** Checkpointing is a session safety net, not a replacement for version control.
 
+## Canonical example
+
+`/rewind`
+
 ## Related commands
 
 - [`/branch`](./branch.md)

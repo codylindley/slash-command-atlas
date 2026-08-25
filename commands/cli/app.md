@@ -13,6 +13,10 @@ Opens the current session in the GitHub Copilot desktop app.
 
 Hands a terminal session over to the desktop app, or shows the download URL if the app is not installed. Requires app version 1.1.3 or later.
 
+## Canonical example
+
+`/app`
+
 ## Related commands
 
 - [`/ide`](./ide.md)

@@ -13,6 +13,10 @@ Proposes a fix for a code block, or resolves compiler and linting errors.
 
 Most effective from inline chat with the problem selected, or straight off the lightbulb Code Action when the editor is already showing you a squiggle.
 
+## Canonical example
+
+`/fix`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

@@ -16,6 +16,10 @@ Eligible subscription plans also break usage down by skill, subagent, plugin, an
 
 > **Note:** Anthropic lists this among text-output commands that work from web and mobile; cloud support also follows the general rule that text-producing built-ins work.
 
+## Canonical example
+
+`/usage`
+
 ## Related commands
 
 - [`/usage-credits`](./usage-credits.md)

@@ -14,6 +14,10 @@ Drafts an auto-mode environment policy from this project and recent work.
 
 Proposes `autoMode.environment` entries, shows the draft for review, and saves accepted changes to user settings.
 
+## Canonical example
+
+`/auto-mode-setup`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

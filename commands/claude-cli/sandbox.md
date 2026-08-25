@@ -14,6 +14,10 @@ Toggles sandbox mode for shell execution.
 
 Uses supported operating-system isolation to constrain Bash filesystem and network access while reducing repeated permission prompts.
 
+## Canonical example
+
+`/sandbox`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

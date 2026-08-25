@@ -14,6 +14,10 @@ Approves one retry of an action denied by automatic review.
 
 Shows the relevant recent denial and retries that action once under the current session policy. It does not turn off automatic review or broadly change permissions.
 
+## Canonical example
+
+`/approve`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

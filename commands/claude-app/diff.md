@@ -17,6 +17,10 @@ Move left and right between the working-tree diff and individual Claude turns, t
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/diff`
+
 ## Related commands
 
 - [`/code-review`](./code-review.md)

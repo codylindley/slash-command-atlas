@@ -14,6 +14,10 @@ Copies session debug JSON to your clipboard.
 
 A structured dump of the session’s state, for pasting into a bug report or reading yourself. Lighter than `/collect-debug-logs`, which packages the full logs.
 
+## Canonical example
+
+`/debug`
+
 ## Related commands
 
 - [`/collect-debug-logs`](./collect-debug-logs.md)

@@ -13,6 +13,10 @@ Finds and fixes a failing test.
 
 > **Note:** Listed in GitHub’s Copilot Chat cheat sheet for VS Code. It does not appear in the current VS Code reference, so treat it as legacy — check the picker in your build.
 
+## Canonical example
+
+`/fixTestFailure`
+
 ## Related commands
 
 - [`/tests`](./tests.md)

@@ -13,6 +13,10 @@ Configures memory use and generation.
 
 Opens controls for using existing memories, generating new memories, or keeping memory behavior disabled. The updated choices apply to future sessions.
 
+## Canonical example
+
+`/memories`
+
 ## Related commands
 
 - [`/personality`](./personality.md)

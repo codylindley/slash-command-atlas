@@ -14,6 +14,10 @@ Restarts the current session and keeps its history.
 
 Reinitializes the session without throwing away the transcript. This is the fix for a session that has gone unresponsive, is holding stale tool state, or has picked up configuration changes that only take effect on restart.
 
+## Canonical example
+
+`/restart-session`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

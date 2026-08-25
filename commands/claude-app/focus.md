@@ -17,6 +17,10 @@ Focus view keeps only your last prompt, a one-line tool summary with edit counts
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/focus`
+
 ## Related commands
 
 - [`/tui`](./tui.md)

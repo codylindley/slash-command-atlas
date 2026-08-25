@@ -13,6 +13,10 @@ Shows what currently occupies the cloud session’s context window.
 
 Use it before compacting to see whether conversation history, tool results, memory, or loaded instructions are the real source of pressure.
 
+## Canonical example
+
+`/context`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

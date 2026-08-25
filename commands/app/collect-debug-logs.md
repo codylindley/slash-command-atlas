@@ -16,6 +16,10 @@ Packages the logs for a bug report. The gist is secret rather than public, but i
 
 > **Note:** Secret gists are unlisted, not private — anyone with the URL can read one. Check what you are uploading before you share the link.
 
+## Canonical example
+
+`/collect-debug-logs`
+
 ## Related commands
 
 - [`/debug`](./debug.md)

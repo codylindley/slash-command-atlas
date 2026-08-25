@@ -13,6 +13,10 @@ Creates a detailed implementation plan for a complex coding task.
 
 Researches the requirements, asks clarifying questions, and produces a structured plan with steps, verification and decisions. Equivalent to selecting the **Plan** agent from the agents dropdown.
 
+## Canonical example
+
+`/plan`
+
 ## Related commands
 
 - [`/init`](./init.md)

@@ -13,6 +13,10 @@ Generates a repository-wide Copilot instructions file.
 
 Creates a starting `.github/copilot-instructions.md` from the current solution so future chat requests inherit the project’s conventions.
 
+## Canonical example
+
+`/generateInstructions`
+
 ## Related commands
 
 - [`/generate`](./generate.md)

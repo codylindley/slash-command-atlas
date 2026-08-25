@@ -16,6 +16,10 @@ Useful for quickly reorienting yourself or naming what the session has become wi
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/recap`
+
 ## Related commands
 
 - [`/rename`](./rename.md)

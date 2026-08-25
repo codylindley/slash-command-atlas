@@ -16,6 +16,10 @@ An alias for `/permissions allow-all`. Worth pairing with `/sandbox enable` if y
 
 > **Note:** This removes the approval prompts that are your main guardrail. Prefer a sandbox or a disposable worktree.
 
+## Canonical example
+
+`/allow-all`
+
 ## Related commands
 
 - [`/permissions`](./permissions.md)

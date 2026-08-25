@@ -15,6 +15,10 @@ Is unavailable because browser session switching happens in the sidebar.
 
 Anthropic names `/resume` with `/plugin` as terminal-interface-only, whether or not an argument is supplied.
 
+## Canonical example
+
+`/resume`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

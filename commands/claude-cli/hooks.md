@@ -13,6 +13,10 @@ Shows configured lifecycle hooks and their tool-event matchers.
 
 Use it to inspect what runs before and after tool calls, prompts, compaction, session changes, and other Claude Code events.
 
+## Canonical example
+
+`/hooks`
+
 ## Related commands
 
 - [`/plugin`](./plugin.md)

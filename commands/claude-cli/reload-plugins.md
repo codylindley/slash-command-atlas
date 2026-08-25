@@ -13,6 +13,10 @@ Reloads active plugins and reports component or load errors.
 
 Applies plugin changes without restarting. If changed MCP tools would invalidate the prompt cache, the command warns and skips that reload unless you pass `--force`.
 
+## Canonical example
+
+`/reload-plugins`
+
 ## Related commands
 
 - [`/plugin`](./plugin.md)

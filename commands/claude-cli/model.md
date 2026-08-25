@@ -13,9 +13,9 @@ Switches models and saves the choice as the default for new sessions.
 
 Without an argument, opens the model picker; press `s` to make a session-only choice. Models that support effort expose it with the left and right arrows.
 
-## Examples
+## Canonical example
 
-- `/model sonnet`
+`/model sonnet`
 
 ## Related commands
 

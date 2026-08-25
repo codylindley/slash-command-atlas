@@ -13,6 +13,10 @@ Runs a focused security review of active local changes.
 
 Returns prioritized vulnerability findings with remediation suggestions. This is explicitly not a full repository security audit — it looks at what you have changed.
 
+## Canonical example
+
+`/security-review focus on authentication and input validation`
+
 ## Related commands
 
 - [`/review`](./review.md)

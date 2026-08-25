@@ -14,9 +14,9 @@ Clears the terminal and starts a fresh chat.
 
 Resets the visible transcript and creates a new chat in the same CLI session. Optional text names the new chat. Unlike `Ctrl+L`, this changes the chat rather than only clearing the terminal view.
 
-## Examples
+## Canonical example
 
-- `/clear release prep`
+`/clear release prep`
 
 ## Related commands
 

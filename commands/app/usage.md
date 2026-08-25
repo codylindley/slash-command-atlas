@@ -13,6 +13,10 @@ Opens usage and rate-limit details for your plan.
 
 What you have spent and what is left. Worth checking before starting something expensive, and the first thing to look at when the agent suddenly starts refusing work.
 
+## Canonical example
+
+`/usage`
+
 ## Related commands
 
 - [`/context`](./context.md)

@@ -13,6 +13,10 @@ Shows, enables, or ends remote control of the session.
 
 With remote steering on you can drive the session from GitHub.com or GitHub Mobile. Run bare to check status.
 
+## Canonical example
+
+`/remote on`
+
 ## Related commands
 
 - [`/ide`](./ide.md)

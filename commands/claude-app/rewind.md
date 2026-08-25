@@ -19,6 +19,10 @@ The picker can restore both code and conversation, either one alone, or summariz
 
 **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/rewind`
+
 ## Related commands
 
 - [`/branch`](./branch.md)

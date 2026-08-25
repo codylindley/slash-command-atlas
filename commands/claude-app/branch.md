@@ -21,6 +21,10 @@ Preserves the original conversation in the resume picker while the new branch di
 - Trying a second implementation strategy without losing the first
 - Exploring a risky idea while preserving a clean return point
 
+## Canonical example
+
+`/branch alternate-cache-design`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

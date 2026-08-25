@@ -18,6 +18,10 @@ Opens the experimental-feature picker and saves the selected feature settings. S
 - You want to inspect which experimental features your build exposes
 - Documentation asks you to enable a named experimental capability
 
+## Canonical example
+
+`/experimental`
+
 ## Related commands
 
 - [`/debug-config`](./debug-config.md)

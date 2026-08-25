@@ -14,6 +14,10 @@ Clears session-level tool approvals and turns auto-approval off.
 
 The undo for approvals you granted in the moment, including `/yolo`. The agent goes back to asking. Worth running after a demo, or once you have finished whatever justified opening things up.
 
+## Canonical example
+
+`/reset-allowed-tools`
+
 ## Related commands
 
 - [`/allow-all-tools`](./allow-all-tools.md)

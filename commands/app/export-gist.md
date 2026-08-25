@@ -14,6 +14,10 @@ Exports the transcript to a secret gist.
 
 Turns the conversation into a shareable link, for a colleague, a write-up, or your own records. The same caveat as debug logs applies: secret gists are reachable by anyone holding the URL.
 
+## Canonical example
+
+`/export-gist`
+
 ## Related commands
 
 - [`/collect-debug-logs`](./collect-debug-logs.md)

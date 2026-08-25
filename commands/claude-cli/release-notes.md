@@ -13,6 +13,10 @@ Browses the Claude Code changelog by version.
 
 Release notes appear in the transcript but are not added to the conversation Claude sees.
 
+## Canonical example
+
+`/release-notes`
+
 ## Related commands
 
 - [`/status`](./status.md)

@@ -14,6 +14,10 @@ Installs the Claude GitHub App for a repository.
 
 Walks through repository selection and optionally sets up GitHub Actions workflows and secrets.
 
+## Canonical example
+
+`/install-github-app`
+
 ## Related commands
 
 - [`/web-setup`](./web-setup.md)

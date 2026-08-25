@@ -14,6 +14,10 @@ Builds a teammate onboarding guide from 30 days of local usage.
 
 Analyzes sessions, commands, and MCP usage, then produces a guide a teammate can paste as a first prompt. Eligible Claude subscriptions also receive a shareable Claude Code link.
 
+## Canonical example
+
+`/team-onboarding`
+
 ## Related commands
 
 - [`/insights`](./insights.md)

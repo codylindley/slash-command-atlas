@@ -20,6 +20,10 @@ Starts Goal mode for an objective that remains attached to the chat while work c
 - The objective will take multiple turns or a long-running agent loop
 - You want progress to remain visible and resumable across follow-up messages
 
+## Canonical example
+
+`/goal`
+
 ## Related commands
 
 - [`/plan`](./plan.md)

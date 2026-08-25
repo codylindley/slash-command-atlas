@@ -13,6 +13,10 @@ Opens Settings on version, model, account, and connectivity status.
 
 Also identifies whether the session is ordinary interactive work or an attached or unattended background job. The panel can open while Claude is responding.
 
+## Canonical example
+
+`/status`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

@@ -16,6 +16,10 @@ A dialog lets you choose how much session history to include and confirm before 
 
 > **Note:** Review the selected session history for secrets before confirming.
 
+## Canonical example
+
+`/bug MCP tools disappear after compaction`
+
 ## Related commands
 
 - [`/feedback`](./feedback.md)

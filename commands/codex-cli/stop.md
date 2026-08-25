@@ -14,6 +14,10 @@ Stops all background terminals for the current session.
 
 Cancels the background terminal work shown by `/ps`, asking for confirmation when applicable. `/clean` remains a documented alias.
 
+## Canonical example
+
+`/stop`
+
 ## Related commands
 
 - [`/ps`](./ps.md)

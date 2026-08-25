@@ -14,9 +14,9 @@ Spawns a forked subagent whose result returns to this conversation.
 
 The subagent inherits the full conversation and works in the background while you continue. Unlike `/fork`, it reports its result back here instead of becoming an independent session.
 
-## Examples
+## Canonical example
 
-- `/subtask trace where the legacy header is still emitted`
+`/subtask trace where the legacy header is still emitted`
 
 ## Related commands
 

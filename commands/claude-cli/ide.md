@@ -13,6 +13,10 @@ Manages IDE integrations and shows their connection status.
 
 Connects the terminal session to supported editors so Claude can use editor context and integration features.
 
+## Canonical example
+
+`/ide`
+
 ## Related commands
 
 - [`/terminal-setup`](./terminal-setup.md)

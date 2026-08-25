@@ -14,6 +14,10 @@ Switches to a different session, chosen from a list or by ID.
 
 The same idea as the `--resume` and `--continue` launch flags, but from inside a running session.
 
+## Canonical example
+
+`/resume`
+
 ## Related commands
 
 - [`/session`](./session.md)

@@ -13,6 +13,10 @@ Analyzes and improves the running time of the selected code.
 
 Unique to Visual Studio — no other Copilot surface exposes a performance command by this name.
 
+## Canonical example
+
+`/optimize`
+
 ## Related commands
 
 - [`/explain`](./explain.md)

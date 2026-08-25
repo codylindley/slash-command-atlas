@@ -23,6 +23,10 @@ The CLI’s chronicle is where the desktop app’s history features come from, a
 - `/chronicle skills review` — Review a drafted skill proposal
 - `/chronicle skills status` — Track the status of skill proposals
 
+## Canonical example
+
+`/chronicle standup`
+
 ## Related commands
 
 - [`/search`](./search.md)

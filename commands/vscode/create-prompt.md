@@ -11,6 +11,10 @@
 
 Generates a prompt file with AI assistance in Agent mode.
 
+## Canonical example
+
+`/create-prompt`
+
 ## Related commands
 
 - [`/prompts`](./prompts.md)

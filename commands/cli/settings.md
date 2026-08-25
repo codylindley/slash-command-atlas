@@ -14,9 +14,9 @@ Opens the settings dialog, or reads and writes a setting inline.
 
 The dialog has **User**, **Repo**, **Repo (local)** and **Problems** tabs; a setting overridden in another scope shows a badge naming which scope wins. `show KEY` masks secret-named values instead of printing them. Add `--repo` or `--local` to target the repository settings files instead of your user settings. Rows governed by an organization or MDM policy render read-only with a `(managed)` tag.
 
-## Examples
+## Canonical example
 
-- `/settings --repo model gpt-5.2`
+`/settings --repo model gpt-5.2`
 
 ## Related commands
 

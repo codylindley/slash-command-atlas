@@ -13,6 +13,10 @@ Opens the page for moving to a higher Claude plan.
 
 When a browser cannot open, Claude Code shows a sign-in prompt instead. The command is hidden on plans where upgrading here does not apply.
 
+## Canonical example
+
+`/upgrade`
+
 ## Related commands
 
 - [`/usage-credits`](./usage-credits.md)

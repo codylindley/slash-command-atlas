@@ -14,6 +14,10 @@ Invokes a user, project, or plugin skill by its discovered name.
 
 Skills in `~/.claude/skills/` and `.claude/skills/` become commands. Legacy Markdown files in `.claude/commands/` still work, and plugins use namespaced commands. Current builds can chain as many as six skills at the start of one prompt. These are dynamic, so the Atlas does not pretend to enumerate your installation.
 
+## Canonical example
+
+`/review-api src/auth`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

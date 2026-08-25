@@ -13,6 +13,10 @@ Runs the chat in the selected local project.
 
 Switches the chat to local execution in the project selected by the app. Use `/cloud` for the corresponding move to an available cloud environment.
 
+## Canonical example
+
+`/local`
+
 ## Related commands
 
 - [`/cloud`](./cloud.md)

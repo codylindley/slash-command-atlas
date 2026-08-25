@@ -11,6 +11,10 @@
 
 Displays every directory that file access has been allowed for.
 
+## Canonical example
+
+`/list-dirs`
+
 ## Related commands
 
 - [`/add-dir`](./add-dir.md)

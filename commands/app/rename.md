@@ -14,6 +14,10 @@ Renames the current chat or session.
 
 Sessions appear in the sidebar grouped by repository, and with several running in parallel the auto-generated names become hard to tell apart quickly. Renaming is cosmetic, but it is the difference between a usable sidebar and a wall of near-identical titles.
 
+## Canonical example
+
+`/rename`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

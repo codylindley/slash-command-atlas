@@ -14,9 +14,9 @@ Sets the cloud session’s identifying color.
 
 Pass the color explicitly because cloud sessions cannot open the terminal color picker.
 
-## Examples
+## Canonical example
 
-- `/color cyan`
+`/color cyan`
 
 ## Related commands
 

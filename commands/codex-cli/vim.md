@@ -13,6 +13,10 @@ Toggles Vim editing mode for the composer.
 
 Switches the current session between Vim-style composer behavior and the default editing mode. The persistent default is configured separately with `tui.vim_mode_default`.
 
+## Canonical example
+
+`/vim`
+
 ## Related commands
 
 - [`/keymap`](./keymap.md)

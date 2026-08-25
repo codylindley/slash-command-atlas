@@ -13,6 +13,10 @@ Shows suggestions to reduce token usage and cost.
 
 The same idea as `/chronicle tips`, pointed at spend: where your sessions burn context, and which habits are expensive.
 
+## Canonical example
+
+`/chronicle cost-tips`
+
 ## Related commands
 
 - [`/chronicle tips`](./chronicle-tips.md)

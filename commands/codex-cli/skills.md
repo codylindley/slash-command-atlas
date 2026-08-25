@@ -13,6 +13,10 @@ Browses and selects skills for the next request.
 
 Opens the skill picker and inserts the selected skill context so the following request is handled under that skill's instructions.
 
+## Canonical example
+
+`/skills`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

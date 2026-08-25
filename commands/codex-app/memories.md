@@ -14,6 +14,10 @@ Configures whether the chat can use or generate memories.
 
 Opens the memory controls for the chat. Availability depends on whether Memories is enabled for the current account or environment.
 
+## Canonical example
+
+`/memories`
+
 ## Related commands
 
 - [`/status`](./status.md)

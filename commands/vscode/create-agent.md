@@ -11,6 +11,10 @@
 
 Generates a custom agent with AI assistance in Agent mode.
 
+## Canonical example
+
+`/create-agent`
+
 ## Related commands
 
 - [`/agents`](./agents.md)

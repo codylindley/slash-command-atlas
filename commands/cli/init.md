@@ -13,6 +13,10 @@ Initializes Copilot custom instructions and agentic features for the repository.
 
 Scaffolds the repository-level configuration the agent reads on every future session here.
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/instructions`](./instructions.md)

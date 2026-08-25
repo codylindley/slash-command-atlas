@@ -11,6 +11,10 @@
 
 Signs in to an Anthropic or Claude account.
 
+## Canonical example
+
+`/login`
+
 ## Related commands
 
 - [`/logout`](./logout.md)

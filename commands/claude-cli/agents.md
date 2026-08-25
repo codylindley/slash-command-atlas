@@ -13,6 +13,10 @@ Explains how to create or manage custom subagents.
 
 Current builds direct you to ask Claude to create an agent or edit `.claude/agents/` or `~/.claude/agents/` directly. Builds through 2.1.197 opened an interactive agent manager instead.
 
+## Canonical example
+
+`/agents`
+
 ## Related commands
 
 - [`/list-agents`](./list-agents.md)

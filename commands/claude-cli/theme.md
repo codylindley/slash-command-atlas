@@ -13,6 +13,10 @@ Changes the terminal color theme.
 
 Includes automatic light/dark matching, colorblind-accessible variants, ANSI-palette themes, and custom themes supplied from your user directory or plugins.
 
+## Canonical example
+
+`/theme`
+
 ## Related commands
 
 - [`/color`](./color.md)

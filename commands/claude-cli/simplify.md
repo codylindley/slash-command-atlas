@@ -19,6 +19,10 @@ Four agents inspect reuse, clarity, efficiency, and abstraction level in paralle
 - A feature works but the implementation feels more complicated than necessary
 - You want a focused cleanup pass before review
 
+## Canonical example
+
+`/simplify src/auth`
+
 ## Related commands
 
 - [`/code-review`](./code-review.md)

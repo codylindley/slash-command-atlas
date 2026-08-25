@@ -11,6 +11,10 @@
 
 Enables parallel subagent execution of parts of a task.
 
+## Canonical example
+
+`/fleet add tests for every parser in src/parsers`
+
 ## Related commands
 
 - [`/subagents`](./subagents.md)

@@ -13,6 +13,10 @@ Starts a chat without a project.
 
 Creates a new projectless chat. Use `/project` when the next chat should instead be tied to a selected project.
 
+## Canonical example
+
+`/task`
+
 ## Related commands
 
 - [`/project`](./project.md)

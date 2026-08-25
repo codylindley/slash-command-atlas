@@ -14,6 +14,10 @@ Runs the chat in the cloud.
 
 Switches execution away from the selected local project and into an available cloud environment. Use `/cloud-environment` when you need to choose which configured environment backs the chat.
 
+## Canonical example
+
+`/cloud`
+
 ## Related commands
 
 - [`/cloud-environment`](./cloud-environment.md)

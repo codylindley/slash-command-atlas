@@ -16,6 +16,10 @@ Team and Enterprise sessions cannot send an administrator credit request from we
 
 > **Note:** Documented in the Remote Control limitations list for web and mobile.
 
+## Canonical example
+
+`/usage-credits`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

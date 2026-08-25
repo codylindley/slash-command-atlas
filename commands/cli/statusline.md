@@ -12,6 +12,10 @@
 
 Configures which items appear in the status line.
 
+## Canonical example
+
+`/statusline`
+
 ## Related commands
 
 - [`/theme`](./theme.md)

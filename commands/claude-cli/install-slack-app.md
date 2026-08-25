@@ -12,6 +12,10 @@
 
 Installs the Claude Slack app through browser OAuth.
 
+## Canonical example
+
+`/install-slack-app`
+
 ## Related commands
 
 - [`/install-github-app`](./install-github-app.md)

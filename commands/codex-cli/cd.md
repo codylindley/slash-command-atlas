@@ -14,9 +14,12 @@ Changes the working directory without losing the conversation.
 
 Moves an idle local session to a trusted directory while preserving its transcript. Relative paths resolve from the current directory; omitting the path selects your home directory. Codex rejects unsafe transitions, remote environments, active work, and incompatible permission profiles.
 
-## Examples
+## Canonical example
 
-- `/cd ../service-api`
+`/cd ../service-api`
+
+## More examples
+
 - `/cd`
 
 ## Related commands

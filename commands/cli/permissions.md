@@ -21,6 +21,10 @@ This is the canonical command for permission changes; `/allow-all` and `/yolo` r
 - `/permissions show` — Report the current mode
 - `/permissions reset` — Clear in-memory approvals for this session
 
+## Canonical example
+
+`/permissions show`
+
 ## Related commands
 
 - [`/allow-all`](./allow-all.md)

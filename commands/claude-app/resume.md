@@ -17,6 +17,10 @@ Background sessions appear with a `bg` marker. A background session that is stil
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/resume oauth-token-rotation`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

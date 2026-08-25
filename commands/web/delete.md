@@ -13,6 +13,10 @@ Deletes a conversation.
 
 The only Copilot surface with a delete command in the slash picker.
 
+## Canonical example
+
+`/delete`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

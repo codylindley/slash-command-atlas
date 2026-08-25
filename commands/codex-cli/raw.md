@@ -13,6 +13,10 @@ Toggles raw terminal scrollback mode.
 
 Makes terminal selection and copying more direct. Use the bare command to toggle or pass `on` or `off`; the default `Alt+R` shortcut controls the same mode.
 
+## Canonical example
+
+`/raw on`
+
 ## Related commands
 
 - [`/copy`](./copy.md)

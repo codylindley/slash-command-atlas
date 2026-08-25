@@ -13,6 +13,10 @@ Renders an interactive inbox widget for work items.
 
 A single view of what is waiting on you across GitHub: review requests, assigned issues, pull requests that need attention. It renders empty if you have nothing pending, which is the good outcome.
 
+## Canonical example
+
+`/inbox`
+
 ## Related commands
 
 - [`/pr-open`](./pr-open.md)

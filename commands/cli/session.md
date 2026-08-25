@@ -24,6 +24,10 @@ Shows session information and manages saved sessions.
 - `/session cleanup / prune` — Clear out old session data
 - `/session delete [ID] / delete-all` — Delete one session, or all of them
 
+## Canonical example
+
+`/session info`
+
 ## Related commands
 
 - [`/resume`](./resume.md)

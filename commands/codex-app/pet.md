@@ -13,6 +13,10 @@ Wakes or tucks away the desktop pet.
 
 Controls the ambient pet in the desktop app without changing the chat, model, or execution environment.
 
+## Canonical example
+
+`/pet`
+
 ## Related commands
 
 - [`/personality`](./personality.md)

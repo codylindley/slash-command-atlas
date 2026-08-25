@@ -13,6 +13,10 @@ Configures terminal window or tab title fields.
 
 Chooses and reorders title components such as the app name, project, status, thread, Git branch, model, and task progress, then persists them to `tui.terminal_title`.
 
+## Canonical example
+
+`/title`
+
 ## Related commands
 
 - [`/statusline`](./statusline.md)

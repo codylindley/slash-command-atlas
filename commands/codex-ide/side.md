@@ -13,6 +13,10 @@ Starts a temporary side chat without interrupting the main chat.
 
 Creates an ephemeral detour for a focused question while leaving the main conversation in place. Use `/fork` when you want a durable branch.
 
+## Canonical example
+
+`/side`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

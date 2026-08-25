@@ -18,6 +18,10 @@ Attaches a durable objective to the current chat so Codex can keep working towar
 - A task spans multiple turns or a long-running workflow
 - You want the objective to remain attached while you continue steering the chat
 
+## Canonical example
+
+`/goal`
+
 ## Related commands
 
 - [`/plan`](./plan.md)

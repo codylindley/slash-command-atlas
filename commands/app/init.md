@@ -20,6 +20,10 @@ Inspects the project and writes — or upgrades — the custom instructions file
 - The agent keeps getting your conventions wrong
 - After a significant architectural change
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/skills`](./skills.md)

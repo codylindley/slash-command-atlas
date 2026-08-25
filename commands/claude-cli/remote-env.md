@@ -14,6 +14,10 @@ Chooses the default environment used by cloud agents.
 
 Sets which saved cloud environment Claude uses when it launches remote work.
 
+## Canonical example
+
+`/remote-env`
+
 ## Related commands
 
 - [`/autofix-pr`](./autofix-pr.md)

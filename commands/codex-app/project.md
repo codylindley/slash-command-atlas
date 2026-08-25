@@ -13,6 +13,10 @@ Chooses a project for new chats.
 
 Selects the project that newly created chats will use. The reference scopes this command to new chats rather than describing it as a move of the current chat.
 
+## Canonical example
+
+`/project`
+
 ## Related commands
 
 - [`/task`](./task.md)

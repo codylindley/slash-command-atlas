@@ -18,6 +18,10 @@ Reduces accumulated context so a long chat has room to continue without starting
 - The context figure shown by `/status` is getting tight
 - You want to retain the task while reducing earlier conversational detail
 
+## Canonical example
+
+`/compact`
+
 ## Related commands
 
 - [`/status`](./status.md)

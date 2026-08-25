@@ -13,9 +13,9 @@ Includes open files, the current selection, and other IDE context.
 
 Pulls available editor state into the next prompt. Optional inline text can tell Codex what to do with the selected code or open files.
 
-## Examples
+## Canonical example
 
-- `/ide explain how the selected handler reaches the database`
+`/ide explain how the selected handler reaches the database`
 
 ## Related commands
 

@@ -18,6 +18,10 @@ Prints the addressable name for each peer. The command only exists when cross-se
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/list-agents`
+
 ## Related commands
 
 - [`/agents`](./agents.md)

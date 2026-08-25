@@ -13,6 +13,10 @@ Chooses the model for the current chat.
 
 Opens the model picker. Reasoning effort and a catalog-provided Fast tier are controlled separately with `/reasoning` and `/fast`.
 
+## Canonical example
+
+`/model`
+
 ## Related commands
 
 - [`/reasoning`](./reasoning.md)

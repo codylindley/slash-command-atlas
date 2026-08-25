@@ -18,6 +18,10 @@ Opens an ephemeral detour for a focused question while leaving the main conversa
 - You need a quick check that should not redirect the main task
 - You want a temporary second line of reasoning rather than a saved fork
 
+## Canonical example
+
+`/side`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

@@ -16,9 +16,12 @@ Run bare to inspect the active or most recently achieved goal. `clear`, `stop`, 
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/goal all unit and integration tests pass`
+`/goal all unit and integration tests pass`
+
+## More examples
+
 - `/goal clear`
 
 ## Related commands

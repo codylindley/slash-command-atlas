@@ -13,6 +13,10 @@ Returns personalized workflow tips.
 
 Looks at how you have actually been using the agent and suggests changes: commands you are not reaching for, habits that are costing you time.
 
+## Canonical example
+
+`/chronicle tips`
+
 ## Related commands
 
 - [`/chronicle`](./chronicle.md)

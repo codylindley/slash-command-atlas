@@ -14,6 +14,10 @@ Configures terminal keybindings such as Shift+Enter.
 
 Appears only in terminals that need extra setup, including VS Code, Cursor, Devin Desktop, Alacritty, and Zed.
 
+## Canonical example
+
+`/terminal-setup`
+
 ## Related commands
 
 - [`/keybindings`](./keybindings.md)

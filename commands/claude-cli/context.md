@@ -13,6 +13,10 @@ Visualizes what is consuming the current context window.
 
 Shows a colored usage grid, heavy contributors, capacity warnings, and optimization suggestions. In fullscreen mode the per-item breakdown starts collapsed; pass `all` to expand it.
 
+## Canonical example
+
+`/context all`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

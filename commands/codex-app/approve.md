@@ -19,6 +19,10 @@ This is a narrowly scoped override: it retries the denied action once while auto
 - You inspected a recent automatic-review denial and want Codex to try that action once
 - The denial was a false positive rather than a signal to change the approach
 
+## Canonical example
+
+`/approve`
+
 ## Related commands
 
 - [`/review`](./review.md)

@@ -13,6 +13,10 @@ Runs the chat in the local workspace.
 
 Switches execution to the workspace open in the IDE. Use `/cloud` to move the chat to an available cloud environment.
 
+## Canonical example
+
+`/local`
+
 ## Related commands
 
 - [`/cloud`](./cloud.md)

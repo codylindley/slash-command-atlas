@@ -18,6 +18,10 @@ Opens the approval-policy picker so you can relax or tighten permissions during 
 - You want to inspect changes before Codex edits or runs commands
 - A well-scoped task is pausing for approvals more often than you want
 
+## Canonical example
+
+`/permissions`
+
 ## Related commands
 
 - [`/approve`](./approve.md)

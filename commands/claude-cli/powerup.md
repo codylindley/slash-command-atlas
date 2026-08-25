@@ -11,6 +11,10 @@
 
 Teaches Claude Code features through short interactive demos.
 
+## Canonical example
+
+`/powerup`
+
 ## Related commands
 
 - [`/help`](./help.md)

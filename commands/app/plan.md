@@ -19,9 +19,9 @@ Plan mode is the middle setting on the autonomy dial. Copilot investigates the c
 - A refactor where the sequencing matters more than any individual edit
 - You want to check the agent understood the task before it spends tokens implementing the wrong thing
 
-## Examples
+## Canonical example
 
-- `/plan add rate limiting to the public API, 100 requests per minute per token`
+`/plan add rate limiting to the public API, 100 requests per minute per token`
 
 ## Related commands
 

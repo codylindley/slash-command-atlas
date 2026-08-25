@@ -13,6 +13,10 @@ Configures your agent skills.
 
 Skills package instructions and supporting files into a capability the agent can invoke. A skill file also becomes a slash command of the same name.
 
+## Canonical example
+
+`/skills`
+
 ## Related commands
 
 - [`/create-skill`](./create-skill.md)

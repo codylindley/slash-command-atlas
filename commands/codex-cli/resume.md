@@ -13,6 +13,10 @@ Resumes a saved chat from the session list.
 
 Opens the saved-session picker and reloads the selected transcript so you can continue with its original history.
 
+## Canonical example
+
+`/resume`
+
 ## Related commands
 
 - [`/fork`](./fork.md)

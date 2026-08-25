@@ -11,6 +11,10 @@
 
 Configures Claude in Chrome integration settings.
 
+## Canonical example
+
+`/chrome`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

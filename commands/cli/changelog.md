@@ -14,9 +14,9 @@ Displays the CLI changelog, optionally summarized.
 
 Add the keyword `summarize` for an AI-generated summary rather than raw release notes — a quick way to catch up on what changed since you last updated.
 
-## Examples
+## Canonical example
 
-- `/changelog summarize last 5`
+`/changelog summarize last 5`
 
 ## Related commands
 

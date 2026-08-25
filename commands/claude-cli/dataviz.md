@@ -15,9 +15,9 @@ Applies structured design guidance to charts and dashboards.
 
 Chooses an appropriate chart form, assigns color by semantic role, validates palette contrast and colorblind safety, and applies interaction and accessibility rules.
 
-## Examples
+## Canonical example
 
-- `/dataviz redesign the retention dashboard for weekly cohorts`
+`/dataviz redesign the retention dashboard for weekly cohorts`
 
 ## Related commands
 

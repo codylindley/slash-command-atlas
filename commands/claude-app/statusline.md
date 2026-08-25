@@ -16,9 +16,9 @@ Describe the status line you want, or run bare to derive one from the current sh
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
-## Examples
+## Canonical example
 
-- `/statusline show model, context percent, branch, and elapsed time`
+`/statusline show model, context percent, branch, and elapsed time`
 
 ## Related commands
 

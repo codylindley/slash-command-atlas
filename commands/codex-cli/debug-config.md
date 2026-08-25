@@ -13,6 +13,10 @@ Prints configuration layers and policy-requirement diagnostics.
 
 Shows config layers in precedence order, whether each is active, and policy sources and requirements. Use it when effective behavior differs from the value you expected in `config.toml`.
 
+## Canonical example
+
+`/debug-config`
+
 ## Related commands
 
 - [`/status`](./status.md)

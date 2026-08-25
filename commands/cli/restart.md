@@ -11,6 +11,10 @@
 
 Restarts the CLI, preserving the current session.
 
+## Canonical example
+
+`/restart`
+
 ## Related commands
 
 - [`/clear`](./clear.md)

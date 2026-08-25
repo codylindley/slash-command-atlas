@@ -13,9 +13,9 @@ Summarizes your work from the last day.
 
 Reads recent sessions and writes the summary you would otherwise reconstruct from memory each morning. It is also the fastest way to work out which of five parallel sessions actually did what.
 
-## Examples
+## Canonical example
 
-- `/chronicle standup`
+`/chronicle standup`
 
 ## Related commands
 

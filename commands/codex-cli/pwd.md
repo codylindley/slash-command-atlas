@@ -14,6 +14,10 @@ Shows the current working directory.
 
 Prints the active directory for the session. Unlike `/cd`, this read-only command remains available while a task is running and from side conversations.
 
+## Canonical example
+
+`/pwd`
+
 ## Related commands
 
 - [`/cd`](./cd.md)

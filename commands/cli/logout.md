@@ -11,6 +11,10 @@
 
 Logs out of Copilot.
 
+## Canonical example
+
+`/logout`
+
 ## Related commands
 
 - [`/login`](./login.md)

@@ -13,6 +13,10 @@ Manages the current GitHub user.
 
 For people with a work account and a personal one, `switch` is the difference between committing under the right identity and not.
 
+## Canonical example
+
+`/user switch`
+
 ## Related commands
 
 - [`/login`](./login.md)

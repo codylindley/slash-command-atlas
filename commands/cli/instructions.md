@@ -13,6 +13,10 @@ Views and toggles custom instruction files.
 
 Shows which instruction files are in play for this session and lets you switch them off — handy when you suspect an instruction file is the reason the agent keeps doing something odd.
 
+## Canonical example
+
+`/instructions`
+
 ## Related commands
 
 - [`/init`](./init.md)

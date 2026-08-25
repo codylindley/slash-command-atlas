@@ -13,6 +13,10 @@ Browses apps (connectors) and inserts one into the prompt.
 
 Opens the app picker. Selecting an app inserts its mention as `$app-slug` in the composer so the next request can ask Codex to use it.
 
+## Canonical example
+
+`/apps`
+
 ## Related commands
 
 - [`/plugins`](./plugins.md)

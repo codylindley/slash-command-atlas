@@ -13,6 +13,10 @@ Opens a file picker and attaches files to your message.
 
 Pins specific files into the prompt instead of hoping the agent finds them. Attaching the two or three files that actually matter is usually faster, cheaper and more reliable than describing where to look.
 
+## Canonical example
+
+`/attach-files`
+
 ## Related commands
 
 - [`/attach-folder`](./attach-folder.md)

@@ -17,6 +17,10 @@ The transcript and any worktree are kept. To detach without stopping the work, u
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
+## Canonical example
+
+`/stop`
+
 ## Related commands
 
 - [`/background`](./background.md)

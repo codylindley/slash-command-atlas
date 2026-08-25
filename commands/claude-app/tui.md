@@ -16,6 +16,10 @@ Selects the terminal renderer and relaunches the current conversation.
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 
+## Canonical example
+
+`/tui`
+
 ## Related commands
 
 - [`/focus`](./focus.md)

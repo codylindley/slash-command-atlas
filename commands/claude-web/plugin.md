@@ -14,6 +14,10 @@ Is unavailable because plugin management runs only in the terminal interface.
 
 Cloud sessions can still load plugins declared in repository settings or enabled for the claude.ai account, but the interactive plugin manager is terminal-only.
 
+## Canonical example
+
+`/plugin`
+
 ## Related commands
 
 - [`/reload-plugins`](./reload-plugins.md)

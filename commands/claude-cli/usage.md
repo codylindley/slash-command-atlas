@@ -14,6 +14,10 @@ Shows session cost, plan limits, and activity statistics.
 
 Eligible subscription plans also break usage down by skill, subagent, plugin, and MCP server. The `/stats` alias opens directly on the Stats tab.
 
+## Canonical example
+
+`/usage`
+
 ## Related commands
 
 - [`/usage-credits`](./usage-credits.md)

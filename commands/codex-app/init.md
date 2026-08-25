@@ -18,6 +18,10 @@ Creates a starting instructions file for the project. Review and refine the gene
 - A repository does not yet have persistent agent instructions
 - You want a generated starting point that the team can edit and commit
 
+## Canonical example
+
+`/init`
+
 ## Related commands
 
 - [`/project`](./project.md)

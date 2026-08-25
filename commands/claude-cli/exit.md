@@ -14,6 +14,10 @@ Exits the CLI, or detaches from an attached background session.
 
 Detaching leaves a background session running. Use `/stop` when you intend to end that work rather than simply leave its terminal view.
 
+## Canonical example
+
+`/exit`
+
 ## Related commands
 
 - [`/stop`](./stop.md)

@@ -15,6 +15,10 @@ Internal Desktop workflow entry exposed by some builds.
 
 This double-underscore command is visible in the live Desktop Code picker but is not documented as a public command. Treat it as implementation detail rather than a stable user-facing workflow.
 
+## Canonical example
+
+`/__remote-workflow`
+
 ## Related commands
 
 - [`/workflows`](./workflows.md)

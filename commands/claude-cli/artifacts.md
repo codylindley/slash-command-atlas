@@ -14,6 +14,10 @@ Browses artifacts you own or that others shared with you.
 
 Attach an artifact to the session, open it in a browser, or copy its link from the picker.
 
+## Canonical example
+
+`/artifacts`
+
 ## Related commands
 
 - [`/deep-research`](./deep-research.md)

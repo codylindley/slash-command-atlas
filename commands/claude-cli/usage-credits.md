@@ -13,6 +13,10 @@ Configures usage credits or requests them from an administrator.
 
 Opens billing settings for users with access. Team and Enterprise members without billing access can confirm an administrator notification instead; headless sessions print the URL when a browser cannot open.
 
+## Canonical example
+
+`/usage-credits`
+
 ## Related commands
 
 - [`/usage`](./usage.md)

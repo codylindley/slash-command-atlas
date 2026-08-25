@@ -14,9 +14,12 @@ Schedules a one-off prompt, skill, or schedulable slash command.
 
 The non-recurring counterpart to `/every`. With no arguments it opens the same schedule manager.
 
-## Examples
+## Canonical example
 
-- `/after 30m remind me the time`
+`/after 30m remind me the time`
+
+## More examples
+
 - `/after 1h /chronicle standup`
 
 ## Related commands

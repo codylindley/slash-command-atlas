@@ -13,6 +13,10 @@ Shows background terminals and their recent output.
 
 Lists background terminal commands, their state, and up to three recent non-empty output lines. The list can be empty when no background terminals exist or unified execution is not in use.
 
+## Canonical example
+
+`/ps`
+
 ## Related commands
 
 - [`/stop`](./stop.md)

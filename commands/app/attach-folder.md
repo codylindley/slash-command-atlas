@@ -13,6 +13,10 @@ Opens a folder picker and attaches a folder to your message.
 
 The same idea as `/attach-files` at directory granularity, for when the relevant unit is a module or package rather than a handful of files. Be deliberate: a large folder is a large number of tokens.
 
+## Canonical example
+
+`/attach-folder`
+
 ## Related commands
 
 - [`/attach-files`](./attach-files.md)

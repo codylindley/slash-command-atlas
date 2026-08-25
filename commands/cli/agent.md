@@ -11,6 +11,10 @@
 
 Browses and selects from the available custom agents.
 
+## Canonical example
+
+`/agent`
+
 ## Related commands
 
 - [`/subagents`](./subagents.md)

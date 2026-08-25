@@ -13,6 +13,10 @@ Sets the prompt-bar color for this session.
 
 Choose red, blue, green, yellow, purple, orange, pink, or cyan; use `default` to reset. With no argument Claude Code picks a random color. The color also identifies the session in agent view and syncs to Remote Control.
 
+## Canonical example
+
+`/color blue`
+
 ## Related commands
 
 - [`/rename`](./rename.md)

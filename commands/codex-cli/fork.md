@@ -18,6 +18,10 @@ Clones the active transcript into a new chat with a fresh ID and leaves the orig
 - You want to test an alternative approach from the current context
 - The experiment should be durable rather than an ephemeral side chat
 
+## Canonical example
+
+`/fork`
+
 ## Related commands
 
 - [`/side`](./side.md)

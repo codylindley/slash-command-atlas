@@ -15,6 +15,10 @@ Makes this local session steerable from claude.ai or mobile.
 
 Remote Control exposes the running terminal session without moving its execution off your machine. It requires Claude subscription sign-in and organization policy support.
 
+## Canonical example
+
+`/remote-control`
+
 ## Related commands
 
 - [`/teleport`](./teleport.md)

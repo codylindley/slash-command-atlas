@@ -14,6 +14,10 @@ Toggles fast serving for an eligible cloud session.
 
 There is no picker on the web. The command only works when this session started with fast mode enabled.
 
+## Canonical example
+
+`/fast on`
+
 ## Related commands
 
 - [`/model`](./model.md)

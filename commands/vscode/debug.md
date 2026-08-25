@@ -11,6 +11,10 @@
 
 Opens the Chat Debug view to inspect chat logs.
 
+## Canonical example
+
+`/debug`
+
 ## Related commands
 
 - [`/troubleshoot`](./troubleshoot.md)

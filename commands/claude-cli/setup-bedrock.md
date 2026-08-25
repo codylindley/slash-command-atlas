@@ -15,6 +15,10 @@ Configures Amazon Bedrock authentication, region, and model pins.
 
 An interactive wizard hidden from autocomplete until Bedrock mode is enabled; type the full command to invoke it.
 
+## Canonical example
+
+`/setup-bedrock`
+
 ## Related commands
 
 - [`/setup-vertex`](./setup-vertex.md)

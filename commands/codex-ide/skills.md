@@ -15,6 +15,10 @@ Opens the skill picker so the next request follows that skill’s instructions. 
 
 > **Note:** OpenAI’s Build skills guide names this command for the IDE extension, although it is absent from the extension’s 22-row slash-command table. The popup in your installed extension remains definitive.
 
+## Canonical example
+
+`/skills`
+
 ## Related commands
 
 - [`/mcp`](./mcp.md)

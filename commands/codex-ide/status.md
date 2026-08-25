@@ -13,6 +13,10 @@ Shows the chat ID, context usage, and rate limits.
 
 Displays the core runtime facts for the active Codex chat and is the fastest way to check context pressure or identify the conversation.
 
+## Canonical example
+
+`/status`
+
 ## Related commands
 
 - [`/compact`](./compact.md)

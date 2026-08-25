@@ -21,9 +21,9 @@ The rubber duck is a built-in critic that deliberately runs on a *different* mod
 - Before committing to a large refactor
 - A second opinion on whether your tests actually cover the risk
 
-## Examples
+## Canonical example
 
-- `/rubber-duck is this migration plan safe to run against production data?`
+`/rubber-duck is this migration plan safe to run against production data?`
 
 ## Related commands
 

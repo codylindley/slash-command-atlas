@@ -13,6 +13,10 @@ Prints a one-line summary of the current session.
 
 > **Note:** Listed among the text-output commands that work from web and mobile.
 
+## Canonical example
+
+`/recap`
+
 ## Related commands
 
 - [`/context`](./context.md)
