@@ -151,22 +151,31 @@ comparison is deterministic on later days.
 
 A command records what you can type after the token in a single `args` string, so an empty value is
 ambiguous — it can mean the command takes nothing, opens a picker, wants a secondary verb, or simply
-was never documented. This audit reports the cases where the data contradicts itself:
+was never documented.
 
 ```bash
 node tools/audit-arguments.js
 ```
 
-It reports three things: per-surface coverage, commands whose token documents arguments on one
-surface but nothing on another (`/compact` is `[FOCUS-INSTRUCTIONS]` in the CLI but bare on seven
-other surfaces), and commands that document no input while their own prose implies some
-(`codex-app` `/fast` says it turns the tier "on or off" but shows no way to say which).
+Findings come in three tiers, ordered by how far you can trust them:
 
-The audit is **advisory, not a correctness check** — a bare command is usually right, because most
-commands genuinely take nothing, and some differences are real: Desktop's `/config` is deliberately
-bare because it ignores any text after the command. Prose findings skip negated phrasing for that
-reason. Use `--json` for machine-readable output and `--strict` to exit non-zero when anything is
-found.
+1. **Self-contradictory** — the record's own canonical example types something the signature never
+   declares, so one of the two fields is wrong. Purely structural, no heuristics. `vscode`
+   `/explain` shows `/explain what does this reducer do…` while documenting no arguments.
+2. **Same product, different story** — a token documents arguments on one surface and nothing on
+   another. `/compact` is `[FOCUS-INSTRUCTIONS]` in the GitHub Copilot CLI but bare in the app.
+   Grouped **within a product**, because equal tokens across vendors are unrelated commands: Xcode's
+   `/simplify` and Claude's `/simplify` have nothing to do with each other.
+3. **Prose hints** — wording implies input the record does not show. Pattern matching, so this is a
+   candidate list for review, not a defect list.
+
+Only tier 1 is a defect list, and `--strict` gates on it alone. Tiers 2 and 3 need a human: a bare
+command is usually correct because most commands genuinely take nothing, and some differences are
+real — Desktop's `/config` is deliberately bare because it ignores any text after the command.
+Tier 3 skips sentences containing negation for that reason, and still reports phrasing like "takes
+the work" that describes what a command does rather than what you type.
+
+Use `--json` for machine-readable output.
 
 ### Cache busting
 

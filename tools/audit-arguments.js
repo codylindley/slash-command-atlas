@@ -1,9 +1,19 @@
 /* Audits how well each command documents what you can type after the token.
 
-   The data model has one `args` string per command, so an empty value is
-   ambiguous: it can mean "takes nothing", "opens a picker", "wants a secondary
-   verb", or "we simply never wrote the arguments down". This tool surfaces the
-   cases where that ambiguity is demonstrably a gap rather than a design choice.
+   A command records that in a single `args` string, so an empty value is
+   ambiguous: it can mean the command takes nothing, opens a picker, wants a
+   secondary verb, or was simply never written down.
+
+   Findings are ordered by how much you can trust them:
+
+     1. Structural  — the record contradicts itself. No heuristics, no judgement.
+     2. Comparative — the same command documents different input on two surfaces
+                      OF THE SAME PRODUCT. Comparing across products is invalid:
+                      Xcode's /simplify and Claude's /simplify are unrelated.
+     3. Prose       — wording hints at input the record does not show. Pattern
+                      matching, so this is a candidate list, not a defect list.
+
+   Only tier 1 gates --strict. Tiers 2 and 3 need a human.
 
    Usage: node tools/audit-arguments.js [--json] [--strict] */
 
@@ -22,10 +32,10 @@ if (unknownArgs.length) {
 const jsonMode = args.includes('--json');
 const strictMode = args.includes('--strict');
 const rootDir = path.join(__dirname, '..');
-const dataDir = path.join(rootDir, 'assets', 'js', 'data');
 
-/* Phrases that imply a command consumes something after the token. Deliberately
-   conservative: these describe taking input, not merely doing work. */
+/* Wording that hints a command consumes something after the token. These are
+   candidates only: "takes the work and opens a pull request" matches "takes the"
+   while describing what the command does to existing state, not what you type. */
 const INPUT_HINTS = [
   /\boptional(ly)?\b/i,
   /\bpass (a|an|the|it|your|in)\b/i,
@@ -34,16 +44,12 @@ const INPUT_HINTS = [
   /\benables? or disables?\b/i,
   /\bon or off\b/i,
   /\bsubcommand/i,
-  /\btakes? (a|an|the)\b/i,
-  /\bspecify\b/i,
-  /\baccepts?\b/i
+  /\bspecify\b/i
 ];
 
-/* Several entries describe a command explicitly *not* taking input — Desktop's
-   `/config` "accepts no key=value form" is the canonical case. Matching on the
-   verb alone would report those as gaps when they are the opposite. */
+/* Some entries describe a command explicitly NOT taking input — Desktop's
+   `/config` "accepts no key=value form" is the canonical case. */
 const NEGATION = /\b(no|not|never|cannot|can't|doesn't|does not|isn't|ignores?|ignored|without|unlike)\b/i;
-const NEGATION_WINDOW = 40;
 
 function dataScriptsFromIndex(projectRoot) {
   const indexHtml = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf8');
@@ -62,12 +68,18 @@ function plainText(value) {
   return String(value == null ? '' : value).replace(/<[^>]+>/g, ' ');
 }
 
-function prose(c) {
-  return [c.summary, c.detail, c.note].concat(c.when || []).map(plainText).join(' ');
+function documentsInput(c) {
+  return Boolean(c.args) || Boolean((c.subs || []).length);
 }
 
-function takesInput(c) {
-  return Boolean(c.args) || Boolean((c.subs || []).length);
+/* Does the canonical example type anything after the token? Compare against the
+   primary name and every alias, since an example may legitimately use either. */
+function exampleCarriesInput(c) {
+  const example = String(c.canonicalExample || '');
+  if (!example) return false;
+  return [c.cmd].concat(c.aliases || []).some(function (name) {
+    return example.length > name.length && example.indexOf(name + ' ') === 0;
+  });
 }
 
 global.window = {};
@@ -77,27 +89,43 @@ dataScriptsFromIndex(rootDir).forEach(function (relativePath) {
 
 const S = global.window.SLASH;
 const commands = S.commands;
-const surfaceName = {};
-S.surfaces.forEach(function (s) { surfaceName[s.id] = s.name; });
+const productName = {};
+S.products.forEach(function (p) { productName[p.id] = p.name; });
+const productOfSurface = {};
+S.surfaces.forEach(function (s) { productOfSurface[s.id] = s.product; });
 
-/* Finding 1: the same token documents arguments on one surface but nothing on
-   another. Either the bare entry is under-documented or the difference is real
-   and deserves an explicit note. */
-const byToken = {};
+/* Tier 1: the record contradicts itself. The example demonstrates input the
+   signature never declares, so one of the two fields is wrong. */
+const selfContradictions = [];
+commands.forEach(function (c) {
+  if (documentsInput(c)) return;
+  if (!exampleCarriesInput(c)) return;
+  selfContradictions.push({
+    surface: c.surface,
+    command: c.cmd,
+    key: c.key,
+    example: c.canonicalExample
+  });
+});
+
+/* Tier 2: same product, same token, different input story. */
+const grouped = {};
 commands.forEach(function (c) {
   if (c.noCompare) return;
-  (byToken[c.cmd] = byToken[c.cmd] || []).push(c);
+  const key = productOfSurface[c.surface] + ' ' + c.cmd;
+  (grouped[key] = grouped[key] || []).push(c);
 });
 
 const inconsistent = [];
-Object.keys(byToken).sort().forEach(function (token) {
-  const list = byToken[token];
+Object.keys(grouped).sort().forEach(function (key) {
+  const list = grouped[key];
   if (list.length < 2) return;
-  const documented = list.filter(takesInput);
-  const bare = list.filter(function (c) { return !takesInput(c); });
+  const documented = list.filter(documentsInput);
+  const bare = list.filter(function (c) { return !documentsInput(c); });
   if (!documented.length || !bare.length) return;
   inconsistent.push({
-    command: token,
+    product: productOfSurface[list[0].surface],
+    command: list[0].cmd,
     documented: documented.map(function (c) {
       return { surface: c.surface, args: c.args || '(subcommands only)' };
     }),
@@ -105,33 +133,32 @@ Object.keys(byToken).sort().forEach(function (token) {
   });
 });
 
-/* Finding 2: a command documents no input, but its own prose says otherwise. */
-const proseConflicts = [];
+/* Tier 3: prose hints. Candidates for review, never a pass/fail signal. */
+const proseCandidates = [];
 commands.forEach(function (c) {
-  if (takesInput(c)) return;
-  const text = prose(c);
-  const matched = [];
-  INPUT_HINTS.forEach(function (re) {
-    const m = re.exec(text);
-    if (!m) return;
-    const from = Math.max(0, m.index - NEGATION_WINDOW);
-    const to = Math.min(text.length, m.index + m[0].length + NEGATION_WINDOW);
-    if (NEGATION.test(text.slice(from, to))) return;
-    matched.push(m[0].trim().toLowerCase());
+  if (documentsInput(c) || exampleCarriesInput(c)) return;
+  const sentences = [c.summary, c.detail, c.note].concat(c.when || [])
+    .map(plainText).join(' ').split(/(?<=[.!?])\s+/);
+  const phrases = [];
+  sentences.forEach(function (sentence) {
+    if (NEGATION.test(sentence)) return;
+    INPUT_HINTS.forEach(function (re) {
+      const m = re.exec(sentence);
+      if (m) phrases.push(m[0].trim().toLowerCase());
+    });
   });
-  if (!matched.length) return;
-  proseConflicts.push({
+  if (!phrases.length) return;
+  proseCandidates.push({
     surface: c.surface,
     command: c.cmd,
     key: c.key,
-    phrases: [...new Set(matched)]
+    phrases: [...new Set(phrases)]
   });
 });
 
-/* Coverage, so a surface that documents nothing at all is visible. */
 const coverage = S.surfaces.map(function (s) {
   const list = commands.filter(function (c) { return c.surface === s.id; });
-  const documented = list.filter(takesInput).length;
+  const documented = list.filter(documentsInput).length;
   return {
     surface: s.id,
     name: s.name,
@@ -144,53 +171,63 @@ const coverage = S.surfaces.map(function (s) {
 
 const report = {
   totalCommands: commands.length,
+  selfContradictions: selfContradictions,
   crossSurfaceInconsistencies: inconsistent,
-  proseImpliesInput: proseConflicts,
+  proseCandidates: proseCandidates,
   coverage: coverage
 };
+
+function labelWidth(list) {
+  return list.reduce(function (max, row) {
+    return Math.max(max, (row.surface + ' ' + row.command).length);
+  }, 0) + 2;
+}
 
 if (jsonMode) {
   console.log(JSON.stringify(report, null, 2));
 } else {
   console.log('Argument documentation audit — ' + commands.length + ' commands\n');
 
-  console.log('Input documented per surface');
-  coverage.forEach(function (row) {
-    const bar = String(row.documented + '/' + row.total).padEnd(8);
-    console.log('  ' + row.surface.padEnd(15) + bar + String(row.percentDocumented + '%').padStart(4) +
-      '  ' + row.name);
+  console.log('1. Self-contradictory: example types input the signature omits (' +
+    selfContradictions.length + ')');
+  if (!selfContradictions.length) {
+    console.log('   none');
+  } else {
+    const width = labelWidth(selfContradictions);
+    selfContradictions.forEach(function (row) {
+      console.log('   ' + (row.surface + ' ' + row.command).padEnd(width) + row.example);
+    });
+  }
+
+  console.log('\n2. Same product, documented on one surface but bare on another (' +
+    inconsistent.length + ')');
+  inconsistent.forEach(function (row) {
+    console.log('   ' + productName[row.product] + '  ' + row.command);
+    row.documented.forEach(function (d) {
+      console.log('       ' + d.surface.padEnd(15) + d.args);
+    });
+    console.log('       bare: ' + row.bare.join(', '));
   });
 
-  console.log('\nSame command, arguments on one surface but bare on another (' +
-    inconsistent.length + ')');
-  if (!inconsistent.length) {
-    console.log('  none');
-  } else {
-    inconsistent.forEach(function (row) {
-      console.log('  ' + row.command);
-      row.documented.forEach(function (d) {
-        console.log('      ' + d.surface.padEnd(15) + d.args);
-      });
-      console.log('      bare: ' + row.bare.join(', '));
+  console.log('\n3. Prose hints at input (candidates for review, not defects) (' +
+    proseCandidates.length + ')');
+  if (proseCandidates.length) {
+    const width = labelWidth(proseCandidates);
+    proseCandidates.forEach(function (row) {
+      console.log('   ' + (row.surface + ' ' + row.command).padEnd(width) +
+        row.phrases.join(', '));
     });
   }
 
-  console.log('\nDocuments no input, but its own prose implies input (' +
-    proseConflicts.length + ')');
-  if (!proseConflicts.length) {
-    console.log('  none');
-  } else {
-    const labelWidth = proseConflicts.reduce(function (max, row) {
-      return Math.max(max, (row.surface + ' ' + row.command).length);
-    }, 0) + 2;
-    proseConflicts.forEach(function (row) {
-      console.log('  ' + (row.surface + ' ' + row.command).padEnd(labelWidth) +
-        'implied by: ' + row.phrases.join(', '));
-    });
-  }
+  console.log('\nInput documented per surface');
+  coverage.forEach(function (row) {
+    console.log('   ' + row.surface.padEnd(15) +
+      String(row.documented + '/' + row.total).padEnd(8) +
+      String(row.percentDocumented + '%').padStart(4) + '  ' + row.name);
+  });
 
-  console.log('\nThis audit is advisory. A bare command is often correct — many commands');
-  console.log('genuinely take nothing. Findings mark where the data contradicts itself.');
+  console.log('\nA bare command is usually correct — most commands genuinely take nothing.');
+  console.log('Only section 1 is a defect list; --strict gates on it alone.');
 }
 
-if (strictMode && (inconsistent.length || proseConflicts.length)) process.exit(1);
+if (strictMode && selfContradictions.length) process.exit(1);
