@@ -406,9 +406,11 @@ code, kbd, .mono { font-family: var(--mono); }
 
 .cmd-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
 
+/* 13px (not 999px) so single-line badges still clamp to a perfect pill,
+   while a wrapped badge gets rounded-rect corners instead of a stretched lozenge. */
 .badge {
   display: inline-flex; align-items: center; gap: 4px;
-  padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 550;
+  padding: 3px 8px; border-radius: 13px; font-size: 11.5px; font-weight: 550; line-height: 1.35;
   border: 1px solid var(--border); color: var(--text-muted); background: var(--bg-subtle);
   max-width: 100%; min-width: 0; overflow-wrap: anywhere;
 }
