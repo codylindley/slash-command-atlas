@@ -4,7 +4,7 @@ An interactive reference for the slash commands of AI coding agents — **GitHub
 Code** and **OpenAI Codex** — organized by product and by the surface you actually type them into,
 because `/` gives you a different menu in a desktop app, a terminal, an editor extension, and the web.
 
-**518 command entries across 15 surfaces and 3 products.** No build step, no dependencies, no framework.
+**518 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
 
 ---
 
@@ -20,8 +20,8 @@ because `/` gives you a different menu in a desktop app, a terminal, an editor e
   official source links; many add variants, use cases, gating conditions, related commands, and
   cross-surface equivalents.
 - **Compare surfaces.** A matrix of command name × surface, with spanning product headers. Filled cells
-  link to the surface-specific behavior; faint dots mean “not listed,” and question marks distinguish
-  evidence-only subsets and surfaces where the vendor does not publish an inventory.
+  link to the surface-specific behavior; faint dots mean “not listed,” and question marks mark
+  evidence-only subsets where the vendor's documentation is not exhaustive.
 - **Deep links.** Every command has its own URL — `#/app/security-review` — so you can share one.
 - **Continue in AI.** Copy a command&rsquo;s self-contained prompt, or choose ChatGPT, Claude,
   Gemini, or Perplexity to copy that same prompt and open a new conversation.

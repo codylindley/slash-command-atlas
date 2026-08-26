@@ -50,7 +50,8 @@ window.SLASH.products = [
     name: 'OpenAI Codex',
     vendor: 'OpenAI',
     blurb: 'OpenAI&rsquo;s coding agent, available in the ChatGPT desktop app, the terminal, and ' +
-           'supported editor extensions, with cloud tasks available in the browser.'
+           'supported editor extensions. ChatGPT on the web is not a Codex surface: it has its own ' +
+           'composer command menu, and OpenAI states the Codex command set does not apply there.'
   }
 ];
 
@@ -279,24 +280,6 @@ window.SLASH.surfaces = [
       '<p>Xcode and JetBrains integrations are not folded into this surface because OpenAI does not publish ' +
       'separate slash-command tables for them.</p>',
     docs: 'https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands'
-  },
-  {
-    id: 'codex-web',
-    product: 'codex',
-    name: 'OpenAI Codex on the web',
-    label: 'Web',
-    coverage: 'unpublished-inventory',
-    where: 'Browser — chatgpt.com/codex',
-    color: 'var(--c-codex-web)',
-    note:
-      '<p><strong>A slash menu exists, but OpenAI publishes no inventory for it.</strong> The developer commands ' +
-      'reference says ChatGPT web &ldquo;has its own composer command menu&rdquo; and that the Codex desktop, CLI, ' +
-      'and IDE command sets do not apply there. No first-party page enumerates that menu, so the Atlas leaves this ' +
-      'surface empty rather than copying commands from another product surface.</p>' +
-      '<p>Codex cloud work is still fully supported in the browser: connect a repository, create an environment, ' +
-      'start a task, review the diff, and open a pull request. Those workflows are driven through the interface, ' +
-      'prose, and contextual mentions rather than a published slash-command reference.</p>',
-    docs: 'https://learn.chatgpt.com/docs/developer-commands?surface=web'
   }
 ];
 

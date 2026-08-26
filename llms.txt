@@ -568,7 +568,3 @@ Use the per-command Markdown pages below for focused context. Vendor documentati
 - [`/status`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/status.md): Shows the chat ID, context usage, and rate limits.
 - [`/worktree`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/worktree.md): Runs the chat in a new Git worktree.
 - [`/prompts:<name> [ARGUMENTS]`](https://codylindley.github.io/slash-command-atlas/commands/codex-ide/custom-prompt.md): Runs a legacy custom prompt by its configured name.
-
-## OpenAI Codex on the web
-
-No published command inventory is available for this surface.
