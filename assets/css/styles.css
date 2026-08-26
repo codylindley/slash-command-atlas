@@ -39,7 +39,6 @@
   --c-codex-app:  #006b5f;
   --c-codex-cli:  #006a7a;
   --c-codex-ide:  #1b5e9b;
-  --c-codex-web:  #5c4b9a;
 
   --radius:    10px;
   --radius-lg: 16px;
@@ -89,7 +88,6 @@
     --c-codex-app:  #5eead4;
     --c-codex-cli:  #67e8f9;
     --c-codex-ide:  #7dd3fc;
-    --c-codex-web:  #c4b5fd;
 
     --shadow-sm: 0 1px 2px rgba(1,4,9,.5);
     --shadow-md: 0 8px 24px rgba(1,4,9,.6);
@@ -132,7 +130,6 @@
   --c-codex-app:  #5eead4;
   --c-codex-cli:  #67e8f9;
   --c-codex-ide:  #7dd3fc;
-  --c-codex-web:  #c4b5fd;
 
   --shadow-sm: 0 1px 2px rgba(1,4,9,.5);
   --shadow-md: 0 8px 24px rgba(1,4,9,.6);

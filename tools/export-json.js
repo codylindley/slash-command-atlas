@@ -446,7 +446,7 @@ function validate(data) {
     if (surfaceIds.has(s.id)) errors.push('Duplicate surface id: ' + s.id);
     if (!productIds.has(s.product)) errors.push('Unknown product on surface ' + s.id + ': ' + s.product);
     if (s.coverage && s.coverage !== 'documented-subset' &&
-        s.coverage !== 'unpublished-inventory' && s.coverage !== 'runtime-variable') {
+        s.coverage !== 'runtime-variable') {
       errors.push('Unknown coverage value on surface ' + s.id + ': ' + s.coverage);
     }
     if (!/^https:\/\//.test(s.docs || '')) errors.push('Invalid docs URL on surface ' + s.id);

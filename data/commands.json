@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generated": "2026-08-25",
+  "generated": "2026-08-26",
   "dataCompiled": "2026-08-23",
   "siteUrl": "https://codylindley.github.io/slash-command-atlas/",
   "products": [
@@ -146,15 +146,6 @@
       "coverage": "documented-subset",
       "where": "VS Code, Cursor and Windsurf",
       "docs": "https://learn.chatgpt.com/docs/developer-commands?surface=ide#available-slash-commands"
-    },
-    {
-      "id": "codex-web",
-      "product": "codex",
-      "name": "OpenAI Codex on the web",
-      "label": "Web",
-      "coverage": "unpublished-inventory",
-      "where": "Browser — chatgpt.com/codex",
-      "docs": "https://learn.chatgpt.com/docs/developer-commands?surface=web"
     }
   ],
   "categories": {

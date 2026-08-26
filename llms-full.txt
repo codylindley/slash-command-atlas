@@ -23059,7 +23059,3 @@ Markdown files directly under `~/.codex/prompts/` appear dynamically in the IDE 
 
 ---
 
-## OpenAI Codex on the web
-
-No published command inventory is available for this surface.
-

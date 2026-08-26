@@ -98,15 +98,11 @@
   }
   function coverageLabel(s) {
     if (s.coverage === 'documented-subset') return 'documented subset';
-    if (s.coverage === 'unpublished-inventory') return 'inventory not published';
     if (s.coverage === 'runtime-variable') return 'availability varies';
     return '';
   }
 
   function coverageAbsence(s) {
-    if (s.coverage === 'unpublished-inventory') {
-      return 'No command inventory is published for this surface';
-    }
     if (s.coverage === 'runtime-variable') {
       return 'Availability is not established for this variable surface';
     }
@@ -368,11 +364,8 @@
       list.length + (list.length === 1 ? ' command' : ' commands') +
       (list.length !== total ? ' of ' + total : '');
     var empty = $('#empty-state');
-    empty.innerHTML = total === 0
-      ? 'The vendor confirms a slash menu exists here, but does not publish its command inventory. ' +
-        'See the surface note above for the first-party source.'
-      : 'No commands match that search. ' +
-        '<button type="button" class="linkish" data-reset-filters>Reset the filters</button>';
+    empty.innerHTML = 'No commands match that search. ' +
+      '<button type="button" class="linkish" data-reset-filters>Reset the filters</button>';
     empty.hidden = list.length > 0;
   }
 

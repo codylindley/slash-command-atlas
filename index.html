@@ -99,8 +99,8 @@
     <p class="lede">
       Same name, different product &mdash; and sometimes different behavior. A filled cell means that surface
       documents a command by that name; hover or tap it to read what it does <em>there</em>.
-      A faint middle dot means the command is not listed. In columns marked <em>documented subset</em> or
-      <em>inventory not published</em>, a question mark means the vendor&rsquo;s surface-specific documentation
+      A faint middle dot means the command is not listed. In columns marked <em>documented subset</em>,
+      a question mark means the vendor&rsquo;s surface-specific documentation
       is not exhaustive, so absence is unknown rather than proof that the command is unavailable.
     </p>
     <div class="compare-controls">
@@ -154,9 +154,10 @@
       counts only when the vendor documents commands for the coding product itself. That includes
       <strong>GitHub Copilot Chat on GitHub.com</strong> and <strong>Claude Code on the web</strong> at
       <code>claude.ai/code</code>. It excludes ordinary Claude chat: its <code>/</code> menu contains general
-      composer options and account skills, not Claude Code commands. Codex cloud is browser-based, and OpenAI
-      confirms its web composer has a separate command menu but publishes no inventory for it. The web surface
-      is therefore shown explicitly with unknown availability instead of borrowing the desktop command set.
+      composer options and account skills, not Claude Code commands. <strong>Codex has no web surface</strong>
+      for the same reason: ChatGPT on the web presents Chat and Work, not Codex, and OpenAI states that its
+      web composer has a separate command menu to which the Codex desktop, CLI, and IDE command sets
+      do not apply.
     </p>
     <p>
       Editor integrations are separate surfaces only when their composer exposes a distinct documented
@@ -242,7 +243,6 @@
 <script src="assets/js/data/codex-app.js?v=12"></script>
 <script src="assets/js/data/codex-cli.js?v=12"></script>
 <script src="assets/js/data/codex-ide.js?v=12"></script>
-<script src="assets/js/data/codex-web.js?v=12"></script>
 <script src="assets/js/app.js?v=12"></script>
 </body>
 </html>
