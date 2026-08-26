@@ -29,6 +29,7 @@ Creates a temporary fork for a focused detour without switching the main chat aw
 
 - [OpenAI Codex in the ChatGPT desktop app — `/side`](../codex-app/side.md)
 - [OpenAI Codex IDE extension — `/side`](../codex-ide/side.md)
+- [GitHub Copilot app — `/ask`](../app/ask.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
 - [Claude Code in VS Code — `/btw`](../claude-vscode/btw.md)

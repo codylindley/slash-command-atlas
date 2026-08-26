@@ -27,6 +27,7 @@ Equivalent to **Cmd+;** on macOS or **Ctrl+;** on Windows. The side chat can rea
 
 ## Also in other surfaces
 
+- [GitHub Copilot app — `/ask`](../app/ask.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Code in VS Code — `/btw`](../claude-vscode/btw.md)
 - [OpenAI Codex CLI — `/side`](../codex-cli/side.md)
