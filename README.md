@@ -4,7 +4,7 @@ An interactive reference for the slash commands of AI coding agents — **GitHub
 Code** and **OpenAI Codex** — organized by product and by the surface you actually type them into,
 because `/` gives you a different menu in a desktop app, a terminal, an editor extension, and the web.
 
-**517 command entries across 15 surfaces and 3 products.** No build step, no dependencies, no framework.
+**518 command entries across 15 surfaces and 3 products.** No build step, no dependencies, no framework.
 
 ---
 
@@ -81,7 +81,7 @@ assets/css/styles.css       All styling; light/dark via CSS custom properties
 assets/js/app.js            Router, search, filtering, detail panel, compare table
 assets/js/data/meta.js      Surfaces, categories, sources
 assets/js/data/examples.js  Canonical examples for argument-heavy or ambiguous commands
-assets/js/data/app.js       GitHub Copilot app commands (47)
+assets/js/data/app.js       GitHub Copilot app commands (48)
 assets/js/data/cli.js       GitHub Copilot CLI commands (72)
 assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (9), Xcode (5), web (4)
 assets/js/data/claude-*.js  Claude Desktop Code tab (107), CLI (103), IDE extension (9), web (18)

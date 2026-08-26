@@ -128,6 +128,20 @@
 
     /* ---------- context & input ---------- */
     {
+      key: 'ask', cmd: '/ask', aliases: ['/btw'], args: '[QUESTION]', cat: 'context',
+      requires: 'Active session',
+      summary: 'Asks a side question without interrupting the current response.',
+      detail: 'Opens a <em>Side chat</em> beside the session instead of adding a turn to it. The main agent keeps working &mdash; you do not have to wait for the current response to finish &mdash; and the answer never enters the transcript the agent is reasoning over. The Side chat is not blind to the work: it can pull in the main session&rsquo;s recent transcript on demand, so you can ask &ldquo;why did it choose that?&rdquo; without re-explaining any of it.',
+      when: [
+        'A clarifying question occurs to you mid-run and you do not want to stop the agent',
+        'Understanding unfamiliar code without spending main-thread context on the detour',
+        'Checking an assumption before deciding whether to interrupt and redirect the session'
+      ],
+      note: 'Side chats are saved as their own sessions owned by the parent session or workspace, so you can return to one later &mdash; but editing an earlier message is not supported inside a Side chat. Added in Copilot app v1.1.12 and not yet listed in the published slash command reference.',
+      examples: ['/ask why does this repo pin the Node version in two places?'],
+      related: ['context', 'compact', 'spawn']
+    },
+    {
       key: 'attach-files', cmd: '/attach-files', cat: 'context',
       summary: 'Opens a file picker and attaches files to your message.',
       detail: 'Pins specific files into the prompt instead of hoping the agent finds them. Attaching the two or three files that actually matter is usually faster, cheaper and more reliable than describing where to look.',

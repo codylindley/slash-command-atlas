@@ -24,6 +24,7 @@ The answer appears in a panel beside chat, supports follow-ups, and survives win
 
 ## Also in other surfaces
 
+- [GitHub Copilot app — `/ask`](../app/ask.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
 - [OpenAI Codex CLI — `/side`](../codex-cli/side.md)
