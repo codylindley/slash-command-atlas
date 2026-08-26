@@ -91,6 +91,7 @@ commands/{surface}/*.md     Generated, public Markdown page for every command
 llms.txt                    AI-readable command index
 llms-full.txt               Complete command reference in one Markdown document
 tools/export-json.js        Validates and regenerates every machine-readable artifact
+tools/audit-arguments.js    Advisory audit of how well commands document their arguments
 ```
 
 The data files are plain scripts that call `window.SLASH.register(surface, [...])`. Surface metadata
@@ -145,6 +146,36 @@ node tools/export-json.js --check
 
 Check mode preserves the export's existing `generated` date while rebuilding in memory, so the
 comparison is deterministic on later days.
+
+### Auditing arguments
+
+A command records what you can type after the token in a single `args` string, so an empty value is
+ambiguous — it can mean the command takes nothing, opens a picker, wants a secondary verb, or simply
+was never documented.
+
+```bash
+node tools/audit-arguments.js
+```
+
+Findings come in three tiers, ordered by how far you can trust them:
+
+1. **Self-contradictory** — the record's own canonical example types something the signature never
+   declares, so one of the two fields is wrong. Purely structural, no heuristics. `vscode`
+   `/explain` shows `/explain what does this reducer do…` while documenting no arguments.
+2. **Same product, different story** — a token documents arguments on one surface and nothing on
+   another. `/compact` is `[FOCUS-INSTRUCTIONS]` in the GitHub Copilot CLI but bare in the app.
+   Grouped **within a product**, because equal tokens across vendors are unrelated commands: Xcode's
+   `/simplify` and Claude's `/simplify` have nothing to do with each other.
+3. **Prose hints** — wording implies input the record does not show. Pattern matching, so this is a
+   candidate list for review, not a defect list.
+
+Only tier 1 is a defect list, and `--strict` gates on it alone. Tiers 2 and 3 need a human: a bare
+command is usually correct because most commands genuinely take nothing, and some differences are
+real — Desktop's `/config` is deliberately bare because it ignores any text after the command.
+Tier 3 skips sentences containing negation for that reason, and still reports phrasing like "takes
+the work" that describes what a command does rather than what you type.
+
+Use `--json` for machine-readable output.
 
 ### Cache busting
 
