@@ -21,6 +21,7 @@ Use the per-command Markdown pages below for focused context. Vendor documentati
 - [`/rename`](https://codylindley.github.io/slash-command-atlas/commands/app/rename.md): Renames the current chat or session.
 - [`/remote`](https://codylindley.github.io/slash-command-atlas/commands/app/remote.md): Enables or manages remote control, so you can reach the session from GitHub.com or GitHub Mobile.
 - [`/terminal [COMMAND]`](https://codylindley.github.io/slash-command-atlas/commands/app/terminal.md): Opens a terminal in the right panel, optionally running a command.
+- [`/ask [QUESTION]`](https://codylindley.github.io/slash-command-atlas/commands/app/ask.md): Asks a side question without interrupting the current response.
 - [`/attach-files`](https://codylindley.github.io/slash-command-atlas/commands/app/attach-files.md): Opens a file picker and attaches files to your message.
 - [`/attach-folder`](https://codylindley.github.io/slash-command-atlas/commands/app/attach-folder.md): Opens a folder picker and attaches a folder to your message.
 - [`/compact`](https://codylindley.github.io/slash-command-atlas/commands/app/compact.md): Summarizes earlier parts of the conversation to reduce token pressure.

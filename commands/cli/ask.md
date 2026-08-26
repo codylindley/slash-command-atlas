@@ -22,6 +22,10 @@ A scratchpad question that leaves no trace in the transcript — so it does not 
 - [`/compact`](./compact.md)
 - [`/context`](./context.md)
 
+## Also in other surfaces
+
+- [GitHub Copilot app — `/ask`](../app/ask.md)
+
 ## Official sources
 
 - [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)

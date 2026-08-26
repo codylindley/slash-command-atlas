@@ -538,6 +538,34 @@
       "docs": []
     },
     {
+      "id": "app-ask",
+      "product": "copilot",
+      "surface": "app",
+      "command": "/ask",
+      "aliases": [
+        "/btw"
+      ],
+      "arguments": "[QUESTION]",
+      "category": "context",
+      "categoryLabel": "Context & input",
+      "requires": "Active session",
+      "flags": [],
+      "comparisonEligible": true,
+      "summary": "Asks a side question without interrupting the current response.",
+      "summaryHtml": "Asks a side question without interrupting the current response.",
+      "canonicalExample": "/ask why does this repo pin the Node version in two places?",
+      "subcommands": [],
+      "examples": [
+        "/ask why does this repo pin the Node version in two places?"
+      ],
+      "related": [
+        "context",
+        "compact",
+        "spawn"
+      ],
+      "docs": []
+    },
+    {
       "id": "app-attach-files",
       "product": "copilot",
       "surface": "app",
