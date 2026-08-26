@@ -91,6 +91,7 @@ commands/{surface}/*.md     Generated, public Markdown page for every command
 llms.txt                    AI-readable command index
 llms-full.txt               Complete command reference in one Markdown document
 tools/export-json.js        Validates and regenerates every machine-readable artifact
+tools/audit-arguments.js    Advisory audit of how well commands document their arguments
 ```
 
 The data files are plain scripts that call `window.SLASH.register(surface, [...])`. Surface metadata
@@ -145,6 +146,27 @@ node tools/export-json.js --check
 
 Check mode preserves the export's existing `generated` date while rebuilding in memory, so the
 comparison is deterministic on later days.
+
+### Auditing arguments
+
+A command records what you can type after the token in a single `args` string, so an empty value is
+ambiguous — it can mean the command takes nothing, opens a picker, wants a secondary verb, or simply
+was never documented. This audit reports the cases where the data contradicts itself:
+
+```bash
+node tools/audit-arguments.js
+```
+
+It reports three things: per-surface coverage, commands whose token documents arguments on one
+surface but nothing on another (`/compact` is `[FOCUS-INSTRUCTIONS]` in the CLI but bare on seven
+other surfaces), and commands that document no input while their own prose implies some
+(`codex-app` `/fast` says it turns the tier "on or off" but shows no way to say which).
+
+The audit is **advisory, not a correctness check** — a bare command is usually right, because most
+commands genuinely take nothing, and some differences are real: Desktop's `/config` is deliberately
+bare because it ignores any text after the command. Prose findings skip negated phrasing for that
+reason. Use `--json` for machine-readable output and `--strict` to exit non-zero when anything is
+found.
 
 ### Cache busting
 
