@@ -5,7 +5,8 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex IDE extension
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local chat
 
 ## What it does
 

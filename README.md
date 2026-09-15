@@ -4,7 +4,7 @@ An interactive reference for the slash commands of AI coding agents — **GitHub
 Code** and **OpenAI Codex** — organized by product and by the surface you actually type them into,
 because `/` gives you a different menu in a desktop app, a terminal, an editor extension, and the web.
 
-**518 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
+**547 command entries across 14 surfaces and 3 products.** No build step, no dependencies, no framework.
 
 ---
 
@@ -21,7 +21,7 @@ because `/` gives you a different menu in a desktop app, a terminal, an editor e
   cross-surface equivalents.
 - **Compare surfaces.** A matrix of command name × surface, with spanning product headers. Filled cells
   link to the surface-specific behavior; faint dots mean “not listed,” and question marks mark
-  evidence-only subsets where the vendor's documentation is not exhaustive.
+  incomplete or runtime-variable inventories, where absence does not establish unavailability.
 - **Deep links.** Every command has its own URL — `#/app/security-review` — so you can share one.
 - **Continue in AI.** Copy a command&rsquo;s self-contained prompt, or choose ChatGPT, Claude,
   Gemini, or Perplexity to copy that same prompt and open a new conversation.
@@ -82,10 +82,10 @@ assets/js/app.js            Router, search, filtering, detail panel, compare tab
 assets/js/data/meta.js      Surfaces, categories, sources
 assets/js/data/examples.js  Canonical examples for argument-heavy or ambiguous commands
 assets/js/data/app.js       GitHub Copilot app commands (48)
-assets/js/data/cli.js       GitHub Copilot CLI commands (72)
-assets/js/data/editors.js   VS Code (32), JetBrains (7), Visual Studio (9), Xcode (5), web (4)
-assets/js/data/claude-*.js  Claude Desktop Code tab (107), CLI (103), IDE extension (9), web (18)
-assets/js/data/codex-*.js   OpenAI Codex desktop (26), CLI (54), IDE (24), web (0 published)
+assets/js/data/cli.js       GitHub Copilot CLI commands (75)
+assets/js/data/editors.js   VS Code (40), JetBrains (7), Visual Studio (10), Xcode (5), web (4)
+assets/js/data/claude-*.js  Claude Desktop Code tab (112), CLI (108), IDE extension (9), web (22)
+assets/js/data/codex-*.js   OpenAI Codex desktop (26), CLI (57), IDE (24)
 data/commands.json          Generated machine-readable export
 commands/{surface}/*.md     Generated, public Markdown page for every command
 llms.txt                    AI-readable command index
@@ -160,8 +160,8 @@ node tools/audit-arguments.js
 Findings come in three tiers, ordered by how far you can trust them:
 
 1. **Self-contradictory** — the record's own canonical example types something the signature never
-   declares, so one of the two fields is wrong. Purely structural, no heuristics. `vscode`
-   `/explain` shows `/explain what does this reducer do…` while documenting no arguments.
+   declares, so one of the two fields is wrong. Purely structural, no heuristics: a bare signature
+   paired with an example that adds task instructions contradicts itself.
 2. **Same product, different story** — a token documents arguments on one surface and nothing on
    another. `/compact` is `[FOCUS-INSTRUCTIONS]` in the GitHub Copilot CLI but bare in the app.
    Grouped **within a product**, because equal tokens across vendors are unrelated commands: Xcode's
@@ -186,18 +186,28 @@ in confusing, hard-to-reproduce ways rather than cleanly.
 
 ## Where the data comes from
 
-Command names, arguments, aliases, gating conditions and one-line descriptions are derived from
-first-party documentation and, where a published table lags, first-party source code. Rule-derived
-Desktop entries are visibly marked as inherited rather than presented as individually documented:
+Command names, arguments, aliases, gating conditions and one-line descriptions are checked against
+first-party documentation, release notes, and source code. Previously observed commands retain their
+version qualifications rather than being presented as freshly verified. Rule-derived Desktop entries
+are visibly marked as inherited rather than presented as individually documented:
 
 - [Slash commands for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 - [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
+- [Auto routing tiers (September 14, 2026)](https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/)
+- [Enterprise-managed agent permissions (September 9, 2026)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
+- [Content exclusions in the app and CLI (September 2, 2026)](https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/)
 - [GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [GitHub Copilot CLI stable 1.0.83 release notes](https://github.com/github/copilot-cli/releases/tag/v1.0.83)
+- [GitHub Copilot CLI prerelease 1.0.84-6 release notes](https://github.com/github/copilot-cli/releases/tag/v1.0.84-6)
 - [GitHub Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet) (Visual Studio, JetBrains, Xcode, github.com)
 - [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [GitHub Copilot in VS Code: August 2026 releases](https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/)
 - [Visual Studio: customize chat responses](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 - [GitHub Copilot agent in JetBrains IDEs](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 - [Claude Code command reference](https://code.claude.com/docs/en/commands)
+- [Claude Code 2.1.269 release notes: restored `/output-style`](https://github.com/anthropics/claude-code/releases/tag/v2.1.269)
+- [Claude Code 2.1.270 release notes](https://github.com/anthropics/claude-code/releases/tag/v2.1.270)
 - [Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 - [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
 - [Claude Code Remote Control limitations](https://code.claude.com/docs/en/remote-control#limitations)
@@ -205,18 +215,46 @@ Desktop entries are visibly marked as inherited rather than presented as individ
 - [Slash commands in the ChatGPT desktop app](https://learn.chatgpt.com/docs/reference/slash-commands)
 - [OpenAI Codex CLI commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
 - [OpenAI Codex IDE commands](https://learn.chatgpt.com/docs/developer-commands?surface=ide)
-- [OpenAI Codex commands on the web](https://learn.chatgpt.com/docs/developer-commands?surface=web)
-- [OpenAI Codex CLI slash-command source](https://github.com/openai/codex/blob/main/codex-rs/tui/src/slash_command.rs)
+- [ChatGPT web command-menu scope](https://learn.chatgpt.com/docs/developer-commands?surface=web)
+- [OpenAI Codex CLI stable 0.154.0 source](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/slash_command.rs)
+- [OpenAI Codex CLI prerelease 0.155.0-alpha.4 source](https://github.com/openai/codex/blob/66eab8ece44141ff92707868269e1d53b40c4ac5/codex-rs/tui/src/slash_command.rs)
 
 The longer explanations, "reach for it when" bullets and example prompts are editorial — written to
 make the reference usable, not copied from the docs.
 
 ## Accuracy
 
-This is a snapshot compiled on 2026-08-23. These products ship changes often, and availability also
-depends on your plan, platform, provider, organization policies, feature rollout, and client version.
-The authoritative answer for your setup is always the same: **type `/` in the prompt box** and read
-the picker, or run the product&rsquo;s help command in the CLI.
+This snapshot was reviewed against public vendor references on **2026-09-14**. That date describes
+the content review, not a fresh runtime check of every command. Source-specific versions, inherited
+behavior, and earlier runtime observations remain qualified in the entries.
+
+For the **GitHub Copilot app**, all 46 rows in the published command table are represented. The
+48-entry app inventory also includes the separately documented `/pr-stack` skill and the previously
+verified `/ask` command (`/btw` alias) from app v1.1.12. The app's live picker was not rechecked during
+this review, and `/ask` remains absent from the public table. App guidance now covers the September 14
+Auto tier rollout, September 9 managed-permission precedence, September 2 content-exclusion support,
+and the generally available Customize tab.
+
+The **GitHub Copilot CLI** and **VS Code** inventories distinguish current reference entries from
+version- or session-specific additions. CLI 1.0.84-6 release notes mention `/computer` but do not establish
+its invocation or gating, so it remains an explicit coverage gap rather than an invented entry. VS Code
+entries distinguish editor chat from Agent Host and the Agents window; legacy prompt files are supported
+by the Local agent, not Agent Host.
+
+The **Claude Code** review includes the restored `/output-style` command from 2.1.269, even though an
+older guide still calls it removed, and Linux beta availability for the Desktop Code tab. Desktop
+inheritance and earlier picker observations are not fresh runtime confirmations; web entries distinguish
+cloud sessions, Remote Control, and explicitly blocked commands.
+
+The **OpenAI Codex CLI** inventory combines stable 0.154.0 with explicitly qualified prerelease
+0.155.0-alpha.4 evidence; not all 57 entries are available together. Desktop and IDE inventories remain
+documented subsets. ChatGPT web has a separate contextual menu without a published token inventory in
+the reviewed reference, so it is not assigned a zero-command surface or given desktop commands by analogy.
+
+These products ship changes often, and availability also depends on your plan, platform, provider,
+organization policies, feature rollout, and client version. **Type `/` in the intended client's prompt
+box** and read its picker, or run the product's help command in the CLI. Do not assume a remote-control
+interface exposes the same slash commands as its host.
 
 ## License
 

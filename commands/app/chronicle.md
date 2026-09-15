@@ -1,21 +1,25 @@
-# `/chronicle`
+# `/chronicle [standup|tips|cost-tips|search|improve|reindex]`
 
 > Opens session history and analysis features.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Opens session history and analysis features.
 
-Chronicle is memory across sessions. Because the app is built on the Copilot CLI, it reads history from both app sessions and other CLI sessions, so a week of work is queryable in one place. Run it bare to open the interface, or go straight to a subcommand.
+Queries recorded history from app sessions and other GitHub Copilot CLI sessions. Run it bare to choose an analysis, or invoke a subcommand directly. Results depend on the history available locally or synced to your account, rather than a guaranteed record of every past session.
 
 ## Canonical example
 
 `/chronicle`
+
+## More examples
+
+- `/chronicle standup`
 
 ## Related commands
 
@@ -31,7 +35,7 @@ Chronicle is memory across sessions. Because the app is built on the Copilot CLI
 ## Official sources
 
 - [Using /chronicle with app sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions#using-chronicle-with-app-sessions)
-- [Chronicle (Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [Session history (GitHub Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

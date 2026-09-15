@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** custom
 
 ## What it does
 
 Invokes a built-in, personal, project, synced, or plugin skill from Desktop.
 
-Type `/` in the prompt box or choose **+ → Slash commands** to browse what this session actually has. Desktop combines the shared Claude Code command inventory with skills from your account, machine, project, and installed plugins, so the runtime list can be larger than this fixed reference.
+Type `/` or choose **+ → Slash commands** to browse the current session. Local sessions read personal skills from your machine; SSH sessions read the remote host’s home directory; cloud sessions load account-enabled skills. Project and plugin skills also vary by environment.
 
 ## Canonical example
 

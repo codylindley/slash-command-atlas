@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** blocked
 
 ## What it does
@@ -25,7 +25,7 @@ Cloud sessions can still load plugins declared in repository settings or enabled
 
 ## Also in other surfaces
 
-- [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
+- [GitHub Copilot CLI — `/plugin`](../cli/plugins.md)
 - [Claude Code CLI — `/plugin`](../claude-cli/plugin.md)
 - [Claude Desktop — Code tab — `/plugin`](../claude-app/plugin.md)
 

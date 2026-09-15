@@ -5,15 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** CLAUDE_CODE_USE_VERTEX=1
+- **Data snapshot:** 2026-09-14
 - **Flags:** hidden
 
 ## What it does
 
 Configures Google Cloud authentication, project, region, and model pins.
 
-An interactive wizard hidden from autocomplete until the Google Cloud provider mode is enabled; type the full command to invoke it.
+The Agent Platform wizard is hidden from autocomplete until `CLAUDE_CODE_USE_VERTEX=1` is set; type the full command to invoke it. The variable controls menu visibility, and first-time users can also start setup from the login screen.
 
 ## Canonical example
 

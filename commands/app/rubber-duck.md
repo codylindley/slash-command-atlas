@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -34,6 +34,7 @@ The rubber duck is a built-in critic that deliberately runs on a *different* mod
 ## Also in other surfaces
 
 - [GitHub Copilot CLI — `/rubber-duck`](../cli/rubber-duck.md)
+- [GitHub Copilot Chat in VS Code — `/rubber-duck`](../vscode/rubber-duck.md)
 
 ## Official sources
 

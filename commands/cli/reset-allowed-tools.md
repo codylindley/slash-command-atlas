@@ -5,11 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Resets the list of allowed tools.
+
+> **Note:** Resetting session allowances does not remove enterprise-managed permission rules.
 
 ## Canonical example
 
@@ -26,7 +28,8 @@ Resets the list of allowed tools.
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 
 ## Atlas links
 

@@ -1,21 +1,26 @@
-# `/review`
+# `/review [INSTRUCTIONS]`
 
-> Asks Codex to review the working tree.
+> Reviews local changes, a base-branch diff, a commit, or a custom target.
 
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Idle main chat
 
 ## What it does
 
-Asks Codex to review the working tree.
+Reviews local changes, a base-branch diff, a commit, or a custom target.
 
-Starts a review focused on behavior changes and missing tests in the current working tree. It uses the current session model unless `review_model` is configured; use `/diff` to inspect the exact edits.
+The bare command opens a preset picker for uncommitted changes, a base-branch comparison, a commit, or custom review instructions. Inline text submits custom instructions directly. It uses the current session model unless `review_model` is configured.
 
 ## Canonical example
 
 `/review`
+
+## More examples
+
+- `/review Check the retry changes for behavior regressions`
 
 ## Related commands
 
@@ -35,6 +40,8 @@ Starts a review focused on behavior changes and missing tests in the current wor
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI argument handling (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/chatwidget/slash_dispatch.rs)
+- [Codex CLI review presets (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/chatwidget/review_popups.rs)
 
 ## Atlas links
 

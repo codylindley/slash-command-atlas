@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/footer`
 
 ## What it does

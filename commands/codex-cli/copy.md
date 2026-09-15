@@ -1,18 +1,20 @@
 # `/copy`
 
-> Copies the latest completed Codex output.
+> Copies a whole response, code block, quote, or status field.
 
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
-- **Requires:** At least one completed Codex output
+- **Data snapshot:** 2026-09-14
+- **Requires:** Completed response or recent /status output; non-Android TUI
 
 ## What it does
 
-Copies the latest completed Codex output.
+Copies a whole response, code block, quote, or status field.
 
-Copies the most recent completed response or plan to the clipboard. If a turn is still running, Codex copies the last completed output instead; `Ctrl+O` is the default keyboard equivalent.
+Opens a target picker for the latest completed response, including its code blocks and quotes. Immediately after `/status`, it instead offers the whole status output or individual fields. Whole-response copying preserves Markdown and rich-text formatting.
+
+> **Note:** The stable `0.154.0` implementation is broader than the prose reference. The picker takes no inline arguments and does not copy an unfinished response.
 
 ## Canonical example
 
@@ -23,6 +25,7 @@ Copies the most recent completed response or plan to the clipboard. If a turn is
 - [`/raw`](./raw.md)
 - [`/diff`](./diff.md)
 - [`/status`](./status.md)
+- [`/export`](./export.md)
 
 ## Also in other surfaces
 
@@ -33,6 +36,8 @@ Copies the most recent completed response or plan to the clipboard. If a turn is
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI copy picker (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/chatwidget/interaction.rs)
+- [Codex CLI 0.154.0 release notes](https://github.com/openai/codex/releases/tag/rust-v0.154.0)
 
 ## Atlas links
 

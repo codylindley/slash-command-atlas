@@ -5,7 +5,7 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex in the ChatGPT desktop app
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Cloud execution available
 
 ## What it does

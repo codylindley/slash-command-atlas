@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Xcode
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -27,7 +27,7 @@ Generates documentation for this symbol.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Xcode slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
+- [Copilot Chat cheat sheet (Xcode)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
 
 ## Atlas links
 

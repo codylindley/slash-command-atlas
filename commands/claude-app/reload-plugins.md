@@ -1,20 +1,20 @@
 # `/reload-plugins [--force]`
 
-> Reloads active plugins and reports component or load errors.
+> Reloads Desktop plugin components without restarting the session.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Flags:** inherited
+- **Data snapshot:** 2026-09-14
+- **Requires:** Claude Code engine 2.1.260+; direct input in the Desktop prompt
 
 ## What it does
 
-Reloads active plugins and reports component or load errors.
+Reloads Desktop plugin components without restarting the session.
 
-Applies plugin changes without restarting. If changed MCP tools would invalidate the prompt cache, the command warns and skips that reload unless you pass `--force`.
+Type the command directly in the Desktop prompt box. It reloads active plugin components and reports counts or errors, but does not connect or disconnect plugin MCP servers; those changes take effect in the next session.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** A remotely forwarded invocation, including one sent through Remote Control to a Desktop-hosted session, is refused.
 
 ## Canonical example
 
@@ -33,8 +33,7 @@ Applies plugin changes without restarting. If changed MCP tools would invalidate
 
 ## Official sources
 
-- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
-- [Create plugins](https://code.claude.com/docs/en/plugins)
+- [Plugin reloads in Desktop and headless sessions](https://code.claude.com/docs/en/discover-plugins#apply-plugin-changes-without-restarting)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

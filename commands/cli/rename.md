@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -24,6 +24,7 @@ An alias for `/session rename`.
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/rename`](../app/rename.md)
+- [GitHub Copilot Chat in VS Code — `/rename`](../vscode/rename.md)
 - [GitHub Copilot Chat on GitHub.com — `/rename`](../web/rename.md)
 - [Claude Code CLI — `/rename`](../claude-cli/rename.md)
 - [Claude Desktop — Code tab — `/rename`](../claude-app/rename.md)

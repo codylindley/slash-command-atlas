@@ -5,13 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Reloads active plugins and reports component or load errors.
 
 Applies plugin changes without restarting. If changed MCP tools would invalidate the prompt cache, the command warns and skips that reload unless you pass `--force`.
+
+> **Note:** In 2.1.260+, Desktop and headless sessions accept this only as direct session input, not a remotely forwarded command. Those hosts leave plugin MCP server changes for the next session.
 
 ## Canonical example
 
@@ -30,6 +32,7 @@ Applies plugin changes without restarting. If changed MCP tools would invalidate
 
 ## Official sources
 
+- [Apply plugin changes without restarting](https://code.claude.com/docs/en/discover-plugins#apply-plugin-changes-without-restarting)
 - [Create plugins](https://code.claude.com/docs/en/plugins)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 

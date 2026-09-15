@@ -1,11 +1,11 @@
-# `/statusline`
+# `/statusline [DESCRIPTION]`
 
 > Configures the information shown in the terminal status line.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** inherited
 
 ## What it does

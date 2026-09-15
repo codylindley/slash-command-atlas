@@ -5,9 +5,8 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/find`
-- **Flags:** experimental
 
 ## What it does
 

@@ -5,13 +5,13 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Opens VS Code’s graphical plugin and marketplace manager.
 
-Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. The extension uses Claude Code’s shared plugin configuration underneath.
+Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. Changes apply to open sessions in that VS Code window; if reloading fails, the dialog offers retry or restart. The extension shares the CLI’s plugin configuration.
 
 ## Canonical example
 
@@ -23,7 +23,6 @@ Install plugins at user, project, or local scope; enable or disable installed pl
 
 ## Also in other surfaces
 
-- [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
 - [OpenAI Codex CLI — `/plugins`](../codex-cli/plugins.md)
 
 ## Official sources

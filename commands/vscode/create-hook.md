@@ -1,11 +1,13 @@
-# `/create-hook`
+# `/create-hook [DESCRIPTION]`
 
 > Generates a hook configuration with AI assistance in Agent mode.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session with hooks allowed by policy
+- **Flags:** preview
 
 ## What it does
 
@@ -13,7 +15,7 @@ Generates a hook configuration with AI assistance in Agent mode.
 
 ## Canonical example
 
-`/create-hook`
+`/create-hook run the formatter after each file edit`
 
 ## Related commands
 
@@ -21,7 +23,8 @@ Generates a hook configuration with AI assistance in Agent mode.
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agent hooks (Preview)](https://code.visualstudio.com/docs/agent-customization/hooks)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

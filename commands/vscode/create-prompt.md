@@ -1,19 +1,24 @@
-# `/create-prompt`
+# `/create-prompt [DESCRIPTION]`
 
 > Generates a prompt file with AI assistance in Agent mode.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session
 
 ## What it does
 
 Generates a prompt file with AI assistance in Agent mode.
 
+Describe the task to capture as a `.prompt.md` file. The agent asks clarifying questions and offers workspace or user storage.
+
+> **Note:** Agent Host does not load prompt files; use a skill for workflows that need to run there.
+
 ## Canonical example
 
-`/create-prompt`
+`/create-prompt summarize the API changes before a release`
 
 ## Related commands
 
@@ -22,8 +27,8 @@ Generates a prompt file with AI assistance in Agent mode.
 
 ## Official sources
 
-- [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

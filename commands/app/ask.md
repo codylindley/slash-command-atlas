@@ -1,21 +1,21 @@
 # `/ask [QUESTION]`
 
-> Asks a side question without interrupting the current response.
+> Asks a side question without interrupting the response; previously verified in app v1.1.12.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/btw`
 - **Requires:** Active session
 
 ## What it does
 
-Asks a side question without interrupting the current response.
+Asks a side question without interrupting the response; previously verified in app v1.1.12.
 
-Opens a *Side chat* beside the session instead of adding a turn to it. The main agent keeps working — you do not have to wait for the current response to finish — and the answer never enters the transcript the agent is reasoning over. The Side chat is not blind to the work: it can pull in the main session’s recent transcript on demand, so you can ask “why did it choose that?” without re-explaining any of it.
+Opens a *Side chat* beside the session instead of adding a prompt-and-response turn to the main conversation. The main agent keeps working — you do not have to wait for the current response to finish. The Side chat can pull in the main session’s recent transcript on demand, so you can ask about the work without re-explaining it.
 
-> **Note:** Side chats are saved as their own sessions owned by the parent session or workspace, so you can return to one later — but editing an earlier message is not supported inside a Side chat. Added in Copilot app v1.1.12 and not yet listed in the published slash command reference.
+> **Note:** This is a previously verified app entry, not a command listed in GitHub’s public table at the 2026-09-14 documentation review. Availability was not rechecked in a live picker for this review. In the observed version, side chats had their own saved history and did not support editing earlier messages.
 
 ## Reach for it when
 
@@ -36,6 +36,7 @@ Opens a *Side chat* beside the session instead of adding a turn to it. The main 
 ## Also in other surfaces
 
 - [GitHub Copilot CLI — `/ask`](../cli/ask.md)
+- [GitHub Copilot Chat in VS Code — `/btw`](../vscode/btw.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
 - [Claude Code in VS Code — `/btw`](../claude-vscode/btw.md)

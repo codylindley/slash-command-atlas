@@ -5,8 +5,8 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
-- **Requires:** Windows using the degraded sandbox
+- **Data snapshot:** 2026-09-14
+- **Requires:** Idle Windows main chat using the degraded sandbox
 
 ## What it does
 
@@ -27,6 +27,7 @@ Appears only when native Windows Codex is using the degraded restricted-token sa
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI command source (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/slash_command.rs)
 
 ## Atlas links
 

@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Git repository with an origin remote
 
 ## What it does

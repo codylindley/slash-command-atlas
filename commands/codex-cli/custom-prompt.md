@@ -5,20 +5,21 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** A local custom-prompt file
 - **Flags:** custom
 
 ## What it does
 
 Runs a legacy custom prompt by its configured name.
 
-Markdown files directly under `~/.codex/prompts/` appear dynamically as slash commands. They can accept positional placeholders, `$ARGUMENTS`, and named `KEY=value` arguments.
+Markdown files directly under `~/.codex/prompts/` appear dynamically as slash commands. They can accept positional placeholders, `$ARGUMENTS`, and uppercase named placeholders supplied as `KEY=value`, such as `FOCUS=security` when the prompt defines `$FOCUS`.
 
 > **Note:** OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting Codex.
 
 ## Canonical example
 
-`/prompts:review-pr focus=security`
+`/prompts:review-pr FOCUS=security`
 
 ## Related commands
 

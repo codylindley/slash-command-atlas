@@ -1,21 +1,29 @@
-# `/skills reload`
+# `/skills [reload]`
 
 > Manages skills. Use /skills reload to reload them mid-session.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Manages skills. Use /skills reload to reload them mid-session.
 
-Skills are packaged instructions that extend what the agent does well. This command lists and manages what is available, and the `reload` subcommand picks up edits without a restart — which is exactly what you want while you are authoring one.
+Skills are packaged instructions that extend what the agent does well. Use the bare command to manage them, or `reload` to pick up edits mid-session. Skills configured for your repository or GitHub Copilot CLI are available in the app; you can also browse and manage them under **Customize &gt; Skills**.
+
+## Subcommands
+
+- `/skills reload` — Reload available skills during the session.
 
 ## Canonical example
 
-`/skills reload`
+`/skills`
+
+## More examples
+
+- `/skills reload`
 
 ## Related commands
 
@@ -35,7 +43,8 @@ Skills are packaged instructions that extend what the agent does well. This comm
 ## Official sources
 
 - [About agent skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
-- [Built-in skills for the Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

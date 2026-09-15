@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/allowed-tools`
 - **Flags:** blocked
 

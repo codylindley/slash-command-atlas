@@ -5,7 +5,8 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Flags:** experimental
 
 ## What it does
 
@@ -24,7 +25,7 @@ Recommends a framework suited to the codebase, walks through configuring it, and
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

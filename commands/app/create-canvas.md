@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** skill
 
 ## What it does
@@ -13,6 +13,8 @@
 Invokes the canvas-authoring skill.
 
 Canvases are custom, agent-driven interfaces in the app’s side panel — dashboards, diagrams, triage boards — that you and the agent can both act on. This command builds one out of the conversation, turning a discussion into a small purpose-built tool.
+
+> **Note:** To find an existing canvas rather than author a new one, open **Customize &gt; Canvas**. The Customize tab also brings together MCP servers, plugins, and skills.
 
 ## Canonical example
 
@@ -26,7 +28,8 @@ Canvases are custom, agent-driven interfaces in the app’s side panel — dashb
 ## Official sources
 
 - [Working with canvas extensions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions)
-- [Built-in skills for the Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

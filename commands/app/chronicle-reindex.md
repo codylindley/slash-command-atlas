@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Rebuilds the chronicle session index.
 
-Maintenance. Run it when search results look stale or incomplete, or after sessions have been moved around.
+Rebuilds the local session store from recorded history and refreshes account synchronization when enabled. Use it when search results look stale or incomplete; it is not a way to recover history that was never retained.
 
 ## Canonical example
 
@@ -24,7 +24,7 @@ Maintenance. Run it when search results look stale or incomplete, or after sessi
 
 ## Official sources
 
-- [Chronicle (Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [Session history (GitHub Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -27,6 +27,7 @@ Useful for quickly reorienting yourself or naming what the session has become wi
 
 - [Claude Desktop — Code tab — `/recap`](../claude-app/recap.md)
 - [Claude Code on the web — `/recap`](../claude-web/recap.md)
+- [OpenAI Codex CLI — `/recap`](../codex-cli/recap.md)
 
 ## Official sources
 

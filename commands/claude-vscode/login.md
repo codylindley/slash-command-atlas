@@ -1,17 +1,17 @@
 # `/login`
 
-> Starts account sign-in when the extension is not authenticated.
+> Sign-in command named in the extension’s authentication error.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
-Starts account sign-in when the extension is not authenticated.
+Sign-in command named in the extension’s authentication error.
 
-The extension normally opens its sign-in screen automatically; this command is the documented recovery path when the panel reports that you are not logged in.
+Anthropic documents the message `Not logged in · Please run /login`, but says the extension normally reopens its sign-in screen automatically. If the screen is missing, use **Developer: Reload Window**; the guide does not separately describe the slash handler.
 
 ## Canonical example
 

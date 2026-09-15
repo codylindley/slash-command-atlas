@@ -1,19 +1,21 @@
-# `/fix`
+# `/fix [CODE]`
 
 > Proposes a fix for problems in the selected code.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Proposes a fix for problems in the selected code.
 
+Select the code first, or name the method and file after the command.
+
 ## Canonical example
 
-`/fix`
+`/fix the RetryRequestAsync method in HttpClientService.cs`
 
 ## Related commands
 
@@ -28,8 +30,7 @@ Proposes a fix for problems in the selected code.
 
 ## Official sources
 
-- [Chat with Copilot in your IDE](https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide)
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

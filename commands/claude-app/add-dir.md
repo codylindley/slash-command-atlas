@@ -5,16 +5,18 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** inherited
 
 ## What it does
 
 Adds another working directory for this session to access.
 
-Grants file access for the current session and fires `DirectoryAdded` hooks. Most `.claude/` configuration is not discovered from an added directory; skills are the notable exception.
+Grants file access and fires `DirectoryAdded` hooks. It is not a full configuration switch: skills, legacy commands, subagents, and plugin-discovery settings are exceptions to the usual exclusion of added-directory configuration. Memory files require a separate opt-in.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** In 2.1.257+, adding an already-readable project subdirectory can load its skills, commands, and subagents without adding another working directory. Settings-only `permissions.additionalDirectories` grants file access, not these discovery exceptions.
+
+**Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Canonical example
 
@@ -35,6 +37,7 @@ Grants file access for the current session and fires `DirectoryAdded` hooks. Mos
 
 - [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Permissions and working directories](https://code.claude.com/docs/en/permissions)
 - [Hooks reference](https://code.claude.com/docs/en/hooks)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

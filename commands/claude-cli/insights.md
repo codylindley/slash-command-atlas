@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Local session
 
 ## What it does

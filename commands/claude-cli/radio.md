@@ -5,8 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
-- **Requires:** First-party Anthropic connection
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 

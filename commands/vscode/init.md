@@ -5,7 +5,8 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session
 
 ## What it does
 
@@ -34,8 +35,8 @@ Writes `copilot-instructions.md` or `AGENTS.md` based on the project’s structu
 
 ## Official sources
 
-- [Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** A Git repository
 - **Flags:** experimental
 
@@ -14,6 +14,8 @@
 Moves uncommitted changes into a new Git worktree and switches to it.
 
 The counterpart to `/worktree`: where that leaves your changes behind, this takes them with you. Useful when you realise the work you have started belongs on its own branch.
+
+> **Note:** Experimental in the public reference, but the 1.0.84-6 prerelease (2026-09-14) no longer requires experimental mode.
 
 ## Canonical example
 
@@ -25,7 +27,8 @@ The counterpart to `/worktree`: where that leaves your changes behind, this take
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Copilot CLI 1.0.84-6 (prerelease, 2026-09-14)](https://github.com/github/copilot-cli/releases/tag/v1.0.84-6)
 
 ## Atlas links
 

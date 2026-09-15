@@ -5,8 +5,8 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
-- **Requires:** Pro, Max, or Team; Claude Code 2.1.228+
+- **Data snapshot:** 2026-09-14
+- **Requires:** Pro, Max, or Team; Claude Code 2.1.228+ (native Windows: 2.1.233+)
 
 ## What it does
 

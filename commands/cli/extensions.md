@@ -5,8 +5,9 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/extension`
+- **Flags:** experimental
 
 ## What it does
 
@@ -18,7 +19,7 @@ Manages CLI extensions.
 
 ## Related commands
 
-- [`/plugins`](./plugins.md)
+- [`/plugin`](./plugins.md)
 - [`/env`](./env.md)
 
 ## Official sources

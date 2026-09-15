@@ -1,15 +1,17 @@
 # `/restart`
 
-> Restarts the CLI, preserving the current session.
+> Restarts the CLI and restores its live sessions.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
-Restarts the CLI, preserving the current session.
+Restarts the CLI and restores its live sessions.
+
+Restores all live sessions in this process, not just the foreground session. If the target version cannot restore multiple sessions, the CLI asks whether to continue with only the foreground session or cancel.
 
 ## Canonical example
 

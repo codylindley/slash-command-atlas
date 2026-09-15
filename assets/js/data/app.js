@@ -1,6 +1,7 @@
 /* GitHub Copilot app (desktop) — slash commands.
    Command names, arguments, gating conditions and one-line summaries follow the official
-   reference. Longer explanations, use cases and examples are editorial. */
+   reference, with explicitly noted supplements. Longer explanations, use cases
+   and examples are editorial. */
 
 (function () {
   var D = {
@@ -11,16 +12,21 @@
     duckH:    ['Using the rubber duck agent', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions#using-the-rubber-duck-agent'],
     sec:      ['Using /security-review in app sessions', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions#using-security-review-in-app-sessions'],
     chronA:   ['Using /chronicle with app sessions', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions#using-chronicle-with-app-sessions'],
-    chronC:   ['Chronicle (Copilot CLI)', 'https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle'],
-    skills:   ['Built-in skills for the Copilot app', 'https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills'],
+    chronC:   ['Session history (GitHub Copilot CLI)', 'https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle'],
+    skills:   ['Built-in skills for the GitHub Copilot app', 'https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills'],
     agents:   ['About custom agents', 'https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents'],
     agentSk:  ['About agent skills', 'https://docs.github.com/en/copilot/concepts/agents/about-agent-skills'],
+    custom:   ['Customizing the GitHub Copilot app', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app'],
+    exclude:  ['Content exclusion in the GitHub Copilot app', 'https://docs.github.com/en/copilot/concepts/agents/github-copilot-app#content-exclusion'],
     mcp:      ['MCP and Agent Finder', 'https://docs.github.com/en/copilot/concepts/context/mcp#agent-finder'],
+    finder:   ['Agent Finder skill and query syntax', 'https://github.com/ards-project/connectors/blob/main/skills/github-copilot/SKILL.md'],
+    managed:  ['Enterprise-managed agent permissions (September 9, 2026)', 'https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/'],
     canvas:   ['Working with canvas extensions', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions'],
     repoCfg:  ['Repository configuration', 'https://docs.github.com/en/copilot/reference/github-copilot-app-reference/repository-configuration'],
     stacked:  ['About stacked pull requests', 'https://docs.github.com/en/pull-requests/get-started/about-stacked-prs'],
     prs:      ['Managing issues and pull requests', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests'],
     auto:     ['Auto model selection', 'https://docs.github.com/en/copilot/concepts/models/auto-model-selection'],
+    tiers:    ['Auto routing tiers (September 14, 2026)', 'https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/'],
     byok:     ['Use your own model provider', 'https://docs.github.com/en/copilot/how-tos/github-copilot-app/use-byok-models']
   };
 
@@ -56,16 +62,16 @@
     {
       key: 'autopilot', cmd: '/autopilot', args: '[PROMPT]', cat: 'modes',
       summary: 'Switches into Autopilot mode and optionally starts execution.',
-      detail: 'Full autonomy &mdash; the agent writes code, runs tests and iterates without pausing for approval. It works best on well-specified work with a clear pass/fail signal, because a test suite is what tells it whether it is finished. A common pattern is to run <code>/plan</code> first, approve the plan, then hand execution to Autopilot.',
+      detail: 'The agent writes code, runs tests and iterates without waiting for routine input. It works best on well-specified work with a clear pass/fail signal, because a test suite is what tells it whether it is finished. A common pattern is to run <code>/plan</code> first, approve the plan, then hand execution to Autopilot.',
       when: [
         'Dependency upgrades and other mechanical migrations',
         'Tasks with an unambiguous success check, like a green test suite',
         'Long-running chores you do not want to babysit'
       ],
-      note: 'Autopilot does not ask before acting. Think about tool approvals deliberately here rather than reaching for <code>/allow-all-tools</code> out of habit.',
+      note: 'Autopilot controls how independently the agent works; tool approvals and enterprise-managed restrictions are separate controls. Do not assume switching modes grants every tool permission.',
       examples: ['/autopilot upgrade to React 19 and get the test suite passing'],
       related: ['plan', 'interactive', 'allow-all-tools', 'fleet'],
-      docs: [D.modes]
+      docs: [D.modes, D.managed]
     },
 
     /* ---------- session lifecycle ---------- */
@@ -113,31 +119,32 @@
     {
       key: 'remote', cmd: '/remote', cat: 'session', requires: 'Active session',
       summary: 'Enables or manages remote control, so you can reach the session from GitHub.com or GitHub Mobile.',
-      detail: 'Turns a desktop session into something you can steer from a browser or your phone. The obvious use is starting a long Autopilot run at your desk and checking on it from somewhere else.',
-      note: 'Remote control is policy-gated. If the command is missing, your organization or enterprise has likely disabled it.',
+      detail: 'Lets you monitor a running session, send prompts, and respond to questions or approval requests from another device. It does not move execution to that device: the original host must stay running and online.',
+      note: 'For an organization-provided seat, the applicable <strong>Store local sessions in the Cloud</strong> policy must allow <strong>View and control</strong>; enterprise-managed settings can restrict access further. The remote interface does not currently accept slash commands. A missing picker entry alone does not identify which prerequisite is unmet.',
       related: ['terminal', 'inbox'],
-      docs: [D.remote]
+      docs: [D.remote, D.repoCfg]
     },
     {
       key: 'terminal', cmd: '/terminal', args: '[COMMAND]', cat: 'session', requires: 'Active session',
       summary: 'Opens a terminal in the right panel, optionally running a command.',
-      detail: 'Gives you a shell next to the agent, scoped to the session’s own worktree. Useful for checking the agent’s work yourself &mdash; running the tests, reading <code>git status</code> &mdash; without leaving the app or competing with the agent over the same working tree.',
+      detail: 'Opens a shell in the session&rsquo;s working directory. That can be an isolated worktree, an existing local checkout, or a folder, depending on how the session was created. Use it to run tests or inspect <code>git status</code> without leaving the app; the terminal and agent still operate on the same session files.',
       examples: ['/terminal npm test'],
-      related: ['review', 'debug']
+      related: ['review', 'debug'],
+      docs: [D.sessions]
     },
 
     /* ---------- context & input ---------- */
     {
       key: 'ask', cmd: '/ask', aliases: ['/btw'], args: '[QUESTION]', cat: 'context',
       requires: 'Active session',
-      summary: 'Asks a side question without interrupting the current response.',
-      detail: 'Opens a <em>Side chat</em> beside the session instead of adding a turn to it. The main agent keeps working &mdash; you do not have to wait for the current response to finish &mdash; and the answer never enters the transcript the agent is reasoning over. The Side chat is not blind to the work: it can pull in the main session&rsquo;s recent transcript on demand, so you can ask &ldquo;why did it choose that?&rdquo; without re-explaining any of it.',
+      summary: 'Asks a side question without interrupting the response; previously verified in app v1.1.12.',
+      detail: 'Opens a <em>Side chat</em> beside the session instead of adding a prompt-and-response turn to the main conversation. The main agent keeps working &mdash; you do not have to wait for the current response to finish. The Side chat can pull in the main session&rsquo;s recent transcript on demand, so you can ask about the work without re-explaining it.',
       when: [
         'A clarifying question occurs to you mid-run and you do not want to stop the agent',
         'Understanding unfamiliar code without spending main-thread context on the detour',
         'Checking an assumption before deciding whether to interrupt and redirect the session'
       ],
-      note: 'Side chats are saved as their own sessions owned by the parent session or workspace, so you can return to one later &mdash; but editing an earlier message is not supported inside a Side chat. Added in Copilot app v1.1.12 and not yet listed in the published slash command reference.',
+      note: 'This is a previously verified app entry, not a command listed in GitHub&rsquo;s public table at the 2026-09-14 documentation review. Availability was not rechecked in a live picker for this review. In the observed version, side chats had their own saved history and did not support editing earlier messages.',
       examples: ['/ask why does this repo pin the Node version in two places?'],
       related: ['context', 'compact', 'spawn']
     },
@@ -145,13 +152,17 @@
       key: 'attach-files', cmd: '/attach-files', cat: 'context',
       summary: 'Opens a file picker and attaches files to your message.',
       detail: 'Pins specific files into the prompt instead of hoping the agent finds them. Attaching the two or three files that actually matter is usually faster, cheaper and more reliable than describing where to look.',
-      related: ['attach-folder', 'context', 'init']
+      note: 'For GitHub Copilot Business and Enterprise, applicable content exclusions still prevent excluded files from being used as context. Selecting an attachment is not a policy override.',
+      related: ['attach-folder', 'context', 'init'],
+      docs: [D.exclude]
     },
     {
       key: 'attach-folder', cmd: '/attach-folder', cat: 'context',
       summary: 'Opens a folder picker and attaches a folder to your message.',
-      detail: 'The same idea as <code>/attach-files</code> at directory granularity, for when the relevant unit is a module or package rather than a handful of files. Be deliberate: a large folder is a large number of tokens.',
-      related: ['attach-files', 'context', 'compact']
+      detail: 'Selects a directory when the relevant unit is a module or package rather than a handful of files. Prefer the smallest relevant folder so the intended scope is clear; attaching a folder does not establish that every file is loaded into the context window.',
+      note: 'Folder attachments remain subject to applicable content exclusion policies.',
+      related: ['attach-files', 'context', 'compact'],
+      docs: [D.exclude]
     },
     {
       key: 'compact', cmd: '/compact', cat: 'context', requires: 'Active session',
@@ -307,14 +318,15 @@
     {
       key: 'model', cmd: '/model', aliases: ['/models'], args: '[MODEL]', cat: 'config',
       summary: 'Opens model selection, or selects a model by name or ID.',
-      detail: 'Switches the model driving the session. Choosing <strong>Auto</strong> lets the app pick per task based on complexity, and after a turn the picker shows which model actually answered. Reasoning effort is a separate dial: more effort buys more thinking time on hard problems at the cost of latency. If you have configured your own model provider, those models appear here too.',
+      detail: 'Chooses a named model or <strong>Auto</strong>, which routes prompts using task complexity and model availability. Auto now offers <strong>Efficiency</strong> for cost, <strong>Balance</strong> for cost, quality and latency, and <strong>Intelligence</strong> for quality. All tiers draw from the same eligible model set; they change routing preferences, not the model inventory. Configured bring-your-own-provider models also appear in the picker.',
+      note: 'Auto tiers began rolling out to the app on 2026-09-14. They are separate from reasoning effort and remain subject to plan and policy restrictions. The picker shows which model handled a response; Intelligence does not guarantee the largest model for every prompt.',
       when: [
         'Moving to a stronger model for a problem the current one is fumbling',
         'Dropping to a cheaper model for mechanical work',
         'A task that suits a particular vendor’s strengths'
       ],
       related: ['agent', 'usage', 'rubber-duck'],
-      docs: [D.auto, D.byok]
+      docs: [D.auto, D.tiers, D.byok]
     },
     {
       key: 'agent', cmd: '/agent', cat: 'config',
@@ -324,62 +336,67 @@
       docs: [D.agents]
     },
     {
-      key: 'skills', cmd: '/skills', args: 'reload', cat: 'config',
+      key: 'skills', cmd: '/skills', args: '[reload]', cat: 'config',
       summary: 'Manages skills. Use /skills reload to reload them mid-session.',
-      detail: 'Skills are packaged instructions that extend what the agent does well. This command lists and manages what is available, and the <code>reload</code> subcommand picks up edits without a restart &mdash; which is exactly what you want while you are authoring one.',
+      detail: 'Skills are packaged instructions that extend what the agent does well. Use the bare command to manage them, or <code>reload</code> to pick up edits mid-session. Skills configured for your repository or GitHub Copilot CLI are available in the app; you can also browse and manage them under <strong>Customize &gt; Skills</strong>.',
+      subs: [['reload', 'Reload available skills during the session.']],
       related: ['agent', 'af', 'init'],
-      docs: [D.agentSk, D.skills]
+      docs: [D.agentSk, D.skills, D.custom]
     },
     {
-      key: 'af', cmd: '/af', cat: 'config', flags: ['skill'],
+      key: 'af', cmd: '/af', args: '[QUERY]', cat: 'config', flags: ['skill'],
       summary: 'Finds installable MCP servers, tools, skills and agents by searching Agent Finder.',
       detail: 'A search front end for the ecosystem: describe a capability you wish you had and it surfaces MCP servers, skills and agents you can install. This is the path from &ldquo;I wish Copilot could talk to our issue tracker&rdquo; to actually having that connector installed.',
       examples: ['/af something that can query a Postgres database'],
       related: ['skills', 'agent'],
-      docs: [D.mcp, D.skills]
+      docs: [D.mcp, D.skills, D.finder]
     },
     {
       key: 'create-canvas', cmd: '/create-canvas', args: '[PROMPT]', cat: 'config', flags: ['skill'],
       summary: 'Invokes the canvas-authoring skill.',
       detail: 'Canvases are custom, agent-driven interfaces in the app’s side panel &mdash; dashboards, diagrams, triage boards &mdash; that you and the agent can both act on. This command builds one out of the conversation, turning a discussion into a small purpose-built tool.',
+      note: 'To find an existing canvas rather than author a new one, open <strong>Customize &gt; Canvas</strong>. The Customize tab also brings together MCP servers, plugins, and skills.',
       examples: ['/create-canvas a board of the open PRs in this repo grouped by review state'],
       related: ['inbox', 'orchestrate'],
-      docs: [D.canvas, D.skills]
+      docs: [D.canvas, D.skills, D.custom]
     },
 
     /* ---------- tools & permissions ---------- */
     {
       key: 'allow-all-tools', cmd: '/allow-all-tools', aliases: ['/yolo'], cat: 'perms', requires: 'Active session',
       summary: 'Turns tool auto-approval on, or shows its current state.',
-      detail: 'Stops the agent asking permission for each tool call. Genuinely useful in a throwaway worktree or a cloud sandbox where the blast radius is contained, and considerably less so pointed at a repository you care about with shell access enabled.',
-      note: 'This switches off the approval prompts that are your main guardrail. Prefer it in disposable or sandboxed environments, and use <code>/reset-allowed-tools</code> to turn it back off when you are done.',
-      related: ['reset-allowed-tools', 'autopilot']
+      detail: 'Enables session tool auto-approval so eligible operations can run without per-call prompts. It does not isolate shell access or file writes: even a disposable worktree can run commands that affect files elsewhere.',
+      note: 'Enterprise-managed deny and ask rules take precedence over auto-approval and previously saved approvals. These controls became generally available in the app on 2026-09-09. Use <code>/reset-allowed-tools</code> to clear session approvals; it does not change administrator policies.',
+      related: ['reset-allowed-tools', 'autopilot'],
+      docs: [D.managed]
     },
     {
       key: 'reset-allowed-tools', cmd: '/reset-allowed-tools', cat: 'perms', requires: 'Active session',
       summary: 'Clears session-level tool approvals and turns auto-approval off.',
-      detail: 'The undo for approvals you granted in the moment, including <code>/yolo</code>. The agent goes back to asking. Worth running after a demo, or once you have finished whatever justified opening things up.',
-      related: ['allow-all-tools']
+      detail: 'Clears approvals you granted for this session, including <code>/yolo</code>, and restores normal approval behavior. Enterprise-managed restrictions remain in force; this command neither resets nor relaxes administrator policies.',
+      related: ['allow-all-tools'],
+      docs: [D.managed]
     },
 
     /* ---------- history ---------- */
     {
-      key: 'chronicle', cmd: '/chronicle', cat: 'history',
+      key: 'chronicle', cmd: '/chronicle', args: '[standup|tips|cost-tips|search|improve|reindex]', cat: 'history',
       summary: 'Opens session history and analysis features.',
-      detail: 'Chronicle is memory across sessions. Because the app is built on the Copilot CLI, it reads history from both app sessions and other CLI sessions, so a week of work is queryable in one place. Run it bare to open the interface, or go straight to a subcommand.',
+      detail: 'Queries recorded history from app sessions and other GitHub Copilot CLI sessions. Run it bare to choose an analysis, or invoke a subcommand directly. Results depend on the history available locally or synced to your account, rather than a guaranteed record of every past session.',
+      examples: ['/chronicle', '/chronicle standup'],
       related: ['chronicle-standup', 'chronicle-search', 'context'],
       docs: [D.chronA, D.chronC]
     },
     {
-      key: 'chronicle-standup', cmd: '/chronicle standup', cat: 'history',
+      key: 'chronicle-standup', cmd: '/chronicle standup', args: '[CONTEXT]', cat: 'history',
       summary: 'Summarizes your work from the last day.',
-      detail: 'Reads recent sessions and writes the summary you would otherwise reconstruct from memory each morning. It is also the fastest way to work out which of five parallel sessions actually did what.',
-      examples: ['/chronicle standup'],
+      detail: 'Summarizes recorded work from the last 24 hours by default. Append context to request a different period or emphasis, rather than treating the default as a fixed reporting window.',
+      examples: ['/chronicle standup', '/chronicle standup for the last 3 days'],
       related: ['chronicle', 'chronicle-search'],
       docs: [D.chronC]
     },
     {
-      key: 'chronicle-search', cmd: '/chronicle search', cat: 'history',
+      key: 'chronicle-search', cmd: '/chronicle search', args: '[QUERY]', cat: 'history',
       summary: 'Searches session history by keyword or topic.',
       detail: 'Finds the session where you solved this before. Given how much agentic work turns out to be re-solving something you half-remember, this is the subcommand that earns chronicle its place.',
       examples: ['/chronicle search flaky websocket test'],
@@ -387,9 +404,10 @@
       docs: [D.chronC]
     },
     {
-      key: 'chronicle-tips', cmd: '/chronicle tips', cat: 'history',
+      key: 'chronicle-tips', cmd: '/chronicle tips', args: '[CONTEXT]', cat: 'history',
       summary: 'Returns personalized workflow tips.',
-      detail: 'Looks at how you have actually been using the agent and suggests changes: commands you are not reaching for, habits that are costing you time.',
+      detail: 'Looks at how you have actually been using the agent and suggests changes: commands you are not reaching for, habits that are costing you time. Append context to focus the recommendations on a topic.',
+      examples: ['/chronicle tips', '/chronicle tips for better prompting'],
       related: ['chronicle', 'chronicle-cost-tips', 'chronicle-improve'],
       docs: [D.chronC]
     },
@@ -403,14 +421,14 @@
     {
       key: 'chronicle-improve', cmd: '/chronicle improve', cat: 'history',
       summary: 'Suggests improvements for your instructions file.',
-      detail: 'Reads your history for the places the agent repeatedly needed correcting, then proposes edits to your custom instructions so it stops needing them. The natural follow-up to <code>/init</code> after a few weeks of real use.',
+      detail: 'Looks for repeated corrections and friction in session history for the <strong>current repository or working directory</strong>, rather than every project. It proposes improvements to <code>.github/copilot-instructions.md</code> and lets you choose which recommendations to apply.',
       related: ['init', 'chronicle-tips'],
       docs: [D.chronC]
     },
     {
       key: 'chronicle-reindex', cmd: '/chronicle reindex', cat: 'history',
       summary: 'Rebuilds the chronicle session index.',
-      detail: 'Maintenance. Run it when search results look stale or incomplete, or after sessions have been moved around.',
+      detail: 'Rebuilds the local session store from recorded history and refreshes account synchronization when enabled. Use it when search results look stale or incomplete; it is not a way to recover history that was never retained.',
       related: ['chronicle', 'chronicle-search'],
       docs: [D.chronC]
     },

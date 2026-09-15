@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Desktop build exposing the internal remote-workflow entry
 - **Flags:** hidden
 
@@ -13,7 +13,7 @@
 
 Internal Desktop workflow entry exposed by some builds.
 
-This double-underscore command is visible in the live Desktop Code picker but is not documented as a public command. Treat it as implementation detail rather than a stable user-facing workflow.
+This double-underscore entry was recorded in an earlier local picker audit and was not re-observed during the 2026-09-14 documentation review. It is not a published public command; treat it as implementation detail, not a stable workflow.
 
 ## Canonical example
 

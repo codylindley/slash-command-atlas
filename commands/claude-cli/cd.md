@@ -5,14 +5,16 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.169+
 
 ## What it does
 
 Moves this session to another working directory without losing context.
 
-Keeps the conversation and prompt cache, asks for workspace trust when needed, and makes the moved session discoverable by later resume commands from the new directory. `Cd` permission rules can restrict targets.
+Keeps the conversation, loads the destination’s project instructions, and asks for workspace trust when needed. Since 2.1.246 it also applies the new settings, hooks, MCP servers, plugins, skills, and subagents immediately, replacing the previous directory’s project connections. `Cd` permission rules can restrict targets.
+
+> **Note:** Environment values from the new settings overlay those from the old directory rather than clearing them. The session becomes resumable from its new directory.
 
 ## Canonical example
 
@@ -33,6 +35,7 @@ Keeps the conversation and prompt cache, asks for workspace trust when needed, a
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Permissions and working directories](https://code.claude.com/docs/en/permissions)
 
 ## Atlas links
 

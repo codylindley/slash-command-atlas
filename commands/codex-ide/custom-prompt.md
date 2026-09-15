@@ -5,20 +5,21 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex IDE extension
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** A local custom-prompt file
 - **Flags:** custom
 
 ## What it does
 
 Runs a legacy custom prompt by its configured name.
 
-Markdown files directly under `~/.codex/prompts/` appear dynamically in the IDE slash menu and can accept positional, free-form, or named arguments.
+Markdown files directly under `~/.codex/prompts/` appear dynamically in the IDE slash menu and can accept positional, free-form, or uppercase named arguments, such as `FOCUS=security` when the prompt defines `$FOCUS`.
 
 > **Note:** OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting the extension.
 
 ## Canonical example
 
-`/prompts:review-pr focus=security`
+`/prompts:review-pr FOCUS=security`
 
 ## Related commands
 

@@ -5,13 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Sets or reports the model’s reasoning effort.
 
-Supports levels from `low` through `xhigh`, plus session-only `max` and `ultracode` where available. `auto` returns to the model default; bare invocation opens a slider.
+Available levels depend on the model. Run bare for a slider, use `status` to inspect the level, or `auto` for the default. Typed levels and `Enter` save a per-model choice; `s` applies it only to this session (2.1.257+). `max` is session-only when set here.
+
+> **Note:** `ultracode` is a workflow-orchestration setting, not another model reasoning level. It uses `xhigh` and requires workflows, a compatible model, and an effort cap that permits it.
 
 ## Canonical example
 

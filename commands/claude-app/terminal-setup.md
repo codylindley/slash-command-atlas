@@ -1,19 +1,19 @@
 # `/terminal-setup`
 
-> Configures terminal keybindings such as Shift+Enter.
+> Configures terminal-specific newline keys and integration settings.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** Terminal requiring keybinding setup
+- **Data snapshot:** 2026-09-14
+- **Requires:** Supported terminal needing setup
 - **Flags:** blocked
 
 ## What it does
 
-Configures terminal keybindings such as Shift+Enter.
+Configures terminal-specific newline keys and integration settings.
 
-Appears only in terminals that need extra setup, including VS Code, Cursor, Devin Desktop, Alacritty, and Zed.
+Installs Shift+Enter for VS Code, Cursor, Devin Desktop, Alacritty, and Zed. In Apple Terminal it configures Option+Enter and turns off the bell; in iTerm2 it enables the clipboard access used by `/copy`.
 
 > **Note:** **Desktop limitation:** this command opens a terminal panel or controls the terminal renderer, so Desktop refuses it or replaces it with native UI.
 

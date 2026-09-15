@@ -5,13 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Adds another working directory for this session to access.
 
-Grants file access for the current session and fires `DirectoryAdded` hooks. Most `.claude/` configuration is not discovered from an added directory; skills are the notable exception.
+Grants file access and fires `DirectoryAdded` hooks. It is not a full configuration switch: skills, legacy commands, subagents, and plugin-discovery settings are exceptions to the usual exclusion of added-directory configuration. Memory files require a separate opt-in.
+
+> **Note:** In 2.1.257+, adding an already-readable project subdirectory can load its skills, commands, and subagents without adding another working directory. Settings-only `permissions.additionalDirectories` grants file access, not these discovery exceptions.
 
 ## Canonical example
 
@@ -31,6 +33,7 @@ Grants file access for the current session and fires `DirectoryAdded` hooks. Mos
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Permissions and working directories](https://code.claude.com/docs/en/permissions)
 - [Hooks reference](https://code.claude.com/docs/en/hooks)
 
 ## Atlas links

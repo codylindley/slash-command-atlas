@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/ios`, `/android`
 - **Flags:** inherited
 

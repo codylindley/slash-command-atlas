@@ -5,13 +5,15 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Adds a directory to the allowed list for file access.
 
-The CLI only reads and writes inside directories you have allowed. This widens that boundary deliberately, and leaves an auditable trail of what you opened up.
+Also loads the directory’s `.github/skills` and `.github/agents` as trusted configuration. Review the directory before adding it: this grants access and makes its agent customizations available.
+
+> **Note:** Adding a directory does not disable content exclusions. For Copilot Business and Enterprise, the CLI respects exclusion policies from enterprise, organization, and repository administrators and does not use excluded files as context; this became generally available on 2026-09-02.
 
 ## Canonical example
 
@@ -30,7 +32,8 @@ The CLI only reads and writes inside directories you have allowed. This widens t
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Content exclusions in Copilot CLI (GA, 2026-09-02)](https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli)
 
 ## Atlas links
 

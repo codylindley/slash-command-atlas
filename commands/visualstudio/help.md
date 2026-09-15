@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -29,7 +29,7 @@ Quick reference and basics of using Copilot.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

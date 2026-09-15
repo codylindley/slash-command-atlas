@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.205+ in the session environment
 
 ## What it does
 
 Renames the cloud session from the conversation.
 
-Pass the name directly instead of opening the terminal naming UI. Claude normalizes invisible and control characters, caps names at 200 characters, and rejects a name that is empty after normalization.
+Supply an explicit name; the CLI’s bare auto-naming form is not the documented cloud invocation. Claude replaces invisible and control characters with spaces, caps names at 200 characters, and rejects a name that is empty after normalization.
 
 ## Canonical example
 
@@ -26,6 +26,7 @@ Pass the name directly instead of opening the terminal naming UI. Claude normali
 
 - [GitHub Copilot app — `/rename`](../app/rename.md)
 - [GitHub Copilot CLI — `/rename`](../cli/rename.md)
+- [GitHub Copilot Chat in VS Code — `/rename`](../vscode/rename.md)
 - [GitHub Copilot Chat on GitHub.com — `/rename`](../web/rename.md)
 - [Claude Code CLI — `/rename`](../claude-cli/rename.md)
 - [Claude Desktop — Code tab — `/rename`](../claude-app/rename.md)

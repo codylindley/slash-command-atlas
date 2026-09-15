@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Xcode
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Simplifies the current code selection.
 
-Unique to Xcode. Closest in spirit to Visual Studio’s `/optimize`, but aimed at readability rather than running time.
+Requests a simpler version of the selected code. This is distinct from Visual Studio’s running-time-focused `/optimize`.
 
 ## Canonical example
 
@@ -29,7 +29,7 @@ Unique to Xcode. Closest in spirit to Visual Studio’s `/optimize`, but aimed a
 
 ## Official sources
 
-- [GitHub Copilot Chat in Xcode slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
+- [Copilot Chat cheat sheet (Xcode)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
 
 ## Atlas links
 

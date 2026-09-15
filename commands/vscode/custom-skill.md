@@ -1,18 +1,18 @@
-# `/<skill name>`
+# `/<skill name> [CONTEXT]`
 
 > Runs one of your own agent skills by name.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** custom
 
 ## What it does
 
 Runs one of your own agent skills by name.
 
-Any skill file becomes a slash command. A skill saved as `webapp-testing.md` is invoked as `/webapp-testing`. This is the mechanism that makes VS Code’s command set effectively open-ended — and it is why your picker will not match anyone else’s.
+For example, `.github/skills/webapp-testing/SKILL.md` with `name: webapp-testing` exposes `/webapp-testing`. The name must match the directory. `user-invocable: false` hides it from the menu; plugin-distributed skills receive a plugin-name prefix automatically. Optional text after the command provides task context.
 
 ## Canonical example
 
@@ -26,7 +26,8 @@ Any skill file becomes a slash command. A skill saved as `webapp-testing.md` is 
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

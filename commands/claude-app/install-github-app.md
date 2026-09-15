@@ -5,15 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
-- **Requires:** GitHub repository and interactive terminal
+- **Data snapshot:** 2026-09-14
+- **Requires:** github.com repository and interactive terminal
 - **Flags:** inherited
 
 ## What it does
 
 Installs the Claude GitHub App for a repository.
 
-Walks through repository selection and optionally sets up GitHub Actions workflows and secrets.
+Walks through repository selection and optionally sets up GitHub Actions workflows and secrets. This setup command targets github.com repositories, not GitLab or Bitbucket remotes.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 

@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
-- **Requires:** Claude Code 2.1.174+
+- **Data snapshot:** 2026-09-14
+- **Requires:** claude.ai sign-in; attribution requires Claude Code 2.1.174+
 
 ## What it does
 
 Opens the extension’s Account & usage dialog.
 
-Shows account and plan, session and weekly usage bars, reset timing, and local Day/Week attribution by skill, subagent, plugin, and MCP server. It also highlights behaviors responsible for at least 10% of recent use.
+Shows account and plan, usage-limit bars, reset timing, and Day/Week attribution by skill, subagent, plugin, and MCP server. Attribution is approximate and local to this machine, excluding other devices and cloud usage. Behaviors responsible for at least 10% of recent use receive reduction tips.
 
 ## Canonical example
 

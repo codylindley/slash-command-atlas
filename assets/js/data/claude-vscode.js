@@ -1,7 +1,8 @@
 /* Claude Code for VS Code — conservative first-party documented subset.
    Anthropic describes the extension as exposing only a subset of CLI commands.
    This file includes commands named in the VS Code and Remote Control guides; menu
-   actions whose slash spelling is not documented are not inferred. */
+   actions whose slash spelling is not documented are not inferred.
+   Documentation checked on 2026-09-14. */
 
 (function () {
   var D = {
@@ -35,17 +36,17 @@
     {
       key: 'usage', cmd: '/usage', cat: 'diag',
       summary: 'Opens the extension’s Account & usage dialog.',
-      detail: 'Shows account and plan, session and weekly usage bars, reset timing, and local Day/Week attribution by skill, subagent, plugin, and MCP server. It also highlights behaviors responsible for at least 10% of recent use.',
-      requires: 'Claude Code 2.1.174+',
+      detail: 'Shows account and plan, usage-limit bars, reset timing, and Day/Week attribution by skill, subagent, plugin, and MCP server. Attribution is approximate and local to this machine, excluding other devices and cloud usage. Behaviors responsible for at least 10% of recent use receive reduction tips.',
+      requires: 'claude.ai sign-in; attribution requires Claude Code 2.1.174+',
       related: ['compact'],
       docs: [D.vscode]
     },
     {
       key: 'remote-control', cmd: '/remote-control', aliases: ['/rc'], cat: 'session',
       summary: 'Makes the VS Code session available through claude.ai or mobile.',
-      detail: 'The extension shows connection status above the prompt and can open the remote browser view. Run the command again or close the banner to disconnect.',
+      detail: 'Execution stays on your machine. The extension displays a Remote Control indicator in the prompt footer and posts the connected session URL in the conversation. Click the connected indicator to open the browser view; run the command again to disconnect.',
       note: 'Unlike the CLI form, VS Code accepts no custom name argument and does not display a QR code.',
-      requires: 'Claude subscription and Remote Control policy',
+      requires: 'claude.ai subscription sign-in; direct Anthropic connection; Remote Control allowed',
       related: ['usage'],
       docs: [D.remote, D.vscode]
     },
@@ -69,21 +70,22 @@
     {
       key: 'plugins', cmd: '/plugins', cat: 'config',
       summary: 'Opens VS Code’s graphical plugin and marketplace manager.',
-      detail: 'Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. The extension uses Claude Code&rsquo;s shared plugin configuration underneath.',
+      detail: 'Install plugins at user, project, or local scope; enable or disable installed plugins; and add, refresh, or remove marketplaces. Changes apply to open sessions in that VS Code window; if reloading fails, the dialog offers retry or restart. The extension shares the CLI&rsquo;s plugin configuration.',
       related: ['usage'],
       docs: [D.vscode, D.plugins]
     },
     {
       key: 'mcp', cmd: '/mcp', cat: 'config',
-      summary: 'Opens VS Code&rsquo;s MCP server manager.',
-      detail: 'Shows configured Model Context Protocol servers and lets you enable or disable them, reconnect, and manage OAuth authentication without leaving the chat panel. Adding a new server still requires the CLI.',
+      summary: 'Adds and manages MCP server connections from the chat panel.',
+      detail: 'The dialog can add servers, remove locally saved user/project/local-scope servers, enable or disable connections, reconnect, and manage OAuth authentication. It writes the same configuration as <code>claude mcp add</code>; server-configuration changes take effect in conversations started afterwards.',
+      requires: 'Claude Code 2.1.261+ for adding or removing servers',
       related: ['plugins', 'usage'],
       docs: [D.vscode]
     },
     {
       key: 'login', cmd: '/login', cat: 'system',
-      summary: 'Starts account sign-in when the extension is not authenticated.',
-      detail: 'The extension normally opens its sign-in screen automatically; this command is the documented recovery path when the panel reports that you are not logged in.',
+      summary: 'Sign-in command named in the extension&rsquo;s authentication error.',
+      detail: 'Anthropic documents the message <code>Not logged in &middot; Please run /login</code>, but says the extension normally reopens its sign-in screen automatically. If the screen is missing, use <strong>Developer: Reload Window</strong>; the guide does not separately describe the slash handler.',
       related: ['usage', 'remote-control'],
       docs: [D.vscode]
     }

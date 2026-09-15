@@ -1,20 +1,20 @@
 # `/allow-all [off|auto|show]`
 
-> Enables all permissions — tools, paths and URLs.
+> Skips ordinary permission prompts within managed policy.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/yolo`
 
 ## What it does
 
-Enables all permissions — tools, paths and URLs.
+Skips ordinary permission prompts within managed policy.
 
-An alias for `/permissions allow-all`. Worth pairing with `/sandbox enable` if you want the speed without handing over the whole machine.
+An alias for `/permissions allow-all` covering tools, paths, and URLs. Managed deny rules still block operations and ask rules still require human approval; user settings, auto-approval, and previously saved approvals cannot override those restrictions.
 
-> **Note:** This removes the approval prompts that are your main guardrail. Prefer a sandbox or a disposable worktree.
+> **Note:** An enabled sandbox and configured content exclusions still apply. For Business and Enterprise, excluded files are not used as Copilot context. A worktree separates Git changes, not access to your machine; sandboxing provides OS-level restrictions.
 
 ## Canonical example
 
@@ -33,7 +33,9 @@ An alias for `/permissions allow-all`. Worth pairing with `/sandbox enable` if y
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
+- [Content exclusions in Copilot CLI (GA, 2026-09-02)](https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli)
 
 ## Atlas links
 

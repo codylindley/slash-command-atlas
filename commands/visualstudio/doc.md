@@ -1,19 +1,19 @@
-# `/doc`
+# `/doc [CODE]`
 
-> Adds a documentation comment for this symbol.
+> Adds comments for selected or specified code.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
-Adds a documentation comment for this symbol.
+Adds comments for selected or specified code.
 
 ## Canonical example
 
-`/doc`
+`/doc the RetryRequestAsync method in HttpClientService.cs`
 
 ## Related commands
 
@@ -27,7 +27,7 @@ Adds a documentation comment for this symbol.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

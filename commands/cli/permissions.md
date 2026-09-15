@@ -5,21 +5,23 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Switches permission mode, shows the current one, or resets in-session approvals.
 
-This is the canonical command for permission changes; `/allow-all` and `/yolo` remain supported as aliases for `/permissions allow-all`. `reset` clears all in-memory tool and path approvals so the agent prompts again on next use.
+This is the canonical command for permission changes; `/allow-all` and `/yolo` remain supported as aliases for `/permissions allow-all`. `reset` clears in-memory tool and path approvals without changing managed rules.
+
+> **Note:** Enterprise-managed deny/ask/allow controls are generally available for Copilot Business and Enterprise as of 2026-09-09. User or workspace settings, auto-approval, and saved approvals cannot weaken managed restrictions: denied operations stay blocked and ask rules still require human approval.
 
 ## Subcommands
 
 - `/permissions default` — Prompt for tool and path access as normal
 - `/permissions assisted` — An intermediate mode between prompting and allow-all
-- `/permissions allow-all` — Allow all tools, paths and URLs
+- `/permissions allow-all` — Skip ordinary tool, path, and URL prompts while preserving managed deny and ask rules
 - `/permissions show` — Report the current mode
-- `/permissions reset` — Clear in-memory approvals for this session
+- `/permissions reset` — Clear in-memory approvals for this session, not managed permission rules
 
 ## Canonical example
 
@@ -39,7 +41,8 @@ This is the canonical command for permission changes; `/allow-all` and `/yolo` r
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 
 ## Atlas links
 

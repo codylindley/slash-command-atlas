@@ -5,7 +5,7 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex IDE extension
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -33,6 +33,7 @@ Creates an isolated worktree for the chat so it can edit the same repository wit
 
 - [GitHub Copilot CLI — `/worktree`](../cli/worktree.md)
 - [OpenAI Codex in the ChatGPT desktop app — `/worktree`](../codex-app/worktree.md)
+- [OpenAI Codex CLI — `/worktree`](../codex-cli/worktree.md)
 
 ## Official sources
 

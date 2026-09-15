@@ -1,6 +1,6 @@
 /* OpenAI Codex IDE extension — slash commands from the Codex composer.
-   Ordinary VS Code Command Palette actions are intentionally excluded; only the explicit
-   slash-command inventory in the official OpenAI Developer commands reference is included. */
+   Ordinary VS Code Command Palette actions are intentionally excluded.
+   This is the documented subset, including prose-documented skills and legacy custom prompts. */
 
 (function () {
   var D = {
@@ -57,6 +57,7 @@
     },
     {
       key: 'fork', cmd: '/fork', cat: 'session',
+      requires: 'Local chat',
       summary: 'Copies a local chat into a new local chat.',
       detail: 'Branches the current local conversation into a durable new chat while keeping the original unchanged. The IDE reference does not describe this command as creating a worktree; <code>/worktree</code> handles that explicitly.',
       when: [
@@ -181,8 +182,9 @@
     {
       key: 'custom-prompt', cmd: '/prompts:<name>', args: '[ARGUMENTS]', cat: 'author',
       flags: ['custom'], noCompare: true,
+      requires: 'A local custom-prompt file',
       summary: 'Runs a legacy custom prompt by its configured name.',
-      detail: 'Markdown files directly under <code>~/.codex/prompts/</code> appear dynamically in the IDE slash menu and can accept positional, free-form, or named arguments.',
+      detail: 'Markdown files directly under <code>~/.codex/prompts/</code> appear dynamically in the IDE slash menu and can accept positional, free-form, or uppercase named arguments, such as <code>FOCUS=security</code> when the prompt defines <code>$FOCUS</code>.',
       note: 'OpenAI has deprecated custom prompts in favor of skills, but existing prompt files remain supported after restarting the extension.',
       related: ['init'], docs: [D.prompts]
     }

@@ -1,22 +1,22 @@
 # `/desktop`
 
-> Continues this session in the Claude Code Desktop app.
+> CLI entry point for opening a terminal conversation in Desktop.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/app`
 - **Requires:** macOS or x64 Windows; Claude subscription
 - **Flags:** inherited
 
 ## What it does
 
-Continues this session in the Claude Code Desktop app.
+CLI entry point for opening a terminal conversation in Desktop.
 
-Saves the conversation, opens it in the Code tab of Claude Desktop, and exits the terminal CLI.
+Anthropic documents running this in the terminal, where it saves the conversation, opens the Code tab, and exits the CLI. Inside Desktop, the separate **Continue in** menu offers web or IDE handoff.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** **Desktop inheritance:** this indexed engine entry is not evidence of a Code-tab slash handler. The CLI handoff remains limited to macOS and x64 Windows even though Desktop supports additional platforms.
 
 ## Canonical example
 
@@ -35,7 +35,6 @@ Saves the conversation, opens it in the Code tab of Claude Desktop, and exits th
 
 ## Official sources
 
-- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 

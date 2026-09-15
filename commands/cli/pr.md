@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Pull requests
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Manages pull requests for the current branch.
 
-Where the desktop app splits this across four `/pr-*` commands, the CLI folds it into one. `auto` drives the pull request to green and stops; `automerge` (alias `agentmerge`) drives it to green and then merges it.
+`auto` works through checks and feedback until the pull request is green, then stops. `automerge` (alias `agentmerge`) also merges the pull request.
 
 ## Subcommands
 

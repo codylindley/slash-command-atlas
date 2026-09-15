@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/config`
 
 ## What it does
@@ -13,6 +13,8 @@
 Opens the settings dialog, or reads and writes a setting inline.
 
 The dialog has **User**, **Repo**, **Repo (local)** and **Problems** tabs; a setting overridden in another scope shows a badge naming which scope wins. `show KEY` masks secret-named values instead of printing them. Add `--repo` or `--local` to target the repository settings files instead of your user settings. Rows governed by an organization or MDM policy render read-only with a `(managed)` tag.
+
+> **Note:** The 1.0.84-6 prerelease describes `/config` as opening a sidebar configuration screen. The public reference still groups it with `/settings`; the presentation depends on your build.
 
 ## Canonical example
 
@@ -34,6 +36,7 @@ The dialog has **User**, **Repo**, **Repo (local)** and **Problems** tabs; a set
 
 - [Change settings](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/change-settings)
 - [Config directory reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference)
+- [Copilot CLI 1.0.84-6 (prerelease, 2026-09-14)](https://github.com/github/copilot-cli/releases/tag/v1.0.84-6)
 - [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
 
 ## Atlas links

@@ -1,21 +1,21 @@
-# `/optimize`
+# `/optimize [CODE]`
 
 > Analyzes and improves the running time of the selected code.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Analyzes and improves the running time of the selected code.
 
-Unique to Visual Studio — no other Copilot surface exposes a performance command by this name.
+Use the current selection or identify a method and file in your prompt.
 
 ## Canonical example
 
-`/optimize`
+`/optimize the RetryRequestAsync method in HttpClientService.cs`
 
 ## Related commands
 
@@ -24,7 +24,7 @@ Unique to Visual Studio — no other Copilot surface exposes a performance comma
 
 ## Official sources
 
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

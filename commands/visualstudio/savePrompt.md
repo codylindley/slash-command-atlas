@@ -1,21 +1,24 @@
-# `/savePrompt [NAME]`
+# `/savePrompt`
 
 > Extracts a reusable prompt from the current conversation.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** An existing conversation in a supporting Visual Studio Chat window
 
 ## What it does
 
 Extracts a reusable prompt from the current conversation.
 
-Saves the result under `.github/prompts/` as a `.prompt.md` file so it can be reviewed, committed, and invoked again.
+After Copilot responds, run the command without arguments, then choose the prompt file’s name. It saves `.github/prompts/[name].prompt.md` for reuse from the slash picker.
+
+> **Note:** Documented in the current-release guidance, not the Visual Studio 2022 command table. This runs in the Chat window, not inline chat.
 
 ## Canonical example
 
-`/savePrompt review-api-changes`
+`/savePrompt`
 
 ## Related commands
 

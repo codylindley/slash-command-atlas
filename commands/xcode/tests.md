@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Xcode
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -28,7 +28,7 @@ Creates a unit test for the current code selection.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Xcode slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
+- [Copilot Chat cheat sheet (Xcode)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
 
 ## Atlas links
 

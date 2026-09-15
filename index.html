@@ -18,7 +18,7 @@
 <link rel="describedby" href="llms.txt" type="text/markdown">
 <link rel="alternate" href="data/commands.json" type="application/json" title="Slash command dataset">
 <link id="command-markdown" rel="alternate" type="text/markdown" title="Current command as Markdown">
-<link rel="stylesheet" href="assets/css/styles.css?v=13">
+<link rel="stylesheet" href="assets/css/styles.css?v=14">
 </head>
 <body>
 
@@ -97,11 +97,11 @@
   <div class="wrap">
     <h1 class="page-title">Where each command lives</h1>
     <p class="lede">
-      Same name, different product &mdash; and sometimes different behavior. A filled cell means that surface
-      documents a command by that name; hover or tap it to read what it does <em>there</em>.
-      A faint middle dot means the command is not listed. In columns marked <em>documented subset</em>,
-      a question mark means the vendor&rsquo;s surface-specific documentation
-      is not exhaustive, so absence is unknown rather than proof that the command is unavailable.
+      Same name, different product &mdash; and sometimes different behavior. A filled cell links to an indexed
+      command; read its badges for inherited, experimental, or unavailable behavior on that surface.
+      A faint middle dot means the command is not listed. In columns marked <em>documented subset</em> or
+      <em>availability varies</em>, a question mark means coverage or runtime support is not established,
+      rather than proving that the command is unavailable.
     </p>
     <div class="compare-controls">
       <div class="search-field compact">
@@ -132,13 +132,13 @@
     </p>
     <p>
       Within <strong>GitHub Copilot</strong> alone the sets diverge sharply. The desktop app is built on
-      top of the GitHub Copilot CLI, so it inherits much of the CLI's vocabulary
-      (<code>/chronicle</code>, <code>/compact</code>, <code>/model</code>) &mdash; then adds app-only
-      commands like <code>/orchestrate</code>, <code>/create-canvas</code> and <code>/inbox</code>, and
-      drops the terminal-specific ones. GitHub Copilot Chat in VS Code is a different lineage entirely:
+      top of the GitHub Copilot CLI, but that shared engine does not imply identical menus. Both document
+      names such as <code>/chronicle</code>, <code>/compact</code>, and <code>/model</code>; the app adds
+      workflows like <code>/orchestrate</code>, <code>/create-canvas</code>, and <code>/inbox</code> instead
+      of exposing every terminal command. GitHub Copilot Chat in VS Code also has editor-specific actions:
       editor actions (<code>/fix</code>, <code>/tests</code>, <code>/explain</code>) plus customization
       authoring (<code>/create-skill</code>, <code>/create-agent</code>). The JetBrains, Visual Studio
-      and Xcode plugins expose a much smaller set again.
+      and Xcode entries cover their published subsets, not every CLI-backed or preview agent integration.
     </p>
     <p>
       Across products the overlap is real but shallow. Several names &mdash; <code>/init</code>,
@@ -150,14 +150,15 @@
 
     <h2>What counts as a surface?</h2>
     <p>
-      Slash Command Atlas catalogs first-party-documented commands in coding-agent interfaces. A browser
+      Slash Command Atlas catalogs commands in coding-agent interfaces using first-party documentation,
+      source code, and explicitly qualified observations. A browser
       counts only when the vendor documents commands for the coding product itself. That includes
       <strong>GitHub Copilot Chat on GitHub.com</strong> and <strong>Claude Code on the web</strong> at
       <code>claude.ai/code</code>. It excludes ordinary Claude chat: its <code>/</code> menu contains general
-      composer options and account skills, not Claude Code commands. <strong>Codex has no web surface</strong>
-      for the same reason: ChatGPT on the web presents Chat and Work, not Codex, and OpenAI states that its
-      web composer has a separate command menu to which the Codex desktop, CLI, and IDE command sets
-      do not apply.
+      composer options and account skills, not Claude Code commands. <strong>No Codex web slash-command
+      inventory is included here.</strong> ChatGPT web has its own contextual composer menu, and the
+      desktop and CLI reference does not apply there. This is a boundary on the Atlas's evidence, not a
+      claim that Codex cloud workflows or ChatGPT web commands do not exist.
     </p>
     <p>
       Editor integrations are separate surfaces only when their composer exposes a distinct documented
@@ -192,9 +193,11 @@
     </ul>
 
     <h2>Sources</h2>
-    <p>Every command and its one-line description is derived from official documentation. The longer
-      explanations, use cases, and example prompts are editorial &mdash; written to make the reference
-      usable, not copied from the docs.</p>
+    <p>Command names and behavior are checked against first-party documentation and source code.
+      Source-backed, inherited, and previously observed entries carry qualifications where the published
+      surface reference is incomplete; a documentation review is not a fresh runtime check of every command.
+      The longer explanations, use cases, and example prompts are editorial &mdash; written to make the
+      reference usable, not copied from the docs.</p>
     <ul id="source-list" class="source-list"></ul>
 
     <h2>Staying current</h2>
@@ -231,18 +234,18 @@
   </div>
 </footer>
 
-<script src="assets/js/data/meta.js?v=13"></script>
-<script src="assets/js/data/examples.js?v=13"></script>
-<script src="assets/js/data/app.js?v=13"></script>
-<script src="assets/js/data/cli.js?v=13"></script>
-<script src="assets/js/data/editors.js?v=13"></script>
-<script src="assets/js/data/claude-cli.js?v=13"></script>
-<script src="assets/js/data/claude-app.js?v=13"></script>
-<script src="assets/js/data/claude-vscode.js?v=13"></script>
-<script src="assets/js/data/claude-web.js?v=13"></script>
-<script src="assets/js/data/codex-app.js?v=13"></script>
-<script src="assets/js/data/codex-cli.js?v=13"></script>
-<script src="assets/js/data/codex-ide.js?v=13"></script>
-<script src="assets/js/app.js?v=13"></script>
+<script src="assets/js/data/meta.js?v=14"></script>
+<script src="assets/js/data/examples.js?v=14"></script>
+<script src="assets/js/data/app.js?v=14"></script>
+<script src="assets/js/data/cli.js?v=14"></script>
+<script src="assets/js/data/editors.js?v=14"></script>
+<script src="assets/js/data/claude-cli.js?v=14"></script>
+<script src="assets/js/data/claude-app.js?v=14"></script>
+<script src="assets/js/data/claude-vscode.js?v=14"></script>
+<script src="assets/js/data/claude-web.js?v=14"></script>
+<script src="assets/js/data/codex-app.js?v=14"></script>
+<script src="assets/js/data/codex-cli.js?v=14"></script>
+<script src="assets/js/data/codex-ide.js?v=14"></script>
+<script src="assets/js/app.js?v=14"></script>
 </body>
 </html>

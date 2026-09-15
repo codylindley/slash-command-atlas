@@ -5,7 +5,8 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Supported agent session
 
 ## What it does
 
@@ -34,8 +35,8 @@ Researches the requirements, asks clarifying questions, and produces a structure
 
 ## Official sources
 
-- [Agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agents in VS Code](https://code.visualstudio.com/docs/agents/overview)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

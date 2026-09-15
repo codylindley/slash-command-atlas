@@ -5,13 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Compacts the Desktop conversation to free context-window space.
 
-Desktop compacts automatically when context fills and continues working. Invoke this earlier when a long session starts carrying more history than the current task needs; optional focus text names what the summary must preserve.
+Desktop compacts automatically when context fills and continues working. Invoke this earlier when a long session starts carrying more history than the current task needs.
+
+> **Note:** Desktop explicitly documents the bare command. The optional focus argument shown here follows the shared CLI signature, not a separately published Desktop signature.
 
 ## Canonical example
 
@@ -38,9 +40,9 @@ Desktop compacts automatically when context fills and continues working. Invoke 
 
 ## Official sources
 
+- [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 - [Explore the context window](https://code.claude.com/docs/en/context-window)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
-- [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links
 

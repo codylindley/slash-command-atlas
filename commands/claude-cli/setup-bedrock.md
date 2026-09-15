@@ -5,15 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** CLAUDE_CODE_USE_BEDROCK=1
+- **Data snapshot:** 2026-09-14
 - **Flags:** hidden
 
 ## What it does
 
 Configures Amazon Bedrock authentication, region, and model pins.
 
-An interactive wizard hidden from autocomplete until Bedrock mode is enabled; type the full command to invoke it.
+The interactive wizard is hidden from autocomplete until `CLAUDE_CODE_USE_BEDROCK=1` is set; type the full command to invoke it. The variable controls menu visibility, not a prerequisite for first-time setup, which is also offered from the login screen.
 
 ## Canonical example
 

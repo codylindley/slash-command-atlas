@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Configures your agent skills.
 
-Skills package instructions and supporting files into a capability the agent can invoke. A skill file also becomes a slash command of the same name.
+Skills package a `SKILL.md` file and supporting resources in a named directory. User-invocable skills also appear in the slash-command menu.
 
 ## Canonical example
 
@@ -34,7 +34,8 @@ Skills package instructions and supporting files into a capability the agent can
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

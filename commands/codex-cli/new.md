@@ -5,13 +5,14 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Idle main chat
 
 ## What it does
 
 Starts a new chat in the same CLI session.
 
-Creates a fresh chat without leaving the terminal. Optional text names it. Unlike `/clear`, `/new` leaves the current terminal view in place.
+Creates a fresh chat without leaving the terminal. Optional text names it. With experimental worktrees enabled in a local Git repository, a picker offers the current checkout or a new worktree. Unlike `/clear`, it leaves the current terminal view in place.
 
 ## Canonical example
 
@@ -22,6 +23,7 @@ Creates a fresh chat without leaving the terminal. Optional text names it. Unlik
 - [`/clear`](./clear.md)
 - [`/resume`](./resume.md)
 - [`/fork`](./fork.md)
+- [`/worktree`](./worktree.md)
 
 ## Also in other surfaces
 
@@ -35,6 +37,7 @@ Creates a fresh chat without leaving the terminal. Optional text names it. Unlik
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI worktree picker (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/chatwidget/worktree_picker.rs)
 
 ## Atlas links
 

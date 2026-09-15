@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat on GitHub.com
 - **Category:** Conversation management
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -32,6 +32,7 @@ Clears the conversation.
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (GitHub.com)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=webui)
 - [GitHub Copilot Chat on GitHub.com slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
 
 ## Atlas links

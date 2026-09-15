@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Manages the current GitHub user.
 
-For people with a work account and a personal one, `switch` is the difference between committing under the right identity and not.
+Use `switch` when your personal and work accounts have different Copilot access or organizational policies.
 
 ## Canonical example
 

@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Artifact availability; Claude Code 2.1.208+
 - **Flags:** blocked
 
@@ -33,6 +33,7 @@ Attach an artifact to the session, open it in a browser, or copy its link from t
 ## Official sources
 
 - [Desktop — what is not available](https://code.claude.com/docs/en/desktop#whats-not-available-in-desktop)
+- [Share session output as artifacts](https://code.claude.com/docs/en/artifacts)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

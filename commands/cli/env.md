@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -21,7 +21,7 @@ Instructions, MCP servers, skills, agents, hooks, plugins, LSPs and extensions â
 
 - [`/instructions`](./instructions.md)
 - [`/mcp`](./mcp.md)
-- [`/plugins`](./plugins.md)
+- [`/plugin`](./plugins.md)
 - [`/lsp`](./lsp.md)
 
 ## Official sources

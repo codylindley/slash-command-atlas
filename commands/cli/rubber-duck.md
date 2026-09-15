@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -26,6 +26,7 @@ Runs on a different model from the one driving your session, which is the whole 
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/rubber-duck`](../app/rubber-duck.md)
+- [GitHub Copilot Chat in VS Code — `/rubber-duck`](../vscode/rubber-duck.md)
 
 ## Official sources
 

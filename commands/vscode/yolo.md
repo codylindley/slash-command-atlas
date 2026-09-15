@@ -1,20 +1,21 @@
 # `/yolo`
 
-> Enables global auto-approval of all tool calls.
+> Skips ordinary approvals for the current session, subject to policy.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/autoApprove`
+- **Requires:** Supported local or Copilot CLI session
 
 ## What it does
 
-Enables global auto-approval of all tool calls.
+Skips ordinary approvals for the current session, subject to policy.
 
-Shows a warning dialog the first time, and for good reason: it approves every tool call in every workspace, including terminal commands.
+Selects the session-scoped Allow all level for edits, terminal commands, and external tools. An enabled terminal sandbox still applies. In Agent Host sessions, enterprise-managed deny and ask rules remain enforced; user or workspace settings, auto-approval, and saved approvals cannot weaken them.
 
-> **Note:** This is a global setting, not a per-session one. `/disableYolo` turns it back off.
+> **Note:** This does not enable global auto-approval across every workspace. The global setting is `chat.tools.global.autoApprove`. Use `/disableYolo` to restore the session’s default permissions.
 
 ## Canonical example
 
@@ -23,6 +24,7 @@ Shows a warning dialog the first time, and for good reason: it approves every to
 ## Related commands
 
 - [`/disableYolo`](./disableYolo.md)
+- [`/autopilot`](./autopilot.md)
 
 ## Also in other surfaces
 
@@ -31,7 +33,9 @@ Shows a warning dialog the first time, and for good reason: it approves every to
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 
 ## Atlas links
 

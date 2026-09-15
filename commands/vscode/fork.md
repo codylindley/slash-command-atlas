@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -21,6 +21,7 @@ Lets you branch off to try something without losing the thread you were on.
 
 - [`/clear`](./clear.md)
 - [`/compact`](./compact.md)
+- [`/btw`](./btw.md)
 
 ## Also in other surfaces
 
@@ -34,7 +35,7 @@ Lets you branch off to try something without losing the thread you were on.
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** skill
 
 ## What it does
@@ -32,7 +32,7 @@ The conductor. Rather than doing the work itself, it decomposes a goal, spins up
 
 ## Official sources
 
-- [Built-in skills for the Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

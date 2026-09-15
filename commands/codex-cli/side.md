@@ -5,7 +5,7 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/btw`
 - **Requires:** Main chat outside review mode
 
@@ -30,6 +30,8 @@ Creates a temporary fork for a focused detour without switching the main chat aw
 - [OpenAI Codex in the ChatGPT desktop app — `/side`](../codex-app/side.md)
 - [OpenAI Codex IDE extension — `/side`](../codex-ide/side.md)
 - [GitHub Copilot app — `/ask`](../app/ask.md)
+- [GitHub Copilot CLI — `/ask`](../cli/ask.md)
+- [GitHub Copilot Chat in VS Code — `/btw`](../vscode/btw.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
 - [Claude Code in VS Code — `/btw`](../claude-vscode/btw.md)

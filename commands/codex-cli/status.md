@@ -5,13 +5,13 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Displays session configuration and token usage.
 
-Shows the active model, approval policy, writable roots, and current token usage. Remote TUI sessions also show the remote address and server version.
+Shows the active model, approval policy, writable roots, and current token usage. Remote TUI sessions also show the remote address and server version. In stable `0.154.0`, run `/copy` immediately afterward to copy the whole status or an individual field.
 
 ## Reach for it when
 
@@ -28,6 +28,7 @@ Shows the active model, approval policy, writable roots, and current token usage
 - [`/permissions`](./permissions.md)
 - [`/model`](./model.md)
 - [`/debug-config`](./debug-config.md)
+- [`/copy`](./copy.md)
 
 ## Also in other surfaces
 
@@ -39,6 +40,7 @@ Shows the active model, approval policy, writable roots, and current token usage
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI copy picker (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/chatwidget/interaction.rs)
 
 ## Atlas links
 

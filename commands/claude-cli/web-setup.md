@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** Authenticated gh CLI; cloud sessions allowed
+- **Data snapshot:** 2026-09-14
+- **Requires:** Authenticated gh CLI; eligible cloud account and organization policy
 
 ## What it does
 
 Connects GitHub to Claude Code on the web using local gh credentials.
 
-Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone repositories and push branches. `/schedule` offers this setup automatically when needed.
+Sends your local `gh` token to your Claude account, giving cloud sessions access to repositories that token can reach. This is separate from installing the Claude GitHub App. Team and Enterprise owners must enable Quick web setup; Zero Data Retention organizations cannot use it.
 
 ## Canonical example
 
@@ -31,6 +31,7 @@ Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone 
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
 
 ## Atlas links
 

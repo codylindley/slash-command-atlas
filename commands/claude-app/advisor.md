@@ -1,20 +1,18 @@
 # `/advisor [MODEL|off]`
 
-> Lets Claude consult a second model for guidance during a task.
+> Prints or changes the advisor model in a Desktop session.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Flags:** inherited
+- **Data snapshot:** 2026-09-14
+- **Requires:** Claude Code engine 2.1.260+; advisor-compatible model and provider
 
 ## What it does
 
-Lets Claude consult a second model for guidance during a task.
+Prints or changes the advisor model in a Desktop session.
 
-Choose `fable`, `opus`, `sonnet`, or a full model ID, or pass `off`. Without an argument the command opens a picker.
-
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+Run bare to see the current advisor and accepted aliases, pass a model to select it, or pass `off` to disable it. Desktop uses the documented text form rather than the terminal picker.
 
 ## Canonical example
 
@@ -29,12 +27,13 @@ Choose `fable`, `opus`, `sonnet`, or a full model ID, or pass `off`. Without an 
 ## Also in other surfaces
 
 - [Claude Code CLI — `/advisor`](../claude-cli/advisor.md)
+- [Claude Code on the web — `/advisor`](../claude-web/advisor.md)
 
 ## Official sources
 
-- [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
+- [Advisor commands in Desktop and headless sessions](https://code.claude.com/docs/en/advisor)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
-- [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
+- [Use Claude Code Desktop](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links
 

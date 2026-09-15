@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session modes
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Creates an implementation plan before coding.
 
-The CLI equivalent of the app’s Plan mode: the agent researches and writes out an approach for you to approve before it starts editing.
+The agent researches your request and proposes an approach for review before implementation.
 
 ## Canonical example
 

@@ -5,13 +5,16 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Chat window in a supporting Visual Studio release
 
 ## What it does
 
 Generates a repository-wide Copilot instructions file.
 
 Creates a starting `.github/copilot-instructions.md` from the current solution so future chat requests inherit the project’s conventions.
+
+> **Note:** Microsoft documents this for its current Visual Studio release, not in the Visual Studio 2022 command table. It is not an inline-chat command.
 
 ## Canonical example
 

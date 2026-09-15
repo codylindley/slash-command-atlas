@@ -5,12 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in JetBrains
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Copilot CLI session
 
 ## What it does
 
 Compresses the current CLI session context to keep a long session manageable.
+
+> **Note:** Documented for an interactive Copilot CLI session in JetBrains, not as a classic editor-chat action.
 
 ## Canonical example
 
@@ -36,6 +38,7 @@ Compresses the current CLI session context to keep a long session manageable.
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (JetBrains)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
 - [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links

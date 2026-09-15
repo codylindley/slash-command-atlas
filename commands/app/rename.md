@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Active session
 
 ## What it does
@@ -26,6 +26,7 @@ Sessions appear in the sidebar grouped by repository, and with several running i
 ## Also in other surfaces
 
 - [GitHub Copilot CLI — `/rename`](../cli/rename.md)
+- [GitHub Copilot Chat in VS Code — `/rename`](../vscode/rename.md)
 - [GitHub Copilot Chat on GitHub.com — `/rename`](../web/rename.md)
 - [Claude Code CLI — `/rename`](../claude-cli/rename.md)
 - [Claude Desktop — Code tab — `/rename`](../claude-app/rename.md)

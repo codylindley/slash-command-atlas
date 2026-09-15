@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Finds and fixes a failing test.
 
-> **Note:** Listed in GitHub’s Copilot Chat cheat sheet for VS Code. It does not appear in the current VS Code reference, so treat it as legacy — check the picker in your build.
+> **Note:** GitHub’s VS Code cheat sheet lists this command, while Microsoft’s current cheat sheet does not enumerate it. That difference does not establish removal; check the picker for your installed build and session type.
 
 ## Canonical example
 
@@ -24,8 +24,8 @@ Finds and fixes a failing test.
 
 ## Official sources
 
-- [Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Copilot Chat cheat sheet (VS Code)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=vscode)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

@@ -5,16 +5,16 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex in the ChatGPT desktop app
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Local Codex thread in the macOS desktop app; sharing allowed by workspace policy
 
 ## What it does
 
 Creates a read-only snapshot of the current local Codex thread.
 
-Opens the sharing dialog and prepares an uploaded snapshot. Personal accounts can create a link for anyone who has it; workspace accounts can restrict the audience to signed-in members or invited people when policy allows.
+Opening the dialog starts uploading the snapshot; selecting Copy link publishes it with the chosen audience. Personal-account links are accessible to anyone who has them. Workspace links are limited to authenticated workspace members, optionally restricted to invited members and groups.
 
-> **Note:** Review the snapshot before copying its link. OpenAI redacts detected secrets, but the snapshot can include messages, reasoning summaries, images, and diffs.
+> **Note:** Open the copied link and review the shared view before sending it. Secret-pattern redaction is not a guarantee: messages, reasoning summaries, images, file paths, and diffs can still contain sensitive content. Later thread changes do not update the snapshot.
 
 ## Reach for it when
 

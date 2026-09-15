@@ -5,15 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/rc`
-- **Requires:** Claude subscription and Remote Control policy
+- **Requires:** claude.ai subscription sign-in; direct Anthropic connection; Remote Control allowed
 
 ## What it does
 
 Makes the VS Code session available through claude.ai or mobile.
 
-The extension shows connection status above the prompt and can open the remote browser view. Run the command again or close the banner to disconnect.
+Execution stays on your machine. The extension displays a Remote Control indicator in the prompt footer and posts the connected session URL in the conversation. Click the connected indicator to open the browser view; run the command again to disconnect.
 
 > **Note:** Unlike the CLI form, VS Code accepts no custom name argument and does not display a QR code.
 

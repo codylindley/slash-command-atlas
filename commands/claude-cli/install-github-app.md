@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
-- **Requires:** GitHub repository and interactive terminal
+- **Data snapshot:** 2026-09-14
+- **Requires:** github.com repository and interactive terminal
 
 ## What it does
 
 Installs the Claude GitHub App for a repository.
 
-Walks through repository selection and optionally sets up GitHub Actions workflows and secrets.
+Walks through repository selection and optionally sets up GitHub Actions workflows and secrets. This setup command targets github.com repositories, not GitLab or Bitbucket remotes.
 
 ## Canonical example
 

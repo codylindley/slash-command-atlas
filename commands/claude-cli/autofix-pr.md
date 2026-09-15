@@ -5,8 +5,8 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Pull requests
-- **Data snapshot:** 2026-08-23
-- **Requires:** gh CLI, open PR, and Claude Code on the web
+- **Data snapshot:** 2026-09-14
+- **Requires:** gh CLI, open PR, Claude GitHub App, and Claude Code on the web
 
 ## What it does
 
@@ -31,6 +31,7 @@ The cloud agent reacts to CI failures and review comments and pushes clear fixes
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
 
 ## Atlas links
 

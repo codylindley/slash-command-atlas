@@ -5,14 +5,16 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/models`
 
 ## What it does
 
 Opens model selection, or selects a model by name or ID.
 
-Switches the model driving the session. Choosing **Auto** lets the app pick per task based on complexity, and after a turn the picker shows which model actually answered. Reasoning effort is a separate dial: more effort buys more thinking time on hard problems at the cost of latency. If you have configured your own model provider, those models appear here too.
+Chooses a named model or **Auto**, which routes prompts using task complexity and model availability. Auto now offers **Efficiency** for cost, **Balance** for cost, quality and latency, and **Intelligence** for quality. All tiers draw from the same eligible model set; they change routing preferences, not the model inventory. Configured bring-your-own-provider models also appear in the picker.
+
+> **Note:** Auto tiers began rolling out to the app on 2026-09-14. They are separate from reasoning effort and remain subject to plan and policy restrictions. The picker shows which model handled a response; Intelligence does not guarantee the largest model for every prompt.
 
 ## Reach for it when
 
@@ -39,10 +41,12 @@ Switches the model driving the session. Choosing **Auto** lets the app pick per 
 - [OpenAI Codex in the ChatGPT desktop app — `/model`](../codex-app/model.md)
 - [OpenAI Codex CLI — `/model`](../codex-cli/model.md)
 - [OpenAI Codex IDE extension — `/model`](../codex-ide/model.md)
+- [GitHub Copilot Chat in VS Code — `/models`](../vscode/models.md)
 
 ## Official sources
 
 - [Auto model selection](https://docs.github.com/en/copilot/concepts/models/auto-model-selection)
+- [Auto routing tiers (September 14, 2026)](https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/)
 - [Use your own model provider](https://docs.github.com/en/copilot/how-tos/github-copilot-app/use-byok-models)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 

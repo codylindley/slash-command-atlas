@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat on GitHub.com
 - **Category:** Conversation management
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -34,6 +34,7 @@ Note the divergence: on github.com `/new` starts a conversation, while in VS Cod
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (GitHub.com)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=webui)
 - [Chat with Copilot on GitHub](https://docs.github.com/en/copilot/how-tos/copilot-on-github/chat-with-copilot/chat-in-github)
 - [GitHub Copilot Chat on GitHub.com slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
 

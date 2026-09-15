@@ -1,8 +1,8 @@
 /* Claude Code — commands available inside an interactive terminal session.
-   The inventory follows Anthropic's current Commands reference. Aliases are folded
-   into their canonical record; removed commands are omitted. Bundled skills and
-   workflows remain slash-invocable, but are labelled so they are not mistaken for
-   fixed built-in UI commands. */
+   Audited against first-party documentation and releases through 2.1.270 on
+   2026-09-14. Dated releases supplement the Commands table where it lags.
+   Aliases are folded into their canonical record; removed commands are omitted.
+   Bundled skills and workflows are labelled separately from fixed built-ins. */
 
 (function () {
   var B = 'https://code.claude.com/docs/en/';
@@ -12,22 +12,32 @@
     subagents:   ['Create custom subagents', B + 'sub-agents'],
     worktrees:   ['Run parallel sessions with worktrees', B + 'worktrees'],
     workflows:   ['Orchestrate subagents with dynamic workflows', B + 'workflows'],
+    artifacts:   ['Share session output as artifacts', B + 'artifacts'],
     skills:      ['Extend Claude Code with skills', B + 'skills'],
+    mcp:         ['MCP prompts and server connections', B + 'mcp#use-mcp-prompts-as-commands'],
     model:       ['Model configuration', B + 'model-config'],
+    advisor:     ['Use an advisor model', B + 'advisor'],
     context:     ['Explore the context window', B + 'context-window'],
-    review:      ['Claude Code review', B + 'code-review'],
+    review:      ['Review a diff locally', B + 'code-review#review-a-diff-locally'],
+    ultrareview: ['Cloud reviews with ultrareview', B + 'ultrareview'],
     remote:      ['Remote Control', B + 'remote-control'],
     checkpoints: ['Checkpointing', B + 'checkpointing'],
     hooks:       ['Hooks reference', B + 'hooks'],
     schedule:    ['Run prompts on a schedule', B + 'scheduled-tasks'],
     memory:      ['How Claude remembers your project', B + 'memory'],
     auto:        ['Configure auto mode', B + 'auto-mode-config'],
+    permissions: ['Permissions and working directories', B + 'permissions'],
     plugins:     ['Create plugins', B + 'plugins'],
+    reload:      ['Apply plugin changes without restarting', B + 'discover-plugins#apply-plugin-changes-without-restarting'],
     sandbox:     ['Configure the sandboxed Bash tool', B + 'sandboxing'],
     routines:    ['Automate work with routines', B + 'routines'],
     statusline:  ['Customize your status line', B + 'statusline'],
+    styles:      ['Output styles', B + 'output-styles'],
+    styleRelease: ['Claude Code 2.1.269 — output-style command restored', 'https://github.com/anthropics/claude-code/releases/tag/v2.1.269'],
+    interactive: ['Interactive mode', B + 'interactive-mode'],
     costs:       ['Manage costs effectively', B + 'costs'],
     desktop:     ['Use Claude Code Desktop', B + 'desktop'],
+    web:         ['Claude Code on the web', B + 'claude-code-on-the-web'],
     changelog:   ['Claude Code changelog', 'https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md']
   };
 
@@ -85,7 +95,8 @@
       key: 'fork', cmd: '/fork', args: '[PROMPT]', cat: 'session',
       summary: 'Copies this conversation into a separate background session.',
       detail: 'The copy inherits the conversation and can start immediately with an optional prompt while you keep working here. Where possible Claude asks the copy to isolate edits in its own worktree. Use <code>/subtask</code> when the result should return to this conversation instead.',
-      requires: 'Agent view enabled; Claude Code 2.1.212+',
+      requires: 'Claude Code 2.1.212+ for background-session behavior',
+      note: 'With agent view turned off, <code>/fork</code> starts a forked subagent instead and <code>/subtask</code> is unavailable. The worktree-isolation instruction for background copies requires 2.1.221+.',
       examples: ['/fork investigate the flaky Windows test and report the cause'],
       related: ['branch', 'background', 'subtask'],
       docs: [D.commands, D.agents, D.worktrees]
@@ -172,11 +183,11 @@
     {
       key: 'autocompact', cmd: '/autocompact', args: '[auto|TOKENS]', cat: 'context',
       summary: 'Sets how full the context window gets before automatic compaction.',
-      detail: 'Pass a window such as <code>500k</code>, or <code>auto</code> to return to the model-tuned default. Without an argument the command opens a dialog showing the current value and saves changes to user settings.',
+      detail: 'Pass a window from 100K to 1M tokens, such as <code>500k</code>, or <code>auto</code> for the model-tuned default. The value is capped at the model&rsquo;s context size and saved to user settings. Run bare for a dialog; an environment or higher-priority settings override can prevent a saved change from taking effect.',
       requires: 'Claude Code 2.1.221+',
       examples: ['/autocompact 500k', '/autocompact auto'],
       related: ['compact', 'context'],
-      docs: [D.commands, D.context]
+      docs: [D.commands, D.model, D.context]
     },
     {
       key: 'context', cmd: '/context', args: '[all]', cat: 'context',
@@ -196,19 +207,21 @@
     {
       key: 'add-dir', cmd: '/add-dir', args: '<PATH>', cat: 'context',
       summary: 'Adds another working directory for this session to access.',
-      detail: 'Grants file access for the current session and fires <code>DirectoryAdded</code> hooks. Most <code>.claude/</code> configuration is not discovered from an added directory; skills are the notable exception.',
+      detail: 'Grants file access and fires <code>DirectoryAdded</code> hooks. It is not a full configuration switch: skills, legacy commands, subagents, and plugin-discovery settings are exceptions to the usual exclusion of added-directory configuration. Memory files require a separate opt-in.',
+      note: 'In 2.1.257+, adding an already-readable project subdirectory can load its skills, commands, and subagents without adding another working directory. Settings-only <code>permissions.additionalDirectories</code> grants file access, not these discovery exceptions.',
       examples: ['/add-dir ../shared-schema'],
       related: ['cd', 'permissions', 'skills'],
-      docs: [D.commands, D.hooks]
+      docs: [D.commands, D.permissions, D.hooks]
     },
     {
       key: 'cd', cmd: '/cd', args: '<PATH>', cat: 'context',
       summary: 'Moves this session to another working directory without losing context.',
-      detail: 'Keeps the conversation and prompt cache, asks for workspace trust when needed, and makes the moved session discoverable by later resume commands from the new directory. <code>Cd</code> permission rules can restrict targets.',
+      detail: 'Keeps the conversation, loads the destination&rsquo;s project instructions, and asks for workspace trust when needed. Since 2.1.246 it also applies the new settings, hooks, MCP servers, plugins, skills, and subagents immediately, replacing the previous directory&rsquo;s project connections. <code>Cd</code> permission rules can restrict targets.',
+      note: 'Environment values from the new settings overlay those from the old directory rather than clearing them. The session becomes resumable from its new directory.',
       requires: 'Claude Code 2.1.169+',
       examples: ['/cd ../service-api'],
       related: ['add-dir', 'permissions', 'resume'],
-      docs: [D.commands]
+      docs: [D.commands, D.permissions]
     },
     {
       key: 'memory', cmd: '/memory', cat: 'context',
@@ -294,18 +307,26 @@
       docs: [D.workflows, D.commands]
     },
     {
+      key: 'workflow-authoring', cmd: '/workflow-authoring', cat: 'author', flags: ['skill'],
+      summary: 'Loads the reference for writing dynamic workflow scripts.',
+      detail: 'Covers the script API, resumable execution, and implementation patterns. Claude normally loads this guidance before authoring a workflow; invoke it yourself before editing a saved script.',
+      requires: 'Dynamic workflows enabled; Claude Code 2.1.248+',
+      related: ['workflows', 'deep-research', 'skills'],
+      docs: [D.workflows, D.skills, D.commands]
+    },
+    {
       key: 'artifacts', cmd: '/artifacts', cat: 'delegate',
       summary: 'Browses artifacts you own or that others shared with you.',
       detail: 'Attach an artifact to the session, open it in a browser, or copy its link from the picker.',
       requires: 'Artifact availability; Claude Code 2.1.208+',
       related: ['deep-research', 'export'],
-      docs: [D.commands]
+      docs: [D.artifacts, D.commands]
     },
     {
       key: 'team-onboarding', cmd: '/team-onboarding', cat: 'delegate',
       summary: 'Builds a teammate onboarding guide from 30 days of local usage.',
       detail: 'Analyzes sessions, commands, and MCP usage, then produces a guide a teammate can paste as a first prompt. Eligible Claude subscriptions also receive a shareable Claude Code link.',
-      requires: 'Pro, Max, Team, or Enterprise subscription',
+      requires: 'Local usage history; share links require an eligible Claude subscription',
       related: ['insights', 'memory', 'export'],
       docs: [D.commands]
     },
@@ -313,23 +334,25 @@
     /* ---------- review, verification & running software ---------- */
     {
       key: 'code-review', cmd: '/code-review', aliases: ['/review', '/ultrareview'],
-      args: '[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [PR|BRANCH|PATH]',
+      args: '[low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--post] [PR|MR|BRANCH|RANGE|PATH]',
       cat: 'review', flags: ['skill'],
       summary: 'Reviews a diff or target for correctness bugs and cleanup opportunities.',
-      detail: 'Target the current diff, a pull request number, branch, or path. <code>--fix</code> applies findings; <code>--comment</code> posts inline GitHub comments. <code>ultra</code> runs a deep cloud review, and the legacy <code>/ultrareview</code> spelling remains available for that path.',
+      detail: 'By default reviews branch commits ahead of upstream plus uncommitted changes. Targets also include PRs, GitLab merge requests, paths, branches, and ref ranges. <code>--fix</code> applies findings; <code>--comment</code> posts inline on GitHub or as one GitLab note through <code>glab</code> (2.1.257+). For an eligible <code>ultra</code> cloud review, <code>--post</code> instead preselects a single github.com PR comment in the confirmation dialog.',
+      note: '<code>/ultrareview</code> means <code>/code-review ultra</code>, not an ordinary local review. That mode compares against the default branch, or a base branch you supply, and needs claude.ai authentication and cloud-review eligibility; otherwise <code>/code-review ultra</code> falls back to a local review. Cloud posting requires 2.1.227+ and per-run consent.',
       subs: [
         ['low … max', 'Choose local review effort'],
         ['ultra', 'Run the deep cloud review'],
         ['--fix', 'Apply accepted findings'],
-        ['--comment', 'Post findings as inline PR comments']
+        ['--comment', 'Post inline GitHub findings or one GitLab merge-request note'],
+        ['--post', 'For an ultra github.com PR review, preselect posting one finished-results comment']
       ],
       examples: [
         '/code-review high --fix src/auth',
         '/review medium 1234',
-        '/code-review ultra --comment 1234'
+        '/code-review ultra 1234 --post'
       ],
       related: ['security-review', 'simplify', 'diff'],
-      docs: [D.review, D.commands]
+      docs: [D.review, D.ultrareview, D.commands]
     },
     {
       key: 'security-review', cmd: '/security-review', cat: 'review',
@@ -352,11 +375,11 @@
     },
     {
       key: 'diff', cmd: '/diff', cat: 'review',
-      summary: 'Opens an interactive viewer for Git and per-turn diffs.',
-      detail: 'Move left and right between the working-tree diff and individual Claude turns, then browse changed files. The viewer reads raw Git blobs, so configured diff drivers and <code>textconv</code> filters do not rewrite what you see.',
+      summary: 'Shows uncommitted changes without leaving the session.',
+      detail: 'In fullscreen mode, opens a side panel that stays visible and updates as you work (2.1.260+). The classic renderer uses a viewer that replaces the prompt until you close it. Git-backed changes include your own edits, not only Claude&rsquo;s; a submodule entry tracks its commit pointer rather than edits inside it.',
       requires: 'A Git repository',
       related: ['code-review', 'rewind', 'export'],
-      docs: [D.commands]
+      docs: [D.commands, D.interactive]
     },
     {
       key: 'run', cmd: '/run', cat: 'review', flags: ['skill'],
@@ -394,16 +417,25 @@
       related: ['debug', 'status', 'fewer-permission-prompts'],
       docs: [D.skills, D.commands]
     },
+    {
+      key: 'skill-doctor', cmd: '/skill-doctor', cat: 'diag',
+      summary: 'Reports skill context costs and usage to help identify unused extensions.',
+      detail: 'The interactive report opens the plugin manager&rsquo;s Stats tab; a non-interactive <code>-p</code> run prints text. It excludes bundled and enterprise skills. A command forwarded through Remote Control is refused: run it on the host machine instead.',
+      requires: 'Feature-flag fetching; a current Claude Code build',
+      note: 'Anthropic&rsquo;s command and skills guides specify 2.1.252+, while the changelog announces this command in 2.1.261. Use a current build if it is missing.',
+      related: ['skills', 'doctor', 'context'],
+      docs: [D.skills, D.commands, D.changelog]
+    },
 
     /* ---------- pull requests & cloud handoff ---------- */
     {
       key: 'autofix-pr', cmd: '/autofix-pr', args: '[PROMPT]', cat: 'pr',
       summary: 'Starts a cloud session that watches this branch’s pull request.',
       detail: 'The cloud agent reacts to CI failures and review comments and pushes clear fixes. By default it handles every failure and comment; an optional prompt narrows its remit.',
-      requires: 'gh CLI, open PR, and Claude Code on the web',
+      requires: 'gh CLI, open PR, Claude GitHub App, and Claude Code on the web',
       examples: ['/autofix-pr only fix lint and type errors'],
       related: ['code-review', 'teleport', 'web-setup'],
-      docs: [D.commands]
+      docs: [D.commands, D.web]
     },
     {
       key: 'teleport', cmd: '/teleport', aliases: ['/tp'], cat: 'session',
@@ -414,10 +446,11 @@
       docs: [D.commands]
     },
     {
-      key: 'remote-control', cmd: '/remote-control', aliases: ['/rc'], cat: 'session',
+      key: 'remote-control', cmd: '/remote-control', aliases: ['/rc'], args: '[NAME]', cat: 'session',
       summary: 'Makes this local session steerable from claude.ai or mobile.',
-      detail: 'Remote Control exposes the running terminal session without moving its execution off your machine. It requires Claude subscription sign-in and organization policy support.',
-      requires: 'Claude subscription; Remote Control allowed',
+      detail: 'Execution and filesystem access stay on your machine. An optional name sets the remote session title. After the one-time confirmation, the command connects; running it again opens connection status with the session link, QR code, and a disconnect option.',
+      requires: 'claude.ai subscription sign-in; direct Anthropic connection; Remote Control allowed',
+      examples: ['/remote-control checkout-investigation'],
       related: ['teleport', 'background', 'color'],
       docs: [D.remote, D.commands]
     },
@@ -432,10 +465,10 @@
     {
       key: 'web-setup', cmd: '/web-setup', cat: 'config',
       summary: 'Connects GitHub to Claude Code on the web using local gh credentials.',
-      detail: 'Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone repositories and push branches. <code>/schedule</code> offers this setup automatically when needed.',
-      requires: 'Authenticated gh CLI; cloud sessions allowed',
+      detail: 'Sends your local <code>gh</code> token to your Claude account, giving cloud sessions access to repositories that token can reach. This is separate from installing the Claude GitHub App. Team and Enterprise owners must enable Quick web setup; Zero Data Retention organizations cannot use it.',
+      requires: 'Authenticated gh CLI; eligible cloud account and organization policy',
       related: ['autofix-pr', 'schedule', 'teleport'],
-      docs: [D.commands]
+      docs: [D.commands, D.web]
     },
 
     /* ---------- models, permissions & execution environment ---------- */
@@ -450,7 +483,8 @@
     {
       key: 'effort', cmd: '/effort', args: '[LEVEL|auto|status]', cat: 'config',
       summary: 'Sets or reports the model’s reasoning effort.',
-      detail: 'Supports levels from <code>low</code> through <code>xhigh</code>, plus session-only <code>max</code> and <code>ultracode</code> where available. <code>auto</code> returns to the model default; bare invocation opens a slider.',
+      detail: 'Available levels depend on the model. Run bare for a slider, use <code>status</code> to inspect the level, or <code>auto</code> for the default. Typed levels and <kbd>Enter</kbd> save a per-model choice; <kbd>s</kbd> applies it only to this session (2.1.257+). <code>max</code> is session-only when set here.',
+      note: '<code>ultracode</code> is a workflow-orchestration setting, not another model reasoning level. It uses <code>xhigh</code> and requires workflows, a compatible model, and an effort cap that permits it.',
       examples: ['/effort high', '/effort status'],
       related: ['model', 'fast', 'advisor'],
       docs: [D.model, D.commands]
@@ -466,9 +500,10 @@
     {
       key: 'advisor', cmd: '/advisor', args: '[MODEL|off]', cat: 'config',
       summary: 'Lets Claude consult a second model for guidance during a task.',
-      detail: 'Choose <code>fable</code>, <code>opus</code>, <code>sonnet</code>, or a full model ID, or pass <code>off</code>. Without an argument the command opens a picker.',
+      detail: 'Choose <code>fable</code>, <code>opus</code>, <code>sonnet</code>, or a full model ID, or pass <code>off</code>. Ordinary local CLI selections are saved for later sessions; run bare for a picker. In Desktop, headless sessions, and Remote Control, 2.1.260+ provides text forms instead; a bare command reports the current advisor.',
+      requires: 'Advisor-compatible model and provider',
       related: ['model', 'effort', 'plan'],
-      docs: [D.commands]
+      docs: [D.commands, D.advisor]
     },
     {
       key: 'config', cmd: '/config', aliases: ['/settings'], args: '[KEY=VALUE ...]', cat: 'config',
@@ -481,7 +516,7 @@
     {
       key: 'permissions', cmd: '/permissions', aliases: ['/allowed-tools'], cat: 'perms',
       summary: 'Manages allow, ask, and deny rules for tool use.',
-      detail: 'The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Changes made while Claude is responding apply to its next tool call.',
+      detail: 'The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Its Auto mode tab also edits classifier rules (2.1.246+). Changes made while Claude is responding apply to its next tool call.',
       related: ['sandbox', 'fewer-permission-prompts', 'add-dir'],
       docs: [D.commands, D.auto]
     },
@@ -505,7 +540,7 @@
       key: 'auto-mode-setup', cmd: '/auto-mode-setup', cat: 'perms',
       summary: 'Drafts an auto-mode environment policy from this project and recent work.',
       detail: 'Proposes <code>autoMode.environment</code> entries, shows the draft for review, and saves accepted changes to user settings.',
-      requires: 'Pro, Max, or Team; Claude Code 2.1.228+',
+      requires: 'Pro, Max, or Team; Claude Code 2.1.228+ (native Windows: 2.1.233+)',
       related: ['permissions', 'sandbox', 'config'],
       docs: [D.auto, D.commands]
     },
@@ -519,19 +554,20 @@
       docs: [D.memory, D.commands]
     },
     {
-      key: 'import', cmd: '/import', args: '[codex|gemini] [--dry-run] [--yes]', cat: 'config',
-      summary: 'Imports configuration from OpenAI Codex or Gemini CLI.',
+      key: 'import', cmd: '/import', args: '[codex|gemini|cursor] [--dry-run] [--yes]', cat: 'config',
+      summary: 'Imports configuration from OpenAI Codex, Gemini CLI, or Cursor.',
       detail: 'Brings over instruction files, MCP servers, commands, subagents, and skills. <code>--dry-run</code> previews changes and <code>--yes</code> skips the interactive picker.',
-      requires: 'First-party Anthropic connection; Claude Code 2.1.213+',
-      examples: ['/import codex --dry-run'],
+      requires: 'First-party connection and feature-flag fetching; 2.1.213+ (Cursor: 2.1.265+)',
+      note: 'Unavailable through a Claude apps gateway or third-party provider.',
+      examples: ['/import codex --dry-run', '/import cursor --dry-run'],
       related: ['init', 'mcp', 'skills'],
       docs: [D.commands]
     },
     {
       key: 'skills', cmd: '/skills', cat: 'author',
       summary: 'Lists skills and controls their visibility to you and Claude.',
-      detail: 'Filter by name, press <kbd>t</kbd> to sort by token count, and use <kbd>Space</kbd> to cycle whether a skill appears to the model and in the slash menu before saving.',
-      related: ['reload-skills', 'plugin', 'custom-skill'],
+      detail: 'Filter by name, description, or source, sort by token count with <kbd>t</kbd>, and cycle visibility with <kbd>Space</kbd> or <kbd>Enter</kbd>. Plugin skills, manual-only skills, and visibility enforced by managed settings or <code>--settings</code> cannot be cycled.',
+      related: ['reload-skills', 'skill-doctor', 'custom-skill'],
       docs: [D.skills, D.commands]
     },
     {
@@ -544,9 +580,10 @@
     {
       key: 'mcp-prompt', cmd: '/mcp__<server>__<prompt>', args: '[ARGUMENTS]', cat: 'author', flags: ['custom'], noCompare: true,
       summary: 'Invokes a prompt dynamically exposed by a connected MCP server.',
-      detail: 'Claude Code discovers MCP prompts at runtime and namespaces them with the server name. The exact commands therefore depend on your active connections and cannot be enumerated as a fixed built-in set.',
+      detail: 'The picker labels prompts as <code>/server:prompt (MCP)</code>; the full <code>/mcp__server__prompt</code> form remains accepted. Arguments are split on whitespace, with one token per argument. The available prompts depend on your connected servers, not a fixed built-in list.',
+      note: 'In the full form, unsupported characters in the server name become underscores; the prompt name stays as the server declares it.',
       related: ['mcp', 'custom-skill'],
-      docs: [D.commands]
+      docs: [D.mcp, D.commands]
     },
     {
       key: 'reload-skills', cmd: '/reload-skills', cat: 'author',
@@ -558,21 +595,22 @@
     {
       key: 'plugin', cmd: '/plugin', args: '[SUBCOMMAND]', cat: 'config',
       summary: 'Browses and manages Claude Code plugins.',
-      detail: 'Run bare for the plugin menu or use direct subcommands such as <code>list</code>, <code>install</code>, <code>enable</code>, and <code>disable</code>. The install summary tells you whether activation was immediate or needs a reload.',
+      detail: 'Run bare for the plugin menu or use direct subcommands such as <code>list</code>, <code>install</code>, <code>enable</code>, and <code>disable</code>. In 2.1.268+, closing the menu automatically reloads its changes, after the current response if necessary. Cache-invalidating changes can remain pending until you confirm with <code>/reload-plugins --force</code>.',
       subs: [
         ['list', 'List installed plugins'],
         ['install', 'Install from a configured marketplace'],
         ['enable / disable', 'Change plugin activation']
       ],
       related: ['reload-plugins', 'skills', 'mcp'],
-      docs: [D.plugins, D.commands]
+      docs: [D.plugins, D.reload, D.commands]
     },
     {
       key: 'reload-plugins', cmd: '/reload-plugins', args: '[--force]', cat: 'config',
       summary: 'Reloads active plugins and reports component or load errors.',
       detail: 'Applies plugin changes without restarting. If changed MCP tools would invalidate the prompt cache, the command warns and skips that reload unless you pass <code>--force</code>.',
+      note: 'In 2.1.260+, Desktop and headless sessions accept this only as direct session input, not a remotely forwarded command. Those hosts leave plugin MCP server changes for the next session.',
       related: ['plugin', 'reload-skills', 'mcp'],
-      docs: [D.plugins, D.commands]
+      docs: [D.reload, D.plugins, D.commands]
     },
     {
       key: 'mcp', cmd: '/mcp', args: '[reconnect SERVER|enable|disable [SERVER|all]]', cat: 'config',
@@ -609,9 +647,9 @@
     },
     {
       key: 'terminal-setup', cmd: '/terminal-setup', cat: 'config',
-      summary: 'Configures terminal keybindings such as Shift+Enter.',
-      detail: 'Appears only in terminals that need extra setup, including VS Code, Cursor, Devin Desktop, Alacritty, and Zed.',
-      requires: 'Terminal requiring keybinding setup',
+      summary: 'Configures terminal-specific newline keys and integration settings.',
+      detail: 'Installs Shift+Enter for VS Code, Cursor, Devin Desktop, Alacritty, and Zed. In Apple Terminal it configures Option+Enter and turns off the bell; in iTerm2 it enables the clipboard access used by <code>/copy</code>.',
+      requires: 'Supported terminal needing setup',
       related: ['keybindings', 'ide'],
       docs: [D.commands]
     },
@@ -622,12 +660,22 @@
       docs: [D.commands]
     },
     {
-      key: 'statusline', cmd: '/statusline', cat: 'config',
+      key: 'statusline', cmd: '/statusline', args: '[DESCRIPTION]', cat: 'config',
       summary: 'Configures the information shown in the terminal status line.',
       detail: 'Describe the status line you want, or run bare to derive one from the current shell prompt.',
       examples: ['/statusline show model, context percent, branch, and elapsed time'],
       related: ['config', 'theme', 'status'],
       docs: [D.statusline, D.commands]
+    },
+    {
+      key: 'output-style', cmd: '/output-style', args: '[NAME]', cat: 'config',
+      summary: 'Lists output styles or switches to a named style.',
+      detail: 'Select a built-in or installed style to change Claude&rsquo;s response role, tone, and format. The command was restored in 2.1.269, including text-based cloud, Remote Control, and headless use.',
+      requires: 'Claude Code 2.1.269+',
+      note: 'The output-styles guide still describes the older command&rsquo;s removal in 2.1.91. This entry follows the newer, dated 2.1.269 release notes.',
+      examples: ['/output-style Concise'],
+      related: ['config', 'model'],
+      docs: [D.styleRelease, D.styles]
     },
     {
       key: 'theme', cmd: '/theme', cat: 'config',
@@ -701,6 +749,15 @@
       docs: [D.costs, D.commands]
     },
     {
+      key: 'rate-limit-options', cmd: '/rate-limit-options', cat: 'diag', flags: ['hidden'],
+      summary: 'Opens options for continuing after a subscription usage limit.',
+      detail: 'Offers waiting for the reset and continuing automatically, adding usage credits, or upgrading where eligible. Keep the session open if you choose to wait. The wait-and-continue choices require 2.1.234+.',
+      requires: 'claude.ai subscription',
+      note: 'Hidden from the command menu; type the complete command.',
+      related: ['usage', 'usage-credits', 'upgrade'],
+      docs: [D.commands, D.interactive, D.costs]
+    },
+    {
       key: 'insights', cmd: '/insights', cat: 'diag',
       summary: 'Generates an HTML report about recent local Claude Code usage.',
       detail: 'Analyzes projects, interaction patterns, friction points, and underused features from sessions on this machine.',
@@ -726,10 +783,10 @@
     },
     {
       key: 'feedback', cmd: '/feedback', args: '[REPORT]', cat: 'diag',
-      summary: 'Sends product feedback through the same consent flow as /bug.',
-      detail: 'Opens immediately when supported, even during a response, and applies the same first-party submission versus local-bundle rules as <code>/bug</code>.',
+      summary: 'Reviews drafted feedback or opens the problem-report dialog.',
+      detail: 'With no argument, sessions that support Claude-drafted feedback open the drafts queue, where you can edit, send, or discard each report. Supplying text opens the report dialog directly. The consent, first-party submission, and local-bundle rules match <code>/bug</code>.',
       related: ['bug', 'release-notes'],
-      docs: [D.commands]
+      docs: [D.commands, D.changelog]
     },
     {
       key: 'heapdump', cmd: '/heapdump', cat: 'diag', flags: ['hidden'],
@@ -801,7 +858,6 @@
     {
       key: 'radio', cmd: '/radio', cat: 'system',
       summary: 'Opens Claude FM lo-fi radio, or prints its stream URL.',
-      requires: 'First-party Anthropic connection',
       related: ['powerup'],
       docs: [D.commands]
     },
@@ -814,8 +870,8 @@
     {
       key: 'install-github-app', cmd: '/install-github-app', cat: 'system',
       summary: 'Installs the Claude GitHub App for a repository.',
-      detail: 'Walks through repository selection and optionally sets up GitHub Actions workflows and secrets.',
-      requires: 'GitHub repository and interactive terminal',
+      detail: 'Walks through repository selection and optionally sets up GitHub Actions workflows and secrets. This setup command targets github.com repositories, not GitLab or Bitbucket remotes.',
+      requires: 'github.com repository and interactive terminal',
       related: ['web-setup', 'autofix-pr', 'install-slack-app'],
       docs: [D.commands]
     },
@@ -828,17 +884,29 @@
     },
     {
       key: 'claude-api', cmd: '/claude-api',
-      args: '[migrate|upgrade|managed-agents-onboard|prompt-audit]', cat: 'author', flags: ['skill'],
+      args: '[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb]', cat: 'author', flags: ['skill'],
       summary: 'Loads current Claude API guidance and runs migration workflows.',
-      detail: 'Activates automatically for Anthropic SDK imports, or invoke a focused workflow: update model usage, upgrade the SDK, onboard a Managed Agent, or audit prompts for instructions written for older models.',
+      detail: 'Activates automatically for Anthropic SDK imports, or invoke a focused workflow for migrations, SDK upgrades, Managed Agents, prompt audits, cost reduction, or evaluations. Cost optimization changes one measured factor at a time; hillclimb iterates against an existing evaluation set.',
       subs: [
         ['migrate', 'Update Claude API code to a newer model'],
         ['upgrade', 'Upgrade a supported Anthropic SDK major version'],
         ['managed-agents-onboard', 'Create and configure a Managed Agent'],
-        ['prompt-audit', 'Find model-era assumptions in prompts and tool descriptions']
+        ['prompt-audit', 'Find model-era assumptions in prompts and tool descriptions'],
+        ['cost-optimize', 'Profile API spending and test savings (2.1.247+)'],
+        ['build-eval', 'Build an evaluation set for a Claude-powered app (2.1.259+)'],
+        ['hillclimb', 'Improve the app against an existing evaluation (2.1.259+)']
       ],
       related: ['skills', 'init', 'import'],
       docs: [D.skills, D.commands]
+    },
+    {
+      key: 'design', cmd: '/design', args: '[BRIEF]', cat: 'author', flags: ['skill'],
+      summary: 'Drafts a design canvas with editable or exportable artboards.',
+      detail: 'Creates UI mockups, screen flows, landing pages, or posters as an artifact using a research-preview Claude Design editor. Accounts with saving enabled can publish edits as a new version; other accounts can view and export the draft.',
+      requires: 'Artifacts available; direct Anthropic connection; Claude Code 2.1.234+',
+      examples: ['/design a settings screen for a bike rental app'],
+      related: ['artifacts', 'dataviz', 'design-sync'],
+      docs: [D.skills, D.artifacts, D.commands]
     },
     {
       key: 'dataviz', cmd: '/dataviz', args: '[REQUEST]', cat: 'author', flags: ['skill'],
@@ -867,16 +935,14 @@
     {
       key: 'setup-bedrock', cmd: '/setup-bedrock', cat: 'config', flags: ['hidden'],
       summary: 'Configures Amazon Bedrock authentication, region, and model pins.',
-      detail: 'An interactive wizard hidden from autocomplete until Bedrock mode is enabled; type the full command to invoke it.',
-      requires: 'CLAUDE_CODE_USE_BEDROCK=1',
+      detail: 'The interactive wizard is hidden from autocomplete until <code>CLAUDE_CODE_USE_BEDROCK=1</code> is set; type the full command to invoke it. The variable controls menu visibility, not a prerequisite for first-time setup, which is also offered from the login screen.',
       related: ['setup-vertex', 'model'],
       docs: [D.commands]
     },
     {
       key: 'setup-vertex', cmd: '/setup-vertex', cat: 'config', flags: ['hidden'],
       summary: 'Configures Google Cloud authentication, project, region, and model pins.',
-      detail: 'An interactive wizard hidden from autocomplete until the Google Cloud provider mode is enabled; type the full command to invoke it.',
-      requires: 'CLAUDE_CODE_USE_VERTEX=1',
+      detail: 'The Agent Platform wizard is hidden from autocomplete until <code>CLAUDE_CODE_USE_VERTEX=1</code> is set; type the full command to invoke it. The variable controls menu visibility, and first-time users can also start setup from the login screen.',
       related: ['setup-bedrock', 'model'],
       docs: [D.commands]
     }

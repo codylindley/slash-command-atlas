@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.221+
 
 ## What it does

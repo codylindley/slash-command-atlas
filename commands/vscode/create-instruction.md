@@ -1,19 +1,22 @@
-# `/create-instruction`
+# `/create-instructions [DESCRIPTION]`
 
-> Generates an instructions file with AI assistance in Agent mode.
+> Generates a targeted instructions file with AI assistance.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session
 
 ## What it does
 
-Generates an instructions file with AI assistance in Agent mode.
+Generates a targeted instructions file with AI assistance.
+
+Describe a convention to create an `.instructions.md` file with a suitable `applyTo` pattern. Use `/init` for workspace-wide always-on instructions.
 
 ## Canonical example
 
-`/create-instruction`
+`/create-instructions use single quotes in TypeScript files`
 
 ## Related commands
 
@@ -22,8 +25,8 @@ Generates an instructions file with AI assistance in Agent mode.
 
 ## Official sources
 
-- [Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

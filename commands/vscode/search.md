@@ -1,17 +1,18 @@
-# `/search`
+# `/search QUERY`
 
 > Generates a search query for the Search view from natural language.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** @vscode chat participant
 
 ## What it does
 
 Generates a search query for the Search view from natural language.
 
-Describe what you are looking for and it composes the regex or glob for you, then hands it to the Search view rather than answering itself.
+Microsoft documents the full invocation as `@vscode /search` followed by a description of what to find. The example below assumes `@vscode` is already selected; the command sends its generated query to the Search view.
 
 ## Canonical example
 
@@ -27,7 +28,7 @@ Describe what you are looking for and it composes the regex or glob for you, the
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

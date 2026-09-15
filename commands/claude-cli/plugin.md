@@ -5,13 +5,13 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Browses and manages Claude Code plugins.
 
-Run bare for the plugin menu or use direct subcommands such as `list`, `install`, `enable`, and `disable`. The install summary tells you whether activation was immediate or needs a reload.
+Run bare for the plugin menu or use direct subcommands such as `list`, `install`, `enable`, and `disable`. In 2.1.268+, closing the menu automatically reloads its changes, after the current response if necessary. Cache-invalidating changes can remain pending until you confirm with `/reload-plugins --force`.
 
 ## Subcommands
 
@@ -31,13 +31,14 @@ Run bare for the plugin menu or use direct subcommands such as `list`, `install`
 
 ## Also in other surfaces
 
-- [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
+- [GitHub Copilot CLI — `/plugin`](../cli/plugins.md)
 - [Claude Desktop — Code tab — `/plugin`](../claude-app/plugin.md)
 - [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 
 - [Create plugins](https://code.claude.com/docs/en/plugins)
+- [Apply plugin changes without restarting](https://code.claude.com/docs/en/discover-plugins#apply-plugin-changes-without-restarting)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 
 ## Atlas links

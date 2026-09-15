@@ -5,16 +5,18 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** inherited
 
 ## What it does
 
 Sets or reports the model’s reasoning effort.
 
-Supports levels from `low` through `xhigh`, plus session-only `max` and `ultracode` where available. `auto` returns to the model default; bare invocation opens a slider.
+Available levels depend on the model. Run bare for a slider, use `status` to inspect the level, or `auto` for the default. Typed levels and `Enter` save a per-model choice; `s` applies it only to this session (2.1.257+). `max` is session-only when set here.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** `ultracode` is a workflow-orchestration setting, not another model reasoning level. It uses `xhigh` and requires workflows, a compatible model, and an effort cap that permits it.
+
+**Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Canonical example
 

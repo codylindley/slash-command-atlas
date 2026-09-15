@@ -5,7 +5,7 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/quit`
 
 ## What it does
@@ -28,6 +28,7 @@ Closes the interactive session. The two documented spellings behave the same; sa
 - [GitHub Copilot CLI — `/exit`](../cli/exit.md)
 - [Claude Code CLI — `/exit`](../claude-cli/exit.md)
 - [Claude Desktop — Code tab — `/exit`](../claude-app/exit.md)
+- [Claude Code on the web — `/exit`](../claude-web/exit.md)
 
 ## Official sources
 

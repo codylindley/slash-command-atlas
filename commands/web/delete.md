@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat on GitHub.com
 - **Category:** Conversation management
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Deletes a conversation.
 
-The only Copilot surface with a delete command in the slash picker.
+A GitHub.com conversation-management command; it is not a source-code deletion action.
 
 ## Canonical example
 
@@ -28,6 +28,7 @@ The only Copilot surface with a delete command in the slash picker.
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (GitHub.com)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=webui)
 - [GitHub Copilot Chat on GitHub.com slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
 
 ## Atlas links
