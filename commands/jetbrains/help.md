@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in JetBrains
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -29,8 +29,8 @@ Quick reference and basics of using Copilot.
 
 ## Official sources
 
-- [Copilot Chat cheat sheet](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
-- [GitHub Copilot agent in JetBrains IDEs](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
+- [Copilot Chat cheat sheet (JetBrains)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links
 

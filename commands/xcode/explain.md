@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Xcode
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -28,8 +28,7 @@ Provides an explanation for the selected code.
 
 ## Official sources
 
-- [Chat with Copilot in your IDE](https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide)
-- [GitHub Copilot Chat in Xcode slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
+- [Copilot Chat cheat sheet (Xcode)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=xcode)
 
 ## Atlas links
 

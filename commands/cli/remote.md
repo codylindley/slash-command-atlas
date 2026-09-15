@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Shows, enables, or ends remote control of the session.
 
-With remote steering on you can drive the session from GitHub.com or GitHub Mobile. Run bare to check status.
+With remote steering on you can drive the session from GitHub.com or GitHub Mobile using the same GitHub account. The local machine must stay online and the CLI session must keep running. Run bare to check status. A GitHub-hosted repository is not required; session syncing alone does not enable remote control.
 
 ## Canonical example
 

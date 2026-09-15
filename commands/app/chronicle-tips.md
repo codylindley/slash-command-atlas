@@ -1,21 +1,25 @@
-# `/chronicle tips`
+# `/chronicle tips [CONTEXT]`
 
 > Returns personalized workflow tips.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Returns personalized workflow tips.
 
-Looks at how you have actually been using the agent and suggests changes: commands you are not reaching for, habits that are costing you time.
+Looks at how you have actually been using the agent and suggests changes: commands you are not reaching for, habits that are costing you time. Append context to focus the recommendations on a topic.
 
 ## Canonical example
 
 `/chronicle tips`
+
+## More examples
+
+- `/chronicle tips for better prompting`
 
 ## Related commands
 
@@ -25,7 +29,7 @@ Looks at how you have actually been using the agent and suggests changes: comman
 
 ## Official sources
 
-- [Chronicle (Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [Session history (GitHub Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

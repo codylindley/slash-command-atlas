@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Desktop build with artifact skills enabled
 - **Flags:** skill
 
@@ -13,7 +13,7 @@
 
 Loads guidance about the artifact formats and capabilities available in Desktop.
 
-This bundled skill appears in the live Desktop Code picker but is not listed in Anthropic’s fixed command table. Its availability can vary with Desktop build, plan, and synced skills.
+Recorded in an earlier local Desktop picker audit, not in Anthropic’s fixed command table. It was not re-observed during the 2026-09-14 documentation review; availability can vary with build, plan, and installed or synced skills.
 
 ## Canonical example
 

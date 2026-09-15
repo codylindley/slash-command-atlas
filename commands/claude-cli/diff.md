@@ -1,18 +1,18 @@
 # `/diff`
 
-> Opens an interactive viewer for Git and per-turn diffs.
+> Shows uncommitted changes without leaving the session.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** A Git repository
 
 ## What it does
 
-Opens an interactive viewer for Git and per-turn diffs.
+Shows uncommitted changes without leaving the session.
 
-Move left and right between the working-tree diff and individual Claude turns, then browse changed files. The viewer reads raw Git blobs, so configured diff drivers and `textconv` filters do not rewrite what you see.
+In fullscreen mode, opens a side panel that stays visible and updates as you work (2.1.260+). The classic renderer uses a viewer that replaces the prompt until you close it. Git-backed changes include your own edits, not only Claude’s; a submodule entry tracks its commit pointer rather than edits inside it.
 
 ## Canonical example
 
@@ -33,6 +33,7 @@ Move left and right between the working-tree diff and individual Claude turns, t
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Interactive mode](https://code.claude.com/docs/en/interactive-mode)
 
 ## Atlas links
 

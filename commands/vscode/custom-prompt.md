@@ -1,16 +1,21 @@
-# `/<prompt name>`
+# `/<prompt name> [CONTEXT]`
 
 > Runs one of your reusable prompt files by name.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session with a saved prompt file
 - **Flags:** custom
 
 ## What it does
 
 Runs one of your reusable prompt files by name.
+
+The command name comes from the prompt’s `name` frontmatter or its `.prompt.md` filename. Add optional instructions or inputs after the command.
+
+> **Note:** Prompt files still work with the Local agent but are deprecated and not loaded in Agent Host sessions. Migrate them to skills for Agent Host.
 
 ## Canonical example
 
@@ -24,8 +29,8 @@ Runs one of your reusable prompt files by name.
 
 ## Official sources
 
-- [Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

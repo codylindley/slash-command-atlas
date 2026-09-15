@@ -5,7 +5,8 @@
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Plugins feature enabled
 
 ## What it does
 
@@ -26,12 +27,12 @@ Opens the plugin browser across the marketplace sources allowed by your configur
 
 ## Also in other surfaces
 
-- [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
 - [Claude Code in VS Code — `/plugins`](../claude-vscode/plugins.md)
 
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI command availability (stable 0.154.0)](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/tui/src/bottom_pane/slash_commands.rs)
 
 ## Atlas links
 

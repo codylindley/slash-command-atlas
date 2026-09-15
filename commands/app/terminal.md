@@ -5,14 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Active session
 
 ## What it does
 
 Opens a terminal in the right panel, optionally running a command.
 
-Gives you a shell next to the agent, scoped to the session’s own worktree. Useful for checking the agent’s work yourself — running the tests, reading `git status` — without leaving the app or competing with the agent over the same working tree.
+Opens a shell in the session’s working directory. That can be an isolated worktree, an existing local checkout, or a folder, depending on how the session was created. Use it to run tests or inspect `git status` without leaving the app; the terminal and agent still operate on the same session files.
 
 ## Canonical example
 
@@ -25,6 +25,7 @@ Gives you a shell next to the agent, scoped to the session’s own worktree. Use
 
 ## Official sources
 
+- [Working with agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

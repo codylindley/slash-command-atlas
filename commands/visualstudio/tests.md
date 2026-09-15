@@ -1,19 +1,21 @@
-# `/tests`
+# `/tests [INSTRUCTIONS]`
 
 > Generates unit tests for the selected code.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Generates unit tests for the selected code.
 
+You can add instructions such as the testing framework to use after the command.
+
 ## Canonical example
 
-`/tests`
+`/tests using xUnit`
 
 ## Related commands
 
@@ -28,7 +30,7 @@ Generates unit tests for the selected code.
 
 ## Official sources
 
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

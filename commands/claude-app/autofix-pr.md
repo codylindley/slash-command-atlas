@@ -5,8 +5,8 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Pull requests
-- **Data snapshot:** 2026-08-23
-- **Requires:** gh CLI, open PR, and Claude Code on the web
+- **Data snapshot:** 2026-09-14
+- **Requires:** gh CLI, open PR, Claude GitHub App, and Claude Code on the web
 - **Flags:** inherited
 
 ## What it does
@@ -35,6 +35,7 @@ The cloud agent reacts to CI failures and review comments and pushes clear fixes
 
 - [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links

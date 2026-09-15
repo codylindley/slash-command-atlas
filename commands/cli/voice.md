@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -25,6 +25,7 @@ Pairs naturally with `/refine`, which cleans up a spoken prompt before you send 
 
 - [Claude Code CLI — `/voice`](../claude-cli/voice.md)
 - [Claude Desktop — Code tab — `/voice`](../claude-app/voice.md)
+- [OpenAI Codex CLI — `/voice`](../codex-cli/voice.md)
 
 ## Official sources
 

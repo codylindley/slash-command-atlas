@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Active session
 
 ## What it does
@@ -24,6 +24,10 @@ Packages the logs for a bug report. The gist is secret rather than public, but i
 
 - [`/debug`](./debug.md)
 - [`/export-gist`](./export-gist.md)
+
+## Also in other surfaces
+
+- [GitHub Copilot CLI — `/collect-debug-logs`](../cli/collect-debug-logs.md)
 
 ## Official sources
 

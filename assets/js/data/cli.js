@@ -1,5 +1,5 @@
 /* GitHub Copilot CLI — slash commands for the interactive session.
-   Names, aliases, arguments and behavior follow the official CLI command reference.
+   Reviewed against first-party documentation and release notes on 2026-09-14.
    Subcommand-heavy commands are folded into one entry rather than listed separately. */
 
 (function () {
@@ -9,6 +9,7 @@
     acp:      ['ACP server', B + 'reference/copilot-cli-reference/acp-server'],
     agents:   ['About custom agents (CLI)', B + 'concepts/agents/copilot-cli/about-custom-agents'],
     chron:    ['Chronicle', B + 'concepts/agents/copilot-cli/chronicle'],
+    chronUse: ['Using CLI session data', B + 'how-tos/copilot-cli/use-copilot-cli/chronicle'],
     ctxComp:  ['Context management: compaction', B + 'concepts/agents/copilot-cli/context-management#compaction'],
     ctxUse:   ['Checking your context usage', B + 'concepts/agents/copilot-cli/context-management#checking-your-context-usage'],
     delegate: ['Delegate tasks to the coding agent', B + 'how-tos/copilot-cli/use-copilot-cli/delegate-tasks-to-cca'],
@@ -17,6 +18,16 @@
     limits:   ['Set a session limit', B + 'how-tos/copilot-cli/use-copilot-cli/set-session-limit'],
     mcp:      ['Managing MCP servers', B + 'how-tos/copilot-cli/customize-copilot/add-mcp-servers#managing-mcp-servers'],
     model:    ['Auto model selection', B + 'concepts/models/auto-model-selection'],
+    autoTiers: ['Auto selection tiers (rollout, 2026-09-14)',
+      'https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/'],
+    hydra:    ['Project HydraFusion research preview',
+      'https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/'],
+    weekly:   ['Copilot weekly release update (2026-09-10)',
+      'https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/'],
+    managedPerms: ['Enterprise-managed permissions (GA, 2026-09-09)',
+      'https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/'],
+    contentExclusions: ['Content exclusions in Copilot CLI (GA, 2026-09-02)',
+      'https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli'],
     pr:       ['Manage pull requests', B + 'how-tos/copilot-cli/use-copilot-cli/manage-pull-requests'],
     remote:   ['Steer remotely', B + 'how-tos/copilot-cli/use-copilot-cli/steer-remotely'],
     research: ['Research', B + 'concepts/agents/copilot-cli/research'],
@@ -24,8 +35,13 @@
     duck:     ['About the rubber duck agent', B + 'concepts/agents/copilot-cli/rubber-duck'],
     skills:   ['Add skills', B + 'how-tos/copilot-cli/customize-copilot/add-skills'],
     plugins:  ['About plugins', B + 'concepts/agents/about-plugins'],
+    pluginRef: ['CLI plugin reference', B + 'reference/copilot-cli-reference/cli-plugin-reference'],
     config:   ['Config directory reference', B + 'reference/copilot-cli-reference/cli-config-dir-reference'],
-    settings: ['Change settings', B + 'how-tos/copilot-cli/customize-copilot/change-settings']
+    settings: ['Change settings', B + 'how-tos/copilot-cli/customize-copilot/change-settings'],
+    release84: ['Copilot CLI 1.0.84-6 (prerelease, 2026-09-14)',
+      'https://github.com/github/copilot-cli/releases/tag/v1.0.84-6'],
+    vimRelease: ['Copilot CLI 1.0.84-2 (prerelease, 2026-09-08)',
+      'https://github.com/github/copilot-cli/releases/tag/v1.0.84-2']
   };
 
   window.SLASH.register('cli', [
@@ -34,36 +50,39 @@
     {
       key: 'plan', cmd: '/plan', args: '[PROMPT]', cat: 'modes',
       summary: 'Creates an implementation plan before coding.',
-      detail: 'The CLI equivalent of the app’s Plan mode: the agent researches and writes out an approach for you to approve before it starts editing.',
+      detail: 'The agent researches your request and proposes an approach for review before implementation.',
       examples: ['/plan migrate the config loader from JSON to TOML'],
       related: ['autopilot', 'rubber-duck', 'research']
     },
     {
-      key: 'autopilot', cmd: '/autopilot', aliases: ['/goal'], args: '[OBJECTIVE]', cat: 'modes', flags: ['experimental'],
+      key: 'autopilot', cmd: '/autopilot', aliases: ['/goal'], args: '[OBJECTIVE] [--max-ai-credits N]', cat: 'modes',
       summary: 'Starts or refocuses autopilot mode, optionally with an explicit objective.',
-      detail: 'Without an objective, autopilot infers intent from context. You can cap spend for an objective with <code>--max-ai-credits N</code>; when the cap is reached autopilot pauses and reports credits used, and you either enter a new amount to resume with a fresh window or leave it paused. <code>/goal on</code> and <code>/goal off</code> toggle the mode without setting an objective.',
+      detail: 'Without an objective, autopilot infers intent from context. <code>--max-ai-credits N</code> caps spending for the objective; reaching the cap pauses work. Enter a new amount in the pause panel, or run <code>/goal --max-ai-credits 5</code>, to resume with a fresh credit window rather than adding to the old cap. <code>/goal on</code> and <code>/goal off</code> toggle the mode without setting an objective and cannot be combined with the credit option.',
+      note: 'Enterprise-managed deny and ask rules remain enforced in autopilot: automatic continuation cannot unblock a denied operation or replace required human approval.',
       examples: [
         '/goal Refactor the auth module --max-ai-credits 5',
         '/autopilot get the integration tests green'
       ],
-      related: ['plan', 'limits', 'fleet']
+      related: ['plan', 'limits', 'fleet'],
+      docs: [D.ref, D.managedPerms]
     },
 
     /* ---------- session lifecycle ---------- */
     {
       key: 'clear', cmd: '/clear', aliases: ['/new', '/reset'], args: '[PROMPT]', cat: 'session',
       summary: 'Starts a new conversation.',
-      detail: 'Discards the current conversation and begins fresh, optionally with the first prompt supplied inline.',
+      detail: 'Begins a fresh conversation, optionally with the first prompt supplied inline.',
       related: ['compact', 'fork', 'restart']
     },
     {
-      key: 'exit', cmd: '/exit', aliases: ['/quit'], cat: 'session',
+      key: 'exit', cmd: '/exit', aliases: ['/quit'], args: '[print]', cat: 'session',
       summary: 'Closes the current session.',
       detail: 'If other sessions are running, this foregrounds the newest remaining one rather than quitting; the CLI only exits when this is the last open session. <code>/exit print</code> always tears the CLI down and offers to dump the transcript.',
+      examples: ['/exit', '/exit print'],
       related: ['resume', 'session', 'share']
     },
     {
-      key: 'fork', cmd: '/fork', aliases: ['/branch'], args: '[NAME]', cat: 'session', flags: ['experimental'],
+      key: 'fork', cmd: '/fork', aliases: ['/branch'], args: '[NAME]', cat: 'session',
       summary: 'Forks the current session into a new one, optionally named.',
       detail: 'Both sessions share history up to the fork point and then diverge &mdash; useful for trying a second approach without losing the context that got you here.',
       related: ['clear', 'worktree', 'resume']
@@ -76,7 +95,8 @@
     },
     {
       key: 'restart', cmd: '/restart', cat: 'session',
-      summary: 'Restarts the CLI, preserving the current session.',
+      summary: 'Restarts the CLI and restores its live sessions.',
+      detail: 'Restores all live sessions in this process, not just the foreground session. If the target version cannot restore multiple sessions, the CLI asks whether to continue with only the foreground session or cancel.',
       related: ['clear', 'update']
     },
     {
@@ -87,24 +107,27 @@
     },
     {
       key: 'session', cmd: '/session', aliases: ['/sessions'], cat: 'session',
-      args: '[info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]',
+      args: '[info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all]',
       summary: 'Shows session information and manages saved sessions.',
-      detail: '<code>info</code> shows session details including the shareable session link when one is available. The remaining subcommands cover checkpoints, tracked files, the current plan, renaming, and clearing out old sessions.',
+      detail: '<code>info</code> shows session details, including a session link when available. Deleting a synced session can also offer to remove its remote copy; <code>delete-all</code> and <code>prune</code> remove local data only.',
       subs: [
         ['info', 'Session details, including the session link when available'],
         ['checkpoints [n]', 'List session checkpoints'],
         ['files', 'Files touched in this session'],
         ['plan', 'The session’s current plan'],
         ['rename [NAME]', 'Rename the session'],
-        ['cleanup / prune', 'Clear out old session data'],
-        ['delete [ID] / delete-all', 'Delete one session, or all of them']
+        ['cleanup', 'Clean up session data'],
+        ['prune --older-than DAYS [--dry-run]', 'Remove old local sessions, or preview the removal'],
+        ['delete [ID] [--yes]', 'Delete a specified session; without an ID, replace the current session with a new one'],
+        ['delete-all [--yes]', 'Delete local sessions except the current one; sessions in use by another process are skipped']
       ],
-      related: ['resume', 'rename', 'undo']
+      related: ['resume', 'rename', 'undo'],
+      docs: [D.ref, D.chron]
     },
     {
       key: 'remote', cmd: '/remote', args: '[on|off]', cat: 'session',
       summary: 'Shows, enables, or ends remote control of the session.',
-      detail: 'With remote steering on you can drive the session from GitHub.com or GitHub Mobile. Run bare to check status.',
+      detail: 'With remote steering on you can drive the session from GitHub.com or GitHub Mobile using the same GitHub account. The local machine must stay online and the CLI session must keep running. Run bare to check status. A GitHub-hosted repository is not required; session syncing alone does not enable remote control.',
       related: ['ide', 'app'],
       docs: [D.remote]
     },
@@ -113,16 +136,19 @@
       requires: 'A Git repository',
       summary: 'Creates a new Git worktree and switches to it, leaving uncommitted changes behind.',
       detail: 'Pass a branch name, a task description used as the opening prompt in the new worktree, or nothing at all to have a branch name generated from the conversation. By default it branches off the current checkout; set <code>worktreeBaseRef</code> to <code>"defaultBranch"</code> to branch off the remote default instead. <code>/worktree new [PROMPT]</code> starts a fresh conversation in a new worktree and leaves the current one untouched.',
+      note: 'The public reference still marks this experimental. The 1.0.84-6 prerelease (2026-09-14) removes the experimental gate for <code>/worktree</code> and <code>/move</code>; older builds may require <code>/experimental on</code>. <code>new</code> is a reserved subcommand, not a literal branch name.',
       subs: [['new [PROMPT]', 'Start a new conversation in a new worktree, leaving this one alone']],
       related: ['move', 'fork'],
-      docs: [D.config]
+      docs: [D.ref, D.config, D.release84]
     },
     {
       key: 'move', cmd: '/move', args: '[branch|task]', cat: 'session', flags: ['experimental'],
       requires: 'A Git repository',
       summary: 'Moves uncommitted changes into a new Git worktree and switches to it.',
       detail: 'The counterpart to <code>/worktree</code>: where that leaves your changes behind, this takes them with you. Useful when you realise the work you have started belongs on its own branch.',
-      related: ['worktree']
+      note: 'Experimental in the public reference, but the 1.0.84-6 prerelease (2026-09-14) no longer requires experimental mode.',
+      related: ['worktree'],
+      docs: [D.ref, D.release84]
     },
     {
       key: 'undo', cmd: '/undo', aliases: ['/rewind'], cat: 'session',
@@ -149,8 +175,10 @@
     {
       key: 'add-dir', cmd: '/add-dir', args: 'PATH', cat: 'context',
       summary: 'Adds a directory to the allowed list for file access.',
-      detail: 'The CLI only reads and writes inside directories you have allowed. This widens that boundary deliberately, and leaves an auditable trail of what you opened up.',
-      related: ['list-dirs', 'cwd', 'permissions']
+      detail: 'Also loads the directory’s <code>.github/skills</code> and <code>.github/agents</code> as trusted configuration. Review the directory before adding it: this grants access and makes its agent customizations available.',
+      note: 'Adding a directory does not disable content exclusions. For Copilot Business and Enterprise, the CLI respects exclusion policies from enterprise, organization, and repository administrators and does not use excluded files as context; this became generally available on 2026-09-02.',
+      related: ['list-dirs', 'cwd', 'permissions'],
+      docs: [D.ref, D.contentExclusions]
     },
     {
       key: 'list-dirs', cmd: '/list-dirs', cat: 'context',
@@ -173,7 +201,7 @@
       key: 'keep-alive', cmd: '/keep-alive', aliases: ['/caffeinate'],
       args: '[on|off|busy|DURATION]', cat: 'system',
       summary: 'Prevents the machine from sleeping while Copilot works.',
-      detail: 'Use <code>on</code> to keep the machine awake continuously, <code>busy</code> only while work is active, or pass a duration such as <code>30m</code>, <code>2h</code>, or <code>1d</code>. Use <code>off</code> to restore normal sleep behavior.',
+      detail: 'Use <code>on</code> to keep the machine awake while the CLI session is active, <code>busy</code> only while work is active, or pass a duration such as <code>30m</code>, <code>2h</code>, or <code>1d</code>. Bare numbers are minutes. Use <code>off</code> to restore normal sleep behavior.',
       examples: ['/keep-alive busy', '/caffeinate 2h'],
       related: ['tasks', 'every', 'after'],
       docs: [D.ref]
@@ -186,7 +214,7 @@
       docs: [D.config]
     },
     {
-      key: 'search', cmd: '/search', aliases: ['/find'], args: '[QUERY]', cat: 'context', flags: ['experimental'],
+      key: 'search', cmd: '/search', aliases: ['/find'], args: '[QUERY]', cat: 'context',
       summary: 'Searches the conversation timeline.',
       related: ['chronicle', 'copy']
     },
@@ -196,14 +224,14 @@
       related: ['share', 'context']
     },
     {
-      key: 'ask', cmd: '/ask', args: 'QUESTION', cat: 'context',
+      key: 'ask', cmd: '/ask', aliases: ['/btw'], args: 'QUESTION', cat: 'context',
       summary: 'Asks a quick side question without adding it to the conversation history.',
-      detail: 'A scratchpad question that leaves no trace in the transcript &mdash; so it does not pollute the context of the task you are actually working on.',
+      detail: 'Keeps a side question out of the main conversation history so it does not distract from the current task.',
       examples: ['/ask what does the -u flag do in git push?'],
       related: ['compact', 'context']
     },
     {
-      key: 'refine', cmd: '/refine', args: 'TEXT', cat: 'context',
+      key: 'refine', cmd: '/refine', args: '[TEXT]', cat: 'context',
       summary: 'Rewrites a roughly composed prompt into a clearer one for review.',
       detail: 'Run it with no arguments (via <kbd>Ctrl</kbd>+<kbd>X</kbd> then <code>/refine</code>) to clean up whatever is currently in the input box. Particularly useful for prompts entered by speaking.',
       related: ['voice', 'plan']
@@ -247,7 +275,7 @@
     {
       key: 'pr', cmd: '/pr', args: '[view|create|fix|auto|automerge]', cat: 'pr',
       summary: 'Manages pull requests for the current branch.',
-      detail: 'Where the desktop app splits this across four <code>/pr-*</code> commands, the CLI folds it into one. <code>auto</code> drives the pull request to green and stops; <code>automerge</code> (alias <code>agentmerge</code>) drives it to green and then merges it.',
+      detail: '<code>auto</code> works through checks and feedback until the pull request is green, then stops. <code>automerge</code> (alias <code>agentmerge</code>) also merges the pull request.',
       subs: [
         ['view', 'Show the pull request for this branch'],
         ['create', 'Open a pull request'],
@@ -274,7 +302,7 @@
     {
       key: 'subagents', cmd: '/subagents', aliases: ['/agents'], cat: 'delegate',
       summary: 'Configures default and per-agent subagent models.',
-      detail: 'Lets you run subagents on a cheaper or faster model than the main session &mdash; often the single biggest lever on the cost of a parallel run.',
+      detail: 'Sets model preferences independently of the main session. A required model policy locks the model selection; a requirement from the agent’s own definition cannot be relaxed by the picker.',
       related: ['fleet', 'model', 'agent'],
       docs: [D.config]
     },
@@ -288,10 +316,11 @@
     {
       key: 'model', cmd: '/model', aliases: ['/models'], args: '[--session|--global|--repo|--local] [MODEL]', cat: 'config',
       summary: 'Selects the AI model, reasoning effort, or context window — or chooses Auto.',
-      detail: 'By default (or with <code>--session</code>) the change applies to this session only and leaves saved settings alone. <code>--repo</code>/<code>--local</code> pins a default in repository settings; <code>--global</code> sets the default for future sessions. Press <kbd>Tab</kbd> on a model with a long-context variant to toggle its context window, and <kbd>Shift</kbd>+<kbd>Tab</kbd> to cycle how the picker groups models. It is usable mid-turn: a change requested while the agent is running is queued and applied once the turn finishes rather than swapping the model mid-request.',
+      detail: 'By default (or with <code>--session</code>) the change applies to this session only and leaves saved settings alone. <code>--repo</code>/<code>--local</code> pins a default in repository settings; <code>--global</code> sets the default for future sessions. Press <kbd>Tab</kbd> on a model with a long-context variant to toggle its context window, and <kbd>Shift</kbd>+<kbd>Tab</kbd> to cycle how the picker groups models. It is usable mid-turn: a change requested while the agent is running is queued and applied once the turn finishes rather than swapping the model mid-request. Project HydraFusion is a separate research-preview model choice exposed through <code>/experimental</code>, not an Auto tier.',
+      note: 'Auto’s Efficiency, Balance, and Intelligence tiers began rolling out on 2026-09-14, so availability can vary. They prioritize cost, balanced cost/quality/latency, and quality respectively. All three route each prompt using the same eligible model pool; even Intelligence can select a smaller model for a simple task. A tier changes routing preferences, not the model’s reasoning-effort setting.',
       examples: ['/model --repo gpt-5.2'],
-      related: ['subagents', 'agent', 'limits'],
-      docs: [D.model]
+      related: ['subagents', 'agent', 'limits', 'experimental'],
+      docs: [D.model, D.autoTiers, D.hydra, D.weekly]
     },
     {
       key: 'agent', cmd: '/agent', cat: 'config',
@@ -300,48 +329,61 @@
       docs: [D.agents]
     },
     {
-      key: 'skills', cmd: '/skills', args: '[list|info|add|remove|reload]', cat: 'config',
+      key: 'skills', cmd: '/skills', args: '[list|info NAME|add [--project] SOURCE|remove NAME-OR-DIRECTORY|reload]', cat: 'config',
       summary: 'Manages skills for enhanced capabilities.',
-      detail: '<code>reload</code> picks up edits to a skill without restarting the session, which is what you want while authoring one.',
+      detail: 'Run bare to open the Skills dashboard, where you can inspect, enable, and disable skills. <code>reload</code> picks up edits without restarting. Plugin-provided skills are removed by managing their plugin rather than deleting the skill separately.',
+      subs: [
+        ['list', 'List available skills'],
+        ['info NAME', 'Show a skill’s details and source'],
+        ['add [--project] SOURCE', 'Add a file, URL, or directory; --project makes file or URL installs repository-scoped'],
+        ['remove NAME-OR-DIRECTORY', 'Remove a directly installed skill or unregister a skill directory'],
+        ['reload', 'Reload skills from all configured directories']
+      ],
       related: ['plugins', 'agent', 'init'],
       docs: [D.skills]
     },
     {
-      key: 'plugins', cmd: '/plugins', aliases: ['/plugin'], cat: 'config',
-      args: '[install|update|uninstall|list|enable|disable|remove|marketplace|mcp]',
-      summary: 'Manages plugins, MCP servers and skills, and opens the plugins dashboard.',
-      detail: 'Run bare to open the dashboard, or pass <code>--plugin</code>, <code>--mcp</code> or <code>--skill</code> to open it focused on that tab. Plugins install from a marketplace spec, a GitHub repository, a git URL, or a local path.',
+      key: 'plugins', cmd: '/plugin', cat: 'config',
+      args: '[install SOURCE|update PLUGIN[@MARKETPLACE]|uninstall PLUGIN[@MARKETPLACE]|list|marketplace SUBCOMMAND]',
+      summary: 'Opens the plugins dashboard or manages installed plugins and marketplaces.',
+      detail: 'The dashboard’s Installed, Online, and Marketplace views cover plugins only. Select an installed plugin to enable, disable, update, or uninstall it. Use <code>/mcp</code> for servers and <code>/skills</code> for skills.',
+      note: 'The experimental <code>/plugins</code> slash command was removed in 1.0.81. It is not an alias for <code>/plugin</code>. The terminal command <code>copilot plugins</code> is a separate, legacy alias for <code>copilot plugin</code>.',
       subs: [
         ['install SOURCE', 'Install from a marketplace, repo, git URL or local path'],
-        ['install --skill [--project] SOURCE', 'Install a skill; --project scopes it to this repository'],
-        ['update / uninstall PLUGIN[@MARKETPLACE]', 'Update or remove an installed plugin'],
+        ['update PLUGIN[@MARKETPLACE]', 'Update an installed plugin'],
+        ['uninstall PLUGIN[@MARKETPLACE]', 'Remove a plugin (aliases: remove, rm)'],
         ['list', 'List installed plugins (alias: ls)'],
-        ['enable|disable|remove --plugin|--mcp|--skill NAME', 'Toggle or remove by kind; defaults to --plugin'],
-        ['marketplace add|remove|list|browse|update', 'Manage and browse marketplaces'],
-        ['mcp [SUBCOMMAND]', 'Delegates to /mcp'],
-        ['help', 'Full /plugins usage']
+        ['marketplace add SOURCE', 'Register a marketplace'],
+        ['marketplace remove NAME', 'Unregister a marketplace'],
+        ['marketplace list', 'List registered marketplaces'],
+        ['marketplace browse NAME', 'Browse a marketplace’s plugins'],
+        ['marketplace update [NAME]', 'Refresh one marketplace catalog, or all of them (alias: refresh)']
       ],
+      examples: ['/plugin list', '/plugin'],
       related: ['mcp', 'skills', 'extensions'],
-      docs: [D.plugins]
+      docs: [D.ref, D.plugins, D.pluginRef]
     },
     {
       key: 'mcp', cmd: '/mcp', cat: 'config',
-      args: '[list|show|add|edit|delete|disable|enable|auth|reload|search] [SERVER-NAME]',
+      args: '[config|list|show|add|edit|delete|disable|enable|auth|reload|search] [SERVER-NAME]',
       summary: 'Manages MCP server configuration.',
-      detail: '<code>list</code> (alias <code>ls</code>) prints servers with connection status and is read-only, so it can run while the agent is mid-turn; every other subcommand is blocked until the turn finishes. Sandboxed local servers report a <code>connected (sandboxed)</code> status.',
+      detail: 'Run bare or use <code>config</code> to open the MCP dashboard. <code>show SERVER-NAME</code> opens a server’s details and tools; <code>list</code> (alias <code>ls</code>) prints connection status. The command table permits bare, <code>config</code>, <code>show</code>, and <code>list</code> while the agent is busy; mutating subcommands wait until the turn finishes.',
+      note: 'For servers defined in a repository’s <code>.mcp.json</code>, <code>edit</code> and <code>delete</code> direct you to that file instead of modifying a shadowed user-level entry.',
       subs: [
+        ['config', 'Open the MCP dashboard (also the bare command)'],
         ['list', 'Plain-text list with connection status — safe to run mid-turn'],
-        ['show / add / edit / delete', 'Inspect and manage server entries'],
+        ['show [SERVER-NAME]', 'Show the server list or one server’s details and tools'],
+        ['add / edit / delete', 'Manage server entries'],
         ['enable / disable', 'Turn a configured server on or off'],
         ['auth', 'Re-run authentication for a server'],
         ['reload', 'Reload server configuration'],
         ['search', 'Find servers to add']
       ],
       related: ['plugins', 'sandbox', 'env'],
-      docs: [D.mcp]
+      docs: [D.ref, D.mcp]
     },
     {
-      key: 'extensions', cmd: '/extensions', aliases: ['/extension'], args: '[manage|mode]', cat: 'config',
+      key: 'extensions', cmd: '/extensions', aliases: ['/extension'], args: '[manage|mode]', cat: 'config', flags: ['experimental'],
       summary: 'Manages CLI extensions.',
       related: ['plugins', 'env']
     },
@@ -355,9 +397,10 @@
       key: 'settings', cmd: '/settings', aliases: ['/config'], args: '[--repo|--local] [show KEY|KEY|KEY VALUE]', cat: 'config',
       summary: 'Opens the settings dialog, or reads and writes a setting inline.',
       detail: 'The dialog has <strong>User</strong>, <strong>Repo</strong>, <strong>Repo (local)</strong> and <strong>Problems</strong> tabs; a setting overridden in another scope shows a badge naming which scope wins. <code>show KEY</code> masks secret-named values instead of printing them. Add <code>--repo</code> or <code>--local</code> to target the repository settings files instead of your user settings. Rows governed by an organization or MDM policy render read-only with a <code>(managed)</code> tag.',
+      note: 'The 1.0.84-6 prerelease describes <code>/config</code> as opening a sidebar configuration screen. The public reference still groups it with <code>/settings</code>; the presentation depends on your build.',
       examples: ['/settings --repo model gpt-5.2'],
       related: ['model', 'instructions', 'experimental'],
-      docs: [D.settings, D.config]
+      docs: [D.settings, D.config, D.release84]
     },
     {
       key: 'limits', cmd: '/limits', args: '[set max-ai-credits VALUE|unset [max-ai-credits|all]]', cat: 'config',
@@ -391,61 +434,87 @@
     {
       key: 'permissions', cmd: '/permissions', args: '[default|assisted|allow-all|show|reset]', cat: 'perms',
       summary: 'Switches permission mode, shows the current one, or resets in-session approvals.',
-      detail: 'This is the canonical command for permission changes; <code>/allow-all</code> and <code>/yolo</code> remain supported as aliases for <code>/permissions allow-all</code>. <code>reset</code> clears all in-memory tool and path approvals so the agent prompts again on next use.',
+      detail: 'This is the canonical command for permission changes; <code>/allow-all</code> and <code>/yolo</code> remain supported as aliases for <code>/permissions allow-all</code>. <code>reset</code> clears in-memory tool and path approvals without changing managed rules.',
+      note: 'Enterprise-managed deny/ask/allow controls are generally available for Copilot Business and Enterprise as of 2026-09-09. User or workspace settings, auto-approval, and saved approvals cannot weaken managed restrictions: denied operations stay blocked and ask rules still require human approval.',
       subs: [
         ['default', 'Prompt for tool and path access as normal'],
         ['assisted', 'An intermediate mode between prompting and allow-all'],
-        ['allow-all', 'Allow all tools, paths and URLs'],
+        ['allow-all', 'Skip ordinary tool, path, and URL prompts while preserving managed deny and ask rules'],
         ['show', 'Report the current mode'],
-        ['reset', 'Clear in-memory approvals for this session']
+        ['reset', 'Clear in-memory approvals for this session, not managed permission rules']
       ],
-      related: ['allow-all', 'reset-allowed-tools', 'sandbox']
+      related: ['allow-all', 'reset-allowed-tools', 'sandbox'],
+      docs: [D.ref, D.managedPerms]
     },
     {
       key: 'allow-all', cmd: '/allow-all', aliases: ['/yolo'], args: '[off|auto|show]', cat: 'perms',
-      summary: 'Enables all permissions — tools, paths and URLs.',
-      detail: 'An alias for <code>/permissions allow-all</code>. Worth pairing with <code>/sandbox enable</code> if you want the speed without handing over the whole machine.',
-      note: 'This removes the approval prompts that are your main guardrail. Prefer a sandbox or a disposable worktree.',
-      related: ['permissions', 'sandbox', 'reset-allowed-tools']
+      summary: 'Skips ordinary permission prompts within managed policy.',
+      detail: 'An alias for <code>/permissions allow-all</code> covering tools, paths, and URLs. Managed deny rules still block operations and ask rules still require human approval; user settings, auto-approval, and previously saved approvals cannot override those restrictions.',
+      note: 'An enabled sandbox and configured content exclusions still apply. For Business and Enterprise, excluded files are not used as Copilot context. A worktree separates Git changes, not access to your machine; sandboxing provides OS-level restrictions.',
+      related: ['permissions', 'sandbox', 'reset-allowed-tools'],
+      docs: [D.ref, D.managedPerms, D.contentExclusions]
     },
     {
       key: 'reset-allowed-tools', cmd: '/reset-allowed-tools', cat: 'perms',
       summary: 'Resets the list of allowed tools.',
-      related: ['permissions', 'allow-all']
+      note: 'Resetting session allowances does not remove enterprise-managed permission rules.',
+      related: ['permissions', 'allow-all'],
+      docs: [D.ref, D.managedPerms]
     },
     {
-      key: 'sandbox', cmd: '/sandbox', args: '[config|status|policy|enable|disable]', cat: 'perms',
+      key: 'sandbox', cmd: '/sandbox', args: '[config|status|policy|enable|disable]', cat: 'perms', flags: ['experimental'],
       summary: 'Manages OS-level sandboxing of filesystem and network access.',
       detail: 'Sandboxing restricts what shell commands, MCP and LSP servers, and the built-in file and web tools can reach. <code>policy</code> shows the effective policy including path grants, denials and network access &mdash; the thing to read before you trust a permissive session.',
+      note: 'Managed policy can limit changes. In the 1.0.84-6 prerelease, <code>disable</code> can opt the current session out only when the organization’s policy permits bypass. Read-only <code>status</code> and <code>policy</code> work mid-turn; configuration changes wait for the turn to finish.',
       subs: [
         ['config', 'Open the sandbox settings dialog (also the bare command)'],
         ['status', 'Whether sandboxing is on'],
         ['policy', 'The effective policy: path grants, denials, network access'],
         ['enable / disable', 'Turn sandboxing on or off']
       ],
-      related: ['permissions', 'allow-all', 'add-dir']
+      related: ['permissions', 'allow-all', 'add-dir'],
+      docs: [D.ref, D.release84]
     },
 
     /* ---------- history ---------- */
     {
       key: 'chronicle', cmd: '/chronicle', cat: 'history',
-      args: '<standup|tips|improve|reindex|skills create|skills review|skills status>',
+      args: '[standup|tips|cost-tips|search QUERY|improve|reindex|skills create|skills review|skills status]',
       summary: 'Session history tools and insights.',
-      detail: 'The CLI’s chronicle is where the desktop app’s history features come from, and it reads sessions from both. The <code>skills</code> subcommands are CLI-only: they draft, review and track repository skill proposals generated from what you have actually been doing.',
+      detail: 'Run bare to choose an action from a picker. The session-data guide documents reports, cost advice, and full-content history search; the command reference also lists skill-proposal actions. Append context to reports or tips to focus them, such as <code>/chronicle standup for the last 3 days</code>.',
+      note: 'GitHub’s command table and session-data guide list different subsets of subcommands. This entry combines their documented actions; use your build’s picker to check availability.',
       subs: [
-        ['standup', 'Summarize recent work'],
-        ['tips', 'Personalized workflow tips'],
+        ['standup [CONTEXT]', 'Summarize recent work, optionally for a different time period'],
+        ['tips [CONTEXT]', 'Personalized workflow tips, optionally focused on a topic'],
+        ['cost-tips', 'Analyze token spending and suggest ways to reduce it'],
+        ['search QUERY', 'Search the full content of past sessions'],
         ['improve', 'Suggest improvements to your instructions file'],
-        ['reindex', 'Rebuild the session index'],
+        ['reindex', 'Rebuild the local session index and sync session data'],
         ['skills create', 'Draft a repository skill from observed usage'],
         ['skills review', 'Review a drafted skill proposal'],
         ['skills status', 'Track the status of skill proposals']
       ],
       related: ['search', 'skills', 'usage'],
-      docs: [D.chron]
+      docs: [D.chron, D.chronUse, D.ref]
     },
 
     /* ---------- diagnostics ---------- */
+    {
+      key: 'diagnose', cmd: '/diagnose', args: '[PROMPT]', cat: 'diag',
+      summary: 'Analyzes the current session log for errors or unexpected behavior.',
+      detail: 'Optionally describe the problem to focus the diagnosis.',
+      examples: ['/diagnose why did the last tool call fail?'],
+      related: ['env', 'feedback'],
+      docs: [D.ref]
+    },
+    {
+      key: 'collect-debug-logs', cmd: '/collect-debug-logs', cat: 'diag', flags: ['preview'],
+      requires: 'CLI 1.0.84-6 prerelease or a build exposing this command',
+      summary: 'Collects debug logs for troubleshooting.',
+      note: 'The 2026-09-14 prerelease makes this command available to all users, but the public command table has not yet documented its options. Check <code>/help</code> in your build and review collected logs for sensitive data before sharing.',
+      related: ['diagnose', 'feedback'],
+      docs: [D.release84]
+    },
     {
       key: 'usage', cmd: '/usage', cat: 'diag',
       summary: 'Displays session usage metrics, including per-model token totals.',
@@ -516,7 +585,7 @@
     {
       key: 'user', cmd: '/user', args: '[show|list|switch]', cat: 'system',
       summary: 'Manages the current GitHub user.',
-      detail: 'For people with a work account and a personal one, <code>switch</code> is the difference between committing under the right identity and not.',
+      detail: 'Use <code>switch</code> when your personal and work accounts have different Copilot access or organizational policies.',
       related: ['login', 'logout']
     },
     {
@@ -537,10 +606,20 @@
       related: ['theme', 'statusline']
     },
     {
+      key: 'vim', cmd: '/vim', cat: 'system',
+      summary: 'Toggles Vim-style modal editing in the input composer.',
+      detail: 'Enables normal and insert modes, motions, operators, yank and put, undo, redo, and repeat. The same choice can be saved with the <code>editorMode</code> setting.',
+      note: 'The 1.0.84-2 prerelease (2026-09-08) makes Vim mode available to everyone. Earlier builds can differ.',
+      related: ['terminal-setup', 'settings'],
+      docs: [D.ref, D.vimRelease]
+    },
+    {
       key: 'experimental', cmd: '/experimental', args: '[on|off|show]', cat: 'system',
       summary: 'Toggles, sets, or shows experimental features.',
-      detail: 'Several commands here are gated behind this &mdash; including <code>/every</code>, <code>/after</code>, <code>/worktree</code>, <code>/move</code>, <code>/fork</code>, <code>/diff</code> and <code>/search</code>.',
-      related: ['settings', 'version']
+      detail: 'The current reference marks scheduling, extensions, sandboxing, and the diff viewer as experimental. Worktrees remain marked experimental there, but the 1.0.84-6 prerelease removes that gate for <code>/worktree</code> and <code>/move</code>.',
+      note: 'GitHub’s 2026-09-10 update also places Project HydraFusion here. Select that research-preview option from the model picker when available; it can choose a single-model, draft-and-escalate, or draft/critic/revise workflow. It is distinct from Auto’s tiers, and preview availability and behavior can change.',
+      related: ['settings', 'version', 'model'],
+      docs: [D.ref, D.weekly, D.hydra]
     },
     {
       key: 'help', cmd: '/help', cat: 'system',

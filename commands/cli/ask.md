@@ -5,13 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Aliases:** `/btw`
 
 ## What it does
 
 Asks a quick side question without adding it to the conversation history.
 
-A scratchpad question that leaves no trace in the transcript — so it does not pollute the context of the task you are actually working on.
+Keeps a side question out of the main conversation history so it does not distract from the current task.
 
 ## Canonical example
 
@@ -25,6 +26,11 @@ A scratchpad question that leaves no trace in the transcript — so it does not 
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/ask`](../app/ask.md)
+- [GitHub Copilot Chat in VS Code — `/btw`](../vscode/btw.md)
+- [Claude Code CLI — `/btw`](../claude-cli/btw.md)
+- [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
+- [Claude Code in VS Code — `/btw`](../claude-vscode/btw.md)
+- [OpenAI Codex CLI — `/side`](../codex-cli/side.md)
 
 ## Official sources
 

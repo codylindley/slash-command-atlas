@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -32,8 +32,8 @@ Custom agents define how the agent operates — its tools, its model, its instru
 
 ## Official sources
 
-- [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

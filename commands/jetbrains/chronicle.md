@@ -1,18 +1,20 @@
-# `/chronicle <standup|tips|search|improve>`
+# `/chronicle [standup|tips|search QUERY|improve]`
 
 > Reviews and analyzes your session history.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in JetBrains
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Copilot CLI session
 
 ## What it does
 
 Reviews and analyzes your session history.
 
-Available because you are running a Copilot CLI session inside JetBrains, not because the JetBrains plugin provides it. The same subcommands as the CLI: `standup`, `tips`, `search` and `improve`.
+GitHub documents `standup`, `tips`, `search`, and `improve` for interactive Copilot CLI sessions in JetBrains. The CLI guide also describes a bare-command picker and additional actions; this IDE entry does not assume the full CLI inventory is exposed in every integration.
+
+> **Note:** This is not a classic editor-chat command. JetBrains AI Assistant’s separate Copilot agent supports a session-dependent subset of CLI commands; inspect its own picker rather than assuming parity.
 
 ## Canonical example
 
@@ -30,8 +32,9 @@ Available because you are running a Copilot CLI session inside JetBrains, not be
 
 ## Official sources
 
-- [Chronicle](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
-- [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
+- [Copilot Chat cheat sheet (JetBrains)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [Using CLI session data](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [GitHub Copilot agent in JetBrains IDEs](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links
 

@@ -5,13 +5,13 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Prints a one-line summary of the current session.
 
-> **Note:** Listed among the text-output commands that work from web and mobile.
+> **Note:** Explicitly listed for web/mobile Remote Control; this does not separately establish the cloud-session handler.
 
 ## Canonical example
 
@@ -26,6 +26,7 @@ Prints a one-line summary of the current session.
 
 - [Claude Code CLI — `/recap`](../claude-cli/recap.md)
 - [Claude Desktop — Code tab — `/recap`](../claude-app/recap.md)
+- [OpenAI Codex CLI — `/recap`](../codex-cli/recap.md)
 
 ## Official sources
 

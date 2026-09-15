@@ -1,17 +1,17 @@
 # `/feedback [REPORT]`
 
-> Sends product feedback through the same consent flow as /bug.
+> Reviews drafted feedback or opens the problem-report dialog.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
-Sends product feedback through the same consent flow as /bug.
+Reviews drafted feedback or opens the problem-report dialog.
 
-Opens immediately when supported, even during a response, and applies the same first-party submission versus local-bundle rules as `/bug`.
+With no argument, sessions that support Claude-drafted feedback open the drafts queue, where you can edit, send, or discard each report. Supplying text opens the report dialog directly. The consent, first-party submission, and local-bundle rules match `/bug`.
 
 ## Canonical example
 
@@ -34,6 +34,7 @@ Opens immediately when supported, even during a response, and applies the same f
 ## Official sources
 
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Claude Code changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 
 ## Atlas links
 

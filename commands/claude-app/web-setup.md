@@ -5,15 +5,15 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** Authenticated gh CLI; cloud sessions allowed
+- **Data snapshot:** 2026-09-14
+- **Requires:** Authenticated gh CLI; eligible cloud account and organization policy
 - **Flags:** inherited
 
 ## What it does
 
 Connects GitHub to Claude Code on the web using local gh credentials.
 
-Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone repositories and push branches. `/schedule` offers this setup automatically when needed.
+Sends your local `gh` token to your Claude account, giving cloud sessions access to repositories that token can reach. This is separate from installing the Claude GitHub App. Team and Enterprise owners must enable Quick web setup; Zero Data Retention organizations cannot use it.
 
 > **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
@@ -35,6 +35,7 @@ Synchronizes your authenticated GitHub CLI identity so cloud sessions can clone 
 
 - [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
+- [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 
 ## Atlas links

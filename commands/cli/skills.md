@@ -1,17 +1,25 @@
-# `/skills [list|info|add|remove|reload]`
+# `/skills [list|info NAME|add [--project] SOURCE|remove NAME-OR-DIRECTORY|reload]`
 
 > Manages skills for enhanced capabilities.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Manages skills for enhanced capabilities.
 
-`reload` picks up edits to a skill without restarting the session, which is what you want while authoring one.
+Run bare to open the Skills dashboard, where you can inspect, enable, and disable skills. `reload` picks up edits without restarting. Plugin-provided skills are removed by managing their plugin rather than deleting the skill separately.
+
+## Subcommands
+
+- `/skills list` — List available skills
+- `/skills info NAME` — Show a skill’s details and source
+- `/skills add [--project] SOURCE` — Add a file, URL, or directory; --project makes file or URL installs repository-scoped
+- `/skills remove NAME-OR-DIRECTORY` — Remove a directly installed skill or unregister a skill directory
+- `/skills reload` — Reload skills from all configured directories
 
 ## Canonical example
 
@@ -19,7 +27,7 @@ Manages skills for enhanced capabilities.
 
 ## Related commands
 
-- [`/plugins`](./plugins.md)
+- [`/plugin`](./plugins.md)
 - [`/agent`](./agent.md)
 - [`/init`](./init.md)
 

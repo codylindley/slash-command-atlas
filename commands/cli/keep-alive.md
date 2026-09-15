@@ -5,14 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** CLI & environment
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/caffeinate`
 
 ## What it does
 
 Prevents the machine from sleeping while Copilot works.
 
-Use `on` to keep the machine awake continuously, `busy` only while work is active, or pass a duration such as `30m`, `2h`, or `1d`. Use `off` to restore normal sleep behavior.
+Use `on` to keep the machine awake while the CLI session is active, `busy` only while work is active, or pass a duration such as `30m`, `2h`, or `1d`. Bare numbers are minutes. Use `off` to restore normal sleep behavior.
 
 ## Canonical example
 

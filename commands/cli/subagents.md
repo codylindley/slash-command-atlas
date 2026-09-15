@@ -5,14 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/agents`
 
 ## What it does
 
 Configures default and per-agent subagent models.
 
-Lets you run subagents on a cheaper or faster model than the main session — often the single biggest lever on the cost of a parallel run.
+Sets model preferences independently of the main session. A required model policy locks the model selection; a requirement from the agent’s own definition cannot be relaxed by the picker.
 
 ## Canonical example
 

@@ -6,7 +6,7 @@
 window.SLASH.exampleOverrides = Object.freeze({
   /* GitHub Copilot app */
   'app/model': '/model auto',
-  'app/skills': '/skills reload',
+  'app/skills': ['/skills', '/skills reload'],
 
   /* GitHub Copilot CLI */
   'cli/autopilot': [
@@ -33,7 +33,7 @@ window.SLASH.exampleOverrides = Object.freeze({
   'cli/delegate': '/delegate add OAuth login and open a pull request',
   'cli/fleet': '/fleet add tests for every parser in src/parsers',
   'cli/skills': '/skills list',
-  'cli/plugins': '/plugins list',
+  'cli/plugins': '/plugin list',
   'cli/mcp': '/mcp list',
   'cli/extensions': '/extensions manage',
   'cli/lsp': '/lsp show',
@@ -56,7 +56,7 @@ window.SLASH.exampleOverrides = Object.freeze({
   'vscode/custom-prompt': '/create-release-notes',
   'jetbrains/chronicle': '/chronicle standup',
   'visualstudio/generate': '/generate an async method that retries transient HTTP failures',
-  'visualstudio/savePrompt': '/savePrompt review-api-changes',
+  'visualstudio/savePrompt': '/savePrompt',
 
   /* Claude Code CLI; Desktop inherits these unless overridden below */
   'claude-cli/background': '/background finish the test run and summarize any failures',
@@ -90,9 +90,9 @@ window.SLASH.exampleOverrides = Object.freeze({
 
   /* OpenAI Codex */
   'codex-app/custom-prompt': '/prompts:review-pr',
-  'codex-cli/custom-prompt': '/prompts:review-pr focus=security',
-  'codex-cli/personality': '/personality pragmatic',
+  'codex-cli/custom-prompt': '/prompts:review-pr FOCUS=security',
+  'codex-cli/personality': '/personality',
   'codex-cli/raw': '/raw on',
   'codex-cli/pets': '/pets',
-  'codex-ide/custom-prompt': '/prompts:review-pr focus=security'
+  'codex-ide/custom-prompt': '/prompts:review-pr FOCUS=security'
 });

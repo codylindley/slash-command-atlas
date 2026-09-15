@@ -1,17 +1,18 @@
 # `/mcp`
 
-> Opens VS Code’s MCP server manager.
+> Adds and manages MCP server connections from the chat panel.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Claude Code 2.1.261+ for adding or removing servers
 
 ## What it does
 
-Opens VS Code’s MCP server manager.
+Adds and manages MCP server connections from the chat panel.
 
-Shows configured Model Context Protocol servers and lets you enable or disable them, reconnect, and manage OAuth authentication without leaving the chat panel. Adding a new server still requires the CLI.
+The dialog can add servers, remove locally saved user/project/local-scope servers, enable or disable connections, reconnect, and manage OAuth authentication. It writes the same configuration as `claude mcp add`; server-configuration changes take effect in conversations started afterwards.
 
 ## Canonical example
 

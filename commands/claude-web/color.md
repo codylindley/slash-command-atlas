@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.205+ in the session environment
 
 ## What it does
 
 Sets the cloud session’s identifying color.
 
-Pass the color explicitly because cloud sessions cannot open the terminal color picker.
+Pass red, blue, green, yellow, purple, orange, pink, cyan, or `default`. The cloud guide specifies an explicit value; the CLI’s bare command chooses a random color rather than opening a picker.
 
 ## Canonical example
 

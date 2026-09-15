@@ -1,20 +1,20 @@
 # `/usage`
 
-> Prints session cost, plan limits, and activity statistics as text.
+> Prints local-session usage as text through Remote Control.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/cost`, `/stats`
 
 ## What it does
 
-Prints session cost, plan limits, and activity statistics as text.
+Prints local-session usage as text through Remote Control.
 
 Eligible subscription plans also break usage down by skill, subagent, plugin, and MCP server.
 
-> **Note:** Anthropic lists this among text-output commands that work from web and mobile; cloud support also follows the general rule that text-producing built-ins work.
+> **Note:** Explicitly listed for web/mobile Remote Control. The cloud guide gives a general text-output rule rather than separately enumerating this command.
 
 ## Canonical example
 

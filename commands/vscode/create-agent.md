@@ -1,11 +1,12 @@
-# `/create-agent`
+# `/create-agent [DESCRIPTION]`
 
 > Generates a custom agent with AI assistance in Agent mode.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session
 
 ## What it does
 
@@ -13,7 +14,7 @@ Generates a custom agent with AI assistance in Agent mode.
 
 ## Canonical example
 
-`/create-agent`
+`/create-agent a read-only API design reviewer`
 
 ## Related commands
 
@@ -21,8 +22,8 @@ Generates a custom agent with AI assistance in Agent mode.
 
 ## Official sources
 
-- [Custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

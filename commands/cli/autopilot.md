@@ -1,19 +1,20 @@
-# `/autopilot [OBJECTIVE]`
+# `/autopilot [OBJECTIVE] [--max-ai-credits N]`
 
 > Starts or refocuses autopilot mode, optionally with an explicit objective.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session modes
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/goal`
-- **Flags:** experimental
 
 ## What it does
 
 Starts or refocuses autopilot mode, optionally with an explicit objective.
 
-Without an objective, autopilot infers intent from context. You can cap spend for an objective with `--max-ai-credits N`; when the cap is reached autopilot pauses and reports credits used, and you either enter a new amount to resume with a fresh window or leave it paused. `/goal on` and `/goal off` toggle the mode without setting an objective.
+Without an objective, autopilot infers intent from context. `--max-ai-credits N` caps spending for the objective; reaching the cap pauses work. Enter a new amount in the pause panel, or run `/goal --max-ai-credits 5`, to resume with a fresh credit window rather than adding to the old cap. `/goal on` and `/goal off` toggle the mode without setting an objective and cannot be combined with the credit option.
+
+> **Note:** Enterprise-managed deny and ask rules remain enforced in autopilot: automatic continuation cannot unblock a denied operation or replace required human approval.
 
 ## Canonical example
 
@@ -32,6 +33,7 @@ Without an objective, autopilot infers intent from context. You can cap spend fo
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/autopilot`](../app/autopilot.md)
+- [GitHub Copilot Chat in VS Code — `/autopilot`](../vscode/autopilot.md)
 - [Claude Code CLI — `/goal`](../claude-cli/goal.md)
 - [Claude Desktop — Code tab — `/goal`](../claude-app/goal.md)
 - [OpenAI Codex in the ChatGPT desktop app — `/goal`](../codex-app/goal.md)
@@ -40,7 +42,8 @@ Without an objective, autopilot infers intent from context. You can cap spend fo
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 
 ## Atlas links
 

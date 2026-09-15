@@ -1,20 +1,20 @@
 # `/plugin [SUBCOMMAND]`
 
-> Browses and manages Claude Code plugins.
+> Indexes the CLI plugin command; Desktop documents a native manager instead.
 
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** inherited
 
 ## What it does
 
-Browses and manages Claude Code plugins.
+Indexes the CLI plugin command; Desktop documents a native manager instead.
 
-Run bare for the plugin menu or use direct subcommands such as `list`, `install`, `enable`, and `disable`. The install summary tells you whether activation was immediate or needs a reload.
+In local or SSH sessions, use **+ → Plugins** to add or manage plugins. The browser is absent in cloud sessions, which load repository-declared or account-synced plugins instead. Plugins are not available in WSL sessions.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** **Desktop inheritance:** the CLI slash subcommands are not separately specified for Desktop. A native plugin manager does not establish the same slash-command behavior.
 
 ## Subcommands
 
@@ -34,14 +34,14 @@ Run bare for the plugin menu or use direct subcommands such as `list`, `install`
 
 ## Also in other surfaces
 
-- [GitHub Copilot CLI — `/plugins`](../cli/plugins.md)
+- [GitHub Copilot CLI — `/plugin`](../cli/plugins.md)
 - [Claude Code CLI — `/plugin`](../claude-cli/plugin.md)
 - [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 
+- [Desktop — install plugins](https://code.claude.com/docs/en/desktop#install-plugins)
 - [Desktop — use skills](https://code.claude.com/docs/en/desktop#use-skills)
-- [Create plugins](https://code.claude.com/docs/en/plugins)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 - [Claude Desktop — Code tab slash command reference](https://code.claude.com/docs/en/desktop)
 

@@ -1,11 +1,11 @@
-# `/refine TEXT`
+# `/refine [TEXT]`
 
 > Rewrites a roughly composed prompt into a clearer one for review.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 

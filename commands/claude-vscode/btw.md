@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Context & input
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.227+
 
 ## What it does
@@ -25,6 +25,8 @@ The answer appears in a panel beside chat, supports follow-ups, and survives win
 ## Also in other surfaces
 
 - [GitHub Copilot app — `/ask`](../app/ask.md)
+- [GitHub Copilot CLI — `/ask`](../cli/ask.md)
+- [GitHub Copilot Chat in VS Code — `/btw`](../vscode/btw.md)
 - [Claude Code CLI — `/btw`](../claude-cli/btw.md)
 - [Claude Desktop — Code tab — `/btw`](../claude-app/btw.md)
 - [OpenAI Codex CLI — `/side`](../codex-cli/side.md)

@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Configures your custom instructions.
 
-Custom instructions are the standing rules Copilot reads on every request in this workspace — conventions, stack, things never to do.
+Opens the instructions configuration menu. Always-on files apply across chat requests; targeted `.instructions.md` files apply according to their matching rules or when attached explicitly.
 
 ## Canonical example
 
@@ -19,7 +19,7 @@ Custom instructions are the standing rules Copilot reads on every request in thi
 
 ## Related commands
 
-- [`/create-instruction`](./create-instruction.md)
+- [`/create-instructions`](./create-instruction.md)
 - [`/init`](./init.md)
 - [`/prompts`](./prompts.md)
 
@@ -29,8 +29,8 @@ Custom instructions are the standing rules Copilot reads on every request in thi
 
 ## Official sources
 
-- [Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

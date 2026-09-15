@@ -1,11 +1,11 @@
-# `/af`
+# `/af [QUERY]`
 
 > Finds installable MCP servers, tools, skills and agents by searching Agent Finder.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** skill
 
 ## What it does
@@ -26,7 +26,8 @@ A search front end for the ecosystem: describe a capability you wish you had and
 ## Official sources
 
 - [MCP and Agent Finder](https://docs.github.com/en/copilot/concepts/context/mcp#agent-finder)
-- [Built-in skills for the Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Built-in skills for the GitHub Copilot app](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills)
+- [Agent Finder skill and query syntax](https://github.com/ards-project/connectors/blob/main/skills/github-copilot/SKILL.md)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

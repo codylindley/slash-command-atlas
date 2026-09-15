@@ -5,11 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Chat view in the main VS Code window
 
 ## What it does
 
 Opens the Chat Debug view to inspect chat logs.
+
+> **Note:** Not available in the Agents window.
 
 ## Canonical example
 
@@ -28,7 +31,8 @@ Opens the Chat Debug view to inspect chat logs.
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Debug chat interactions](https://code.visualstudio.com/docs/agents/agent-troubleshooting/chat-debug-view)
 
 ## Atlas links
 

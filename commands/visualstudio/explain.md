@@ -1,19 +1,21 @@
-# `/explain`
+# `/explain [QUESTION]`
 
 > Explains how the code in your active editor works.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Explains how the code in your active editor works.
 
+Use the current selection or name the code you want explained in the prompt. Available in the Chat window and inline chat.
+
 ## Canonical example
 
-`/explain`
+`/explain the RetryRequestAsync method in HttpClientService.cs`
 
 ## Related commands
 
@@ -29,8 +31,7 @@ Explains how the code in your active editor works.
 
 ## Official sources
 
-- [Chat with Copilot in your IDE](https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide)
-- [GitHub Copilot Chat in Visual Studio slash command reference](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
+- [Customize chat responses in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio)
 
 ## Atlas links
 

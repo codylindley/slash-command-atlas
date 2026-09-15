@@ -1,24 +1,28 @@
-# `/chronicle <standup|tips|improve|reindex|skills create|skills review|skills status>`
+# `/chronicle [standup|tips|cost-tips|search QUERY|improve|reindex|skills create|skills review|skills status]`
 
 > Session history tools and insights.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Session history tools and insights.
 
-The CLI’s chronicle is where the desktop app’s history features come from, and it reads sessions from both. The `skills` subcommands are CLI-only: they draft, review and track repository skill proposals generated from what you have actually been doing.
+Run bare to choose an action from a picker. The session-data guide documents reports, cost advice, and full-content history search; the command reference also lists skill-proposal actions. Append context to reports or tips to focus them, such as `/chronicle standup for the last 3 days`.
+
+> **Note:** GitHub’s command table and session-data guide list different subsets of subcommands. This entry combines their documented actions; use your build’s picker to check availability.
 
 ## Subcommands
 
-- `/chronicle standup` — Summarize recent work
-- `/chronicle tips` — Personalized workflow tips
+- `/chronicle standup [CONTEXT]` — Summarize recent work, optionally for a different time period
+- `/chronicle tips [CONTEXT]` — Personalized workflow tips, optionally focused on a topic
+- `/chronicle cost-tips` — Analyze token spending and suggest ways to reduce it
+- `/chronicle search QUERY` — Search the full content of past sessions
 - `/chronicle improve` — Suggest improvements to your instructions file
-- `/chronicle reindex` — Rebuild the session index
+- `/chronicle reindex` — Rebuild the local session index and sync session data
 - `/chronicle skills create` — Draft a repository skill from observed usage
 - `/chronicle skills review` — Review a drafted skill proposal
 - `/chronicle skills status` — Track the status of skill proposals
@@ -41,7 +45,8 @@ The CLI’s chronicle is where the desktop app’s history features come from, a
 ## Official sources
 
 - [Chronicle](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/chronicle)
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Using CLI session data](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
 
 ## Atlas links
 

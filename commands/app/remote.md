@@ -5,16 +5,16 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Active session
 
 ## What it does
 
 Enables or manages remote control, so you can reach the session from GitHub.com or GitHub Mobile.
 
-Turns a desktop session into something you can steer from a browser or your phone. The obvious use is starting a long Autopilot run at your desk and checking on it from somewhere else.
+Lets you monitor a running session, send prompts, and respond to questions or approval requests from another device. It does not move execution to that device: the original host must stay running and online.
 
-> **Note:** Remote control is policy-gated. If the command is missing, your organization or enterprise has likely disabled it.
+> **Note:** For an organization-provided seat, the applicable **Store local sessions in the Cloud** policy must allow **View and control**; enterprise-managed settings can restrict access further. The remote interface does not currently accept slash commands. A missing picker entry alone does not identify which prerequisite is unmet.
 
 ## Canonical example
 
@@ -33,6 +33,7 @@ Turns a desktop session into something you can steer from a browser or your phon
 ## Official sources
 
 - [About remote control](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-remote-control)
+- [Repository configuration](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/repository-configuration)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

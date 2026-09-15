@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat on GitHub.com
 - **Category:** Conversation management
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -24,6 +24,7 @@ Renames a conversation.
 
 - [GitHub Copilot app — `/rename`](../app/rename.md)
 - [GitHub Copilot CLI — `/rename`](../cli/rename.md)
+- [GitHub Copilot Chat in VS Code — `/rename`](../vscode/rename.md)
 - [Claude Code CLI — `/rename`](../claude-cli/rename.md)
 - [Claude Desktop — Code tab — `/rename`](../claude-app/rename.md)
 - [Claude Code on the web — `/rename`](../claude-web/rename.md)
@@ -31,6 +32,7 @@ Renames a conversation.
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (GitHub.com)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=webui)
 - [GitHub Copilot Chat on GitHub.com slash command reference](https://docs.github.com/en/copilot/reference/chat-cheat-sheet)
 
 ## Atlas links

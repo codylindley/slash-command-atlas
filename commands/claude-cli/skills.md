@@ -5,13 +5,13 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Lists skills and controls their visibility to you and Claude.
 
-Filter by name, press `t` to sort by token count, and use `Space` to cycle whether a skill appears to the model and in the slash menu before saving.
+Filter by name, description, or source, sort by token count with `t`, and cycle visibility with `Space` or `Enter`. Plugin skills, manual-only skills, and visibility enforced by managed settings or `--settings` cannot be cycled.
 
 ## Canonical example
 
@@ -20,7 +20,7 @@ Filter by name, press `t` to sort by token count, and use `Space` to cycle wheth
 ## Related commands
 
 - [`/reload-skills`](./reload-skills.md)
-- [`/plugin`](./plugin.md)
+- [`/skill-doctor`](./skill-doctor.md)
 - [`/<skill-name>`](./custom-skill.md)
 
 ## Also in other surfaces

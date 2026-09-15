@@ -1,11 +1,12 @@
-# `/create-skill`
+# `/create-skill [DESCRIPTION]`
 
 > Generates an agent skill with AI assistance in Agent mode.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local agent session
 
 ## What it does
 
@@ -13,7 +14,7 @@ Generates an agent skill with AI assistance in Agent mode.
 
 ## Canonical example
 
-`/create-skill`
+`/create-skill run and diagnose integration tests`
 
 ## Related commands
 
@@ -22,7 +23,8 @@ Generates an agent skill with AI assistance in Agent mode.
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

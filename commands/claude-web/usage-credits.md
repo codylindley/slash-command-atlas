@@ -1,16 +1,16 @@
 # `/usage-credits`
 
-> Prints the usage-credits billing URL in the web conversation.
+> Prints the usage-credits billing URL through Remote Control.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Eligible account
 
 ## What it does
 
-Prints the usage-credits billing URL in the web conversation.
+Prints the usage-credits billing URL through Remote Control.
 
 Team and Enterprise sessions cannot send an administrator credit request from web or mobile; the response directs you to run the command in the local terminal instead.
 

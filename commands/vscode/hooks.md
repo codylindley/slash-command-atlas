@@ -5,13 +5,16 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Flags:** preview
 
 ## What it does
 
 Configures your hooks.
 
 Hooks run your own commands at defined points in the agent loop — formatting after an edit, blocking a tool call, logging what happened.
+
+> **Note:** Hooks are in preview and can be disabled by organization policy.
 
 ## Canonical example
 
@@ -30,7 +33,8 @@ Hooks run your own commands at defined points in the agent loop — formatting a
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [Agent hooks (Preview)](https://code.visualstudio.com/docs/agent-customization/hooks)
+- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
 
 ## Atlas links
 

@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -26,6 +26,7 @@ Names appear in the prompt bar and session lists. Claude Code removes invisible 
 
 - [GitHub Copilot app — `/rename`](../app/rename.md)
 - [GitHub Copilot CLI — `/rename`](../cli/rename.md)
+- [GitHub Copilot Chat in VS Code — `/rename`](../vscode/rename.md)
 - [GitHub Copilot Chat on GitHub.com — `/rename`](../web/rename.md)
 - [Claude Desktop — Code tab — `/rename`](../claude-app/rename.md)
 - [Claude Code on the web — `/rename`](../claude-web/rename.md)

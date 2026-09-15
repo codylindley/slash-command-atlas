@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude.ai account
 
 ## What it does
@@ -27,6 +27,7 @@ Choose push-and-hold or tap-to-toggle dictation behavior, or turn it off.
 
 - [GitHub Copilot CLI — `/voice`](../cli/voice.md)
 - [Claude Desktop — Code tab — `/voice`](../claude-app/voice.md)
+- [OpenAI Codex CLI — `/voice`](../codex-cli/voice.md)
 
 ## Official sources
 

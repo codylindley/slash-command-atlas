@@ -1,18 +1,18 @@
 # `/delete`
 
-> Permanently deletes the current session and exits Codex.
+> Permanently deletes the current session and its descendants.
 
 - **Product:** OpenAI Codex
 - **Surface:** OpenAI Codex CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Idle main chat
 
 ## What it does
 
-Permanently deletes the current session and exits Codex.
+Permanently deletes the current session and its descendants.
 
-Deletes the local transcript, closes the TUI, and also removes spawned descendant sessions. It is unavailable while a chat is running or from inside a side chat.
+Deletes the local transcript and spawned descendant sessions. Stable `0.154.0` exits the TUI; the checked `0.155.0-alpha.4` prerelease can return to the agent command center on a shared server instead. It is unavailable while a chat is running or from inside a side chat.
 
 > **Note:** **Permanent:** unlike `/archive`, this does not retain a restorable transcript.
 
@@ -33,6 +33,7 @@ Deletes the local transcript, closes the TUI, and also removes spawned descendan
 ## Official sources
 
 - [Codex CLI built-in slash commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli#built-in-slash-commands)
+- [Codex CLI argument handling (prerelease 0.155.0-alpha.4)](https://github.com/openai/codex/blob/66eab8ece44141ff92707868269e1d53b40c4ac5/codex-rs/tui/src/chatwidget/slash_dispatch.rs)
 
 ## Atlas links
 

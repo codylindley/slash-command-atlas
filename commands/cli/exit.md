@@ -1,11 +1,11 @@
-# `/exit`
+# `/exit [print]`
 
 > Closes the current session.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/quit`
 
 ## What it does
@@ -18,6 +18,10 @@ If other sessions are running, this foregrounds the newest remaining one rather 
 
 `/exit`
 
+## More examples
+
+- `/exit print`
+
 ## Related commands
 
 - [`/resume`](./resume.md)
@@ -28,6 +32,7 @@ If other sessions are running, this foregrounds the newest remaining one rather 
 
 - [Claude Code CLI — `/exit`](../claude-cli/exit.md)
 - [Claude Desktop — Code tab — `/exit`](../claude-app/exit.md)
+- [Claude Code on the web — `/exit`](../claude-web/exit.md)
 - [OpenAI Codex CLI — `/exit`](../codex-cli/exit.md)
 
 ## Official sources

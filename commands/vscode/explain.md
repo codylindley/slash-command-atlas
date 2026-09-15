@@ -1,11 +1,11 @@
-# `/explain`
+# `/explain [QUESTION]`
 
 > Explains a code block, a file, or a programming concept.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -31,8 +31,9 @@ The workhorse. With a selection it explains that code; with nothing selected it 
 
 ## Official sources
 
-- [Chat in VS Code](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Chat in VS Code](https://code.visualstudio.com/docs/chat/chat-overview)
+- [Adding context to chat](https://code.visualstudio.com/docs/chat/copilot-chat-context)
 
 ## Atlas links
 

@@ -5,14 +5,14 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/allowed-tools`
 
 ## What it does
 
 Manages allow, ask, and deny rules for tool use.
 
-The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Changes made while Claude is responding apply to its next tool call.
+The dialog shows rules by scope, lets you add or remove patterns and working directories, and surfaces recent denials from auto mode. Its Auto mode tab also edits classifier rules (2.1.246+). Changes made while Claude is responding apply to its next tool call.
 
 ## Canonical example
 

@@ -1,11 +1,11 @@
-# `/code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [PR|BRANCH|PATH]`
+# `/code-review [low|medium|high|xhigh|max|ultra] [--fix] [--comment] [--post] [PR|MR|BRANCH|RANGE|PATH]`
 
 > Reviews a diff or target for correctness bugs and cleanup opportunities.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Review & critique
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/review`, `/ultrareview`
 - **Flags:** skill
 
@@ -13,14 +13,17 @@
 
 Reviews a diff or target for correctness bugs and cleanup opportunities.
 
-Target the current diff, a pull request number, branch, or path. `--fix` applies findings; `--comment` posts inline GitHub comments. `ultra` runs a deep cloud review, and the legacy `/ultrareview` spelling remains available for that path.
+By default reviews branch commits ahead of upstream plus uncommitted changes. Targets also include PRs, GitLab merge requests, paths, branches, and ref ranges. `--fix` applies findings; `--comment` posts inline on GitHub or as one GitLab note through `glab` (2.1.257+). For an eligible `ultra` cloud review, `--post` instead preselects a single github.com PR comment in the confirmation dialog.
+
+> **Note:** `/ultrareview` means `/code-review ultra`, not an ordinary local review. That mode compares against the default branch, or a base branch you supply, and needs claude.ai authentication and cloud-review eligibility; otherwise `/code-review ultra` falls back to a local review. Cloud posting requires 2.1.227+ and per-run consent.
 
 ## Subcommands
 
 - `/code-review low … max` — Choose local review effort
 - `/code-review ultra` — Run the deep cloud review
 - `/code-review --fix` — Apply accepted findings
-- `/code-review --comment` — Post findings as inline PR comments
+- `/code-review --comment` — Post inline GitHub findings or one GitLab merge-request note
+- `/code-review --post` — For an ultra github.com PR review, preselect posting one finished-results comment
 
 ## Canonical example
 
@@ -29,7 +32,7 @@ Target the current diff, a pull request number, branch, or path. `--fix` applies
 ## More examples
 
 - `/review medium 1234`
-- `/code-review ultra --comment 1234`
+- `/code-review ultra 1234 --post`
 
 ## Related commands
 
@@ -48,7 +51,8 @@ Target the current diff, a pull request number, branch, or path. `--fix` applies
 
 ## Official sources
 
-- [Claude Code review](https://code.claude.com/docs/en/code-review)
+- [Review a diff locally](https://code.claude.com/docs/en/code-review#review-a-diff-locally)
+- [Cloud reviews with ultrareview](https://code.claude.com/docs/en/ultrareview)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 
 ## Atlas links

@@ -1,18 +1,17 @@
-# `/mcp [reconnect SERVER|enable|disable [SERVER|all]]`
+# `/mcp [reconnect [SERVER]|enable [SERVER|all]|disable [SERVER|all]]`
 
 > Opens web connector settings or manages a Remote Control session’s MCP servers.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Requires:** Claude Code 2.1.166+
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Opens web connector settings or manages a Remote Control session’s MCP servers.
 
-Bare `/mcp` on the web opens the claude.ai connectors directory. The `reconnect`, `enable`, and `disable` subcommands work from web and mobile; reconnecting without a server name retries every failed server or server awaiting authentication.
+Bare `/mcp` on the web opens the claude.ai connectors directory. Through Remote Control, `reconnect`, `enable`, and `disable` manage the host machine’s servers. Unlike the local CLI form, `/mcp reconnect` without a server name retries every failed server or server awaiting authentication.
 
 > **Note:** This behavior is documented for the claude.ai/code client under Remote Control limitations; Anthropic does not separately state the cloud-session behavior.
 

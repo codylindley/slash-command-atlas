@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Artifact availability; Claude Code 2.1.208+
 
 ## What it does
@@ -29,6 +29,7 @@ Attach an artifact to the session, open it in a browser, or copy its link from t
 
 ## Official sources
 
+- [Share session output as artifacts](https://code.claude.com/docs/en/artifacts)
 - [Claude Code commands](https://code.claude.com/docs/en/commands)
 
 ## Atlas links

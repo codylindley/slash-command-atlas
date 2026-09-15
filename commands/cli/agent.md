@@ -5,7 +5,7 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
@@ -19,7 +19,7 @@ Browses and selects from the available custom agents.
 
 - [`/subagents`](./subagents.md)
 - [`/model`](./model.md)
-- [`/plugins`](./plugins.md)
+- [`/plugin`](./plugins.md)
 
 ## Also in other surfaces
 

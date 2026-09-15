@@ -5,8 +5,8 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
-- **Requires:** Agent view enabled; Claude Code 2.1.212+
+- **Data snapshot:** 2026-09-14
+- **Requires:** Claude Code 2.1.212+ for background-session behavior
 - **Flags:** inherited
 
 ## What it does
@@ -15,7 +15,9 @@ Copies this conversation into a separate background session.
 
 The copy inherits the conversation and can start immediately with an optional prompt while you keep working here. Where possible Claude asks the copy to isolate edits in its own worktree. Use `/subtask` when the result should return to this conversation instead.
 
-> **Note:** **Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
+> **Note:** With agent view turned off, `/fork` starts a forked subagent instead and `/subtask` is unavailable. The worktree-isolation instruction for background copies requires 2.1.221+.
+
+**Desktop inheritance:** Anthropic says the Code tab includes built-in commands, but does not publish this command’s Desktop behavior separately. Terminal and native-app behavior can differ.
 
 ## Canonical example
 

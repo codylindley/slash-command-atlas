@@ -1,11 +1,11 @@
-# `/generate [QUESTION]`
+# `/generate QUESTION`
 
 > Generates code to answer a specified question.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in Visual Studio
 - **Category:** Editor actions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 

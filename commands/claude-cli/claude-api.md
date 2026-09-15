@@ -1,18 +1,18 @@
-# `/claude-api [migrate|upgrade|managed-agents-onboard|prompt-audit]`
+# `/claude-api [migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb]`
 
 > Loads current Claude API guidance and runs migration workflows.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Customization authoring
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Flags:** skill
 
 ## What it does
 
 Loads current Claude API guidance and runs migration workflows.
 
-Activates automatically for Anthropic SDK imports, or invoke a focused workflow: update model usage, upgrade the SDK, onboard a Managed Agent, or audit prompts for instructions written for older models.
+Activates automatically for Anthropic SDK imports, or invoke a focused workflow for migrations, SDK upgrades, Managed Agents, prompt audits, cost reduction, or evaluations. Cost optimization changes one measured factor at a time; hillclimb iterates against an existing evaluation set.
 
 ## Subcommands
 
@@ -20,6 +20,9 @@ Activates automatically for Anthropic SDK imports, or invoke a focused workflow:
 - `/claude-api upgrade` — Upgrade a supported Anthropic SDK major version
 - `/claude-api managed-agents-onboard` — Create and configure a Managed Agent
 - `/claude-api prompt-audit` — Find model-era assumptions in prompts and tool descriptions
+- `/claude-api cost-optimize` — Profile API spending and test savings (2.1.247+)
+- `/claude-api build-eval` — Build an evaluation set for a Claude-powered app (2.1.259+)
+- `/claude-api hillclimb` — Improve the app against an existing evaluation (2.1.259+)
 
 ## Canonical example
 

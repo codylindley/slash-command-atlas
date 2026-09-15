@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Desktop — Code tab
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/quit`
 - **Flags:** inherited
 
@@ -31,6 +31,7 @@ Detaching leaves a background session running. Use `/stop` when you intend to en
 
 - [GitHub Copilot CLI — `/exit`](../cli/exit.md)
 - [Claude Code CLI — `/exit`](../claude-cli/exit.md)
+- [Claude Code on the web — `/exit`](../claude-web/exit.md)
 - [OpenAI Codex CLI — `/exit`](../codex-cli/exit.md)
 
 ## Official sources

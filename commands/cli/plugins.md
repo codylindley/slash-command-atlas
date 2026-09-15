@@ -1,33 +1,35 @@
-# `/plugins [install|update|uninstall|list|enable|disable|remove|marketplace|mcp]`
+# `/plugin [install SOURCE|update PLUGIN[@MARKETPLACE]|uninstall PLUGIN[@MARKETPLACE]|list|marketplace SUBCOMMAND]`
 
-> Manages plugins, MCP servers and skills, and opens the plugins dashboard.
+> Opens the plugins dashboard or manages installed plugins and marketplaces.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Models, agents & skills
-- **Data snapshot:** 2026-08-23
-- **Aliases:** `/plugin`
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
-Manages plugins, MCP servers and skills, and opens the plugins dashboard.
+Opens the plugins dashboard or manages installed plugins and marketplaces.
 
-Run bare to open the dashboard, or pass `--plugin`, `--mcp` or `--skill` to open it focused on that tab. Plugins install from a marketplace spec, a GitHub repository, a git URL, or a local path.
+The dashboard’s Installed, Online, and Marketplace views cover plugins only. Select an installed plugin to enable, disable, update, or uninstall it. Use `/mcp` for servers and `/skills` for skills.
+
+> **Note:** The experimental `/plugins` slash command was removed in 1.0.81. It is not an alias for `/plugin`. The terminal command `copilot plugins` is a separate, legacy alias for `copilot plugin`.
 
 ## Subcommands
 
-- `/plugins install SOURCE` — Install from a marketplace, repo, git URL or local path
-- `/plugins install --skill [--project] SOURCE` — Install a skill; --project scopes it to this repository
-- `/plugins update / uninstall PLUGIN[@MARKETPLACE]` — Update or remove an installed plugin
-- `/plugins list` — List installed plugins (alias: ls)
-- `/plugins enable|disable|remove --plugin|--mcp|--skill NAME` — Toggle or remove by kind; defaults to --plugin
-- `/plugins marketplace add|remove|list|browse|update` — Manage and browse marketplaces
-- `/plugins mcp [SUBCOMMAND]` — Delegates to /mcp
-- `/plugins help` — Full /plugins usage
+- `/plugin install SOURCE` — Install from a marketplace, repo, git URL or local path
+- `/plugin update PLUGIN[@MARKETPLACE]` — Update an installed plugin
+- `/plugin uninstall PLUGIN[@MARKETPLACE]` — Remove a plugin (aliases: remove, rm)
+- `/plugin list` — List installed plugins (alias: ls)
+- `/plugin marketplace add SOURCE` — Register a marketplace
+- `/plugin marketplace remove NAME` — Unregister a marketplace
+- `/plugin marketplace list` — List registered marketplaces
+- `/plugin marketplace browse NAME` — Browse a marketplace’s plugins
+- `/plugin marketplace update [NAME]` — Refresh one marketplace catalog, or all of them (alias: refresh)
 
 ## Canonical example
 
-`/plugins list`
+`/plugin list`
 
 ## Related commands
 
@@ -37,16 +39,15 @@ Run bare to open the dashboard, or pass `--plugin`, `--mcp` or `--skill` to open
 
 ## Also in other surfaces
 
-- [Claude Code in VS Code — `/plugins`](../claude-vscode/plugins.md)
-- [OpenAI Codex CLI — `/plugins`](../codex-cli/plugins.md)
 - [Claude Code CLI — `/plugin`](../claude-cli/plugin.md)
 - [Claude Desktop — Code tab — `/plugin`](../claude-app/plugin.md)
 - [Claude Code on the web — `/plugin`](../claude-web/plugin.md)
 
 ## Official sources
 
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
 - [About plugins](https://docs.github.com/en/copilot/concepts/agents/about-plugins)
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference)
 
 ## Atlas links
 

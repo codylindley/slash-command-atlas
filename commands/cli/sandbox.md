@@ -5,13 +5,16 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Flags:** experimental
 
 ## What it does
 
 Manages OS-level sandboxing of filesystem and network access.
 
 Sandboxing restricts what shell commands, MCP and LSP servers, and the built-in file and web tools can reach. `policy` shows the effective policy including path grants, denials and network access — the thing to read before you trust a permissive session.
+
+> **Note:** Managed policy can limit changes. In the 1.0.84-6 prerelease, `disable` can opt the current session out only when the organization’s policy permits bypass. Read-only `status` and `policy` work mid-turn; configuration changes wait for the turn to finish.
 
 ## Subcommands
 
@@ -37,7 +40,8 @@ Sandboxing restricts what shell commands, MCP and LSP servers, and the built-in 
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Copilot CLI 1.0.84-6 (prerelease, 2026-09-14)](https://github.com/github/copilot-cli/releases/tag/v1.0.84-6)
 
 ## Atlas links
 

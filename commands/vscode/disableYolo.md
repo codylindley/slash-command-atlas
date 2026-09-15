@@ -1,16 +1,19 @@
 # `/disableYolo`
 
-> Disables global auto-approval of tool calls.
+> Restores the current session’s default permission level.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/disableAutoApprove`
+- **Requires:** Supported local or Copilot CLI session
 
 ## What it does
 
-Disables global auto-approval of tool calls.
+Restores the current session’s default permission level.
+
+In Agent Host sessions, this leaves enterprise-managed permission rules unchanged.
 
 ## Canonical example
 
@@ -19,10 +22,13 @@ Disables global auto-approval of tool calls.
 ## Related commands
 
 - [`/yolo`](./yolo.md)
+- [`/exitAutopilot`](./exitAutopilot.md)
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals)
+- [Enterprise-managed permissions (GA, 2026-09-09)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 
 ## Atlas links
 

@@ -1,23 +1,23 @@
-# `/remote-control`
+# `/remote-control [NAME]`
 
 > Makes this local session steerable from claude.ai or mobile.
 
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/rc`
-- **Requires:** Claude subscription; Remote Control allowed
+- **Requires:** claude.ai subscription sign-in; direct Anthropic connection; Remote Control allowed
 
 ## What it does
 
 Makes this local session steerable from claude.ai or mobile.
 
-Remote Control exposes the running terminal session without moving its execution off your machine. It requires Claude subscription sign-in and organization policy support.
+Execution and filesystem access stay on your machine. An optional name sets the remote session title. After the one-time confirmation, the command connects; running it again opens connection status with the session link, QR code, and a disconnect option.
 
 ## Canonical example
 
-`/remote-control`
+`/remote-control checkout-investigation`
 
 ## Related commands
 

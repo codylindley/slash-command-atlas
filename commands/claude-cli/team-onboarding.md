@@ -5,8 +5,8 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code CLI
 - **Category:** Delegation & parallelism
-- **Data snapshot:** 2026-08-23
-- **Requires:** Pro, Max, Team, or Enterprise subscription
+- **Data snapshot:** 2026-09-14
+- **Requires:** Local usage history; share links require an eligible Claude subscription
 
 ## What it does
 

@@ -1,17 +1,20 @@
-# `/troubleshoot`
+# `/troubleshoot [QUESTION] [#session]`
 
 > Asks the AI to analyze the agent debug logs for this chat session.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in VS Code
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
+- **Requires:** Agent debug logging enabled before reproducing the issue
 
 ## What it does
 
 Asks the AI to analyze the agent debug logs for this chat session.
 
-Optionally include `#session` to select and diagnose a previous session instead. Requires the agent debug log setting to be enabled.
+Supported in local and Copilot CLI sessions. Add `#session` to choose another session. For local chat, enable `github.copilot.chat.agentDebugLog.fileLogging.enabled` and reload the window. For Agent Host, enable `chat.agentHost.agentDebugLog.enabled` before the activity you want to inspect; log capture is not retroactive.
+
+> **Note:** Agent Debug Logs are in preview. Logs can contain prompts, code, paths, and tool data; review them before sharing.
 
 ## Canonical example
 
@@ -27,7 +30,8 @@ Optionally include `#session` to select and diagnose a previous session instead.
 
 ## Official sources
 
-- [GitHub Copilot Chat in VS Code slash command reference](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)
+- [VS Code AI features cheat sheet](https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet)
+- [Debug chat interactions](https://code.visualstudio.com/docs/agents/agent-troubleshooting/chat-debug-view)
 
 ## Atlas links
 

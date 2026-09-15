@@ -1,18 +1,18 @@
-# `/session [info|checkpoints|files|plan|rename|cleanup|prune|delete|delete-all]`
+# `/session [info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all]`
 
 > Shows session information and manages saved sessions.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot CLI
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Aliases:** `/sessions`
 
 ## What it does
 
 Shows session information and manages saved sessions.
 
-`info` shows session details including the shareable session link when one is available. The remaining subcommands cover checkpoints, tracked files, the current plan, renaming, and clearing out old sessions.
+`info` shows session details, including a session link when available. Deleting a synced session can also offer to remove its remote copy; `delete-all` and `prune` remove local data only.
 
 ## Subcommands
 
@@ -21,8 +21,10 @@ Shows session information and manages saved sessions.
 - `/session files` — Files touched in this session
 - `/session plan` — The session’s current plan
 - `/session rename [NAME]` — Rename the session
-- `/session cleanup / prune` — Clear out old session data
-- `/session delete [ID] / delete-all` — Delete one session, or all of them
+- `/session cleanup` — Clean up session data
+- `/session prune --older-than DAYS [--dry-run]` — Remove old local sessions, or preview the removal
+- `/session delete [ID] [--yes]` — Delete a specified session; without an ID, replace the current session with a new one
+- `/session delete-all [--yes]` — Delete local sessions except the current one; sessions in use by another process are skipped
 
 ## Canonical example
 
@@ -36,7 +38,8 @@ Shows session information and manages saved sessions.
 
 ## Official sources
 
-- [GitHub Copilot CLI slash command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference)
+- [Chronicle](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/chronicle)
 
 ## Atlas links
 

@@ -5,14 +5,14 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** Tools & permissions
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Active session
 
 ## What it does
 
 Clears session-level tool approvals and turns auto-approval off.
 
-The undo for approvals you granted in the moment, including `/yolo`. The agent goes back to asking. Worth running after a demo, or once you have finished whatever justified opening things up.
+Clears approvals you granted for this session, including `/yolo`, and restores normal approval behavior. Enterprise-managed restrictions remain in force; this command neither resets nor relaxes administrator policies.
 
 ## Canonical example
 
@@ -28,6 +28,7 @@ The undo for approvals you granted in the moment, including `/yolo`. The agent g
 
 ## Official sources
 
+- [Enterprise-managed agent permissions (September 9, 2026)](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

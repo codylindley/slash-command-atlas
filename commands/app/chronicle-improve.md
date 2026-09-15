@@ -5,13 +5,13 @@
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot app
 - **Category:** History & chronicle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 
 ## What it does
 
 Suggests improvements for your instructions file.
 
-Reads your history for the places the agent repeatedly needed correcting, then proposes edits to your custom instructions so it stops needing them. The natural follow-up to `/init` after a few weeks of real use.
+Looks for repeated corrections and friction in session history for the **current repository or working directory**, rather than every project. It proposes improvements to `.github/copilot-instructions.md` and lets you choose which recommendations to apply.
 
 ## Canonical example
 
@@ -24,7 +24,7 @@ Reads your history for the places the agent repeatedly needed correcting, then p
 
 ## Official sources
 
-- [Chronicle (Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
+- [Session history (GitHub Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle)
 - [GitHub Copilot app slash command reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands)
 
 ## Atlas links

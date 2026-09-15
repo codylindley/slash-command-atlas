@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code on the web
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Cloud environment with Claude Code 2.1.223+
 
 ## What it does

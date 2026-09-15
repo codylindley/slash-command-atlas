@@ -1,22 +1,26 @@
-# `/remote`
+# `/remote [on|off]`
 
 > Enables or manages remote control of the current session.
 
 - **Product:** GitHub Copilot
 - **Surface:** GitHub Copilot Chat in JetBrains
 - **Category:** Session lifecycle
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Copilot CLI session
 
 ## What it does
 
 Enables or manages remote control of the current session.
 
-Lets you reach the session from GitHub.com or GitHub Mobile. CLI-session only.
+Run bare to show status and access details, `on` to enable remote steering, or `off` to end it. The CLI must remain running on an online machine, and remote access uses the same GitHub account. GitHub also documents an Enable Copilot CLI Remote setting in the JetBrains plugin.
 
 ## Canonical example
 
 `/remote`
+
+## More examples
+
+- `/remote on`
 
 ## Related commands
 
@@ -30,6 +34,8 @@ Lets you reach the session from GitHub.com or GitHub Mobile. CLI-session only.
 
 ## Official sources
 
+- [Copilot Chat cheat sheet (JetBrains)](https://docs.github.com/en/copilot/reference/chat-cheat-sheet?tool=jetbrains)
+- [Steer a CLI session remotely](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/steer-remotely)
 - [GitHub Copilot Chat in JetBrains slash command reference](https://www.jetbrains.com/help/ai-assistant/copilot-agent.html)
 
 ## Atlas links

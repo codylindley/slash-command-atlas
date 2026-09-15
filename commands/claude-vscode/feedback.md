@@ -5,7 +5,7 @@
 - **Product:** Claude Code
 - **Surface:** Claude Code in VS Code
 - **Category:** Diagnostics & usage
-- **Data snapshot:** 2026-08-23
+- **Data snapshot:** 2026-09-14
 - **Requires:** Claude Code 2.1.229+
 
 ## What it does

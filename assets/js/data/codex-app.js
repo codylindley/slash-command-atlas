@@ -1,4 +1,4 @@
-/* ChatGPT desktop app (Codex) — composer slash commands.
+/* OpenAI Codex in the ChatGPT desktop app — composer slash commands.
    Built-in command names and concise behavior follow the official OpenAI reference.
    Longer explanations and examples are editorial, constrained to documented behavior. */
 
@@ -7,7 +7,9 @@
     ref: ['ChatGPT desktop app slash commands',
       'https://learn.chatgpt.com/docs/reference/slash-commands#available-slash-commands'],
     share: ['Share a read-only snapshot of a Codex thread',
-      'https://learn.chatgpt.com/docs/use-chatgpt#share-a-read-only-snapshot-of-a-codex-thread']
+      'https://learn.chatgpt.com/docs/use-chatgpt#share-a-read-only-snapshot-of-a-codex-thread'],
+    prompts: ['Custom prompts in Codex',
+      'https://learn.chatgpt.com/docs/custom-prompts']
   };
 
   window.SLASH.register('codex-app', [
@@ -69,6 +71,7 @@
     },
     {
       key: 'fork', cmd: '/fork', cat: 'session',
+      requires: 'Local chat',
       summary: 'Copies a local chat into a new local chat or worktree.',
       detail: 'Branches from the current local chat so the original remains intact while the copy can take a different direction. Depending on the choice you make, the copy can stay in the same project or use a new worktree.',
       when: [
@@ -192,8 +195,8 @@
       key: 'share', cmd: '/share', cat: 'session',
       requires: 'Local Codex thread in the macOS desktop app; sharing allowed by workspace policy',
       summary: 'Creates a read-only snapshot of the current local Codex thread.',
-      detail: 'Opens the sharing dialog and prepares an uploaded snapshot. Personal accounts can create a link for anyone who has it; workspace accounts can restrict the audience to signed-in members or invited people when policy allows.',
-      note: 'Review the snapshot before copying its link. OpenAI redacts detected secrets, but the snapshot can include messages, reasoning summaries, images, and diffs.',
+      detail: 'Opening the dialog starts uploading the snapshot; selecting Copy link publishes it with the chosen audience. Personal-account links are accessible to anyone who has them. Workspace links are limited to authenticated workspace members, optionally restricted to invited members and groups.',
+      note: 'Open the copied link and review the shared view before sending it. Secret-pattern redaction is not a guarantee: messages, reasoning summaries, images, file paths, and diffs can still contain sensitive content. Later thread changes do not update the snapshot.',
       when: [
         'You want to share a reproducible thread without giving someone access to the live project',
         'A teammate needs the conversation and resulting diff, but not local tool or shell history'
@@ -224,10 +227,11 @@
     },
     {
       key: 'custom-prompt', cmd: '/prompts:<name>', cat: 'author', flags: ['custom'], noCompare: true,
-      summary: 'Runs a custom prompt by its configured name.',
+      requires: 'A configured custom prompt',
+      summary: 'Runs a legacy custom prompt by its configured name.',
       detail: 'Custom prompts appear dynamically in the composer as <code>/prompts:&lt;name&gt;</code>. The concrete names depend on the prompts available in your setup, so this wildcard record is not a built-in command.',
-      note: 'Enabled skills also appear in the slash list, but the documented explicit invocation syntax for a skill is <code>$skill-name</code>, not a slash command.',
-      related: [], docs: [D.ref]
+      note: 'OpenAI deprecates custom prompts in favor of skills. Enabled skills also appear in the slash list, but the documented explicit invocation syntax for a Codex skill is <code>$skill-name</code>, not an invented slash spelling.',
+      related: [], docs: [D.ref, D.prompts]
     }
   ]);
 }());
